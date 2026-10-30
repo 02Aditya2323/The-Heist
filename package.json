@@ -1,0 +1,46 @@
+{
+  "name": "the-heist",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build:shared && npm run build:server && npm run build:client && npm run build:bots",
+    "build:shared": "npm -w @heist/shared run build",
+    "build:server": "npm -w @heist/server run build",
+    "build:client": "npm -w @heist/client run build",
+    "build:bots": "npm -w @heist/bots run build",
+    "test": "npm -w @heist/shared run test",
+    "test:shared": "npm -w @heist/shared run test",
+    "test:server": "npm -w @heist/server run test",
+    "gen-map": "npx tsx tools/gen-map.ts",
+    "gen-city-map": "tsx tools/gen-city-map.ts",
+    "build:art-world": "tsx tools/build-art-world.mts --v2",
+    "audit:world": "tsx tools/check-complete-world.mts",
+    "dev:server": "npm -w @heist/server run dev",
+    "dev:client": "npm -w @heist/client run dev",
+    "tunnel": "node tools/start-ngrok.mjs",
+    "bots": "tsx apps/bots/src/main.ts",
+    "bots:replay": "tsx apps/bots/src/replay-cli.ts",
+    "bots:hosting": "tsx apps/bots/src/hosting-suite.ts",
+    "bots:gameplay": "tsx apps/bots/src/gameplay-suite.ts",
+    "test:bots": "npm -w @heist/bots run test",
+    "benchmark:views": "tsx tools/benchmark-event-views.mts",
+    "benchmark": "tsx apps/bots/src/benchmark.ts",
+    "build:deploy": "npm run build:shared && npm run build:server && npm run build:client"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "allowScripts": {
+    "argon2@0.41.1": true,
+    "esbuild@0.28.2": true,
+    "esbuild@0.25.12": true,
+    "fsevents@2.3.3": true
+  },
+  "devDependencies": {
+    "@ngrok/ngrok": "^1.7.0"
+  }
+}

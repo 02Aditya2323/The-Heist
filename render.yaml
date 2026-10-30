@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: the-heist-demo
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeployTrigger: checksPass
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_BACKEND
+        value: sqlite
+      - key: DB_URL
+        value: sqlite:/app/data/heist.db
+      - key: HOST
+        value: 0.0.0.0
+      - key: MAX_PLAYERS
+        value: "60"
+      - key: DEBUG_ENDPOINTS
+        value: "false"
+      - key: HEIST_ADMIN_USERNAME
+        value: heist_owner
+      - key: HEIST_ADMIN_PASSWORD
+        generateValue: true

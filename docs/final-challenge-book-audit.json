@@ -1,0 +1,693 @@
+{
+  "date": "2026-10-14",
+  "sources": [
+    {
+      "path": "The Heist Zero Hour Challenge Book (Final).pdf",
+      "sha256": "465f58aab50d2fc659c2e86faf18d7ba30d47232745895de7a6753f5b1e523b4",
+      "unchanged": true
+    },
+    {
+      "path": "The_Heist_Challenge_Tracker_and_Money_Plan.xlsx",
+      "sha256": "06db3e11db69d9db347948c11aab0fd61df081820cd2fa79a5837af85446a318",
+      "unchanged": true
+    }
+  ],
+  "catalogue": [
+    {
+      "id": "ST-01",
+      "name": "Receipt Total",
+      "type": "Code",
+      "language": "C",
+      "station": "CP Lab",
+      "handlerId": "cp-lab",
+      "workbench": "code",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "ST-02",
+      "name": "Broken Receipt",
+      "type": "Debug",
+      "language": "Python",
+      "station": "Debugging Lab",
+      "handlerId": "debug-lab",
+      "workbench": "debug",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "ST-03",
+      "name": "Gate Cipher",
+      "type": "CTF",
+      "language": "-",
+      "station": "Logic Terminal",
+      "handlerId": "logic",
+      "workbench": "cipher",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "SD-01",
+      "name": "Peak Reading",
+      "type": "Code",
+      "language": "Java",
+      "station": "CP Lab",
+      "handlerId": "cp-lab",
+      "workbench": "code",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "SD-02",
+      "name": "Lonely Packet",
+      "type": "Code",
+      "language": "Python",
+      "station": "Data Centre",
+      "handlerId": "data-centre",
+      "workbench": "code",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "SD-03",
+      "name": "Robot Route",
+      "type": "Code",
+      "language": "C",
+      "station": "CP Lab",
+      "handlerId": "cp-lab",
+      "workbench": "code",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "SD-04",
+      "name": "Patch the Meter",
+      "type": "Debug",
+      "language": "C",
+      "station": "Debugging Lab",
+      "handlerId": "debug-lab",
+      "workbench": "debug",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "SD-05",
+      "name": "Fence Count",
+      "type": "Debug",
+      "language": "Java",
+      "station": "Code Review Desk",
+      "handlerId": "sql",
+      "workbench": "debug",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "SD-06",
+      "name": "Password Profiler",
+      "type": "CTF",
+      "language": "-",
+      "station": "CTF Arena",
+      "handlerId": "ctf",
+      "workbench": "deduction",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "SD-07",
+      "name": "Log Hunter",
+      "type": "CTF",
+      "language": "-",
+      "station": "Challenge Terminal",
+      "handlerId": "black-challenge",
+      "workbench": "logs",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "SD-08",
+      "name": "Decode Chain",
+      "type": "CTF",
+      "language": "-",
+      "station": "Network Tower",
+      "handlerId": "network-tower",
+      "workbench": "cipher",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "SD-09",
+      "name": "Fare Gate",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "Logic Terminal",
+      "handlerId": "logic",
+      "workbench": "lights",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "SD-10",
+      "name": "Who Moved the Money",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "OSINT Terminal",
+      "handlerId": "osint",
+      "workbench": "statements",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "EX-01",
+      "name": "Door and Key",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "CP Lab",
+      "handlerId": "cp-lab",
+      "workbench": "maze",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "EX-02",
+      "name": "Chain of Command",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "Data Centre",
+      "handlerId": "data-centre",
+      "workbench": "tree",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "EX-03",
+      "name": "Ghost in the Counter",
+      "type": "Debug",
+      "language": "C",
+      "station": "Debugging Lab",
+      "handlerId": "debug-lab",
+      "workbench": "debug",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "EX-04",
+      "name": "Gatekeeper",
+      "type": "CTF",
+      "language": "-",
+      "station": "Sandbox Station",
+      "handlerId": "sandbox",
+      "workbench": "machine",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "EX-05",
+      "name": "Portal Peek",
+      "type": "CTF",
+      "language": "-",
+      "station": "Sandbox Station",
+      "handlerId": "sandbox",
+      "workbench": "portal",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BG-01",
+      "name": "Code Oracle",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "Home door, level 1",
+      "handlerId": null,
+      "workbench": "oracle",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BG-02",
+      "name": "Maze Lock",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "Home door, level 2",
+      "handlerId": null,
+      "workbench": "maze",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BG-03",
+      "name": "Circuit Lock",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "Home door, level 3",
+      "handlerId": null,
+      "workbench": "circuit",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "RC-01",
+      "name": "Sprint: Fare Sum",
+      "type": "Code",
+      "language": "Python",
+      "station": "Race Terminal",
+      "handlerId": null,
+      "workbench": "code",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "RC-02",
+      "name": "Sprint: Bug Hunt",
+      "type": "Debug",
+      "language": "C, Python or Java",
+      "station": "Race Terminal",
+      "handlerId": null,
+      "workbench": "debug",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "RC-03",
+      "name": "Sprint: Decode",
+      "type": "CTF",
+      "language": "-",
+      "station": "Race Terminal",
+      "handlerId": null,
+      "workbench": "cipher",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "GH-01",
+      "name": "Key Card",
+      "type": "CTF",
+      "language": "-",
+      "station": "NEXUS Plaza map tiles",
+      "handlerId": null,
+      "workbench": "cipher",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "GH-02",
+      "name": "Courier Interrogation",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "Courier on the map",
+      "handlerId": null,
+      "workbench": "courier",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "GH-03",
+      "name": "Server Sprint",
+      "type": "Code",
+      "language": "Python",
+      "station": "Golden Hour Terminal",
+      "handlerId": null,
+      "workbench": "code",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BR-01",
+      "name": "Tunnel Network",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "Raid Circle",
+      "handlerId": null,
+      "workbench": "maze",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BR-02",
+      "name": "Double Login",
+      "type": "Code",
+      "language": "Java",
+      "station": "Raid Circle",
+      "handlerId": null,
+      "workbench": "code",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BR-03",
+      "name": "Cipher Relay",
+      "type": "CTF",
+      "language": "-",
+      "station": "Raid Circle",
+      "handlerId": null,
+      "workbench": "cipher",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BR-04",
+      "name": "Ghost Log",
+      "type": "CTF",
+      "language": "-",
+      "station": "Raid Circle",
+      "handlerId": null,
+      "workbench": "logs",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BR-05",
+      "name": "Org Chart",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "Raid Circle",
+      "handlerId": null,
+      "workbench": "tree",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BR-06",
+      "name": "Combination Clues",
+      "type": "CTF",
+      "language": "-",
+      "station": "Raid Circle",
+      "handlerId": null,
+      "workbench": "deduction",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BR-07",
+      "name": "Self-Checking Vault",
+      "type": "CTF",
+      "language": "-",
+      "station": "Raid Circle",
+      "handlerId": null,
+      "workbench": "deduction",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BR-08",
+      "name": "Broken Tally",
+      "type": "Debug",
+      "language": "C",
+      "station": "Raid Circle",
+      "handlerId": null,
+      "workbench": "debug",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BR-09",
+      "name": "Deploy Order",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "Raid Circle",
+      "handlerId": null,
+      "workbench": "order",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BR-10",
+      "name": "Constraint Vault",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "Raid Circle",
+      "handlerId": null,
+      "workbench": "constraints",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BL-01",
+      "name": "Ledger Running Total",
+      "type": "Code",
+      "language": "Java",
+      "station": "Raid Circle, window 3",
+      "handlerId": null,
+      "workbench": "code",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BL-02",
+      "name": "Triple Cipher",
+      "type": "CTF",
+      "language": "-",
+      "station": "Raid Circle, window 3",
+      "handlerId": null,
+      "workbench": "cipher",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BL-03",
+      "name": "Shadow Ring",
+      "type": "Puzzle",
+      "language": "-",
+      "station": "Raid Circle, window 3",
+      "handlerId": null,
+      "workbench": "ring",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BL-04",
+      "name": "Warden Script",
+      "type": "CTF",
+      "language": "-",
+      "station": "Raid Circle, window 3",
+      "handlerId": null,
+      "workbench": "machine",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    },
+    {
+      "id": "BL-05",
+      "name": "Broken Router",
+      "type": "Debug",
+      "language": "Python",
+      "station": "Raid Circle, window 3",
+      "handlerId": null,
+      "workbench": "debug",
+      "status": "Implemented; automated validation passed",
+      "humanDifficultyPlaytest": false
+    }
+  ],
+  "typeCounts": {
+    "Code": 8,
+    "Debug": 7,
+    "CTF": 14,
+    "Puzzle": 13
+  },
+  "rules": {
+    "durationMinutes": 180,
+    "total": 400000,
+    "homeCount": 90,
+    "maxPlayers": 40,
+    "cap": 80000,
+    "reactivate": 60000,
+    "starterPay": 1000,
+    "standardPay": 2000,
+    "expertPay": 8000,
+    "standardSlots": 8,
+    "bankMax": 20000,
+    "bankOpen": 10,
+    "bankFeeNumerator": 1,
+    "bankFeeDenominator": 1000,
+    "checkoutOpen": 150,
+    "minimumSolveMs": 5000,
+    "withdrawal": 300000,
+    "offline": 600000,
+    "lateJoin": 120,
+    "answerInterval": 5000,
+    "wrongLimit": 3,
+    "wrongWait": 60000,
+    "trainingLimit": 6,
+    "standardLock": 360000,
+    "expertLock": 600000,
+    "queueAccept": 30000,
+    "queueLimit": 2,
+    "burglaryOpen": 40,
+    "burglaryClose": 175,
+    "homeMinimum": 2000,
+    "homeFloor": 500,
+    "homeCooldown": 600000,
+    "thiefCooldown": 1800000,
+    "burglaryFee": 300,
+    "jail": 180000,
+    "bounty": 2000,
+    "burglaryLevels": [
+      {
+        "share": 5,
+        "max": 1000,
+        "duration": 180000,
+        "clears": 0
+      },
+      {
+        "share": 10,
+        "max": 2500,
+        "duration": 300000,
+        "clears": 5
+      },
+      {
+        "share": 20,
+        "max": 5000,
+        "duration": 480000,
+        "clears": 12
+      }
+    ],
+    "raidQuestions": 5,
+    "raidGate": 2,
+    "raidCrew": 10,
+    "smallRaidCrew": 8,
+    "smallRaidThreshold": 36,
+    "raidPass": 5,
+    "raidDuration": 900000,
+    "raidStand": 60000,
+    "raidDepositPercent": 10,
+    "raidQuestionMax": 16000,
+    "raidWindows": [
+      {
+        "open": 45,
+        "close": 90,
+        "crewDeadline": 90
+      },
+      {
+        "open": 90,
+        "close": 135,
+        "crewDeadline": 135
+      },
+      {
+        "open": 150,
+        "close": 175,
+        "crewDeadline": 160
+      }
+    ],
+    "raceDuration": 600000,
+    "raceNotice": 300000,
+    "raceRewards": [
+      5000,
+      3000,
+      2000
+    ],
+    "eventDurations": [
+      480000,
+      600000,
+      300000
+    ],
+    "eventChallengeDurations": [
+      60000,
+      180000,
+      180000
+    ],
+    "eventRewards": [
+      [
+        2000,
+        2000,
+        2000,
+        2000,
+        2000
+      ],
+      [
+        10000
+      ],
+      [
+        4000,
+        2500,
+        1500,
+        1000,
+        1000
+      ]
+    ],
+    "waveTimes": [
+      0,
+      20,
+      50,
+      80,
+      120
+    ],
+    "waveTemplates": [
+      [
+        "SD-01",
+        "SD-02"
+      ],
+      [
+        "SD-04",
+        "SD-06"
+      ],
+      [
+        "SD-03",
+        "SD-08"
+      ],
+      [
+        "SD-05",
+        "SD-09"
+      ],
+      [
+        "SD-07",
+        "SD-10"
+      ]
+    ],
+    "expertTimes": [
+      30,
+      60,
+      90,
+      120,
+      140
+    ],
+    "expertTemplates": [
+      "EX-01",
+      "EX-04",
+      "EX-02",
+      "EX-05",
+      "EX-03"
+    ],
+    "raceTimes": [
+      30,
+      90,
+      135
+    ],
+    "goldenTimes": [
+      70,
+      115,
+      165
+    ]
+  },
+  "savedEvent": {
+    "phase": "lobby",
+    "rulesVersion": 2,
+    "totalPaise": 400000,
+    "ledgerRows": 2,
+    "reconciled": true,
+    "ledgerChainVerified": true,
+    "preMigrationBackupPresent": true
+  },
+  "world": {
+    "version": 30,
+    "scenes": 19,
+    "homeSites": 90,
+    "interactionPoints": 124,
+    "gates": 44,
+    "serverClientManifestIdentical": true,
+    "artworkChanged": false,
+    "activeHousingWards": [
+      "A",
+      "B",
+      "C"
+    ],
+    "reserveHousingWards": [
+      "D",
+      "E",
+      "F"
+    ]
+  },
+  "limitations": [
+    "Real payout method and minimum payout remain organizer decisions. No payment provider is connected.",
+    "Automated solve and money checks do not establish first-year difficulty or a three-hour 40-player VM soak.",
+    "Accessible code remains text; no claim of blocking AI tools or screenshots.",
+    "Server validation is retained rather than trusting browser completion claims."
+  ]
+}

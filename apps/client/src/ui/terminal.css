@@ -1,0 +1,1137 @@
+/* Tactical mission console. These layers are decorative; all status comes from the store. */
+#terminal-dialog {
+  --terminal-accent: #b4ebd8;
+  width: 1000px;
+  max-width: calc(100vw - 36px);
+  max-height: calc(100dvh - 36px);
+  padding: 0;
+  border: 1px solid #647e7f;
+  border-radius: 16px;
+  background: #0a141c;
+  box-shadow:
+    0 32px 120px #000d,
+    0 0 0 6px #09111655;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #46645c #0b151c;
+  animation: terminal-arrive 0.18s ease-out;
+}
+#terminal-dialog[data-tone="raid"] {
+  --terminal-accent: #f1c17b;
+}
+#terminal-dialog[data-tone="bank"] {
+  --terminal-accent: #a6e7c3;
+}
+#terminal-dialog[data-tone="race"] {
+  --terminal-accent: #95d9fa;
+}
+#terminal-dialog[data-tone="events"] {
+  --terminal-accent: #f3ce7b;
+}
+#terminal-dialog[data-tone="checkout"] {
+  --terminal-accent: #f7ab9f;
+}
+#terminal-dialog[data-tone="Code"] {
+  --terminal-accent: #99d8f8;
+}
+#terminal-dialog[data-tone="Debug"] {
+  --terminal-accent: #f6a59a;
+}
+#terminal-dialog[data-tone="CTF"] {
+  --terminal-accent: #a6e7c3;
+}
+#terminal-dialog[data-tone="Puzzle"] {
+  --terminal-accent: #c7b0fa;
+}
+#terminal-dialog::backdrop {
+  background: #03070ac9;
+  backdrop-filter: blur(7px) saturate(0.7);
+}
+#terminal-dialog .terminal-header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  margin: 0;
+  padding: 14px 26px;
+  background: #0b151ff5;
+  border-bottom: 1px solid #29413f;
+  backdrop-filter: blur(8px);
+}
+.terminal-channel {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+}
+.terminal-channel::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--terminal-accent);
+  box-shadow: 0 0 12px var(--terminal-accent);
+  flex: 0 0 auto;
+}
+#terminal-dialog .terminal-header small {
+  color: #a2bbb9;
+  font:
+    9px/1.4 Consolas,
+    monospace;
+  letter-spacing: 0.16em;
+}
+#terminal-dialog #dialog-close {
+  min-height: 36px;
+  padding: 7px 12px;
+  background: #17232d;
+  border: 1px solid #3f535d;
+  border-radius: 7px;
+  color: #d0dedf;
+  white-space: nowrap;
+}
+#terminal-dialog #dialog-close:hover {
+  background: #253b43;
+  border-color: var(--terminal-accent);
+}
+.terminal-content {
+  padding: 28px;
+}
+.terminal-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 22px;
+  padding: 10px 0 24px;
+  isolation: isolate;
+}
+.terminal-hero::before {
+  content: "";
+  position: absolute;
+  inset: -28px -28px 0 26%;
+  z-index: -1;
+  background-image:
+    linear-gradient(90deg, #0a141c 1%, #0a141cbf 48%, #0a141cd9),
+    var(--terminal-art);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.62;
+  pointer-events: none;
+}
+.terminal-emblem {
+  height: 74px;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--terminal-accent) 40%, #183a3d);
+  border-radius: 18px;
+  color: var(--terminal-accent);
+  background: linear-gradient(145deg, #24383b, #101d26);
+  box-shadow:
+    inset 0 0 22px #b7e0ca0a,
+    0 8px 32px #0005;
+}
+.terminal-emblem svg {
+  width: 38px;
+  height: 38px;
+}
+.terminal-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 9px;
+  font:
+    9px Consolas,
+    monospace;
+  letter-spacing: 0.12em;
+  color: var(--terminal-accent);
+}
+.terminal-mode {
+  border: 1px solid #405554;
+  border-radius: 4px;
+  color: #b3c3c5;
+  padding: 4px 6px;
+  font-size: 8px;
+}
+#terminal-dialog #terminal-title {
+  font:
+    700 clamp(25px, 3.4vw, 40px) / 1.1 "Segoe UI",
+    sans-serif;
+  letter-spacing: -0.04em;
+  color: #f4f2e9;
+  margin: 0 0 12px;
+  overflow-wrap: anywhere;
+}
+#terminal-dialog #terminal-copy {
+  color: #a8b9bf;
+  font-size: 12px;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 690px;
+}
+.terminal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  border-top: 1px solid #2a3c43;
+  border-bottom: 1px solid #2a3c43;
+  padding: 11px 0;
+  color: #99b1b6;
+  font:
+    9px/1.5 Consolas,
+    monospace;
+  letter-spacing: 0.04em;
+}
+.terminal-meta b {
+  color: #d8e5e2;
+  font-weight: 400;
+}
+#terminal-dialog #terminal-state {
+  margin: 15px 0;
+  border: 1px solid #2e4d46;
+  border-left: 3px solid #97d9b7;
+  border-radius: 6px;
+  background: #112a24;
+  font:
+    11px/1.7 "Segoe UI",
+    sans-serif;
+  padding: 10px 13px;
+  color: #b1e1c9;
+}
+#terminal-dialog #terminal-state[data-error="true"] {
+  background: #32201f;
+  border-color: #6e4242;
+  border-left-color: #f0a28c;
+  color: #ffc6b9;
+}
+#terminal-game .game-section {
+  margin: 24px 0;
+}
+#terminal-game .game-section > h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  padding: 0;
+  margin: 0 0 15px;
+  color: #94a9ac;
+  font:
+    9px Consolas,
+    monospace;
+  letter-spacing: 0.14em;
+}
+#terminal-game .game-section > h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #2a3c43;
+}
+#terminal-game .game-section > p {
+  color: #a9bec4;
+}
+.terminal-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  margin: 18px 0;
+}
+.terminal-metric {
+  position: relative;
+  min-width: 0;
+  padding: 16px 17px;
+  border: 1px solid #2b4048;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #172730, #0f1d26);
+}
+.terminal-metric > svg {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 19px;
+  height: 19px;
+  color: var(--terminal-accent);
+  opacity: 0.7;
+}
+.terminal-metric > small {
+  display: block;
+  font:
+    8px/1.5 Consolas,
+    monospace;
+  letter-spacing: 0.11em;
+  color: #9bafb4;
+  padding-right: 20px;
+}
+.terminal-metric > strong {
+  display: block;
+  margin: 8px 0 6px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #f2ebd9;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+.terminal-metric > span {
+  font-size: 10px;
+  color: #8ea8ae;
+  line-height: 1.5;
+}
+.raid-operation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 224px;
+  gap: 24px;
+  position: relative;
+  padding: 25px;
+  border: 1px solid #796546;
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at 100% 0%, #77563724, transparent 65%),
+    linear-gradient(130deg, #1c282a, #101e27);
+  overflow: hidden;
+}
+.raid-operation::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 1px;
+  top: 0;
+  left: 24px;
+  background: #f4c582;
+  box-shadow: 0 0 15px #edc882;
+}
+.operation-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #635741;
+  border-radius: 4px;
+  padding: 5px 8px;
+  background: #4a372322;
+  color: #edc585;
+  font:
+    8px Consolas,
+    monospace;
+  letter-spacing: 0.13em;
+}
+.operation-status::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 50%;
+}
+.raid-brief h3 {
+  font-size: clamp(23px, 3vw, 32px);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin: 14px 0 10px;
+  color: #f4eddb;
+}
+.raid-brief > p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #a9bfc5;
+  max-width: 480px;
+}
+.raid-crew-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 22px 0 10px;
+  font:
+    9px Consolas,
+    monospace;
+  color: #b8c3bf;
+}
+.raid-crew-label small {
+  color: #8ca2a5;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+.raid-crew-label strong {
+  font-weight: 400;
+  color: #e6d6b8;
+}
+.raid-crew-slots {
+  display: grid;
+  grid-template-columns: repeat(var(--crew-size), minmax(0, 1fr));
+  gap: 5px;
+  margin-bottom: 16px;
+}
+.raid-crew-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 2px 6px;
+  background: #091722;
+  border: 1px solid #32454d;
+  border-radius: 5px;
+}
+.crew-head {
+  position: relative;
+  display: block;
+  width: 9px;
+  height: 9px;
+  border: 1px solid #64757b;
+  border-radius: 50%;
+  margin-bottom: 7px;
+}
+.crew-head::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -4px;
+  width: 15px;
+  height: 6px;
+  border: 1px solid #64757b;
+  border-radius: 7px 7px 2px 2px;
+}
+.raid-crew-slot b {
+  font:
+    8px Consolas,
+    monospace;
+  color: #69818c;
+}
+.raid-crew-slot[data-filled="true"] {
+  border-color: #8fdac3;
+  background: #183c33;
+}
+.raid-crew-slot[data-filled="true"] .crew-head,
+.raid-crew-slot[data-filled="true"] .crew-head::after {
+  border-color: #a9edcf;
+}
+.raid-crew-slot[data-filled="true"] b {
+  color: #c0eddb;
+}
+.raid-radar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-left: 1px solid #394743;
+  padding-left: 20px;
+}
+.radar-label,
+.radar-caption {
+  font:
+    8px Consolas,
+    monospace;
+  letter-spacing: 0.12em;
+  color: #b3a68e;
+  text-align: center;
+}
+.radar-caption {
+  color: #789698;
+}
+.raid-hold-ring {
+  --ring-progress: 0;
+  width: 174px;
+  height: 174px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: relative;
+  isolation: isolate;
+  border: 1px solid #6c604b;
+  background:
+    radial-gradient(circle, #122630 57%, transparent 58%),
+    conic-gradient(#e8be79 calc(var(--ring-progress) * 1turn), #3e4845 0);
+  box-shadow:
+    0 0 0 8px #af8c5410,
+    0 0 0 9px #6c604b44,
+    inset 0 0 40px #0006;
+}
+.raid-hold-ring::before {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border: 1px dashed #786a4c88;
+  border-radius: 50%;
+  z-index: -1;
+}
+.raid-hold-ring > svg {
+  width: 28px;
+  height: 28px;
+  color: #d4b787;
+}
+.raid-hold-value {
+  font:
+    38px/1.1 Consolas,
+    monospace;
+  color: #f0d5a5;
+  letter-spacing: -0.04em;
+}
+.raid-hold-ring > small {
+  font:
+    7px Consolas,
+    monospace;
+  color: #a2a99e;
+  letter-spacing: 0.06em;
+}
+.raid-protocol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0 18px;
+}
+.protocol-step {
+  position: relative;
+  padding: 15px 15px 15px 46px;
+  border: 1px solid #2c4045;
+  background: #101e26;
+  border-radius: 9px;
+}
+.protocol-step > span {
+  position: absolute;
+  left: 14px;
+  top: 15px;
+  font:
+    16px Consolas,
+    monospace;
+  color: #c7ae83;
+}
+.protocol-step h4 {
+  font:
+    9px Consolas,
+    monospace;
+  letter-spacing: 0.09em;
+  color: #e5ddcb;
+  margin-bottom: 6px;
+}
+.protocol-step p {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #91aab2;
+}
+.protocol-step[data-complete="true"] {
+  border-color: #3f6957;
+  background: #142920;
+}
+.protocol-step[data-complete="true"] > span {
+  color: #a7e6c3;
+}
+#terminal-game .game-button {
+  min-height: 40px;
+  border-radius: 6px;
+  margin: 0;
+  padding: 10px 15px;
+  font-size: 11px;
+  font-weight: 600;
+  border-color: #526d65;
+  background: #234139;
+  color: #d3f1df;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    transform 0.15s;
+}
+#terminal-game .game-button:hover:enabled {
+  border-color: #b2ddc2;
+  background: #335b4b;
+  transform: translateY(-1px);
+}
+#terminal-game .game-button:disabled {
+  opacity: 1;
+  background: #1d2d32;
+  color: #809394;
+  border-color: #3a4c51;
+  cursor: not-allowed;
+}
+#terminal-game .raid-primary {
+  color: #17252b;
+  background: #e7bd7e;
+  border-color: #efd19d;
+  padding: 11px 22px;
+}
+#terminal-game .raid-primary:hover:enabled {
+  background: #f1d39f;
+  border-color: #f8e5bb;
+}
+#terminal-game .raid-primary:disabled {
+  background: #b6a07a;
+  color: #283437;
+  border-color: #c4b18c;
+  opacity: 0.68;
+}
+#terminal-game .action-help {
+  font-size: 10px;
+  color: #91a7ac;
+  margin-top: 9px;
+}
+#terminal-game .job-grid {
+  gap: 13px;
+}
+#terminal-game .job-card,
+#terminal-game .challenge-card,
+#terminal-game .activity-card {
+  --card-accent: #a5d6bf;
+  position: relative;
+  border: 1px solid #3a5058;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #192a33, #0e1c25);
+  padding: 20px;
+  margin: 0;
+  box-shadow: 0 5px 16px #0002;
+}
+#terminal-game [data-type="Code"] {
+  --card-accent: #a1dcf9;
+}
+#terminal-game [data-type="Debug"] {
+  --card-accent: #f0a499;
+}
+#terminal-game [data-type="CTF"] {
+  --card-accent: #a5e0bd;
+}
+#terminal-game [data-type="Puzzle"] {
+  --card-accent: #c9b1ef;
+}
+#terminal-game .job-card::before,
+#terminal-game .challenge-card::before,
+#terminal-game .activity-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 20px;
+  width: 46px;
+  height: 2px;
+  background: var(--card-accent);
+}
+.mission-card-head {
+  display: grid;
+  grid-template-columns: 35px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 11px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #33464c;
+  margin-bottom: 14px;
+}
+.mission-card-icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #435960;
+  border-radius: 8px;
+  background: #243a423b;
+  color: var(--card-accent);
+}
+.mission-card-icon svg {
+  width: 19px;
+  height: 19px;
+}
+.mission-card-heading {
+  min-width: 0;
+}
+#terminal-game .mission-card-heading small {
+  display: block;
+  color: var(--card-accent);
+  font:
+    8px/1.5 Consolas,
+    monospace;
+  letter-spacing: 0.08em;
+}
+#terminal-game .mission-card-heading h4 {
+  font:
+    600 17px/1.3 "Segoe UI",
+    sans-serif;
+  letter-spacing: -0.025em;
+  color: #eee9db;
+  margin: 6px 0 0;
+  overflow-wrap: anywhere;
+}
+.mission-card-reward {
+  text-align: right;
+}
+.mission-card-reward strong {
+  display: block;
+  color: #f1ddba;
+  font:
+    600 19px/1.1 "Segoe UI",
+    sans-serif;
+  white-space: nowrap;
+}
+#terminal-game .mission-card-reward small {
+  display: block;
+  margin-top: 6px;
+  color: #8dabae;
+  font:
+    7px Consolas,
+    monospace;
+  letter-spacing: 0.02em;
+}
+#terminal-game .job-card > p {
+  min-height: 36px;
+  font-size: 11px;
+}
+.job-availability {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  font:
+    8px Consolas,
+    monospace;
+  color: #b4d3b7;
+  margin: 12px 0 14px;
+  letter-spacing: 0.05em;
+}
+.job-availability::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.job-card[data-available="false"] .job-availability {
+  color: #a5adb2;
+}
+#terminal-game .game-actions {
+  flex-wrap: wrap;
+  gap: 7px;
+}
+#terminal-game .game-actions .game-button:last-child {
+  background: transparent;
+  border-color: #445c68;
+  color: #bed1d9;
+}
+.terminal-empty {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 15px;
+  align-items: center;
+  padding: 18px;
+  border: 1px dashed #48605f;
+  border-radius: 10px;
+  background: #13232a;
+}
+.terminal-empty-icon {
+  color: #9ec6bb;
+  background: #203d38;
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+}
+.terminal-empty-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.terminal-empty h4 {
+  color: #dbe5de;
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.terminal-empty p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #97afb6;
+}
+.terminal-key {
+  padding: 7px 11px;
+  border: 1px solid #647a79;
+  border-bottom-width: 3px;
+  border-radius: 5px;
+  font:
+    12px Consolas,
+    monospace;
+  color: #dce3d8;
+  background: #213239;
+}
+#terminal-game .challenge-card {
+  margin-bottom: 12px;
+  padding: 23px;
+}
+#terminal-game .challenge-card[data-black-ledger="true"] {
+  background: linear-gradient(135deg, #201e32, #111b29);
+  border-color: #685777;
+}
+#terminal-game .contract-clock {
+  display: inline-block;
+  padding: 6px 9px;
+  border: 1px solid #405663;
+  border-radius: 4px;
+  background: #152932;
+  margin: 0 0 12px;
+  color: #c7d8dc;
+  font:
+    9px Consolas,
+    monospace;
+}
+#terminal-game .challenge-stamp {
+  float: right;
+  color: var(--card-accent);
+  font:
+    11px Consolas,
+    monospace;
+  letter-spacing: 0.13em;
+}
+#terminal-game .challenge-card pre {
+  border-radius: 8px;
+  background: #08161f;
+  border-color: #334751;
+  font-size: 12px;
+  padding: 18px;
+}
+#terminal-game .answer-form {
+  border-top: 1px solid #354a51;
+  padding-top: 18px;
+  margin-top: 20px;
+}
+#terminal-game .bank-form {
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #354e49;
+  background: #132825;
+}
+#terminal-game .bank-form label {
+  min-width: 0;
+}
+#terminal-game .bank-form input,
+#terminal-game .answer-form input {
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 12px;
+}
+#terminal-game .answer-form button {
+  height: 46px;
+}
+#terminal-game .leaderboard-list {
+  border: 1px solid #32474c;
+  border-radius: 9px;
+  overflow: hidden;
+  background: #0e1d25;
+}
+#terminal-game .leaderboard-list li {
+  padding: 13px 15px;
+}
+#terminal-game .leaderboard-list li:first-child {
+  background: #51442a33;
+}
+#terminal-game .leaderboard-list li[data-self="true"] {
+  background: #234d3c55;
+  border-left: 3px solid #a6e2c0;
+}
+#terminal-game .activity-card {
+  margin: 10px 0;
+}
+#terminal-game .checkout-confirm {
+  border: 1px solid #78534d;
+  padding: 14px;
+  border-radius: 8px;
+  background: #372625;
+  color: #e8bdb2;
+}
+#terminal-dialog[data-tone="checkout"] .game-section > .game-button {
+  background: #684039;
+  color: #ffd8c8;
+  border-color: #b87668;
+}
+.terminal-footnote {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 19px;
+  margin-top: 24px;
+  border-top: 1px solid #2d4146;
+  color: #7d9b9f;
+  font:
+    8px/1.5 Consolas,
+    monospace;
+  letter-spacing: 0.03em;
+}
+.terminal-footnote span:first-child {
+  color: #a9c4b8;
+}
+#terminal-dialog button:focus-visible,
+#terminal-dialog input:focus-visible,
+#terminal-dialog textarea:focus-visible {
+  outline: 2px solid var(--terminal-accent);
+  outline-offset: 3px;
+}
+@keyframes terminal-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(7px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 700px) {
+  #terminal-dialog {
+    max-width: calc(100vw - 16px);
+    max-height: calc(100dvh - 16px);
+    border-radius: 12px;
+    padding: 0;
+  }
+  #terminal-dialog .terminal-header {
+    padding: 11px 15px;
+  }
+  #terminal-dialog #dialog-close {
+    min-height: 44px;
+  }
+  .terminal-content {
+    padding: 18px;
+  }
+  .terminal-hero {
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 13px;
+    padding: 4px 0 18px;
+  }
+  .terminal-emblem {
+    height: 50px;
+    border-radius: 12px;
+  }
+  .terminal-emblem svg {
+    width: 26px;
+    height: 26px;
+  }
+  .terminal-hero::before {
+    inset: -18px -18px 0 0;
+    opacity: 0.4;
+  }
+  .terminal-eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.05em;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+  #terminal-dialog #terminal-title {
+    font-size: 27px;
+  }
+  #terminal-dialog #terminal-copy {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .terminal-meta {
+    gap: 7px 13px;
+    font-size: 8px;
+  }
+  .raid-operation {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 23px;
+    padding: 19px;
+  }
+  .raid-radar {
+    border-left: 0;
+    border-top: 1px solid #394743;
+    padding-left: 0;
+    padding-top: 20px;
+  }
+  .raid-hold-ring {
+    width: 154px;
+    height: 154px;
+  }
+  .raid-protocol {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 7px;
+  }
+  .protocol-step {
+    padding: 13px 13px 13px 48px;
+  }
+  .protocol-step > span {
+    top: 14px;
+  }
+  .terminal-metrics {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .terminal-metric {
+    padding: 13px 16px;
+  }
+  .terminal-metric > strong {
+    font-size: 24px;
+    margin: 5px 0;
+  }
+  #terminal-game .job-card,
+  #terminal-game .challenge-card {
+    padding: 16px;
+  }
+  #terminal-game .mission-card-heading h4 {
+    font-size: 16px;
+  }
+  .mission-card-head {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 10px;
+  }
+  .mission-card-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
+  .mission-card-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .mission-card-reward {
+    grid-column: 2;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #terminal-game .mission-card-reward small {
+    margin: 0;
+  }
+  .terminal-empty {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 11px;
+    padding: 15px;
+  }
+  .terminal-empty-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+  .terminal-empty .terminal-key {
+    display: none;
+  }
+  #terminal-game .game-button {
+    min-height: 44px;
+  }
+  #terminal-game .bank-form {
+    flex-wrap: wrap;
+  }
+  #terminal-game .bank-form label {
+    flex-basis: 100%;
+  }
+  .terminal-footnote {
+    font-size: 7px;
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #terminal-dialog {
+    animation: none;
+  }
+  #terminal-dialog * {
+    transition: none !important;
+  }
+}
+
+/* ── Structured mission brief ──────────────────────────────────────────────
+ * Every challenge reads in the same order: the situation, the task, where the
+ * evidence is, and the exact answer format. The format block is given the
+ * strongest treatment on the card because formatting, not reasoning, was the
+ * most common way a player lost a contract they had actually solved.
+ */
+.challenge-brief .brief-part {
+  display: block;
+  margin: 10px 0 0;
+  padding: 9px 11px;
+  border-left: 3px solid rgba(120, 150, 190, 0.35);
+  border-radius: 0 7px 7px 0;
+  background: rgba(10, 18, 32, 0.45);
+}
+.challenge-brief .brief-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #7fa0c6;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+.challenge-brief .brief-text {
+  margin: 0;
+  color: #dbe6f5;
+  font-size: 13px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+}
+.challenge-brief .is-scenario {
+  border-left-color: rgba(120, 150, 190, 0.5);
+}
+.challenge-brief .is-task {
+  border-left-color: #35e0e8;
+  background: rgba(53, 224, 232, 0.07);
+}
+.challenge-brief .is-task .brief-label {
+  color: #35e0e8;
+}
+.challenge-brief .is-data {
+  border-left-color: #8b7fe8;
+}
+.challenge-brief .is-data .brief-label {
+  color: #a79bf5;
+}
+/* The format block is the one an impatient player must still notice. */
+.challenge-brief .is-format {
+  border-left-color: #f5b945;
+  background: rgba(245, 185, 69, 0.1);
+}
+.challenge-brief .is-format .brief-label {
+  color: #f5b945;
+}
+.challenge-brief .is-format .brief-text {
+  color: #ffe6b8;
+  font-weight: 600;
+}
+.challenge-brief .is-example {
+  border-left-color: rgba(68, 217, 138, 0.6);
+  background: rgba(68, 217, 138, 0.07);
+}
+.challenge-brief .is-example .brief-label {
+  color: #44d98a;
+}
+.challenge-brief .is-example .brief-text {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 12.5px;
+  color: #b9f2d2;
+}
+.challenge-brief .brief-hints {
+  margin-top: 10px;
+  padding: 8px 11px;
+  border: 1px dashed rgba(120, 150, 190, 0.4);
+  border-radius: 7px;
+}
+.challenge-brief .brief-hints summary {
+  color: #9fb6d4;
+  font-size: 12px;
+  cursor: pointer;
+}
+.challenge-brief .brief-hints ol {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  color: #c7d6ea;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+.challenge-brief .brief-evidence {
+  margin: 10px 0 0;
+  color: #5f738e;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+/* ── Locked contracts ──────────────────────────────────────────────────────
+ * A locked card used to look identical to a claimable one, with an enabled-
+ * looking "Take contract" button, so players clicked it and assumed the game
+ * was broken. Locked cards are dimmed, the button says Locked and is visibly
+ * inert, and the unlock line -- which always states how and when -- is the
+ * most prominent text on the card.
+ */
+#terminal-game .job-card[data-available="false"] {
+  opacity: 0.78;
+  filter: saturate(0.55);
+}
+#terminal-game .job-card[data-available="false"] .game-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+#terminal-game .job-card .job-locked-reason {
+  color: #f5c46b;
+  font-weight: 600;
+  line-height: 1.5;
+}
+#terminal-game .job-card[data-available="true"] {
+  border-color: rgba(68, 217, 138, 0.55);
+}

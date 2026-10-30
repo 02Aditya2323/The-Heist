@@ -1,0 +1,57 @@
+name: Extended validation (manual)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.19.0"
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - run: npm run test:bots
+      - name: Focused UI and contract checks
+        run: |
+          npx tsx tools/check-client-input.mts
+          npx tsx tools/check-contract-ux.mts
+          npx tsx tools/check-city-atlas.mts
+          npx tsx tools/check-terminal-cards.mts
+          npx tsx tools/check-workbench-design.mts
+          npx tsx tools/check-workbench-math.mts
+          npx tsx tools/check-challenge-logic.mts
+
+      - name: Deployment tooling tests
+        run: node --test tools/check-vm-env.test.mjs tools/render-vm-nginx.test.mjs
+
+      # The committed world must match what the builder produces from the
+      # reviewed sources. A drifted map would put players inside walls.
+      - name: World map is reproducible from its sources
+        run: |
+          npx tsx tools/build-art-world.mts --v2
+          if ! git diff --quiet -- maps/art-world.json apps/client/public/art/world.json; then
+            echo "::error::The committed world differs from a fresh build of its sources."
+            git --no-pager diff --stat -- maps/art-world.json apps/client/public/art/world.json
+            exit 1
+          fi
+
+      - name: Every interaction point is reachable
+        run: node tools/check-world-reachability.mjs
+
+      # A display rule on a <dialog> that is not scoped to [open] keeps the
+      # dialog painted while closed. That shipped once as an opaque panel over
+      # most of the game for every player; no other check could see it.
+      - name: No dialog can paint while closed
+        run: node tools/check-dialog-visibility.mjs
+
+      # Renders the client in a real browser against a disposable sqlite world.
+      # A canvas sized from stale constants, HUD panels overlapping each other
+      # and a clock clipped off the top of a phone screen are all invisible to a
+      # type check and to every test that does not paint a page.
+      - name: HUD geometry and overlap audits
+        run: node tools/ui-audit-suite.mjs

@@ -1,0 +1,47 @@
+# Line-ending normalisation.
+#
+# This file exists because of a concrete, silent failure: the world builder
+# computes a `sourceHash` by hashing the raw bytes of
+# maps/art-world-v2.layout.json and maps/art-world-v2.obstacles.json. With
+# core.autocrlf=true those files are CRLF in a Windows working tree and LF in a
+# Linux one, so the hash differs by platform and the builder's staleness guard
+# rejects a world that is in fact current.
+#
+# The practical effect was that the world could only be built on the machine
+# that generated the collision review. CI on Linux failed with
+# "Stale collision review" on a tree that built perfectly on Windows.
+#
+# Declaring these as LF makes the hashed bytes identical everywhere.
+
+# Any file whose bytes are hashed, or that is executed on Linux, must be LF.
+maps/*.json           text eol=lf
+tools/*.mjs           text eol=lf
+tools/*.mts           text eol=lf
+deploy/azure/*.sh     text eol=lf
+*.yml                 text eol=lf
+*.yaml                text eol=lf
+
+# Source and docs: normalised in the repository, checked out natively.
+*.ts    text
+*.js    text
+*.mjs   text
+*.mts   text
+*.json  text
+*.css   text
+*.html  text
+*.md    text
+
+# Binary assets must never be transformed. The artwork is hashed too, so a
+# single altered byte would invalidate the collision review.
+*.png   binary
+*.webp  binary
+*.jpg   binary
+*.jpeg  binary
+*.avif  binary
+*.ico   binary
+*.pdf   binary
+*.xlsx  binary
+*.db    binary
+*.woff  binary
+*.woff2 binary
+*.pem   binary

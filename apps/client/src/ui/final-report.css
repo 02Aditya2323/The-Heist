@@ -1,0 +1,147 @@
+/* End-of-event report. Covers the whole city once the ledger is sealed. */
+#final-report {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: max(16px, 4vh) 16px;
+  overflow-y: auto;
+  background:
+    radial-gradient(80% 60% at 50% 0%, rgba(53, 224, 232, 0.14), transparent 70%),
+    rgba(3, 7, 14, 0.94);
+  backdrop-filter: blur(6px);
+  color: #e4edfa;
+  font: 15px/1.5 "Segoe UI", system-ui, sans-serif;
+}
+#final-report[hidden] {
+  display: none !important;
+}
+.fr-card {
+  width: min(760px, 100%);
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid rgba(53, 224, 232, 0.35);
+  border-radius: 18px;
+  background: linear-gradient(160deg, #0d1626, #070b14);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7), 0 0 40px rgba(53, 224, 232, 0.12);
+}
+.fr-eyebrow {
+  display: block;
+  font: 600 11px/1 Consolas, monospace;
+  letter-spacing: 0.22em;
+  color: #35e0e8;
+}
+.fr-card h2 {
+  margin: 10px 0 22px;
+  font-size: clamp(28px, 5vw, 40px);
+  color: #f4f8ff;
+}
+.fr-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.fr-score,
+.fr-rank {
+  padding: 18px 20px;
+  border: 1px solid rgba(143, 166, 196, 0.25);
+  border-radius: 14px;
+  background: rgba(13, 21, 37, 0.9);
+}
+.fr-score small,
+.fr-rank small {
+  display: block;
+  font: 600 10.5px/1 Consolas, monospace;
+  letter-spacing: 0.18em;
+  color: #8fa6c4;
+}
+.fr-score strong {
+  display: block;
+  margin-top: 10px;
+  font: 700 clamp(30px, 6vw, 44px) / 1 Consolas, monospace;
+  color: #44d98a;
+  text-shadow: 0 0 24px rgba(68, 217, 138, 0.35);
+}
+.fr-rank strong {
+  display: block;
+  margin-top: 10px;
+  font: 700 clamp(30px, 6vw, 44px) / 1 Consolas, monospace;
+  color: #f5b945;
+}
+.fr-rank span {
+  color: #8fa6c4;
+  font-size: 13px;
+}
+.fr-facts {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+}
+.fr-facts li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(143, 166, 196, 0.08);
+  font-size: 13px;
+  color: #8fa6c4;
+}
+.fr-facts b {
+  color: #e4edfa;
+}
+.fr-card h3 {
+  margin: 0 0 10px;
+  font: 600 12px/1 Consolas, monospace;
+  letter-spacing: 0.18em;
+  color: #35e0e8;
+  text-transform: uppercase;
+}
+.fr-done ul {
+  margin: 0 0 18px;
+  padding-left: 20px;
+  color: #c9d6e8;
+  font-size: 14px;
+}
+.fr-board {
+  max-height: 46vh;
+  overflow-y: auto;
+  border: 1px solid rgba(143, 166, 196, 0.2);
+  border-radius: 12px;
+  padding: 14px;
+}
+.fr-board table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.fr-board td {
+  padding: 8px 6px;
+  border-bottom: 1px solid rgba(143, 166, 196, 0.12);
+}
+.fr-board td:last-child {
+  text-align: right;
+  font-family: Consolas, monospace;
+  color: #44d98a;
+}
+.fr-board td:first-child {
+  width: 3.5em;
+  color: #8fa6c4;
+  font-family: Consolas, monospace;
+}
+.fr-board tr.is-self td {
+  background: rgba(53, 224, 232, 0.12);
+  color: #f4f8ff;
+  font-weight: 700;
+}
+.fr-foot {
+  margin: 18px 0 0;
+  color: #8fa6c4;
+  font-size: 13px;
+  text-align: center;
+}

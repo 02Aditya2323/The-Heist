@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-14",
+  "environment": "Local Windows Node 22.19.0, isolated in-memory event and authentication databases",
+  "requestedSoakMs": 300000,
+  "measuredTestDurationMs": 380495,
+  "operators": 40,
+  "activeWorkbenchesPerOperator": 5,
+  "movementRejections": 0,
+  "totalIncomingMessages": 50520,
+  "totalBytesOut": 312555391,
+  "tickDuration": {"averageMs": 0.195, "p99Ms": 1.311, "maximumMs": 2.021, "overruns": 0},
+  "network": {"bytesOutPerSecond": 819211, "averageBytesPerOperatorPerSecond": 20480.3, "backpressureEvents": 0, "rateLimitDrops": 0, "malformedMessages": 0},
+  "system": {"testProcessRssMb": 129.8, "heapUsedMb": 36.6, "eventLoopLagMs": 6},
+  "result": "Passed",
+  "limits": "This includes the test runner and simulated clients on one host. It is not a full three-hour soak or a certification of the intended lab VM."
+}

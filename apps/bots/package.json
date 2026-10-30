@@ -1,0 +1,22 @@
+{
+  "name": "@heist/bots",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@heist/shared": "*",
+    "ws": "^8.18.0",
+    "pino": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.0",
+    "typescript": "^5.5.0",
+    "tsx": "^4.0.0",
+    "vitest": "^3.0.0"
+  }
+}

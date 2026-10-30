@@ -1,0 +1,1250 @@
+/* Every player-facing field tool uses the same accessible console language. */
+.terminal-contract-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 18px;
+  border: 1px solid #3d5962;
+  background: #142830;
+  border-radius: 10px;
+  margin: 18px 0;
+}
+#terminal-game .terminal-contract-link p {
+  color: #b4cbd2;
+  font:
+    13px/1.7 system-ui,
+    sans-serif;
+  margin: 0;
+}
+#terminal-game .contract-clock[data-urgent="true"] {
+  color: #ffd4a8;
+  border-color: #ad765c;
+  background: #47332b;
+}
+#terminal-game .challenge-lockout {
+  padding: 16px;
+  border: 1px solid #9b7654;
+  border-left: 3px solid #f0c987;
+  border-radius: 8px;
+  background: #392c25;
+  color: #f0d6aa;
+  font:
+    13px/1.7 system-ui,
+    sans-serif;
+}
+.safehouse-panel {
+  border: 1px solid #425e68;
+  border-radius: 11px;
+  background: linear-gradient(125deg, #1c333a, #11232d);
+  padding: 22px;
+}
+.safehouse-badge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 0;
+}
+.safehouse-badge svg {
+  width: 40px;
+  height: 40px;
+  color: #a6dbbf;
+}
+.safehouse-badge strong {
+  color: #f1edda;
+  font:
+    700 27px Consolas,
+    monospace;
+}
+.safehouse-badge small {
+  color: #abd1c0;
+  font:
+    9px/1.7 Consolas,
+    monospace;
+}
+.transmission-card {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #3b5561;
+  border-radius: 10px;
+  background: #122730;
+  margin: 10px 0;
+}
+.transmission-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  border: 1px solid #456b5c;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  color: #b0dbc1;
+  background: #233d36;
+}
+.transmission-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.transmission-card small {
+  color: #a3caba;
+  font:
+    9px/1.7 Consolas,
+    monospace;
+  letter-spacing: 0.08em;
+}
+#terminal-game .transmission-card p {
+  margin: 8px 0 0;
+  color: #c8d9df;
+  font:
+    13px/1.8 system-ui,
+    sans-serif;
+  overflow-wrap: anywhere;
+}
+.channel-empty {
+  padding: 20px;
+  border: 1px dashed #3e5561;
+  border-radius: 9px;
+  color: #9ab3bd;
+  font:
+    12px/1.7 system-ui,
+    sans-serif;
+}
+#terminal-dialog[data-tone="error"] {
+  --terminal-accent: #f7ab9f;
+}
+.guess-form input {
+  max-width: 250px;
+}
+#terminal-game [data-kind="oracle"] .guess-form input {
+  font:
+    600 26px/1.5 Consolas,
+    monospace;
+  letter-spacing: 0.25em;
+}
+#terminal-game [data-kind="courier"] .guess-form input {
+  font:
+    600 24px/1.5 Consolas,
+    monospace;
+}
+.network-viewport {
+  min-width: 0;
+  overflow: auto;
+  padding: 4px;
+  border-radius: 10px;
+  scrollbar-width: thin;
+}
+.guess-form {
+  display: grid;
+  gap: 14px;
+}
+.guess-form > button {
+  justify-self: start;
+}
+#terminal-game .challenge-card {
+  scroll-margin-top: 80px;
+}
+#terminal-game .contract-tabs {
+  flex-wrap: nowrap;
+  overflow: auto;
+  min-width: 0;
+  scrollbar-width: thin;
+}
+#terminal-game .contract-tabs .bench-button {
+  flex: 0 0 auto;
+}
+#terminal-game .challenge-workbench {
+  --bench: #99d8f8;
+  padding: 0;
+  border: 1px solid #36515d;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #091720;
+  margin: 22px 0;
+  color: #dce8ec;
+  user-select: text;
+}
+#terminal-game .challenge-workbench[data-kind="debug"] {
+  --bench: #f6a59a;
+}
+#terminal-game
+  .challenge-workbench:is(
+    [data-kind="cipher"],
+    [data-kind="deduction"],
+    [data-kind="logs"],
+    [data-kind="machine"],
+    [data-kind="portal"],
+    [data-kind="oracle"],
+    [data-kind="courier"]
+  ) {
+  --bench: #a6e7c3;
+}
+#terminal-game
+  .challenge-workbench:is(
+    [data-kind="maze"],
+    [data-kind="tree"],
+    [data-kind="ring"],
+    [data-kind="order"],
+    [data-kind="lights"],
+    [data-kind="statements"],
+    [data-kind="circuit"],
+    [data-kind="constraints"]
+  ) {
+  --bench: #c7b0fa;
+}
+.bench-header {
+  display: flex;
+  gap: 16px;
+  padding: 22px;
+  background: linear-gradient(120deg, #1b3037, #10212d);
+  border-bottom: 1px solid #31434e;
+}
+.bench-emblem {
+  display: grid;
+  place-items: center;
+  height: 46px;
+  width: 46px;
+  flex: 0 0 auto;
+  color: var(--bench);
+  border: 1px solid #577177;
+  border-radius: 12px;
+  background: #223b4080;
+}
+.bench-emblem svg {
+  width: 25px;
+  height: 25px;
+}
+#terminal-game .bench-header h4 {
+  margin: 5px 0 7px;
+  color: #f0f3eb;
+  font:
+    700 20px/1.25 system-ui,
+    sans-serif;
+  letter-spacing: -0.025em;
+}
+#terminal-game .bench-header p {
+  margin: 0;
+  max-width: 690px;
+  color: #b1c5cf;
+  font:
+    13px/1.7 system-ui,
+    sans-serif;
+}
+#terminal-game .bench-kicker {
+  display: block;
+  margin: 0;
+  color: var(--bench);
+  font:
+    9px/1.5 Consolas,
+    monospace;
+  letter-spacing: 0.12em;
+}
+.bench-workflow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-bottom: 1px solid #324651;
+  background: #11232b;
+}
+.bench-workflow li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  border-right: 1px solid #314650;
+}
+.bench-workflow li:last-child {
+  border: 0;
+}
+.bench-workflow span {
+  color: var(--bench);
+  font:
+    10px Consolas,
+    monospace;
+}
+.bench-workflow b {
+  font:
+    500 12px/1.4 system-ui,
+    sans-serif;
+  color: #c9d8dc;
+}
+#terminal-game .bench-main {
+  padding: 22px;
+  gap: 18px;
+  min-width: 0;
+}
+#terminal-game .bench-main > p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font:
+    13px/1.7 system-ui,
+    sans-serif;
+  color: #b7cbd3;
+  margin: 0;
+}
+#terminal-game .bench-main > strong {
+  color: var(--bench);
+  border-left: 3px solid var(--bench);
+  padding: 14px 16px;
+  background: #1b333d;
+  border-radius: 0 8px 8px 0;
+  font:
+    600 16px Consolas,
+    monospace;
+}
+#terminal-game .challenge-workbench .bench-button {
+  min-height: 42px;
+  border: 1px solid #46626c;
+  border-radius: 7px;
+  background: linear-gradient(#203641, #162933);
+  color: #d8e6e8;
+  padding: 10px 14px;
+  font:
+    500 12px/1.4 system-ui,
+    sans-serif;
+  box-shadow: inset 0 1px #e1faff08;
+  transition:
+    background 0.12s,
+    border-color 0.12s;
+}
+#terminal-game .challenge-workbench .bench-button:hover:not(:disabled) {
+  background: #2d4751;
+  border-color: var(--bench);
+  color: #fff;
+}
+#terminal-game .challenge-workbench .bench-button[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--bench) 20%, #162831);
+  color: var(--bench);
+  border-color: var(--bench);
+}
+#terminal-game .challenge-workbench .bench-button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+#terminal-game .challenge-workbench :is(input, select, textarea) {
+  border-radius: 7px;
+  border-color: #4a626b;
+  background: #08141b;
+  padding: 12px;
+  color: #e4f0f3;
+  font-size: 14px;
+  line-height: 1.5;
+}
+#terminal-game .challenge-workbench label {
+  gap: 8px;
+  font:
+    500 12px/1.5 system-ui,
+    sans-serif;
+  color: #b8cbd2;
+  min-width: 0;
+}
+#terminal-game .challenge-workbench :is(input, select, textarea):focus-visible {
+  outline: 2px solid var(--bench);
+  outline-offset: 3px;
+}
+#terminal-game .challenge-workbench input[type="checkbox"] {
+  accent-color: var(--bench);
+  padding: 0;
+  flex: 0 0 auto;
+}
+#terminal-game .bench-controls {
+  gap: 10px;
+  align-items: end;
+}
+#terminal-game .bench-controls label {
+  max-width: 180px;
+}
+.code-chrome {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #19303b;
+  border: 1px solid #365365;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  color: #9cc6d8;
+  font:
+    9px/1.5 Consolas,
+    monospace;
+  letter-spacing: 0.09em;
+}
+#terminal-game .code-lines {
+  background: #07141e;
+  border: 1px solid #365365;
+  border-radius: 0 0 8px 8px;
+  padding: 8px 0;
+  max-height: 470px;
+  scrollbar-width: thin;
+}
+#terminal-game .code-panel label {
+  padding: 12px;
+  background: #132934;
+}
+#terminal-game .code-line {
+  min-height: 32px;
+  padding: 6px 16px;
+  font:
+    13px/1.55 Consolas,
+    monospace;
+  border-left: 3px solid transparent;
+}
+#terminal-game .code-line:hover {
+  background: #1b3041;
+}
+#terminal-game .code-line[aria-pressed="true"] {
+  background: #274051;
+  border-left-color: var(--bench);
+}
+#terminal-game .line-number {
+  min-width: 25px;
+  color: #8aa7ba;
+  margin-right: 17px;
+}
+.syntax-keyword {
+  color: #a6c4ff;
+}
+.syntax-number {
+  color: #f1c784;
+}
+.syntax-string {
+  color: #a4e4c3;
+}
+.syntax-comment {
+  color: #87a3ad;
+  font-style: italic;
+}
+#terminal-game .fix-options {
+  padding: 18px;
+  background: #35242b55;
+  border: 1px solid #664c50;
+  border-radius: 9px;
+}
+#terminal-game .fix-options > .bench-button {
+  color: #ffd3c8;
+  background: #583934;
+  border-color: #94685e;
+}
+#terminal-game
+  .challenge-workbench
+  :is(.simulation-output, .bench-feedback, .bench-readout) {
+  display: block;
+  border: 1px solid #375b4d;
+  border-left: 3px solid #9ad5b2;
+  background: #132c26;
+  color: #c9f1d9;
+  padding: 15px;
+  border-radius: 7px;
+  white-space: pre-wrap;
+  font:
+    13px/1.6 Consolas,
+    monospace;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+#terminal-game .challenge-workbench :is(.trace-tool, .contract-tools, details) {
+  padding: 16px;
+  background: #10212b;
+  border: 1px solid #37515d;
+  border-radius: 8px;
+}
+#terminal-game .challenge-workbench summary {
+  font:
+    600 13px/1.5 system-ui,
+    sans-serif;
+  color: var(--bench);
+  margin: 0;
+  min-height: 25px;
+}
+#terminal-game .challenge-workbench details[open] summary {
+  margin-bottom: 16px;
+}
+#terminal-game .trace-tool table {
+  margin-bottom: 12px;
+}
+#terminal-game .trace-tool th {
+  background: #203541;
+  padding: 12px 8px;
+  color: #b6d0dd;
+  font-size: 11px;
+}
+#terminal-game .trace-tool td {
+  padding: 6px;
+  border-bottom: 1px solid #2a424e;
+}
+#terminal-game .trace-tool input {
+  font-size: 12px;
+  min-width: 60px;
+}
+#terminal-game .challenge-workbench .cipher-preview {
+  border: 1px solid #567965;
+  border-radius: 10px;
+  background: linear-gradient(120deg, #173c2c, #0d1f26);
+  color: #bcf6d6;
+  padding: 24px;
+  font:
+    600 20px/1.6 Consolas,
+    monospace;
+  letter-spacing: 0.08em;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+#terminal-game .substitution-board {
+  grid-template-columns: repeat(13, minmax(0, 1fr));
+  gap: 8px;
+}
+#terminal-game .substitution-board label {
+  text-align: center;
+  color: var(--bench);
+}
+#terminal-game .substitution-board input {
+  padding: 8px 2px;
+  font-size: 15px;
+}
+.log-filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 12px;
+}
+#terminal-game .log-viewer {
+  border: 1px solid #36575b;
+  border-radius: 9px;
+  background: #0d1c25;
+  scrollbar-width: thin;
+}
+#terminal-game .log-row {
+  font-size: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #2b454b;
+  min-height: 44px;
+}
+#terminal-game .log-row:hover {
+  background: #1b353b;
+}
+#terminal-game .log-row[aria-pressed="true"] {
+  border-left: 3px solid #a6e7c3;
+  background: #1b3c32;
+  color: #d7f2e2;
+}
+#terminal-game .pinned-evidence {
+  border: 1px dashed #476a5b;
+  border-radius: 9px;
+  padding: 18px;
+  background: #102a23;
+}
+#terminal-game .pinned-evidence h5 {
+  color: var(--bench);
+  font:
+    600 12px/1.5 system-ui,
+    sans-serif;
+  margin-bottom: 12px;
+}
+#terminal-game .pinned-evidence pre {
+  margin-top: 8px;
+  padding: 10px;
+  font-size: 12px;
+}
+#terminal-game .bench-empty {
+  color: #9bb6b8;
+  padding: 12px;
+  font:
+    12px/1.7 system-ui,
+    sans-serif;
+}
+#terminal-game .clue-list {
+  gap: 10px;
+}
+#terminal-game .clue-list label {
+  background: #142830;
+  border: 1px solid #36525a;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  line-height: 1.7;
+}
+#terminal-game .clue-list label:has(input:checked) {
+  background: #253b35;
+  border-color: #779d87;
+}
+#terminal-game .candidate-board {
+  gap: 10px;
+  padding: 16px;
+  border: 1px dashed #45616a;
+  border-radius: 9px;
+}
+#terminal-game .candidate-board button {
+  min-width: 46px;
+}
+#terminal-game
+  [data-kind="statements"]
+  .candidate-board
+  button[aria-pressed="true"] {
+  opacity: 1;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 1px var(--bench);
+}
+#terminal-game .digit-slots {
+  gap: 10px;
+}
+#terminal-game .digit-slots input {
+  width: min(65px, 22%);
+  font:
+    600 23px/1.5 Consolas,
+    monospace;
+  text-align: center;
+}
+#terminal-game .machine-chain {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+#terminal-game .machine-chain span {
+  border: 1px solid #47695d;
+  border-radius: 9px;
+  padding: 20px 14px;
+  background: linear-gradient(150deg, #213b32, #12232a);
+  color: #c3eed4;
+  text-align: center;
+  line-height: 1.8;
+}
+#terminal-game .mock-portal {
+  border: 1px solid #59765c;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1b352a, #10232b);
+  padding: 24px;
+}
+#terminal-game .mock-portal > strong {
+  font:
+    10px Consolas,
+    monospace;
+  color: #dfd793;
+  letter-spacing: 0.1em;
+}
+#terminal-game .staff-notice {
+  border: 1px solid #37534a;
+  border-left: 3px solid #afca8f;
+  padding: 14px;
+  background: #0b1d20;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+#terminal-game .puzzle-grid {
+  width: min(100%, 430px);
+  max-width: 430px;
+  gap: 5px;
+  border: 1px solid #786194;
+  border-radius: 11px;
+  background: #111b2b;
+  padding: 12px;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  box-shadow: inset 0 0 24px #c8b9fa08;
+}
+#terminal-game .puzzle-tile {
+  border-radius: 5px;
+  background: #233244;
+  color: #d4c8ee;
+  border-color: #44506c;
+  font-size: 19px;
+}
+#terminal-game .puzzle-tile[data-tile="#"] {
+  background: repeating-linear-gradient(
+    135deg,
+    #0b1420,
+    #0b1420 3px,
+    #15202e 3px,
+    #15202e 5px
+  );
+  border-color: #1d2c3b;
+  color: transparent;
+}
+#terminal-game .puzzle-tile[data-token="true"] {
+  background: #b79ae8;
+  color: #1c2037;
+  border-color: #e2d6ff;
+  box-shadow: 0 0 12px #b69be950;
+}
+#terminal-game .puzzle-tile[data-tile="K"] {
+  color: #f2d396;
+  border-color: #9d825e;
+}
+#terminal-game .puzzle-tile[data-tile="E"] {
+  color: #b3efcd;
+  border-color: #699278;
+}
+#terminal-game .maze-readout {
+  display: block;
+  padding: 13px 16px;
+  border-radius: 7px;
+  border: 1px solid #61597b;
+  background: #211f35;
+  color: #d4c3f5;
+}
+#terminal-game .maze-legend {
+  font-size: 11px;
+}
+#terminal-game .maze-controls .bench-button {
+  min-width: 48px;
+}
+#terminal-game .lights-board {
+  max-width: 320px;
+  padding: 16px;
+  gap: 12px;
+}
+#terminal-game .lights-board .bench-button {
+  border-radius: 12px;
+  font-size: 30px;
+  background: #1a2639;
+  color: #a195bb;
+  border-color: #56617c;
+}
+#terminal-game .lights-board .bench-button[aria-pressed="true"] {
+  background: linear-gradient(135deg, #ebca76, #aa8747);
+  color: #fff8d5;
+  border-color: #f0d89a;
+  box-shadow:
+    0 0 18px #d7b95b40,
+    inset 0 0 10px #ffeca565;
+}
+#terminal-game .node-diagram {
+  border-radius: 10px;
+  border-color: #5b5677;
+  background-color: #111d2a;
+  background-image: radial-gradient(#56677e40 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+#terminal-game .node-diagram .bench-button {
+  padding: 8px 10px;
+  min-height: 36px;
+  min-width: 38px;
+  border-radius: 9px;
+  font:
+    600 12px Consolas,
+    monospace;
+  background: #203248;
+  border-color: #6e6b8a;
+}
+#terminal-game .node-diagram .bench-button[aria-pressed="true"] {
+  background: #c1a3f0;
+  color: #1c2035;
+  border-color: #e7d8ff;
+  box-shadow: 0 0 18px #b79aef55;
+}
+#terminal-game .order-board {
+  gap: 10px;
+  counter-reset: task;
+}
+#terminal-game .order-board li {
+  border-radius: 9px;
+  background: #182a3c;
+  padding: 14px;
+  gap: 12px;
+  border-color: #4c536f;
+  counter-increment: task;
+}
+#terminal-game .order-board li::before {
+  content: counter(task, decimal-leading-zero);
+  color: #ac9fc9;
+  font:
+    11px Consolas,
+    monospace;
+}
+#terminal-game .order-board strong {
+  font:
+    600 16px system-ui,
+    sans-serif;
+}
+#terminal-game .order-board .bench-button {
+  font-size: 11px;
+  min-height: 38px;
+}
+.circuit-stages {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.circuit-stage {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid #565777;
+  border-radius: 9px;
+  background: #1d2638;
+}
+.circuit-stage small {
+  color: #b5a6cc;
+  font:
+    9px Consolas,
+    monospace;
+}
+.circuit-stage strong {
+  font:
+    600 18px Consolas,
+    monospace;
+  color: #c3bdd4;
+}
+.circuit-stage span {
+  color: #9eb2c3;
+  font:
+    11px Consolas,
+    monospace;
+}
+.circuit-stage[data-on="true"] {
+  background: #244135;
+  border-color: #75a58a;
+}
+.circuit-stage[data-on="true"] strong {
+  color: #bdeccc;
+}
+#terminal-game .switch-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+#terminal-game .switch-board .bench-button {
+  min-height: 58px;
+}
+#terminal-game .circuit-lamp {
+  border: 1px solid #605374;
+  border-radius: 9px;
+  background: #2a263a;
+  color: #d8c8f3;
+  padding: 18px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+#terminal-game .circuit-lamp[data-on="true"] {
+  background: #214132;
+  border-color: #76a98b;
+  color: #caf3d8;
+}
+#terminal-game .constraint-board {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+#terminal-game .constraint-board label {
+  border: 1px solid #545271;
+  border-radius: 9px;
+  padding: 14px;
+  background: #1d2639;
+  color: #d2c0f2;
+}
+#terminal-game [data-kind="oracle"] .bench-main > label input {
+  max-width: 230px;
+  font:
+    600 30px/1.5 Consolas,
+    monospace;
+  letter-spacing: 0.25em;
+}
+#terminal-game [data-kind="courier"] .bench-main > label input {
+  max-width: 230px;
+  font:
+    600 25px/1.5 Consolas,
+    monospace;
+}
+#terminal-game [data-bench-submit] {
+  background: #335e47;
+  border-color: #77a387;
+  color: #d5f8dd;
+  justify-self: start;
+}
+#terminal-game .contract-tools {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid #36515d;
+  border-radius: 0;
+  padding: 19px 22px;
+  background: #14252d;
+}
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+}
+.calculator-panel {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+.calculator-panel output:not(:empty) {
+  padding: 12px;
+  border: 1px solid #51665d;
+  background: #1b322b;
+  border-radius: 7px;
+  color: #c3e7cf;
+  font:
+    14px Consolas,
+    monospace;
+  overflow-wrap: anywhere;
+}
+#terminal-game .challenge-brief {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #384f5c;
+  background: #101f2b;
+  user-select: text;
+}
+#terminal-game .challenge-brief small {
+  color: var(--card-accent);
+  font:
+    10px Consolas,
+    monospace;
+  letter-spacing: 0.12em;
+}
+#terminal-game .challenge-brief pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font:
+    13px/1.8 system-ui,
+    sans-serif;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+#terminal-game .challenge-brief .contract-client {
+  padding: 10px 0 0;
+  border-top: 1px solid #2b424e;
+  color: #b3c6ce;
+  font-size: 10px;
+}
+#terminal-game .contract-objective {
+  background: #22333d;
+  border-left: 3px solid var(--card-accent);
+  border-radius: 0 6px 6px 0;
+  padding: 13px 16px;
+  margin: 12px 0;
+  line-height: 1.7;
+}
+.challenge-actions {
+  padding: 18px;
+  background: #14252d;
+  border: 1px solid #405861;
+  border-radius: 10px;
+}
+#terminal-game .challenge-actions .answer-form {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.challenge-action-help {
+  margin-bottom: 12px;
+  color: #b8cbd2;
+  font:
+    12px/1.7 system-ui,
+    sans-serif;
+}
+#terminal-game .challenge-actions > .game-button {
+  margin-top: 14px;
+  background: transparent;
+  color: #d3b9b6;
+  border-color: #635253;
+  padding: 9px 12px;
+  font-size: 11px;
+}
+.abandon-confirm {
+  margin-top: 14px;
+  padding: 16px;
+  background: #302629;
+  border: 1px solid #8c615d;
+  border-radius: 8px;
+  color: #edcdc6;
+  font:
+    12px/1.7 system-ui,
+    sans-serif;
+}
+.abandon-confirm .game-button {
+  margin-right: 10px;
+  margin-top: 12px;
+}
+#terminal-game .challenge-actions:has(.answer-form[hidden]) {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+.challenge-resolved {
+  padding: 20px;
+  border: 1px solid #68967b;
+  border-radius: 10px;
+  color: #c8ead4;
+  background: #1b342c;
+  font:
+    13px/1.7 system-ui,
+    sans-serif;
+}
+#terminal-game .contract-tabs {
+  padding: 12px;
+  background: #0c1c26;
+  border: 1px solid #314957;
+  border-radius: 10px;
+  gap: 8px;
+}
+#terminal-game .contract-tabs .bench-button {
+  border-radius: 7px;
+  min-height: 38px;
+  font:
+    12px/1.5 system-ui,
+    sans-serif;
+  padding: 8px 12px;
+}
+#terminal-game .contract-tabs .bench-button[aria-pressed="true"] {
+  color: #e4f2e8;
+  background: #305147;
+  border-color: #9dcab6;
+}
+.auth-console-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #b1e3cc;
+  font:
+    9px Consolas,
+    monospace;
+  letter-spacing: 0.13em;
+}
+.auth-console-top svg {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #56796c;
+  border-radius: 10px;
+  padding: 7px;
+}
+#auth-modal {
+  background: #050d14bb !important;
+  backdrop-filter: blur(8px);
+  padding: 16px;
+  overflow-y: auto;
+}
+#auth-modal .auth-box {
+  width: min(440px, 100%) !important;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  border-radius: 16px !important;
+  border: 1px solid #648078 !important;
+  padding: 30px !important;
+  gap: 20px;
+  background: linear-gradient(140deg, #1b3035, #0b1723) !important;
+}
+#auth-modal .auth-title {
+  font-size: 29px !important;
+  color: #f1eee0 !important;
+  font:
+    700 29px/1.15 system-ui,
+    sans-serif;
+  letter-spacing: -0.04em !important;
+}
+#auth-modal .auth-note {
+  font:
+    13px/1.7 system-ui,
+    sans-serif;
+  color: #b3c8d1;
+}
+#auth-modal .auth-field label {
+  font:
+    9px Consolas,
+    monospace;
+  letter-spacing: 0.13em;
+  margin-bottom: 6px;
+  color: #accabd !important;
+}
+#auth-modal .auth-field input {
+  border-radius: 7px !important;
+  padding: 13px !important;
+  font-size: 16px;
+}
+#auth-modal .btn {
+  min-height: 44px;
+  border-radius: 7px;
+}
+#auth-modal .btn-primary {
+  background: #b2dbbd !important;
+  color: #12251d !important;
+}
+#auth-modal .btn-secondary {
+  border: 1px solid #57716f;
+  background: #243d40 !important;
+}
+#auth-modal #auth-preview {
+  border: 1px solid #425e66;
+  background: #122931;
+  border-radius: 7px;
+  min-height: 44px;
+  text-decoration: none;
+}
+#auth-status {
+  font:
+    12px/1.6 system-ui,
+    sans-serif;
+}
+#system-banner {
+  background: #132934 !important;
+  border: 1px solid #87966e;
+  border-left: 4px solid #e4bd83;
+  color: #e7eedf !important;
+  max-width: min(650px, calc(100vw - 32px));
+  border-radius: 9px;
+  font:
+    500 13px/1.6 system-ui,
+    sans-serif;
+}
+#game-toast {
+  border: 1px solid #6e947e;
+  border-left: 4px solid #abd9be;
+  border-radius: 9px;
+  background: #172e28;
+  color: #e3f3e8;
+  font:
+    500 13px/1.7 system-ui,
+    sans-serif;
+}
+#game-toast[data-error="true"] {
+  border-color: #a6736c;
+  border-left-color: #f0a398;
+  background: #36272a;
+  color: #f8d4ca;
+}
+#map-inspector {
+  border-radius: 12px;
+  border-color: #5c7b79;
+  background: linear-gradient(140deg, #1b3035, #0d1d2b);
+  padding: 20px;
+}
+#map-inspector :is(select, button) {
+  border-radius: 7px;
+  min-height: 42px;
+}
+@media (max-width: 700px) {
+  .bench-header {
+    padding: 16px;
+    gap: 12px;
+  }
+  .bench-emblem {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+  }
+  .bench-emblem svg {
+    width: 20px;
+    height: 20px;
+  }
+  #terminal-game .bench-header h4 {
+    font-size: 18px;
+  }
+  #terminal-game .bench-header p {
+    font-size: 12px;
+  }
+  #terminal-game .bench-main {
+    padding: 16px;
+    gap: 16px;
+  }
+  .bench-workflow li {
+    padding: 11px 8px;
+    gap: 6px;
+    align-items: start;
+  }
+  .bench-workflow b {
+    font-size: 10px;
+  }
+  #terminal-game .challenge-workbench .bench-button {
+    min-height: 44px;
+  }
+  #terminal-game .challenge-workbench :is(input, select, textarea) {
+    font-size: 16px;
+  }
+  #terminal-game .code-line {
+    font-size: 12px;
+    padding: 6px 10px;
+    min-height: 34px;
+  }
+  #terminal-game .line-number {
+    margin-right: 9px;
+  }
+  .log-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .log-filters > label:first-child {
+    grid-column: 1/-1;
+  }
+  #terminal-game .substitution-board {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  #terminal-game .challenge-workbench .cipher-preview {
+    padding: 18px;
+    font-size: 17px;
+    letter-spacing: 0.03em;
+  }
+  #terminal-game .puzzle-grid {
+    padding: 8px;
+    gap: 3px;
+  }
+  #terminal-game .puzzle-tile {
+    font-size: 16px;
+  }
+  #terminal-game .node-diagram {
+    min-height: 0;
+    min-width: 560px;
+  }
+  #terminal-game .node-diagram .bench-button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 8px;
+    font-size: 12px;
+  }
+  #terminal-game .order-board li {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  #terminal-game .order-board strong {
+    flex: 1;
+  }
+  #terminal-game .order-board .bench-button {
+    padding: 8px;
+    font-size: 10px;
+  }
+  .circuit-stages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .circuit-stage {
+    padding: 14px;
+  }
+  #terminal-game .constraint-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #terminal-game .switch-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .toolkit-grid {
+    grid-template-columns: 1fr;
+  }
+  #terminal-game .contract-tools {
+    padding: 16px;
+  }
+  #terminal-game .challenge-brief {
+    padding: 14px;
+  }
+  #terminal-game .answer-form {
+    flex-wrap: wrap;
+  }
+  #terminal-game .answer-form label {
+    flex-basis: 100%;
+  }
+  #terminal-game .answer-form button {
+    width: 100%;
+  }
+  #auth-modal .auth-box {
+    padding: 24px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #terminal-game .challenge-workbench * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

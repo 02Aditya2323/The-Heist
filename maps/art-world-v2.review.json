@@ -1,0 +1,118 @@
+{
+  "note":"Post-generation review in actual native source pixels, overriding the planning guides. Do not overwrite this with an AI guess. CV extracts neutral-grey floor; these explicit footprints always win.",
+  "scenes":{
+    "central":{
+      "points":{"bank":[840,336],"race":[330,576],"checkout":[1350,576],"leaderboard":[840,864],"raid":[840,608]},
+      "gates":{"c10-from-a":[656,880],"c11-from-a":[144,496],"c09-from-a":[1616,368]},
+      "obstacles":[
+        {"name":"Central Bank","kind":"building","points":[[578,0],[1100,0],[1110,310],[580,315]]},
+        {"name":"Race Terminal","kind":"building","points":[[166,301],[477,301],[477,548],[160,548]]},
+        {"name":"Checkout","kind":"building","points":[[1170,301],[1538,301],[1538,551],[1170,550]]},
+        {"name":"Leaderboard","kind":"building","points":[[572,632],[1100,632],[1110,822],[572,822]]},
+        {"name":"Raid monument","kind":"prop","points":[[794,382],[876,382],[895,512],[785,512]]},
+        {"name":"Southwest border buildings","kind":"building","points":[[210,775],[445,775],[640,928],[210,928]]},
+        {"name":"Southeast border buildings","kind":"building","points":[[1220,775],[1664,775],[1664,928],[1100,928]]},
+        {"name":"Western lower buildings","kind":"building","points":[[0,460],[130,460],[130,928],[0,928]]}
+      ]
+    },
+    "tech":{
+      "points":{"tech-jobs":[840,448],"cp-lab":[330,848],"debug-lab":[1350,848],"logic":[840,880]},
+      "floorOverrides":[[[100,839],[1605,839],[1605,864],[100,864]]],
+      "obstacles":[
+        {"name":"West Server Facility","kind":"building","points":[[76,40],[525,40],[525,330],[76,330]]},
+        {"name":"East Server Facility","kind":"building","points":[[1150,40],[1590,40],[1590,330],[1150,330]]},
+        {"name":"Tech Job Board","kind":"building","points":[[655,110],[1040,110],[1040,408],[655,408]]},
+        {"name":"CP Lab","kind":"building","points":[[100,505],[550,505],[550,832],[100,832]]},
+        {"name":"Debugging Lab","kind":"building","points":[[1150,505],[1585,505],[1585,832],[1150,832]]},
+        {"name":"Logic Terminal","kind":"building","points":[[755,625],[930,625],[930,825],[755,825]]}
+      ]
+    },
+    "harbor":{
+      "points":{"harbor-jobs":[330,448],"data-centre":[840,448],"network-tower":[1350,448],"osint":[330,816],"sql":[840,816],"harbor-info":[1160,816]},
+      "floorOverrides":[[[100,800],[1240,800],[1240,830],[100,830]],[[530,420],[586,420],[586,928],[530,928]]],
+      "gates":{"c08-back-b":[560,880]},
+      "obstacles":[
+        {"name":"Harbor Job Board","kind":"building","points":[[137,130],[518,130],[518,418],[137,418]]},
+        {"name":"Data Centre","kind":"building","points":[[592,78],[1060,78],[1060,420],[592,420]]},
+        {"name":"Network Tower","kind":"building","points":[[1150,100],[1515,100],[1515,425],[1150,425]]},
+        {"name":"OSINT Terminal","kind":"building","points":[[125,505],[522,505],[522,792],[125,792]]},
+        {"name":"SQL Terminal","kind":"building","points":[[590,505],[1055,505],[1055,792],[590,792]]},
+        {"name":"Harbor Information","kind":"building","points":[[1088,653],[1220,653],[1220,793],[1088,793]]},
+        {"name":"Lower basin","kind":"water","points":[[1250,600],[1664,600],[1664,928],[1250,928]]},
+        {"name":"Southern border buildings","kind":"building","points":[[590,832],[1060,832],[1060,928],[590,928]]}
+      ]
+    },
+    "black":{
+      "points":{"black-jobs":[330,464],"security":[840,464],"ctf":[1390,464],"black-challenge":[330,848],"sandbox":[1360,848]},
+      "obstacles":[
+        {"name":"Black Grid Job Board","kind":"building","points":[[126,110],[533,110],[533,425],[126,425]]},
+        {"name":"Security Hub","kind":"building","points":[[624,60],[1055,60],[1055,430],[624,430]]},
+        {"name":"CTF Arena","kind":"building","points":[[1148,110],[1595,110],[1595,425],[1148,425]]},
+        {"name":"Challenge Terminal","kind":"building","points":[[110,526],[544,526],[544,810],[110,810]]},
+        {"name":"Sandbox Station","kind":"building","points":[[1145,526],[1598,526],[1598,810],[1145,810]]},
+        {"name":"West planter","kind":"prop","points":[[634,527],[774,527],[774,810],[634,810]]},
+        {"name":"East planter","kind":"prop","points":[[917,527],[1047,527],[1047,810],[917,810]]}
+      ]
+    },
+    "under":{
+      "points":{"under-info":[840,384],"market":[1320,784]},
+      "floorOverrides":[[[800,375],[884,375],[884,420],[800,420]],[[640,0],[690,0],[690,430],[640,430]]],
+      "gates":{"c13-from-a":[1616,416]},
+      "obstacles":[
+        {"name":"Undercity Information","kind":"building","points":[[735,160],[945,160],[945,356],[735,356]]},
+        {"name":"Local Market","kind":"building","points":[[1020,480],[1530,480],[1530,730],[1020,730]]},
+        {"name":"Northern residential cluster","kind":"building","points":[[140,95],[614,95],[614,350],[140,350]]},
+        {"name":"Eastern residential cluster","kind":"building","points":[[1070,80],[1535,80],[1535,345],[1070,345]]},
+        {"name":"Western residential cluster","kind":"building","points":[[156,480],[653,480],[653,728],[156,728]]},
+        {"name":"North border housing","kind":"building","points":[[735,0],[965,0],[965,155],[735,155]]},
+        {"name":"West planter","kind":"prop","points":[[696,482],[792,482],[792,730],[696,730]]},
+        {"name":"East planter","kind":"prop","points":[[921,482],[995,482],[995,730],[921,730]]}
+      ]
+    },
+    "nexus":{
+      "points":{"nexus-announcement":[300,384],"social":[1390,384],"golden":[330,752],"nexus-event":[1360,752],"nexus-info":[840,880]},
+      "floorOverrides":[[[100,736],[1550,736],[1550,768],[100,768]]],
+      "gates":{"c11-back-b":[1616,416]},
+      "obstacles":[
+        {"name":"NEXUS Tower","kind":"building","points":[[595,0],[1085,0],[1085,358],[595,358]]},
+        {"name":"NEXUS Announcements","kind":"building","points":[[127,88],[514,88],[514,355],[127,355]]},
+        {"name":"Social Hub","kind":"building","points":[[1170,100],[1545,100],[1545,352],[1170,352]]},
+        {"name":"Golden Hour Terminal","kind":"building","points":[[155,460],[540,460],[540,720],[155,720]]},
+        {"name":"Event Terminal","kind":"building","points":[[1145,455],[1535,455],[1535,730],[1145,730]]},
+        {"name":"NEXUS Information","kind":"building","points":[[620,615],[1065,615],[1065,832],[620,832]]},
+        {"name":"Plaza fountain","kind":"water","points":[[758,410],[919,410],[942,545],[746,545]]}
+      ]
+    },
+    "c07":{
+      "points":{"c07-info":[400,384]},"roadY":432,
+      "blocks":[["Information kiosk","building",300,106,190,234],["Food stall","building",1150,100,230,240],["Rest shelter","building",690,548,288,202],["North water","water",704,0,212,178],["Middle water","water",702,275,209,139],["South water","water",692,840,274,88]]
+    },
+    "c08":{
+      "points":{"c08-info":[544,288]},
+      "floorOverrides":[[[16,325],[1648,325],[1648,410],[16,410]],[[525,275],[600,275],[600,352],[525,352]]],
+      "blocks":[["Information kiosk","building",395,75,247,189],["Food stall","building",1050,603,280,177],["Rest cafe","building",370,588,244,189],["Northwest water","water",0,180,300,120],["Southwest water","water",0,440,725,145],["Northeast water","water",950,0,714,280],["Southeast water","water",1370,450,294,380]]
+    },
+    "c09":{
+      "points":{"c09-info":[560,464]},"roadY":464,
+      "foregroundRects":[{"x":688,"y":120,"width":309,"height":54}],
+      "blocks":[["West coffee stall","building",256,220,220,210],["East food stall","building",1190,210,205,220],["Rest shelter","building",700,637,270,170],["West checkpoint tower","building",550,80,140,200],["East checkpoint tower","building",985,80,130,200],["West checkpoint pillar","prop",688,120,43,190],["East checkpoint pillar","prop",951,120,46,190]]
+    },
+    "c10":{
+      "points":{"c10-info":[496,304]},
+      "floorOverrides":[[[300,270],[840,270],[840,319],[300,319]]],
+      "blocks":[["Transit office","building",368,65,277,195],["Rest shelter","building",380,562,259,173],["Food stall","building",1035,555,235,183],["Western canal","water",364,355,366,140],["Eastern canal","water",950,350,370,145]]
+    },
+    "c11":{
+      "points":{"c11-info":[336,384]},"roadY":432,
+      "blocks":[["Information kiosk","building",211,100,284,236],["Food stall","building",1190,96,308,249],["Rest shelter","building",674,620,326,208],["Northwest fountain","water",574,0,91,250],["Northeast fountain","water",1003,0,103,250],["Southwest fountain","water",230,565,248,120],["Southeast fountain","water",1220,565,233,120]]
+    },
+    "c12":{
+      "points":{"c12-info":[448,368]},"roadY":432,
+      "blocks":[["Information kiosk","building",355,150,195,177],["Food stall","building",1143,145,182,190],["Rest shelter","building",660,605,319,190],["Northwest canal","water",678,0,73,329],["Northeast canal","water",945,0,115,325],["Southwest canal","water",310,524,293,306],["Southeast canal","water",1090,524,125,301]]
+    },
+    "c13":{
+      "points":{"c13-info":[336,400]},"roadY":432,
+      "blocks":[["Information kiosk","building",221,153,233,205],["Food stall","building",1248,148,227,182],["Rest shelter","building",719,649,247,143],["Northwest pond","water",465,210,258,120],["Northeast pond","water",985,0,130,326],["Southwest pond","water",484,640,191,150],["Southeast pond","water",1000,660,180,140]]
+    }
+  }
+}

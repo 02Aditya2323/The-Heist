@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  /><title>NEXUS / Event control</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #0a141d;
+      color: #d7e4eb;
+      font: 14px/1.6 system-ui;
+      padding: 28px;
+    }
+    main {
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1 {
+      color: #e4c797;
+      margin: 0;
+    }
+    small {
+      color: #79cbbb;
+      letter-spacing: 0.1em;
+    }
+    button,
+    input {
+      font: inherit;
+      padding: 10px;
+      border: 1px solid #4b6978;
+      background: #172c38;
+      color: #d7e4eb;
+      border-radius: 4px;
+    }
+    button {
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.4;
+    }
+    input {
+      min-width: 240px;
+    }
+    section {
+      border: 1px solid #304956;
+      padding: 20px;
+      margin: 18px 0;
+      background: #0e202b;
+    }
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    td,
+    th {
+      padding: 8px;
+      border-bottom: 1px solid #2c4350;
+      text-align: left;
+    }
+    pre {
+      white-space: pre-wrap;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+    .ok {
+      color: #9beaaf;
+    }
+    .bad {
+      color: #ffb0a0;
+    }
+    .scroll {
+      overflow: auto;
+      max-height: 400px;
+    }
+    [hidden] {
+      display: none !important;
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+    #message {
+      color: #dbc28e;
+    }
+  </style>
+  <main>
+    <small>VEYRA / ORGANIZER UPLINK</small>
+    <h1>NEXUS Event Control</h1>
+    <p>
+      Start the Great Reset, inspect every pool and ledger transfer, release a
+      stuck lock, and seal the final ranking.
+    </p>
+    <section id="access">
+      <label
+        >Administrator key
+        <input id="key" type="password" autocomplete="off" /></label
+      ><button id="connect">Connect console</button>
+      <p>
+        Set HEIST_ADMIN_TOKEN on the server to enable this console. The key
+        stays in this page’s memory.
+      </p>
+    </section>
+    <p id="message" role="status"></p>
+    <div id="console" hidden>
+      <section>
+        <h2 id="phase"></h2>
+        <p id="audit"></p>
+        <nav>
+          <button id="refresh">Refresh audit</button
+          ><button id="start">Start event</button
+          ><button id="freeze">Freeze and seal scores</button>
+        </nav>
+      </section>
+      <section>
+        <h2>NEXUS transmission</h2>
+        <label
+          >Announcement
+          <input
+            id="announcement"
+            maxlength="300"
+            placeholder="Message to every operator" /></label
+        ><button id="announce">Broadcast</button>
+      </section>
+      <section>
+        <h2>Economy pools</h2>
+        <div id="pools" class="scroll"></div>
+      </section>
+      <section>
+        <h2>Operators / final scores</h2>
+        <div id="players" class="scroll"></div>
+      </section>
+      <section>
+        <h2>Locks and queues</h2>
+        <div id="locks" class="scroll"></div>
+        <label
+          >Lock ID
+          <input id="lock-id" placeholder="expert-1 or wave-1-0" /></label
+        ><button id="release">Release stuck lock</button>
+      </section>
+      <section>
+        <h2>Raid crews</h2>
+        <pre id="raids"></pre>
+      </section>
+      <section>
+        <h2>Append-only ledger / latest 100 transfers</h2>
+        <div id="ledger" class="scroll"></div>
+      </section>
+      <section>
+        <h2>Operator history</h2>
+        <label
+          >Operator
+          <select id="history-player"></select></label
+        ><button id="history-load">Load history</button
+        ><button id="history-older" disabled>Older ledger entries</button>
+        <div id="history-ledger" class="scroll"></div>
+        <h3>Latest actions and answer outcomes</h3>
+        <div id="history-actions" class="scroll"></div>
+      </section>
+    </div>
+  </main>
+  <script type="module">
+    let key = "",
+      historyBefore = Number.MAX_SAFE_INTEGER;
+    const get = (id) => document.getElementById(id),
+      money = (n) => "₹" + (n / 100).toFixed(2);
+    function table(target, headers, rows) {
+      target.replaceChildren();
+      const t = document.createElement("table"),
+        head = document.createElement("tr");
+      for (const text of headers) {
+        const h = document.createElement("th");
+        h.textContent = text;
+        head.append(h);
+      }
+      t.append(head);
+      for (const values of rows) {
+        const row = document.createElement("tr");
+        for (const text of values) {
+          const c = document.createElement("td");
+          c.textContent = String(text);
+          row.append(c);
+        }
+        t.append(row);
+      }
+      target.append(t);
+    }
+    async function request(body) {
+      try {
+        const r = await fetch("/api/admin/event", {
+          method: body ? "POST" : "GET",
+          headers: {
+            "x-heist-admin": key,
+            ...(body ? { "Content-Type": "application/json" } : {}),
+          },
+          ...(body ? { body: JSON.stringify(body) } : {}),
+        });
+        const data = await r.json();
+        if (!r.ok) throw Error(data.error || "Server unavailable");
+        get("console").hidden = false;
+        const selected = get("history-player").value;
+        get("history-player").replaceChildren();
+        for (const p of data.players) {
+          const option = document.createElement("option");
+          option.value = p.id;
+          option.textContent = p.name;
+          get("history-player").append(option);
+        }
+        if (data.players.some((p) => p.id === selected))
+          get("history-player").value = selected;
+        get("access").hidden = true;
+        get("message").textContent =
+          "Audit refreshed. " + new Date().toLocaleTimeString();
+        get("phase").textContent =
+          data.phase.toUpperCase() +
+          " / " +
+          data.durationMs / 60000 +
+          " minute event / " +
+          data.players.length +
+          "/" +
+          data.maxPlayers +
+          " operators / raid crew " +
+          (data.raidCrewSize || "fixed at start");
+        get("audit").textContent =
+          (data.audit.ok ? "AUDIT PASSED" : "ECONOMY FROZEN") +
+          " — " +
+          data.audit.total +
+          " / " +
+          data.audit.expected +
+          " paise";
+        get("audit").className = data.audit.ok ? "ok" : "bad";
+        get("start").disabled = data.phase !== "lobby";
+        get("freeze").disabled = data.phase === "frozen";
+        table(
+          get("pools"),
+          ["Account", "Balance"],
+          Object.entries(data.audit.accounts).map(([a, n]) => [a, money(n)]),
+        );
+        table(
+          get("players"),
+          ["Operator", "Home", "Bank", "Transit", "Clears", "Status", "Payout"],
+          data.players.map((p) => [
+            p.name,
+            money(p.home),
+            money(p.bank),
+            money(p.transit),
+            p.completed,
+            p.checkedOut ? "CHECKED OUT" : p.capped ? "CAPPED" : "ACTIVE",
+            money(p.payout),
+          ]),
+        );
+        table(
+          get("locks"),
+          ["Slot", "Template", "Holder", "Queue", "Claimed"],
+          data.slots
+            .filter((s) => s.holder || s.queue.length)
+            .map((s) => [
+              s.id,
+              s.template,
+              s.holder,
+              s.queue.join(", "),
+              s.claimed,
+            ]),
+        );
+        get("raids").textContent = JSON.stringify(data.raids, null, 2);
+        table(
+          get("ledger"),
+          ["TX", "Actor", "Source", "Destination", "Amount", "Reason", "Hash"],
+          data.ledger.map((r) => [
+            r.id,
+            r.actor,
+            r.source,
+            r.destination,
+            money(r.paise),
+            r.reason,
+            r.hash.slice(0, 12),
+          ]),
+        );
+      } catch (error) {
+        get("message").textContent = error.message;
+      }
+    }
+    async function history(reset) {
+      if (reset) historyBefore = Number.MAX_SAFE_INTEGER;
+      try {
+        const response = await fetch(
+          "/api/admin/history/" +
+            encodeURIComponent(get("history-player").value) +
+            "?before=" +
+            historyBefore,
+          { headers: { "x-heist-admin": key } },
+        );
+        const data = await response.json();
+        if (!response.ok) throw Error(data.error);
+        table(
+          get("history-ledger"),
+          ["TX", "Source", "Destination", "Amount", "Reason"],
+          data.ledger.map((r) => [
+            r.id,
+            r.source,
+            r.destination,
+            money(r.paise),
+            r.reason,
+          ]),
+        );
+        table(
+          get("history-actions"),
+          ["Time", "Action", "Challenge", "Outcome", "Message"],
+          data.requests.map((r) => [
+            new Date(r.time).toISOString(),
+            r.action,
+            r.challenge,
+            r.outcome,
+            r.message,
+          ]),
+        );
+        const timing = document.createElement("p");
+        timing.textContent =
+          "Recent answer timings: " +
+          data.answers
+            .map(
+              (a) =>
+                `${a.challenge.split(":").at(-1)} / ${a.elapsedMs === null ? "legacy timing unavailable" : (a.elapsedMs / 1000).toFixed(1) + "s"} / ${a.accepted ? "correct" : "incorrect"}`,
+            )
+            .join(" · ");
+        get("history-actions").append(timing);
+        historyBefore = data.ledger.at(-1)?.id || 0;
+        get("history-older").disabled = data.ledger.length < 100;
+      } catch (error) {
+        get("message").textContent = error.message;
+      }
+    }
+    get("history-load").onclick = () => history(true);
+    get("history-older").onclick = () => history(false);
+    get("connect").onclick = () => {
+      key = get("key").value;
+      get("key").value = "";
+      request();
+    };
+    get("refresh").onclick = () => request();
+    get("start").onclick = () => {
+      if (
+        confirm(
+          "Start the live event now? The timeline and paid claims will begin.",
+        )
+      )
+        request({ action: "start" });
+    };
+    get("freeze").onclick = () => {
+      if (confirm("Freeze permanently and seal every score?"))
+        request({ action: "freeze" });
+    };
+    get("announce").onclick = () =>
+      request({ action: "announce", text: get("announcement").value });
+    get("release").onclick = () =>
+      request({ action: "release", id: get("lock-id").value });
+  </script>
+</html>

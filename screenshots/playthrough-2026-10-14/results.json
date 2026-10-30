@@ -1,0 +1,823 @@
+[
+  {
+    "id": "BL-05",
+    "name": "BL-05 · Broken Router",
+    "method": "Choose three repairs, run repaired code, verify repair",
+    "inputs": {
+      "line2": "best = costs[0]",
+      "line5": "if costs[i] < best:",
+      "line6": "best = costs[i]; best_index = i",
+      "output": "Route 5 costs 22"
+    },
+    "result": "Server verified",
+    "at": "2026-10-14T10:37:10.823Z",
+    "before": "BL-05-before.jpg",
+    "played": "BL-05-played.jpg",
+    "complete": "BL-05-complete.jpg"
+  },
+  {
+    "id": "ST-01",
+    "name": "ST-01 · Receipt Total",
+    "method": "Highlight loop, trace all six passes, submit positive fares only",
+    "inputs": {
+      "fares": [
+        38,
+        -19,
+        28,
+        -45,
+        40,
+        70
+      ],
+      "totals": [
+        38,
+        38,
+        66,
+        66,
+        106,
+        176
+      ],
+      "answer": 176
+    },
+    "result": "Server verified",
+    "at": "2026-10-14T10:39:25.697Z",
+    "before": "ST-01-before.jpg",
+    "played": "ST-01-played.jpg",
+    "complete": "ST-01-complete.jpg"
+  },
+  {
+    "id": "SD-01",
+    "name": "SD-01 · Peak Reading",
+    "method": "Read and highlight source; manually trace the output; submit exactly printed value",
+    "inputs": {
+      "answer": "Peak 54 at 3",
+      "visibleProgram": "●●○\nTime remaining · 00:55:07\nSD-01 / CODE\nPeak Reading\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nThe Power Grid needs its highest reading and zero-based position.\nEvidence ID: df66221c706f\n\nCLIENT / Veyra Power Grid\n\nRead the program and type exactly what it prints.\n\nINTERACTIVE FIELD TOOL / CODE\nCode observatory\n\nRead the program, highlight useful lines and trace its output. Submit the value requested in the briefing.\n\n01\nInspect source\n02\nTrace values\n03\nSubmit output\nSOURCE / READ ONLY\nJava\n1\npublic class Main {\n2\n    public static void main(String[] args) {\n3\n        int[] r = {40, 26, 33, 54, 47, 19};\n4\n        int best = r[0], pos = 0;\n5\n        for (int i = 1; i < r.length; i++) {\n6\n            if (r[i] > best) { best = r[i]; pos = i; }\n7\n        }\n8\n        System.out.println(\"Peak \" + best + \" at \" + pos);\n9\n    }\n10\n}\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nEnter the answer requested in the briefing. Notes and local simulations do not submit a solution.\n\nYour answer\nSubmit answer\nRelease contract"
+    },
+    "result": "Server verified",
+    "at": "2026-10-14T10:40:00.172Z",
+    "before": "SD-01-before.jpg",
+    "played": "SD-01-played.jpg",
+    "complete": "SD-01-complete.jpg"
+  },
+  {
+    "id": "SD-02",
+    "name": "SD-02 · Lonely Packet",
+    "method": "Read and highlight source; manually trace the output; submit exactly printed value",
+    "inputs": {
+      "answer": "102",
+      "visibleProgram": "●●○\nTime remaining · 00:55:07\nSD-02 / CODE\nLonely Packet\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nEvery packet echoes twice except two strays. Report the first packet seen exactly once.\nEvidence ID: 2c7d92d86e1f\n\nCLIENT / Veyra Network Desk\n\nRead the program and type exactly what it prints.\n\nINTERACTIVE FIELD TOOL / CODE\nCode observatory\n\nRead the program, highlight useful lines and trace its output. Submit the value requested in the briefing.\n\n01\nInspect source\n02\nTrace values\n03\nSubmit output\nSOURCE / READ ONLY\nPython\n1\npackets = [47, 78, 32, 61, 47, 78, 32, 61, 102, 103]\n2\nfor p in packets:\n3\n    if packets.count(p) == 1:\n4\n        print(p)\n5\n        break\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nEnter the answer requested in the briefing. Notes and local simulations do not submit a solution.\n\nYour answer\nSubmit answer\nRelease contract"
+    },
+    "result": "Server verified",
+    "at": "2026-10-14T10:40:01.158Z",
+    "before": "SD-02-before.jpg",
+    "played": "SD-02-played.jpg",
+    "complete": "SD-02-complete.jpg"
+  },
+  {
+    "id": "SD-03",
+    "name": "SD-03 · Robot Route",
+    "method": "Read and highlight source; manually trace the output; submit exactly printed value",
+    "inputs": {
+      "answer": "-1 -2",
+      "visibleProgram": "●●○\nTime remaining · 00:55:06\nSD-03 / CODE\nRobot Route\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nA delivery robot starts at 0 0. U increases the puzzle's y; D decreases it. These are program coordinates, not city coordinates.\nEvidence ID: de1931c219c6\n\nCLIENT / Veyra Courier Guild\n\nRead the program and type exactly what it prints.\n\nINTERACTIVE FIELD TOOL / CODE\nCode observatory\n\nRead the program, highlight useful lines and trace its output. Submit the value requested in the briefing.\n\n01\nInspect source\n02\nTrace values\n03\nSubmit output\nSOURCE / READ ONLY\nC\n1\n#include <stdio.h>\n2\nint main() {\n3\n    char cmd[] = \"UDLLRDRDL\";\n4\n    int x = 0, y = 0;\n5\n    for (int i = 0; cmd[i] != '\\0'; i++) {\n6\n        switch (cmd[i]) {\n7\n            case 'R': x++; break;\n8\n            case 'L': x--; break;\n9\n            case 'U': y++; break;\n10\n            case 'D': y--; break;\n11\n        }\n12\n    }\n13\n    printf(\"%d %d\\n\", x, y);\n14\n}\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nEnter the answer requested in the briefing. Notes and local simulations do not submit a solution.\n\nYour answer\nSubmit answer\nRelease contract"
+    },
+    "result": "Server verified",
+    "at": "2026-10-14T10:40:02.135Z",
+    "before": "SD-03-before.jpg",
+    "played": "SD-03-played.jpg",
+    "complete": "SD-03-complete.jpg"
+  },
+  {
+    "id": "RC-01",
+    "name": "RC-01 · Sprint: Fare Sum",
+    "method": "Read and highlight source; manually trace the output; submit exactly printed value",
+    "inputs": {
+      "answer": "231",
+      "visibleProgram": "●●●\nTime remaining · 00:55:06\nRC-01 / CODE\nSprint: Fare Sum\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nRead the fare accumulator. Your race data is personal and equal in length to other entrants.\nEvidence ID: 808d1746bfcb\n\nCLIENT / Veyra Operations Desk\n\nRead the program and type exactly what it prints.\n\nINTERACTIVE FIELD TOOL / CODE\nCode observatory\n\nRead the program, highlight useful lines and trace its output. Submit the value requested in the briefing.\n\n01\nInspect source\n02\nTrace values\n03\nSubmit output\nSOURCE / READ ONLY\nPython\n1\nfares = [7, 53, 33, 71, 47, 20]\n2\ntotal = 0\n3\nfor f in fares:\n4\n    total += f\n5\nprint(total)\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nEnter the answer requested in the briefing. Notes and local simulations do not submit a solution.\n\nYour answer\nSubmit answer\nRelease contract"
+    },
+    "result": "Server verified",
+    "at": "2026-10-14T10:40:03.129Z",
+    "before": "RC-01-before.jpg",
+    "played": "RC-01-played.jpg",
+    "complete": "RC-01-complete.jpg"
+  },
+  {
+    "id": "GH-03",
+    "name": "GH-03 · Server Sprint",
+    "method": "Read and highlight source; manually trace the output; submit exactly printed value",
+    "inputs": {
+      "answer": "6",
+      "visibleProgram": "●●●\nTime remaining · 00:55:06\nGH-03 / CODE\nServer Sprint\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nFind the longest uninterrupted streak of UP servers.\nEvidence ID: 3657770b2168\n\nCLIENT / Veyra Operations Desk\n\nRead the program and type exactly what it prints.\n\nINTERACTIVE FIELD TOOL / CODE\nCode observatory\n\nRead the program, highlight useful lines and trace its output. Submit the value requested in the briefing.\n\n01\nInspect source\n02\nTrace values\n03\nSubmit output\nSOURCE / READ ONLY\nPython\n1\nstatus = [\"UP\", \"DOWN\", \"UP\", \"UP\", \"UP\", \"UP\", \"UP\", \"UP\", \"DOWN\", \"UP\"]\n2\nbest = 0\n3\nrun = 0\n4\nfor s in status:\n5\n    if s == \"UP\":\n6\n        run += 1\n7\n        if run > best:\n8\n            best = run\n9\n    else:\n10\n        run = 0\n11\nprint(best)\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nEnter the answer requested in the briefing. Notes and local simulations do not submit a solution.\n\nYour answer\nSubmit answer\nRelease contract"
+    },
+    "result": "Server verified",
+    "at": "2026-10-14T10:40:04.116Z",
+    "before": "GH-03-before.jpg",
+    "played": "GH-03-played.jpg",
+    "complete": "GH-03-complete.jpg"
+  },
+  {
+    "id": "BR-02",
+    "name": "BR-02 · Double Login",
+    "method": "Read and highlight source; manually trace the output; submit exactly printed value",
+    "inputs": {
+      "answer": "DOUBLE 3",
+      "visibleProgram": "●●●\nTime remaining · 00:55:05\nBR-02 / CODE\nDouble Login\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nBank monitoring flags repeated logins by agent7. Read the printed result.\nEvidence ID: 7d14a5110469\n\nCLIENT / Veyra Operations Desk\n\nRead the program and type exactly what it prints.\n\nINTERACTIVE FIELD TOOL / CODE\nCode observatory\n\nRead the program, highlight useful lines and trace its output. Submit the value requested in the briefing.\n\n01\nInspect source\n02\nTrace values\n03\nSubmit output\nSOURCE / READ ONLY\nJava\n1\npublic class Main {\n2\n    public static void main(String[] args) {\n3\n        String[] log = {\"agent7\", \"raj\", \"dev\", \"ana\", \"agent7\", \"agent7\"};\n4\n        int count = 0;\n5\n        for (int i = 0; i < log.length; i++) {\n6\n            if (log[i].equals(\"agent7\")) count++;\n7\n        }\n8\n        if (count >= 2) System.out.println(\"DOUBLE \" + count);\n9\n        else System.out.println(\"OK\");\n10\n    }\n11\n}\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nEnter the answer requested in the briefing. Notes and local simulations do not submit a solution.\n\nYour answer\nSubmit answer\nRelease contract"
+    },
+    "result": "Server verified",
+    "at": "2026-10-14T10:40:05.038Z",
+    "before": "BR-02-before.jpg",
+    "played": "BR-02-played.jpg",
+    "complete": "BR-02-complete.jpg"
+  },
+  {
+    "id": "BL-01",
+    "name": "BL-01 · Ledger Running Total",
+    "method": "Read and highlight source; manually trace the output; submit exactly printed value",
+    "inputs": {
+      "answer": "86",
+      "visibleProgram": "●●●\nTime remaining · 00:55:05\nBL-01 / CODE\nLedger Running Total\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nApply ledger moves in order. Ignore a withdrawal that would make the balance negative.\nEvidence ID: 8b7c79ebb73d\n\nCLIENT / Veyra Operations Desk\n\nRead the program and type exactly what it prints.\n\nINTERACTIVE FIELD TOOL / CODE\nCode observatory\n\nRead the program, highlight useful lines and trace its output. Submit the value requested in the briefing.\n\n01\nInspect source\n02\nTrace values\n03\nSubmit output\nSOURCE / READ ONLY\nJava\n1\npublic class Main {\n2\n    public static void main(String[] args) {\n3\n        int[] moves = {62, -36, 56, -200, 59, -55};\n4\n        int balance = 0;\n5\n        for (int i = 0; i < moves.length; i++) {\n6\n            if (balance + moves[i] >= 0) balance += moves[i];\n7\n        }\n8\n        System.out.println(balance);\n9\n    }\n10\n}\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nEnter the answer requested in the briefing. Notes and local simulations do not submit a solution.\n\nYour answer\nSubmit answer\nRelease contract"
+    },
+    "result": "Server verified",
+    "at": "2026-10-14T10:40:05.972Z",
+    "before": "BL-01-before.jpg",
+    "played": "BL-01-played.jpg",
+    "complete": "BL-01-complete.jpg"
+  },
+  {
+    "id": "ST-02",
+    "name": "ST-02 · Broken Receipt",
+    "method": "Select positive-only repair, run server simulation, verify repair",
+    "inputs": {
+      "repairs": {
+        "4": "if a > 0:"
+      },
+      "simulation": "●○○\nTime remaining · 00:53:44\nST-02 / DEBUG\nBroken Receipt\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nThe Transit clerk counts refunds as fares. Repair the condition; refunds must be excluded.\nEvidence ID: 3a0f5f8d89c8\n\nCLIENT / Transit Authority Junior Clerk\n\nSelect each buggy line, choose its fix, then run the repaired code.\n\nINTERACTIVE FIELD TOOL / DEBUG\nRepair station\n\nChoose repairs for the listed lines. Run a server simulation, then verify your repair.\n\n01\nFind the fault\n02\nTest repairs\n03\nVerify repair\n191\nSOURCE / READ ONLY\nPython\n1\namounts = [63, -74, 14, -28, 58, 56]\n2\ntotal = 0\n3\nfor a in amounts:\n4\n    if a > 0:\n5\n        total += a\n6\nprint(total)\nRepair line 4\nChoose a repair\nif a > 100:\nif a == 0:\nif a < 0:\nif a > 0:\nRun fixed code\n191\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nYour board selections are collected automatically. Verify when you are ready; the server checks the result.\n\nVerify repair\nRelease contract"
+    },
+    "result": "Server accepted",
+    "completionView": "Clear message; completed card removed by recent-history limit",
+    "at": "2026-10-14T10:42:09.593Z",
+    "before": "ST-02-before.jpg",
+    "played": "ST-02-played.jpg",
+    "complete": "ST-02-complete.jpg"
+  },
+  {
+    "id": "SD-04",
+    "name": "SD-04 · Patch the Meter",
+    "method": "Repair each faulty line, run code, verify selections",
+    "inputs": {
+      "repairs": {
+        "5": "for (int i = 0; i < 5; i++) {",
+        "6": "if (r[i] == 0) total = 0; else total += r[i];"
+      },
+      "simulation": "●●○\nTime remaining · 00:52:22\nSD-04 / DEBUG\nPatch the Meter\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nThe meter must process every reading. A zero resets the running total. Repair two lines.\nEvidence ID: 36d3e4766817\n\nCLIENT / Veyra Utilities\n\nSelect each buggy line, choose its fix, then run the repaired code.\n\nINTERACTIVE FIELD TOOL / DEBUG\nRepair station\n\nChoose repairs for the listed lines. Run a server simulation, then verify your repair.\n\n01\nFind the fault\n02\nTest repairs\n03\nVerify repair\n1 5 0 3 6\nSOURCE / READ ONLY\nC\n1\n#include <stdio.h>\n2\nint main() {\n3\n    int r[5] = {1, 4, 0, 3, 3};\n4\n    int total = 0;\n5\n    for (int i = 0; i < 5; i++) {\n6\n        if (r[i] == 0) total = 0; else total += r[i];\n7\n        printf(\"%d \", total);\n8\n    }\n9\n}\nRepair line 5\nChoose a repair\nfor (int i = 0; i < 5; i++) {\nfor (int i = 0; i < 4; i++) {\nfor (int i = 2; i < 5; i++) {\nRepair line 6\nChoose a repair\nif (r[i] == 0) total = 0; else total += r[i];\ntotal += r[i];\nif (r[i] == 0) total++; else total += r[i];\nRun fixed code\n1 5 0 3 6\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nYour board selections are collected automatically. Verify when you are ready; the server checks the result.\n\nVerify repair\nRelease contract"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:42:11.400Z",
+    "before": "SD-04-before.jpg",
+    "played": "SD-04-played.jpg",
+    "complete": "SD-04-complete.jpg"
+  },
+  {
+    "id": "SD-05",
+    "name": "SD-05 · Fence Count",
+    "method": "Repair each faulty line, run code, verify selections",
+    "inputs": {
+      "repairs": {
+        "4": "for (int i = 1; i <= posts; i++) {"
+      },
+      "simulation": "●●○\nTime remaining · 00:52:20\nSD-05 / DEBUG\nFence Count\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nNumber every fence post, from 1 through the final post. Fix the missing endpoint.\nEvidence ID: 562aaf5fd92d\n\nCLIENT / Veyra Parks Department\n\nSelect each buggy line, choose its fix, then run the repaired code.\n\nINTERACTIVE FIELD TOOL / DEBUG\nRepair station\n\nChoose repairs for the listed lines. Run a server simulation, then verify your repair.\n\n01\nFind the fault\n02\nTest repairs\n03\nVerify repair\nPost 1\nPost 2\nPost 3\nPost 4\nPost 5\nTotal 5\nSOURCE / READ ONLY\nJava\n1\npublic class Main {\n2\n    public static void main(String[] args) {\n3\n        int posts = 5, count = 0;\n4\n        for (int i = 1; i <= posts; i++) {\n5\n            System.out.println(\"Post \" + i);\n6\n            count++;\n7\n        }\n8\n        System.out.println(\"Total \" + count);\n9\n    }\n10\n}\nRepair line 4\nChoose a repair\nfor (int i = 1; i <= posts; i++) {\nfor (int i = 1; i <= posts + 1; i++) {\nfor (int i = 1; i < posts - 1; i++) {\nRun fixed code\nPost 1\nPost 2\nPost 3\nPost 4\nPost 5\nTotal 5\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nYour board selections are collected automatically. Verify when you are ready; the server checks the result.\n\nVerify repair\nRelease contract"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:42:12.919Z",
+    "before": "SD-05-before.jpg",
+    "played": "SD-05-played.jpg",
+    "complete": "SD-05-complete.jpg"
+  },
+  {
+    "id": "EX-03",
+    "name": "EX-03 · Ghost in the Counter",
+    "method": "Repair each faulty line, run code, verify selections",
+    "inputs": {
+      "repairs": {
+        "4": "int count = 0, sum = 0;",
+        "5": "for (int i = 0; i < 6; i++) {",
+        "6": "if (v[i] > 35) {"
+      },
+      "simulation": "●●●\nTime remaining · 00:52:18\nEX-03 / DEBUG\nGhost in the Counter\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nCount and sum all readings strictly above 35. The first count, loop boundary, and comparison are each wrong.\nEvidence ID: 20d00e7a6162\n\nCLIENT / Courier Guild · Second Shift\n\nSelect each buggy line, choose its fix, then run the repaired code.\n\nINTERACTIVE FIELD TOOL / DEBUG\nRepair station\n\nChoose repairs for the listed lines. Run a server simulation, then verify your repair.\n\n01\nFind the fault\n02\nTest repairs\n03\nVerify repair\n4 244\nSOURCE / READ ONLY\nC\n1\n#include <stdio.h>\n2\nint main() {\n3\n    int v[6] = {57, 20, 73, 35, 46, 68};\n4\n    int count = 0, sum = 0;\n5\n    for (int i = 0; i < 6; i++) {\n6\n        if (v[i] > 35) {\n7\n            count++; sum += v[i];\n8\n        }\n9\n    }\n10\n    printf(\"%d %d\\n\", count, sum);\n11\n}\nRepair line 4\nChoose a repair\nint count = 2, sum = 0;\nint count = 0, sum = 0;\nint count = 1, sum = 1;\nRepair line 5\nChoose a repair\nfor (int i = 0; i < 6; i++) {\nfor (int i = 0; i < 4; i++) {\nfor (int i = 1; i < 6; i++) {\nRepair line 6\nChoose a repair\nif (v[i] > 35) {\nif (v[i] >= 35) {\nif (v[i] < 35) {\nRun fixed code\n4 244\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nYour board selections are collected automatically. Verify when you are ready; the server checks the result.\n\nVerify repair\nRelease contract"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:42:14.986Z",
+    "before": "EX-03-before.jpg",
+    "played": "EX-03-played.jpg",
+    "complete": "EX-03-complete.jpg"
+  },
+  {
+    "id": "RC-02",
+    "name": "RC-02 · Sprint: Bug Hunt",
+    "method": "Choose inclusive 1..n loop, simulate C/Java/Python, verify repair",
+    "inputs": {
+      "repairs": {
+        "3": "range(1, n + 1) / int i = 1; i <= n"
+      },
+      "checks": [
+        {
+          "language": "C",
+          "text": "●●●\nTime remaining · 00:52:04\nRC-02 / DEBUG\nSprint: Bug Hunt\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nSum every integer from 1 through n. Choose your language; the loop bug and line number are equivalent.\nEvidence ID: e9c5c220e8ed\n\nCLIENT / Veyra Operations Desk\n\nSelect each buggy line, choose its fix, then run the repaired code.\n\nINTERACTIVE FIELD TOOL / DEBUG\nRepair station\n\nChoose repairs for the listed lines. Run a server simulation, then verify your repair.\n\n01\nFind the fault\n02\nTest repairs\n03\nVerify repair\n21\nSOURCE / READ ONLY\nC\nLanguage\nPython\nC\nJava\n1\nint n = 6;\n2\nint total = 0;\n3\nfor (int i = 1; i <= n; i++) {\n4\n    total += i;\n5\n}\n6\nprintf(\"%d\\n\", total);\nRepair line 3\nChoose a repair\nrange(1, n + 1) / int i = 1; i <= n\nrange(1, n) / int i = 1; i < n\nrange(n + 2) / int i = 0; i <= n + 1\nRun fixed code\n21\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nYour board selections are collected automatically. Verify when you are ready; the server checks the result.\n\nVerify repair\nRelease contract"
+        },
+        {
+          "language": "Java",
+          "text": "●●●\nTime remaining · 00:52:03\nRC-02 / DEBUG\nSprint: Bug Hunt\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nSum every integer from 1 through n. Choose your language; the loop bug and line number are equivalent.\nEvidence ID: e9c5c220e8ed\n\nCLIENT / Veyra Operations Desk\n\nSelect each buggy line, choose its fix, then run the repaired code.\n\nINTERACTIVE FIELD TOOL / DEBUG\nRepair station\n\nChoose repairs for the listed lines. Run a server simulation, then verify your repair.\n\n01\nFind the fault\n02\nTest repairs\n03\nVerify repair\n21\nSOURCE / READ ONLY\nJava\nLanguage\nPython\nC\nJava\n1\nint n = 6;\n2\nint total = 0;\n3\nfor (int i = 1; i <= n; i++) {\n4\n    total += i;\n5\n}\n6\nSystem.out.println(total);\nRepair line 3\nChoose a repair\nrange(1, n + 1) / int i = 1; i <= n\nrange(1, n) / int i = 1; i < n\nrange(n + 2) / int i = 0; i <= n + 1\nRun fixed code\n21\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nYour board selections are collected automatically. Verify when you are ready; the server checks the result.\n\nVerify repair\nRelease contract"
+        },
+        {
+          "language": "Python",
+          "text": "●●●\nTime remaining · 00:52:03\nRC-02 / DEBUG\nSprint: Bug Hunt\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nSum every integer from 1 through n. Choose your language; the loop bug and line number are equivalent.\nEvidence ID: e9c5c220e8ed\n\nCLIENT / Veyra Operations Desk\n\nSelect each buggy line, choose its fix, then run the repaired code.\n\nINTERACTIVE FIELD TOOL / DEBUG\nRepair station\n\nChoose repairs for the listed lines. Run a server simulation, then verify your repair.\n\n01\nFind the fault\n02\nTest repairs\n03\nVerify repair\n21\nSOURCE / READ ONLY\nPython\nLanguage\nPython\nC\nJava\n1\nn = 6\n2\ntotal = 0\n3\nfor i in range(1, n + 1):\n4\n    total += i\n5\nprint(total)\nRepair line 3\nChoose a repair\nrange(1, n + 1) / int i = 1; i <= n\nrange(1, n) / int i = 1; i < n\nrange(n + 2) / int i = 0; i <= n + 1\nRun fixed code\n21\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nYour board selections are collected automatically. Verify when you are ready; the server checks the result.\n\nVerify repair\nRelease contract"
+        }
+      ]
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:42:29.970Z",
+    "before": "RC-02-before.jpg",
+    "played": "RC-02-played.jpg",
+    "complete": "RC-02-complete.jpg"
+  },
+  {
+    "id": "BR-08",
+    "name": "BR-08 · Broken Tally",
+    "method": "Reset counter inside row loop, use strict threshold, simulate and verify",
+    "inputs": {
+      "repairs": {
+        "4": "Remove this declaration; add int count = 0; inside the row loop at line 5.",
+        "7": "if (g[r][c] > 6) count++;"
+      },
+      "simulation": "●●●\nTime remaining · 00:52:01\nBR-08 / DEBUG\nBroken Tally\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nPrint a fresh count for each row, including only values strictly above 6. Repair the reset and comparison.\nEvidence ID: 89f72b4dfda7\n\nCLIENT / Veyra Operations Desk\n\nSelect each buggy line, choose its fix, then run the repaired code.\n\nINTERACTIVE FIELD TOOL / DEBUG\nRepair station\n\nChoose repairs for the listed lines. Run a server simulation, then verify your repair.\n\n01\nFind the fault\n02\nTest repairs\n03\nVerify repair\n0 2 2\nSOURCE / READ ONLY\nC\n1\n#include <stdio.h>\n2\nint main() {\n3\n    int g[3][4] = {{3, 6, 5, 3}, {9, 2, 6, 9}, {5, 10, 7, 1}};\n4\n    // Counter resets at the start of each row\n5\n    for (int r = 0; r < 3; r++) { int count = 0;\n6\n        for (int c = 0; c < 4; c++) {\n7\n            if (g[r][c] > 6) count++;\n8\n        }\n9\n        printf(\"%d \", count);\n10\n    }\n11\n}\nRepair line 4\nChoose a repair\nKeep count outside both loops.\nRemove this declaration; add int count = 0; inside the row loop at line 5.\nSet count = 1 outside the row loop.\nRepair line 7\nChoose a repair\nif (g[r][c] < 6) count++;\nif (g[r][c] > 6) count++;\nif (g[r][c] >= 6) count++;\nRun fixed code\n0 2 2\nTrace table · track each loop pass\nPrivate toolkit / Notes & calculator\n\nYour board selections are collected automatically. Verify when you are ready; the server checks the result.\n\nVerify repair\nRelease contract"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:42:31.792Z",
+    "before": "BR-08-before.jpg",
+    "played": "BR-08-played.jpg",
+    "complete": "BR-08-complete.jpg"
+  },
+  {
+    "id": "ST-03",
+    "name": "ST-03 · Gate Cipher",
+    "method": "Use cipher transformations in inverse encoding order, copy preview, submit",
+    "inputs": {
+      "steps": [
+        -8
+      ],
+      "plaintext": "VEYRA{GATE_OPEN_5145}"
+    },
+    "result": "Server accepted",
+    "completionView": "Clear message; completed card removed by recent-history limit",
+    "at": "2026-10-14T10:43:01.066Z",
+    "before": "ST-03-before.jpg",
+    "played": "ST-03-played.jpg",
+    "complete": "ST-03-complete.jpg"
+  },
+  {
+    "id": "SD-08",
+    "name": "SD-08 · Decode Chain",
+    "method": "Use cipher transformations in inverse encoding order, copy preview, submit",
+    "inputs": {
+      "steps": [
+        "Reverse",
+        "Atbash",
+        -6
+      ],
+      "plaintext": "VEYRA{LAYERS_PEEL_4580}"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:43:03.202Z",
+    "before": "SD-08-before.jpg",
+    "played": "SD-08-played.jpg",
+    "complete": "SD-08-complete.jpg"
+  },
+  {
+    "id": "RC-03",
+    "name": "RC-03 · Sprint: Decode",
+    "method": "Use cipher transformations in inverse encoding order, copy preview, submit",
+    "inputs": {
+      "steps": [
+        "Reverse",
+        -4
+      ],
+      "plaintext": "VEYRA{SPRINT_4981}"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:43:04.984Z",
+    "before": "RC-03-before.jpg",
+    "played": "RC-03-played.jpg",
+    "complete": "RC-03-complete.jpg"
+  },
+  {
+    "id": "GH-01",
+    "name": "GH-01 · Key Card",
+    "method": "Use cipher transformations in inverse encoding order, copy preview, submit",
+    "inputs": {
+      "steps": [
+        "Reverse",
+        "Atbash"
+      ],
+      "plaintext": "VEYRA{KEY_CARD_OK_8730}"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:43:06.772Z",
+    "before": "GH-01-before.jpg",
+    "played": "GH-01-played.jpg",
+    "complete": "GH-01-complete.jpg"
+  },
+  {
+    "id": "BR-03",
+    "name": "BR-03 · Cipher Relay",
+    "method": "Use cipher transformations in inverse encoding order, copy preview, submit",
+    "inputs": {
+      "steps": [
+        "Undo positional shift"
+      ],
+      "plaintext": "VEYRA{RELAY_RUN_2893}"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:43:08.294Z",
+    "before": "BR-03-before.jpg",
+    "played": "BR-03-played.jpg",
+    "complete": "BR-03-complete.jpg"
+  },
+  {
+    "id": "BL-02",
+    "name": "BL-02 · Triple Cipher",
+    "method": "Use cipher transformations in inverse encoding order, copy preview, submit",
+    "inputs": {
+      "steps": [
+        "Reverse",
+        "Atbash",
+        -3
+      ],
+      "plaintext": "VEYRA{TRIPLE_LOCK_8760}"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:43:10.374Z",
+    "before": "BL-02-before.jpg",
+    "played": "BL-02-played.jpg",
+    "complete": "BL-02-complete.jpg"
+  },
+  {
+    "id": "SD-06",
+    "name": "SD-06 · Password Profiler",
+    "method": "Check four clues, eliminate 29 incompatible candidates, submit remaining word",
+    "inputs": {
+      "remaining": "uplink",
+      "eliminated": 29,
+      "answer": "VEYRA{uplink}"
+    },
+    "result": "Server accepted",
+    "completionView": "Clear message; completed card removed by recent-history limit",
+    "at": "2026-10-14T10:44:37.919Z",
+    "before": "SD-06-before.jpg",
+    "played": "SD-06-played.jpg",
+    "complete": "SD-06-complete.jpg"
+  },
+  {
+    "id": "BR-06",
+    "name": "BR-06 · Combination Clues",
+    "method": "Reconcile exact/misplaced clues, eliminate absent digits, fill four key slots",
+    "inputs": {
+      "key": "7285",
+      "reason": "Digits 8 and 7 are required; only 2 fits the remaining shared clues; positional exclusions put 7,2,8,5."
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:44:58.645Z",
+    "before": "BR-06-before.jpg",
+    "played": "BR-06-played.jpg",
+    "complete": "BR-06-complete.jpg"
+  },
+  {
+    "id": "BR-07",
+    "name": "BR-07 · Self-Checking Vault",
+    "method": "Derive true key, translate each digit through lookup, fill encoded slots",
+    "inputs": {
+      "trueKey": "2061",
+      "shownKey": "7316",
+      "checks": "2=2×1; 0 is smallest; 6>2; sum=9; all distinct"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:45:01.292Z",
+    "before": "BR-07-before.jpg",
+    "played": "BR-07-played.jpg",
+    "complete": "BR-07-complete.jpg"
+  },
+  {
+    "id": "SD-10",
+    "name": "SD-10 · Who Moved the Money",
+    "method": "Compare all four statements, select suspect, verify",
+    "inputs": {
+      "thief": "Chitra",
+      "falseStatement": "Chitra says Dev did it"
+    },
+    "result": "Server accepted",
+    "completionView": "Clear message; completed card removed by recent-history limit",
+    "at": "2026-10-14T10:45:20.606Z",
+    "before": "SD-10-before.jpg",
+    "played": "SD-10-played.jpg",
+    "complete": "SD-10-complete.jpg"
+  },
+  {
+    "id": "EX-05",
+    "name": "EX-05 · Portal Peek",
+    "method": "Read the notice-board acrostic, enter fictional admin credentials, verify sandbox access",
+    "inputs": {
+      "username": "admin",
+      "passwordAcrostic": "VAULT",
+      "noticeInitials": [
+        "V",
+        "A",
+        "U",
+        "L",
+        "T"
+      ]
+    },
+    "result": "Server accepted",
+    "completionView": "Clear message; completed card removed by recent-history limit",
+    "at": "2026-10-14T10:45:32.080Z",
+    "before": "EX-05-before.jpg",
+    "played": "EX-05-played.jpg",
+    "complete": "EX-05-complete.jpg"
+  },
+  {
+    "id": "SD-07",
+    "name": "SD-07 · Log Hunter",
+    "method": "Filter user and FAIL status, pin six failures plus usual/new-IP successes, submit account",
+    "inputs": {
+      "account": "agent_5167",
+      "usualIp": "198.51.100.77",
+      "newIp": "203.0.113.7",
+      "failures": 6,
+      "lastFail": "02:13:40",
+      "success": "02:14:15"
+    },
+    "result": "Server accepted",
+    "completionView": "Clear message; completed card removed by recent-history limit",
+    "at": "2026-10-14T10:46:11.545Z",
+    "before": "SD-07-before.jpg",
+    "played": "SD-07-played.jpg",
+    "complete": "SD-07-complete.jpg"
+  },
+  {
+    "id": "BR-04",
+    "name": "BR-04 · Ghost Log",
+    "method": "Filter session user, confirm zero logout records, pin post-03:00 activity, submit session",
+    "inputs": {
+      "session": "S-6755",
+      "user": "omar",
+      "evidence": [
+        "03:12:00 LOGIN user=omar session=S-6755",
+        "03:14:00 ACTION user=omar session=S-6755 export_records",
+        "03:15:00 ACTION user=omar session=S-6755 inspect_audit"
+      ],
+      "noLogout": true
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:46:23.133Z",
+    "before": "BR-04-before.jpg",
+    "played": "BR-04-played.jpg",
+    "complete": "BR-04-complete.jpg"
+  },
+  {
+    "id": "EX-04",
+    "name": "EX-04 · Gatekeeper",
+    "method": "Reverse transformations with calculator, run a limited server probe, submit input",
+    "inputs": {
+      "expression": "((26+5)*2-8)/3",
+      "input": 18,
+      "serverOutput": 26,
+      "testRuns": 1
+    },
+    "result": "Server accepted",
+    "completionView": "Clear message; completed card removed by recent-history limit",
+    "at": "2026-10-14T10:47:07.887Z",
+    "before": "EX-04-before.jpg",
+    "played": "EX-04-played.jpg",
+    "complete": "EX-04-complete.jpg"
+  },
+  {
+    "id": "BL-04",
+    "name": "BL-04 · Warden Script",
+    "method": "Reverse three ×2−1 stages, test the input, submit",
+    "inputs": {
+      "input": 3,
+      "target": 17,
+      "stages": [
+        5,
+        9,
+        17
+      ],
+      "probe": "●●●\nTime remaining · 00:47:24\nBL-04 / CTF\nWarden Script\nPRACTICE\nCONTRACT MODE\nMISSION BRIEF / READ BEFORE YOU ACT\nFind the starting number that produces 17. The machine shows every operation. You may test any input up to five times.\nEvidence ID: b976661fa036\n\nCLIENT / Black Grid Gatekeeper\n\nWork backwards through the machine.\n\nINTERACTIVE FIELD TOOL / MACHINE\nNumber engine\n\nFollow each transformation to find the input that produces the target. Test runs are limited and checked by the server.\n\n01\nInspect stages\n02\nTest an input\n03\nSubmit input\nRun 1/5: 3 → 17\nTARGET OUTPUT: 17\n× 2 → -1 → ÷ 1\n× 2 → -1 → ÷ 1\n× 2 → -1 → ÷ 1\nTest any input\nTest machine · 4 runs left\nPrivate toolkit / Notes & calculator\n\nEnter the answer requested in the briefing. Notes and local simulations do not submit a solution.\n\nYour answer\nSubmit answer\nRelease contract"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:47:09.175Z",
+    "before": "BL-04-before.jpg",
+    "played": "BL-04-played.jpg",
+    "complete": "BL-04-complete.jpg"
+  },
+  {
+    "id": "BG-03",
+    "name": "BG-03 · Circuit Lock",
+    "method": "Toggle named switches and inspect all four logic stages before verification",
+    "inputs": {
+      "on": [
+        "D",
+        "F"
+      ],
+      "gates": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "output": "ON"
+    },
+    "result": "Server accepted",
+    "completionView": "Clear message; completed card removed by recent-history limit",
+    "at": "2026-10-14T10:47:20.914Z",
+    "before": "BG-03-before.jpg",
+    "played": "BG-03-played.jpg",
+    "complete": "BG-03-complete.jpg"
+  },
+  {
+    "id": "SD-09",
+    "name": "SD-09 · Fare Gate",
+    "method": "Derive orthogonal toggle sequence, press the lights, verify all lamps off",
+    "inputs": {
+      "initial": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "presses": [
+        2,
+        4,
+        5
+      ],
+      "final": "all nine off"
+    },
+    "result": "Server accepted",
+    "completionView": "Clear message; completed card removed by recent-history limit",
+    "at": "2026-10-14T10:47:53.661Z",
+    "before": "SD-09-before.jpg",
+    "played": "SD-09-played.jpg",
+    "complete": "SD-09-complete.jpg"
+  },
+  {
+    "id": "EX-01",
+    "name": "EX-01 · Door and Key",
+    "method": "Inspect board, test undo, collect K before D, follow shortest ten-move route to E",
+    "inputs": {
+      "route": "LLDDLLDDDL",
+      "shortestMoves": 10,
+      "keyBeforeDoor": true,
+      "undoTested": true
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:48:30.882Z",
+    "before": "EX-01-before.jpg",
+    "played": "EX-01-played.jpg",
+    "complete": "EX-01-complete.jpg"
+  },
+  {
+    "id": "BG-02",
+    "name": "BG-02 · Maze Lock",
+    "method": "Use keyboard arrows to collect the key, unlock the door, reach the exit and verify route",
+    "inputs": {
+      "route": "DDLLUDLLD",
+      "keyBeforeDoor": true,
+      "input": "Arrow keys"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:49:07.584Z",
+    "before": "BG-02-before.jpg",
+    "played": "BG-02-played.jpg",
+    "complete": "BG-02-complete.jpg"
+  },
+  {
+    "id": "EX-02",
+    "name": "EX-02 · Chain of Command",
+    "method": "Read directed links, select the requested graph nodes and verify",
+    "inputs": {
+      "selected": [
+        "Asha",
+        "Chitra"
+      ],
+      "reason": "Six reporting links connect the chosen diameter endpoints"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:50:10.208Z",
+    "before": "EX-02-before.jpg",
+    "played": "EX-02-played.jpg",
+    "complete": "EX-02-complete.jpg"
+  },
+  {
+    "id": "BR-05",
+    "name": "BR-05 · Org Chart",
+    "method": "Read directed links, select the requested graph nodes and verify",
+    "inputs": {
+      "selected": [
+        "Chitra"
+      ],
+      "reason": "Chitra is the nearest common manager"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:50:11.450Z",
+    "before": "BR-05-before.jpg",
+    "played": "BR-05-played.jpg",
+    "complete": "BR-05-complete.jpg"
+  },
+  {
+    "id": "BL-03",
+    "name": "BL-03 · Shadow Ring",
+    "method": "Read directed links, select the requested graph nodes and verify",
+    "inputs": {
+      "selected": [
+        "F",
+        "A",
+        "E"
+      ],
+      "reason": "F → A → E → F is the only closed loop"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:50:13.238Z",
+    "before": "BL-03-before.jpg",
+    "played": "BL-03-played.jpg",
+    "complete": "BL-03-complete.jpg"
+  },
+  {
+    "id": "BR-09",
+    "name": "BR-09 · Deploy Order",
+    "method": "Read dependencies, reorder with earlier controls and use alphabetical tie-breaking",
+    "inputs": {
+      "initial": "E B D A C F",
+      "final": "C B A D E F",
+      "moves": [
+        "C↑",
+        "C↑",
+        "C↑",
+        "C↑",
+        "B↑",
+        "A↑",
+        "A↑",
+        "D↑"
+      ]
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:50:16.421Z",
+    "before": "BR-09-before.jpg",
+    "played": "BR-09-played.jpg",
+    "complete": "BR-09-complete.jpg"
+  },
+  {
+    "id": "BR-10",
+    "name": "BR-10 · Constraint Vault",
+    "method": "Derive distinct assignments satisfying all eight conditions, fill each named node, verify",
+    "inputs": {
+      "assignments": {
+        "F": 3,
+        "D": 1,
+        "C": 5,
+        "B": 2,
+        "A": 6,
+        "E": 4
+      },
+      "checks": "3>1;5 odd;2+1=3;6>5;4 even;abs(3−4)=1;5>3;1 odd"
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:50:27.444Z",
+    "before": "BR-10-before.jpg",
+    "played": "BR-10-played.jpg",
+    "complete": "BR-10-complete.jpg"
+  },
+  {
+    "id": "BR-01",
+    "name": "BR-01 · Tunnel Network",
+    "method": "Use matching numbered teleport pads to reach the exit in the shortest route",
+    "inputs": {
+      "route": "LLTLLLL",
+      "moves": 7,
+      "teleportPad": 1
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:50:57.286Z",
+    "before": "BR-01-before.jpg",
+    "played": "BR-01-played.jpg",
+    "complete": "BR-01-complete.jpg"
+  },
+  {
+    "id": "GH-02",
+    "name": "GH-02 · Courier Interrogation",
+    "method": "Use Higher/Lower replies to binary-search the hidden number within eight guesses",
+    "inputs": {
+      "history": [
+        {
+          "guess": 50,
+          "reply": "Lower"
+        },
+        {
+          "guess": 25,
+          "reply": "Lower"
+        },
+        {
+          "guess": 12,
+          "reply": "Lower"
+        },
+        {
+          "guess": 6,
+          "reply": "Higher"
+        },
+        {
+          "guess": 9,
+          "reply": "Higher"
+        },
+        {
+          "guess": 10,
+          "reply": "Correct"
+        }
+      ],
+      "guessesUsed": 6,
+      "answer": 10,
+      "enterSubmissionTested": true
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:55:57.894Z",
+    "before": "GH-02-before.jpg",
+    "played": "GH-02-played.jpg",
+    "complete": "GH-02-complete.jpg"
+  },
+  {
+    "id": "BG-01",
+    "name": "BG-01 · Code Oracle",
+    "method": "Use exact/misplaced feedback to eliminate candidate codes; respect five-second server cooldown and nine-guess limit",
+    "inputs": {
+      "history": [
+        {
+          "guess": "012",
+          "exact": 1,
+          "misplaced": 0
+        },
+        {
+          "guess": "023",
+          "exact": 1,
+          "misplaced": 0
+        },
+        {
+          "guess": "045",
+          "exact": 2,
+          "misplaced": 0
+        },
+        {
+          "guess": "647",
+          "exact": 0,
+          "misplaced": 1
+        },
+        {
+          "guess": "065",
+          "exact": 3,
+          "misplaced": 0
+        }
+      ],
+      "guessesUsed": 5,
+      "answer": "065",
+      "leadingZeroPreserved": true
+    },
+    "result": "Server accepted",
+    "completionView": "Verified card",
+    "at": "2026-10-14T10:56:30.183Z",
+    "before": "BG-01-before.jpg",
+    "played": "BG-01-played.jpg",
+    "complete": "BG-01-complete.jpg"
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "version": 30,
+  "note": "Standing markers moved only onto already approved nearby floor; collision unchanged.",
+  "adjustments": [
+    {
+      "id": "c07-back-a",
+      "scene": "c07",
+      "planned": [
+        1616,
+        432
+      ],
+      "reviewedFloorPoint": [
+        1584,
+        432
+      ],
+      "offsetTiles": 1
+    },
+    {
+      "id": "c10-back-b",
+      "scene": "under",
+      "planned": [
+        624,
+        48
+      ],
+      "reviewedFloorPoint": [
+        656,
+        48
+      ],
+      "offsetTiles": 1
+    },
+    {
+      "id": "c12-back-b",
+      "scene": "harbor",
+      "planned": [
+        48,
+        496
+      ],
+      "reviewedFloorPoint": [
+        48,
+        464
+      ],
+      "offsetTiles": 1
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+[Unit]
+Description=The Heist authoritative multiplayer server
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=8
+
+[Service]
+Type=simple
+User=heist
+Group=heist
+WorkingDirectory=/srv/the-heist
+EnvironmentFile=/etc/heist/heist.env
+ExecStartPre=/usr/bin/node /srv/the-heist/tools/check-vm-env.mjs
+ExecStart=/usr/bin/node --max-old-space-size=1024 /srv/the-heist/apps/server/dist/main.js
+Restart=on-failure
+RestartSec=15
+KillSignal=SIGTERM
+TimeoutStopSec=60
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+StateDirectory=heist
+ReadWritePaths=/var/lib/heist
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+MemoryMax=2G
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,31 @@
+{
+  "templates": 42,
+  "workbenchKinds": [
+    "code",
+    "debug",
+    "cipher",
+    "deduction",
+    "logs",
+    "lights",
+    "statements",
+    "maze",
+    "tree",
+    "machine",
+    "portal",
+    "oracle",
+    "circuit",
+    "courier",
+    "order",
+    "constraints",
+    "ring"
+  ],
+  "centres": 37,
+  "screenshots": 348,
+  "findings": [
+    "Recent completed-card retention uses attempt insertion order: a newly solved early-listed card can disappear once more than eight recent clears exist, jumping selection to a different card. Correct/cleared feedback still confirms acceptance; affected captures show the clear message instead of a retained verified card.",
+    "The teleport maze has no key/door in this variant, but still says “key not acquired” on a valid completed route. The route is accepted; the wording is misleading for keyless boards.",
+    "An unassigned reserve Home (H090) opens under its correct title but falls back to “YOUR SAFEHOUSE H001” rather than explicitly explaining that H090 is unassigned. Captured as centre-home-h090-unassigned.jpg.",
+    "During normal five-second guess cooldowns the tool also says server verification is temporarily unavailable. The accurate countdown is shown below; the generic wording could be clearer."
+  ],
+  "scope": "42/42 templates completed through visible UI controls in an isolated unpaid rehearsal. 17/17 workbench types exercised. 348 actual JPEG captures; 37 centre cards. No stored answers, variant seeds, private game state, direct answer requests or forced-solved state were used. Desktop references are fresh, unsolved personal variants; before/played/complete frames are the actual original narrow-view playthrough.\n\nThis does not certify real-event acquisition, payouts, simultaneous raid crews, every procedural variant or all 90 repeated Home addresses."
+}

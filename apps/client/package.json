@@ -1,0 +1,20 @@
+{
+  "name": "@heist/client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:painter": "esbuild src/painter/index.ts --bundle --outfile=painter.bundle.js --format=esm",
+    "dev": "npm run build:painter && vite",
+    "build": "npm run build:painter && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@heist/shared": "*"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^5.5.0",
+    "vite": "^6.0.0"
+  }
+}

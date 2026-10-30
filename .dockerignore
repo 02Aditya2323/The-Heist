@@ -1,0 +1,24 @@
+# Explicit allowlist keeps credentials, SQLite files and benchmark fixtures out.
+**
+!package.json
+!package-lock.json
+!tsconfig.base.json
+!packages/
+!packages/shared/
+!packages/shared/**
+!apps/
+!apps/server/
+!apps/server/**
+!apps/client/
+!apps/client/**
+!apps/bots/
+!apps/bots/package.json
+!maps/
+!maps/art-world.json
+**/node_modules
+**/dist
+**/*.tsbuildinfo
+**/.env
+**/.env.*
+**/*.db
+**/*.db-*

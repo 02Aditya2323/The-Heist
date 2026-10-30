@@ -1,0 +1,106 @@
+[
+  {
+    "scene": "central",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 3215810,
+    "webpBytes": 2396774,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "tech",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 2546453,
+    "webpBytes": 2055296,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "harbor",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 3124193,
+    "webpBytes": 2459788,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "black",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 2894278,
+    "webpBytes": 2238006,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "under",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 3210164,
+    "webpBytes": 2514738,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "nexus",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 3274725,
+    "webpBytes": 2613868,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "c07",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 3162089,
+    "webpBytes": 2504906,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "c08",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 3054863,
+    "webpBytes": 2451290,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "c09",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 3119146,
+    "webpBytes": 2495752,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "c10",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 3212847,
+    "webpBytes": 2600408,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "c11",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 3513239,
+    "webpBytes": 2820504,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "c12",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 3217205,
+    "webpBytes": 2593308,
+    "identicalDecodedPixels": true
+  },
+  {
+    "scene": "c13",
+    "width": 1672,
+    "height": 941,
+    "pngBytes": 3119806,
+    "webpBytes": 2475262,
+    "identicalDecodedPixels": true
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "status": "measured",
+  "measuredAt": "2026-10-29T17:00:48.406Z",
+  "core": {
+    "players": 500,
+    "seconds": 900.0359944170001,
+    "messagesPerSecond": 32726.958902437913,
+    "ackP95Ms": 54.849709000001894,
+    "tickP95Ms": 8.514833,
+    "soaked": true
+  },
+  "aoi": {
+    "players": 100,
+    "reductionPercent": 96.80885047752422
+  },
+  "environment": {
+    "timestamp": "2026-10-29T16:24:43.784Z",
+    "loadModel": "serial-world-intents-v2",
+    "runnerSha256": "06c115f86b07795ea52fcef73bd4db2468a5c900d8f3325bd139716cf2f12991",
+    "cpu": "Apple M1",
+    "logicalCores": 8,
+    "physicalCores": 8,
+    "ramMiB": 8192,
+    "os": "darwin",
+    "osRelease": "25.0.0",
+    "node": "v22.19.0",
+    "fastify": "5.12.5",
+    "ws": "8.22.0",
+    "commit": "f970b77a21aee2a92afbcd1f0170c19af520eed0",
+    "dirty": true,
+    "artifactSha256": "916b76f493a7ca3b689b6e8b9881968373487eab4b5af2d77ad21b4857ea113c",
+    "topology": "Separate server process; bots and server on same host, loopback. CPU/memory are server process only.",
+    "tickRate": 20,
+    "stepTicks": 5,
+    "tickBudgetMs": 50,
+    "chunkSize": 16,
+    "scenario": "soak",
+    "aoi": "spatial",
+    "engine": "core",
+    "count": 500,
+    "seconds": 900,
+    "warmup": 30,
+    "seed": 42,
+    "logging": "warn",
+    "movementMs": "WELCOME cadence × seeded 1.05–1.35 jitter",
+    "interactionSeconds": 20,
+    "coreScope": "Production World, TickLoop, WS/auth/SQLite and interactions. Event/contract scheduler excluded."
+  },
+  "fullGame": {
+    "players": 40,
+    "status": "PASS"
+  },
+  "reportUrl": "/art/benchmark/report.html"
+}

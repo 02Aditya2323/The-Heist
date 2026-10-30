@@ -1,0 +1,513 @@
+/*
+ * Operator console: neon cyber-noir, CSS only.
+ *
+ * No UI framework is pulled in. The console sits above a live canvas game, so
+ * every rule here is cheap to paint and nothing animates continuously while the
+ * dialog is open.
+ *
+ * Colour roles are tokenised so the palette can be retuned in one place.
+ */
+/* Dock button. Placed inside .world-status by main.ts, so it flows with the
+ * latency readout and the City maps button instead of floating over them. */
+.operator-dock {
+  position: static;
+  padding: 9px 14px;
+  border: 1px solid rgba(53, 224, 232, 0.5);
+  border-radius: 9px;
+  background: rgba(7, 11, 20, 0.9);
+  color: #35e0e8;
+  font:
+    600 11.5px/1 "Segoe UI",
+    system-ui,
+    sans-serif;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 18px rgba(53, 224, 232, 0.18);
+}
+.operator-dock:hover {
+  background: rgba(53, 224, 232, 0.12);
+}
+.operator-dock[hidden] {
+  display: none !important;
+}
+
+.oc-dialog {
+  --oc-bg: #070b14;
+  --oc-panel: #0d1422;
+  --oc-panel-2: #121b2d;
+  --oc-line: #1e2b45;
+  --oc-text: #dbe6f5;
+  --oc-dim: #8699b5;
+  --oc-cyan: #35e0e8;
+  --oc-amber: #f5b945;
+  --oc-green: #44d98a;
+  --oc-red: #ff5f6d;
+
+  width: min(1180px, 96vw);
+  max-width: 96vw;
+  height: min(90vh, 900px);
+  padding: 0;
+  border: 1px solid var(--oc-line);
+  border-radius: 14px;
+  background: var(--oc-bg);
+  color: var(--oc-text);
+  font:
+    14px/1.5 "Segoe UI",
+    system-ui,
+    sans-serif;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(53, 224, 232, 0.12),
+    0 30px 80px rgba(0, 0, 0, 0.7);
+}
+.oc-dialog::backdrop {
+  background: rgba(2, 5, 12, 0.82);
+  backdrop-filter: blur(3px);
+}
+.oc-dialog > * {
+  /* The dialog is the scroll container for the body only. */
+  flex: none;
+}
+/*
+ * The column layout is scoped to [open] on purpose, and this is load-bearing.
+ *
+ * The UA stylesheet hides a closed dialog with `dialog:not([open]) { display:
+ * none }`. An unqualified `display: flex` here overrode that, so the console
+ * stayed painted after it was closed: an opaque 1180x900 panel pinned to the
+ * top-left, covering most of the game canvas for every player, staff or not,
+ * from the moment the script ran. Keep the `[open]` qualifier on any display
+ * rule that targets this element.
+ */
+.oc-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.oc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px 14px;
+  border-bottom: 1px solid var(--oc-line);
+  background:
+    radial-gradient(
+      120% 180% at 0% 0%,
+      rgba(53, 224, 232, 0.16),
+      transparent 60%
+    ),
+    var(--oc-panel);
+}
+.oc-eyebrow {
+  display: block;
+  color: var(--oc-cyan);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.oc-titles h2 {
+  margin: 2px 0 0;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+}
+.oc-close {
+  padding: 8px 14px;
+  border: 1px solid var(--oc-line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--oc-dim);
+  cursor: pointer;
+}
+.oc-close:hover {
+  color: var(--oc-text);
+  border-color: var(--oc-cyan);
+}
+
+/* ── Tabs ────────────────────────────────────────────────────────────────── */
+.oc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 10px 16px 0;
+  border-bottom: 1px solid var(--oc-line);
+  background: var(--oc-panel);
+}
+.oc-tab {
+  padding: 9px 15px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  background: transparent;
+  color: var(--oc-dim);
+  font-size: 13px;
+  cursor: pointer;
+}
+.oc-tab:hover {
+  color: var(--oc-text);
+}
+.oc-tab.is-active {
+  background: var(--oc-bg);
+  border-color: var(--oc-line);
+  color: var(--oc-cyan);
+  box-shadow: inset 0 2px 0 var(--oc-cyan);
+}
+
+/* ── Status line ─────────────────────────────────────────────────────────── */
+.oc-status {
+  margin: 0;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--oc-line);
+  background: var(--oc-panel-2);
+  color: var(--oc-dim);
+  font-size: 12.5px;
+  min-height: 19px;
+}
+.oc-status[data-error="true"] {
+  color: var(--oc-red);
+  background: rgba(255, 95, 109, 0.08);
+}
+
+/* ── Body ────────────────────────────────────────────────────────────────── */
+.oc-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 18px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.oc-panel {
+  padding: 16px 18px;
+  border: 1px solid var(--oc-line);
+  border-radius: 12px;
+  background: var(--oc-panel);
+}
+.oc-panel.is-danger {
+  border-color: rgba(255, 95, 109, 0.4);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 95, 109, 0.07),
+    var(--oc-panel)
+  );
+}
+.oc-panel h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--oc-cyan);
+}
+.oc-panel.is-danger h3 {
+  color: var(--oc-red);
+}
+.oc-hint {
+  margin: 0 0 12px;
+  color: var(--oc-dim);
+  font-size: 12.5px;
+  max-width: 78ch;
+}
+.oc-banner {
+  margin: 10px 0 0;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 12.5px;
+}
+.oc-banner.is-warn {
+  background: rgba(245, 185, 69, 0.12);
+  border: 1px solid rgba(245, 185, 69, 0.35);
+  color: var(--oc-amber);
+}
+
+/* ── Stat tiles ──────────────────────────────────────────────────────────── */
+.oc-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+.oc-stat {
+  padding: 12px 14px;
+  border: 1px solid var(--oc-line);
+  border-radius: 10px;
+  background: var(--oc-panel);
+}
+.oc-stat small {
+  display: block;
+  color: var(--oc-dim);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.oc-stat strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+}
+.oc-stat.is-good strong {
+  color: var(--oc-green);
+}
+.oc-stat.is-warn strong {
+  color: var(--oc-amber);
+}
+.oc-stat.is-bad strong {
+  color: var(--oc-red);
+}
+
+.oc-net {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--oc-dim);
+}
+.oc-net strong {
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+.oc-net strong.is-good {
+  color: var(--oc-green);
+}
+.oc-net strong.is-bad {
+  color: var(--oc-red);
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+.oc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+.oc-table th {
+  text-align: left;
+  padding: 6px 8px;
+  color: var(--oc-dim);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--oc-line);
+}
+.oc-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(30, 43, 69, 0.55);
+  font-variant-numeric: tabular-nums;
+}
+.oc-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.oc-body button,
+.oc-savebar button {
+  padding: 9px 15px;
+  border: 1px solid var(--oc-line);
+  border-radius: 8px;
+  background: var(--oc-panel-2);
+  color: var(--oc-text);
+  font-size: 13px;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+}
+.oc-body button:hover:not(:disabled) {
+  border-color: var(--oc-cyan);
+  color: var(--oc-cyan);
+}
+.oc-body button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.oc-primary {
+  border-color: rgba(53, 224, 232, 0.5) !important;
+  color: var(--oc-cyan) !important;
+}
+.oc-warn {
+  border-color: rgba(245, 185, 69, 0.5) !important;
+  color: var(--oc-amber) !important;
+}
+.oc-danger {
+  border-color: rgba(255, 95, 109, 0.5) !important;
+  color: var(--oc-red) !important;
+}
+.oc-mini {
+  padding: 4px 9px !important;
+  font-size: 11px !important;
+}
+.oc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.oc-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.oc-row .oc-input {
+  flex: 1 1 260px;
+}
+
+/* ── Inputs ──────────────────────────────────────────────────────────────── */
+.oc-input,
+.oc-number {
+  padding: 8px 11px;
+  border: 1px solid var(--oc-line);
+  border-radius: 8px;
+  background: #080e1a;
+  color: var(--oc-text);
+  font: inherit;
+}
+.oc-input:focus,
+.oc-number:focus {
+  outline: none;
+  border-color: var(--oc-cyan);
+  box-shadow: 0 0 0 3px rgba(53, 224, 232, 0.14);
+}
+.oc-number {
+  width: 120px;
+  font-variant-numeric: tabular-nums;
+}
+.oc-input {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ── Settings ────────────────────────────────────────────────────────────── */
+.oc-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.oc-field {
+  padding: 11px 0;
+  border-top: 1px solid rgba(30, 43, 69, 0.6);
+}
+.oc-field:first-of-type {
+  border-top: none;
+}
+.oc-field[data-dirty="true"] {
+  box-shadow: inset 3px 0 0 var(--oc-amber);
+  padding-left: 11px;
+}
+.oc-field-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.oc-field-label {
+  flex: 1 1 240px;
+  font-weight: 600;
+}
+.oc-unit {
+  color: var(--oc-dim);
+  font-size: 12px;
+  min-width: 108px;
+}
+.oc-field-help {
+  margin: 5px 0 0;
+  color: var(--oc-dim);
+  font-size: 12px;
+  max-width: 84ch;
+}
+.oc-field-changed {
+  margin: 4px 0 0;
+  color: var(--oc-amber);
+  font-size: 11.5px;
+}
+
+.oc-savebar {
+  position: sticky;
+  bottom: -28px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 -20px -28px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--oc-line);
+  background: rgba(13, 20, 34, 0.96);
+  backdrop-filter: blur(6px);
+}
+.oc-draftcount {
+  flex: 1 1 auto;
+  color: var(--oc-amber);
+  font-size: 12.5px;
+}
+
+/* ── Operators ───────────────────────────────────────────────────────────── */
+.oc-operators {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.oc-operator {
+  padding: 12px 14px;
+  border: 1px solid var(--oc-line);
+  border-radius: 10px;
+  background: var(--oc-panel-2);
+}
+.oc-operator-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.oc-operator-meta {
+  color: var(--oc-dim);
+  font-size: 12px;
+}
+.oc-operator-money {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 8px 0 10px;
+  color: var(--oc-cyan);
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+.oc-operator-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.oc-operator-actions .oc-input {
+  flex: 1 1 200px;
+  max-width: none;
+}
+
+/* ── Narrow screens: the organizer may be on a laptop or a tablet ───────── */
+@media (max-width: 720px) {
+  .oc-dialog {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+  .oc-body {
+    padding: 14px 14px 24px;
+  }
+  .oc-savebar {
+    margin: 0 -14px -24px;
+    padding: 12px 14px;
+  }
+  .oc-number {
+    width: 100px;
+  }
+}
+
+/* Roster table can be wider than the panel on a laptop, so it scrolls on its
+ * own rather than making the whole console scroll sideways. */
+.oc-scroll {
+  margin-top: 12px;
+  overflow-x: auto;
+}
+.oc-operator-identity {
+  margin: 6px 0 0;
+  color: var(--oc-dim);
+  font-size: 12px;
+}

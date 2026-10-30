@@ -1,0 +1,850 @@
+:root {
+  --cyan: #82e4da;
+  --gold: #e7bc78;
+  --ink: #081017;
+  --line: #30454d;
+  --hud-top: 132px;
+  --hud-bottom: 210px;
+}
+#game-canvas {
+  position: fixed;
+  top: var(--hud-top);
+  left: 0;
+  box-shadow:
+    0 -1px #30454d,
+    0 1px #30454d;
+}
+#game-toast {
+  position: fixed;
+  top: 114px;
+  left: 24px;
+  right: 24px;
+  height: 18px;
+  z-index: 22;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #b4e9d2;
+  background: #081017;
+  font-size: 10px;
+  line-height: 18px;
+}
+.job-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.job-grid > h3 {
+  grid-column: 1/-1;
+}
+.job-grid .job-card {
+  margin: 0;
+}
+.job-grid .job-card h4 {
+  font-size: 14px;
+}
+.job-grid .game-button {
+  font-size: 11px;
+  padding: 8px 10px;
+}
+#operator-status[data-exposed="true"] {
+  color: #ffae90;
+}
+.leaderboard-list li[data-self=true]{background:#203934;border-left:2px solid #86cab4;padding-left:8px}
+#map-inspector{top:142px}
+@media (max-width: 600px) {
+  .job-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.world-bar {
+  /* Follows the mast's measured height so a taller mast (a stacked clock on a
+     narrow screen) pushes the scene bar down instead of being overlapped. */
+  top: calc(var(--hud-mast-h, 58px) + 12px);
+  left: 24px;
+  right: 24px;
+  align-items: center;
+  height: 46px;
+}
+.world-heading {
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+.world-heading small {
+  font-size: 9px;
+  color: #819ba6;
+  letter-spacing: 0.2em;
+}
+.world-heading h1 {
+  font-size: 22px;
+  color: #f4eee2;
+}
+.world-status {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #87a1ac;
+  font-size: 11px;
+}
+.world-status button {
+  background: #182a30;
+  border: 1px solid #49625e;
+  color: var(--cyan);
+}
+.hud-mast {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 58px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  background: linear-gradient(90deg, #101f24, #080f16);
+  z-index: 19;
+}
+.hud-wordmark {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.19em;
+  color: #f5eddf;
+}
+.hud-wordmark > span {
+  display: block;
+  font:
+    9px Consolas,
+    monospace;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-top: 3px;
+}
+.hud-clock {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.hud-clock small {
+  font:
+    9px Consolas,
+    monospace;
+  color: var(--cyan);
+  letter-spacing: 0.16em;
+}
+.hud-clock strong {
+  font:
+    26px Consolas,
+    monospace;
+  color: #f2e6c9;
+}
+.hud-wallet {
+  position: fixed;
+  left: 24px;
+  bottom: 18px;
+  width: 270px;
+  z-index: 20;
+}
+.wallet-title {
+  display: flex;
+  justify-content: space-between;
+  font:
+    10px Consolas,
+    monospace;
+  color: #bed0d7;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.wallet-title span:last-child {
+  font-size: 9px;
+  color: var(--cyan);
+}
+.wallet-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+.wallet-total small {
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  color: #8fa4b1;
+}
+.wallet-total strong {
+  font:
+    29px Consolas,
+    monospace;
+  color: #f3ddb2;
+}
+.wallet-accounts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.wallet-accounts > div {
+  border-top: 1px solid #354850;
+  padding-top: 7px;
+}
+.wallet-accounts small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: #859dab;
+  margin-bottom: 5px;
+}
+.wallet-accounts b {
+  font:
+    16px Consolas,
+    monospace;
+}
+.wallet-accounts > div:first-child b {
+  color: #e6b080;
+}
+.wallet-accounts > div:last-child b {
+  color: var(--cyan);
+}
+.wallet-foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #78949f;
+  margin-top: 8px;
+}
+.hud-wallet progress {
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-top: 8px;
+  appearance: none;
+  border: 0;
+}
+.hud-wallet progress::-webkit-progress-bar {
+  background: #22373d;
+}
+.hud-wallet progress::-webkit-progress-value {
+  background: var(--gold);
+}
+.hud-directive {
+  position: fixed;
+  bottom: 22px;
+  left: 328px;
+  right: 290px;
+  z-index: 20;
+  max-width: 420px;
+  border-left: 1px solid #53645e;
+  padding-left: 20px;
+}
+.hud-directive small {
+  font:
+    9px Consolas,
+    monospace;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+}
+.hud-directive p {
+  font-size: 12px;
+  color: #bfced3;
+  line-height: 1.6;
+  margin: 7px 0 10px;
+}
+.hud-directive button {
+  border: 0;
+  background: none;
+  color: var(--cyan);
+  font-size: 11px;
+  padding: 0;
+  text-align: left;
+}
+.hud-directive kbd {
+  font:
+    10px Consolas,
+    monospace;
+  border: 1px solid #47625d;
+  border-radius: 2px;
+  padding: 1px 5px;
+  margin-left: 8px;
+}
+.hud-transmission {
+  position: fixed;
+  left: 24px;
+  right: 24px;
+  bottom: 183px;
+  height: 22px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  z-index: 20;
+}
+.hud-transmission > span {
+  font:
+    9px Consolas,
+    monospace;
+  color: var(--cyan);
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+.hud-transmission i {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px #82e4da80;
+  margin-left: 5px;
+}
+.hud-transmission p {
+  font-size: 11px;
+  color: #9fb6c0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.hud-transmission button {
+  background: none;
+  border: 0;
+  color: #6f8c99;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.world-bottom {
+  bottom: 18px;
+  left: auto;
+  right: 24px;
+  flex-direction: column;
+  align-items: end;
+  gap: 12px;
+}
+.world-help {
+  background: none;
+  padding: 0;
+  font-size: 9px;
+  max-width: 248px;
+  color: #647f8d;
+  line-height: 1.7;
+  text-align: right;
+}
+.world-controls {
+  padding: 0;
+  background: none;
+}
+.world-controls button {
+  padding: 5px 8px;
+  font-size: 10px;
+  background: #13252c;
+  border: 1px solid #2c454e;
+  color: #a8c6ce;
+}
+#zoom-readout {
+  font-size: 10px;
+  width: 32px;
+}
+#interact-button {
+  bottom: 103px;
+  left: 328px;
+  transform: none;
+  max-width: calc(100vw - 352px);
+  padding: 8px 14px;
+  background: #162d31;
+  color: #baf4e8;
+  border: 1px solid #5d9183;
+  border-radius: 3px;
+  font:
+    12px Consolas,
+    monospace;
+  box-shadow: 0 2px 14px #0003;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#terminal-dialog {
+  width: 850px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 40px);
+  padding: 24px 30px;
+  background: linear-gradient(145deg, #14232b, #0b151e);
+  border: 1px solid #577079;
+  border-radius: 8px;
+  color: #d8e6ea;
+  overflow-y: auto;
+  box-shadow: 0 30px 100px #000c;
+  user-select: text;
+}
+#terminal-dialog::backdrop {
+  background: #03090cb8;
+  backdrop-filter: blur(4px);
+}
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.terminal-header small {
+  font:
+    9px Consolas,
+    monospace;
+  color: #81b8ae;
+  letter-spacing: 0.16em;
+}
+#dialog-close {
+  padding: 7px 11px;
+  border: 1px solid #47606b;
+  background: #1a2e38;
+  color: #c4d8df;
+  font-size: 11px;
+  border-radius: 4px;
+}
+#terminal-title {
+  font-size: 27px;
+  color: #f3dfbb;
+  margin-bottom: 8px;
+}
+#terminal-copy {
+  font-size: 13px;
+  color: #97adb8;
+  line-height: 1.6;
+}
+#terminal-state {
+  font-size: 12px;
+  color: #a3e5cc;
+  background: #17302c;
+  border-left: 2px solid #6ccca9;
+  padding: 10px 12px;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+#terminal-state:empty {
+  display: none;
+}
+#terminal-state[data-error="true"] {
+  background: #36272a;
+  border-color: #e08f83;
+  color: #ffc0b1;
+}
+.game-section {
+  margin: 22px 0;
+}
+.game-section > h3 {
+  font:
+    10px Consolas,
+    monospace;
+  color: #c3aa82;
+  letter-spacing: 0.15em;
+  border-bottom: 1px solid #344b55;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+.game-section > p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #a3bac5;
+  margin-bottom: 10px;
+}
+.job-card,
+.activity-card,
+.challenge-card {
+  border: 1px solid #314750;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 9px 0;
+  background: #10202a;
+}
+.job-card small,
+.activity-card small,
+.challenge-card small {
+  font:
+    9px Consolas,
+    monospace;
+  color: #8ebab4;
+  letter-spacing: 0.08em;
+}
+.job-card h4,
+.activity-card h4,
+.challenge-card h4 {
+  font-size: 16px;
+  color: #e9e1cd;
+  margin: 7px 0;
+}
+.job-card p,
+.activity-card p {
+  font-size: 12px;
+  color: #9ab0bd;
+  line-height: 1.6;
+  margin-bottom: 9px;
+}
+.game-actions {
+  display: flex;
+  gap: 8px;
+}
+.game-button {
+  border: 1px solid #507567;
+  background: #203d39;
+  color: #c9f1dd;
+  padding: 9px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin: 5px 6px 0 0;
+}
+.game-button:disabled {
+  opacity: 0.42;
+  cursor: default;
+}
+.game-button:hover:enabled {
+  background: #2d5149;
+}
+.challenge-card pre {
+  white-space: pre-wrap;
+  font:
+    12px/1.9 Consolas,
+    monospace;
+  color: #cfdee4;
+  background: #08151f;
+  border: 1px solid #2f4752;
+  padding: 14px;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+.answer-form,
+.bank-form {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  margin: 10px 0;
+}
+.answer-form label,
+.bank-form label {
+  flex: 1;
+  font-size: 11px;
+  color: #a3bbc6;
+}
+.answer-form input,
+.bank-form input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  background: #09151d;
+  color: #e6f0f3;
+  border: 1px solid #4e6d79;
+  border-radius: 3px;
+  font:
+    14px Consolas,
+    monospace;
+}
+.answer-form button {
+  margin: 0;
+  height: 39px;
+}
+.checkout-confirm {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+.leaderboard-list {
+  list-style: none;
+}
+.leaderboard-list li {
+  display: grid;
+  grid-template-columns: 1fr 95px 70px;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid #2a3d46;
+  font-size: 12px;
+}
+.leaderboard-list b {
+  text-align: right;
+  color: #ead1a4;
+}
+.leaderboard-list small {
+  text-align: right;
+  color: #7e9cab;
+}
+@media (max-width: 900px) {
+  .hud-directive {
+    left: auto;
+    right: 24px;
+    width: 235px;
+  }
+  .world-help {
+    display: none;
+  }
+  .hud-directive p {
+    font-size: 11px;
+  }
+  #interact-button {
+    left: 24px;
+    bottom: 139px;
+    max-width: calc(100vw - 48px);
+  }
+  .hud-transmission {
+    /* The wallet reaches 179px from the bottom here; 173px put the ticker
+       6px inside it. */
+    bottom: 186px;
+  }
+  .hud-wallet {
+    bottom: 20px;
+  }
+  .world-bottom {
+    bottom: 20px;
+  }
+  .hud-directive {
+    bottom: 63px;
+  }
+  .hud-mast {
+    padding: 0 18px;
+  }
+  .hud-clock {
+    gap: 12px;
+  }
+  .hud-clock small {
+    font-size: 8px;
+  }
+  .world-bar {
+    left: 18px;
+    right: 18px;
+  }
+  .world-status {
+    gap: 10px;
+    font-size: 10px;
+  }
+  .world-heading h1 {
+    font-size: 19px;
+  }
+  .world-status button {
+    font-size: 10px;
+    padding: 7px;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --hud-bottom: 238px;
+    --hud-top: 124px;
+  }
+  .hud-wordmark {
+    font-size: 17px;
+  }
+  .hud-wordmark > span {
+    font-size: 7px;
+  }
+  .hud-mast {
+    /* The clock stacks below 600px and no longer fits a fixed 58px mast; it was
+       clipped 7px above the viewport, taking the timer and the HUD toggle with
+       it. The mast grows instead, and --hud-mast-h keeps the scene bar and the
+       canvas in step. */
+    height: auto;
+    min-height: 58px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  .hud-clock {
+    display: block;
+    text-align: right;
+  }
+  .hud-clock strong {
+    display: block;
+    font-size: 21px;
+    margin-top: 2px;
+  }
+  .hud-clock small {
+    font-size: 7px;
+  }
+  .world-bar {
+    top: calc(var(--hud-mast-h, 58px) + 12px);
+    height: 38px;
+  }
+  .world-heading h1 {
+    font-size: 17px;
+  }
+  .world-heading small {
+    font-size: 8px;
+  }
+  .world-status {
+    gap: 6px;
+  }
+  .world-status button {
+    font-size: 9px;
+  }
+  .hud-wallet {
+    /* Must never reach the touch D-pad on the right: it is the only way to
+       move on a phone. Reserves the pad's column plus a gap. */
+    max-width: min(280px, calc(100vw - 186px));
+    left: 18px;
+    width: 205px;
+    bottom: 15px;
+  }
+  .wallet-title {
+    font-size: 9px;
+  }
+  .wallet-title span:last-child {
+    font-size: 8px;
+  }
+  .wallet-total strong {
+    font-size: 24px;
+  }
+  .wallet-total small {
+    font-size: 8px;
+  }
+  .wallet-accounts b {
+    font-size: 13px;
+  }
+  .wallet-accounts small {
+    font-size: 7px;
+  }
+  .wallet-foot {
+    font-size: 9px;
+  }
+  .hud-directive {
+    left: auto;
+    right: 18px;
+    bottom: 70px;
+    width: 120px;
+    padding-left: 10px;
+  }
+  .hud-directive > small,
+  .hud-directive > p {
+    display: none;
+  }
+  .hud-directive button {
+    font-size: 10px;
+  }
+  .hud-transmission {
+    left: 18px;
+    right: 18px;
+    gap: 8px;
+  }
+  .hud-transmission p {
+    font-size: 10px;
+  }
+  .hud-transmission button {
+    font-size: 9px;
+  }
+  .world-bottom {
+    right: 18px;
+    bottom: 15px;
+  }
+  .world-controls {
+    max-width: 130px;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 5px;
+  }
+  .world-controls button {
+    font-size: 9px;
+    padding: 4px 6px;
+  }
+  #interact-button {
+    left: 18px;
+    max-width: calc(100vw - 36px);
+    font-size: 11px;
+    bottom: 136px;
+  }
+  .terminal-header small {
+    font-size: 8px;
+  }
+  #terminal-dialog {
+    padding: 19px;
+    max-height: calc(100vh - 24px);
+    max-width: calc(100vw - 20px);
+  }
+  #terminal-title {
+    font-size: 23px;
+  }
+  .answer-form {
+    flex-wrap: wrap;
+  }
+  .answer-form label {
+    min-width: 100%;
+  }
+  .leaderboard-list li {
+    grid-template-columns: 1fr 80px;
+    font-size: 11px;
+  }
+  .leaderboard-list small {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+#touch-movement {
+  display: none;
+}
+.world-heading {
+  min-width: 0;
+}
+.world-heading h1 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.world-status {
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .hud-transmission {
+    bottom: 210px;
+  }
+  #interact-button {
+    bottom: 168px;
+    max-width: calc(100vw - 175px);
+  }
+  .hud-wallet {
+    width: 195px;
+  }
+  .world-bottom {
+    display: none;
+  }
+  .hud-directive {
+    bottom: 160px;
+  }
+  #touch-movement {
+    display: grid;
+    grid-template: repeat(3, 44px) / repeat(3, 44px);
+    gap: 4px;
+    position: fixed;
+    bottom: 14px;
+    right: 18px;
+    z-index: 20;
+    touch-action: none;
+    user-select: none;
+  }
+  #touch-movement button {
+    background: #142a33;
+    border: 1px solid #3f626d;
+    color: #b4ddd9;
+    border-radius: 6px;
+    font: 20px system-ui;
+    touch-action: none;
+  }
+  #touch-movement button:active {
+    background: #366158;
+  }
+  #touch-up {
+    grid-area: 1/2;
+  }
+  #touch-left {
+    grid-area: 2/1;
+  }
+  #touch-right {
+    grid-area: 2/3;
+  }
+  #touch-down {
+    grid-area: 3/2;
+  }
+  #touch-movement span {
+    grid-area: 2/2;
+    display: grid;
+    place-items: center;
+    color: #456966;
+    font-size: 7px;
+  }
+}

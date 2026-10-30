@@ -1,0 +1,56 @@
+{
+  "note": "Reviewed source-image pixel footprints. These are forbidden standing-foot surfaces, not roof occlusion masks. Unknown surfaces remain blocked outside approved corridors. CV color classes are diagnostic, not semantic ground truth.",
+  "scenes": {
+    "central": [
+      {"name":"Bank","kind":"building","points":[[628,102],[1025,102],[1060,323],[950,370],[726,370],[610,323]]},
+      {"name":"Raid monument","kind":"prop","points":[[800,474],[865,474],[875,522],[850,542],[806,535],[785,514]]},
+      {"name":"Race terminal","kind":"building","points":[[526,349],[602,349],[613,493],[598,528],[540,528],[521,488]]},
+      {"name":"Checkout","kind":"building","points":[[1075,350],[1140,350],[1154,480],[1145,520],[1080,520],[1065,480]]},
+      {"name":"Leaderboard","kind":"building","points":[[748,674],[923,674],[950,742],[936,780],[770,780],[730,740]]}
+    ],
+    "tech": [
+      {"name":"Job board","kind":"building","points":[[775,230],[1065,230],[1100,350],[1063,452],[801,452],[760,351]]},
+      {"name":"Western server","kind":"building","points":[[615,0],[792,0],[792,215],[675,230],[610,193]]},
+      {"name":"Eastern server","kind":"building","points":[[1170,0],[1455,0],[1455,240],[1200,240]]},
+      {"name":"CP lab","kind":"building","points":[[0,548],[365,548],[390,666],[365,810],[0,810]]},
+      {"name":"Debug lab","kind":"building","points":[[1170,555],[1510,555],[1530,780],[1190,780]]}
+    ],
+    "harbor": [
+      {"name":"Job board","kind":"building","points":[[408,250],[610,250],[630,428],[595,475],[418,475],[392,425]]},
+      {"name":"Data centre","kind":"building","points":[[820,205],[1110,205],[1155,365],[1120,482],[854,498],[805,355]]},
+      {"name":"North basin","kind":"water","points":[[960,0],[1325,0],[1325,125],[960,125]]},
+      {"name":"Eastern basin","kind":"water","points":[[1260,210],[1410,210],[1410,335],[1330,473],[1280,473]]},
+      {"name":"Southern basin","kind":"water","points":[[640,690],[965,740],[1090,857],[1080,927],[920,927],[835,810],[670,775]]},
+      {"name":"SQL terminal","kind":"building","points":[[1240,593],[1390,593],[1400,703],[1360,750],[1240,750],[1215,695]]},
+      {"name":"OSINT terminal","kind":"building","points":[[149,534],[270,534],[285,630],[260,667],[168,667],[141,620]]},
+      {"name":"Network tower","kind":"building","points":[[1410,355],[1585,355],[1600,513],[1560,578],[1410,578],[1380,510]]}
+    ],
+    "black": [
+      {"name":"Job board","kind":"building","points":[[427,223],[710,223],[731,392],[698,505],[454,505],[413,402]]},
+      {"name":"Security hub","kind":"building","points":[[862,213],[1118,213],[1160,351],[1135,455],[880,480],[840,358]]},
+      {"name":"CTF arena","kind":"building","points":[[1295,370],[1520,370],[1570,465],[1550,569],[1320,600],[1270,492]]},
+      {"name":"Challenge terminal","kind":"building","points":[[449,602],[680,602],[702,733],[678,774],[466,774],[430,730]]},
+      {"name":"Sandbox","kind":"building","points":[[985,598],[1196,598],[1240,738],[1210,773],[995,773],[970,710]]}
+    ],
+    "under": [
+      {"name":"Northern home","kind":"building","points":[[850,159],[967,159],[985,282],[950,310],[860,310],[843,272]]},
+      {"name":"Central home","kind":"building","points":[[730,346],[768,346],[780,456],[730,456],[710,410]]},
+      {"name":"Eastern home","kind":"building","points":[[950,430],[1110,430],[1120,538],[969,538]]},
+      {"name":"Southern home","kind":"building","points":[[902,704],[1020,704],[1040,832],[920,832]]}
+    ],
+    "nexus": [
+      {"name":"NEXUS tower","kind":"building","points":[[718,0],[1020,0],[1060,268],[1000,433],[927,493],[777,486],[682,407]]},
+      {"name":"Golden Hour terminal","kind":"building","points":[[430,425],[596,425],[623,542],[593,600],[460,600],[416,538]]},
+      {"name":"Event terminal","kind":"building","points":[[1145,428],[1290,428],[1317,554],[1290,602],[1156,602],[1128,535]]},
+      {"name":"Info terminal","kind":"building","points":[[756,729],[929,729],[950,791],[928,827],[772,827],[742,785]]},
+      {"name":"Social hub","kind":"building","points":[[1450,767],[1610,767],[1634,881],[1456,903],[1416,857]]}
+    ],
+    "c07": [{"name":"North canal","kind":"water","points":[[850,0],[1110,0],[1110,146],[850,146]]},{"name":"South canal","kind":"water","points":[[800,630],[950,630],[950,928],[800,928]]}],
+    "c08": [{"name":"West water","kind":"water","points":[[690,510],[760,510],[760,928],[690,928]]},{"name":"East water","kind":"water","points":[[930,563],[1140,563],[1140,928],[930,928]]}],
+    "c09": [{"name":"West pond","kind":"water","points":[[344,474],[625,474],[625,544],[344,544]]},{"name":"Eastern structure","kind":"building","points":[[1280,470],[1630,470],[1630,763],[1280,763]]}],
+    "c10": [{"name":"West canal","kind":"water","points":[[630,380],[752,380],[752,900],[630,900]]},{"name":"East canal","kind":"water","points":[[933,390],[1090,390],[1090,900],[933,900]]}],
+    "c11": [{"name":"Entrance fountain","kind":"prop","points":[[755,134],[912,134],[940,216],[900,252],[770,252],[729,210]]},{"name":"West cascade","kind":"water","points":[[295,625],[445,625],[445,700],[295,700]]},{"name":"East cascade","kind":"water","points":[[1220,630],[1320,630],[1320,700],[1220,700]]}],
+    "c12": [{"name":"North canal","kind":"water","points":[[770,0],[825,0],[825,321],[770,321]]},{"name":"South canal","kind":"water","points":[[850,558],[945,558],[945,928],[850,928]]}],
+    "c13": [{"name":"West north pond","kind":"water","points":[[405,290],[585,290],[585,380],[405,380]]},{"name":"East north pond","kind":"water","points":[[945,287],[1080,287],[1080,395],[945,395]]},{"name":"East south pond","kind":"water","points":[[1000,615],[1200,615],[1200,710],[1000,710]]}]
+  }
+}

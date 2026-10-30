@@ -1,0 +1,472 @@
+.contract-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 12px 0;
+}
+.contract-tabs .bench-button[aria-pressed="true"] {
+  background: #284650;
+  border-color: #87c9d3;
+  color: #dff5fa;
+}
+.challenge-card[data-black-ledger="true"] {
+  background: linear-gradient(115deg, #141620, #27222f);
+  border-color: #695679;
+}
+.contract-client {
+  font: 11px monospace;
+  color: #88a9ad;
+}
+.contract-clock {
+  display: block;
+  margin-bottom: 8px;
+  color: #b8ccd0;
+  font: 11px monospace;
+}
+.contract-objective {
+  font-size: 13px;
+  color: #d4e4e8;
+}
+.bank-fee-ticker {
+  margin: 5px 0;
+}
+.challenge-workbench {
+  --bench: #7dcced;
+  border-top: 1px solid #35515b;
+  padding-top: 16px;
+  margin-top: 14px;
+}
+.challenge-workbench[data-kind="debug"] {
+  --bench: #f19b97;
+}
+.challenge-workbench[data-kind="cipher"],
+.challenge-workbench[data-kind="logs"],
+.challenge-workbench[data-kind="machine"],
+.challenge-workbench[data-kind="portal"],
+.challenge-workbench[data-kind="deduction"] {
+  --bench: #95dab1;
+}
+.challenge-workbench[data-kind="maze"],
+.challenge-workbench[data-kind="tree"],
+.challenge-workbench[data-kind="lights"],
+.challenge-workbench[data-kind="circuit"],
+.challenge-workbench[data-kind="constraints"],
+.challenge-workbench[data-kind="order"],
+.challenge-workbench[data-kind="ring"] {
+  --bench: #c0a4ef;
+}
+.bench-kicker {
+  color: var(--bench);
+  font: 11px monospace;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+.bench-main {
+  display: grid;
+  gap: 12px;
+}
+.bench-button {
+  padding: 9px 12px;
+  border: 1px solid #42616b;
+  border-radius: 4px;
+  background: #152b34;
+  color: #d7e8ed;
+  cursor: pointer;
+  font: 12px/1.5 monospace;
+}
+.bench-button:hover,
+.bench-button[aria-pressed="true"] {
+  border-color: var(--bench);
+  background: #28434c;
+  color: var(--bench);
+}
+.challenge-workbench label {
+  display: grid;
+  gap: 5px;
+  font: 12px/1.5 sans-serif;
+  color: #a4bdc6;
+}
+.challenge-workbench input,
+.challenge-workbench select,
+.challenge-workbench textarea {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #42606b;
+  background: #08181f;
+  color: #d6e8ed;
+  border-radius: 3px;
+  font: 13px monospace;
+}
+.challenge-workbench textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.challenge-workbench input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+.bench-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: end;
+}
+.bench-controls label {
+  max-width: 130px;
+}
+.code-panel {
+  min-width: 0;
+}
+.code-lines {
+  overflow: auto;
+  max-height: 400px;
+  background: #07131b;
+  border: 1px solid #2d4856;
+  padding: 8px 0;
+}
+.code-line {
+  display: flex;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  white-space: pre;
+  text-align: left;
+  padding: 4px 12px;
+  line-height: 1.6;
+  min-width: max-content;
+}
+.code-line code {
+  color: #d0e4ee;
+}
+.line-number {
+  color: #617b8b;
+  min-width: 30px;
+  margin-right: 16px;
+  user-select: none;
+}
+.code-line[aria-pressed="true"] {
+  background: #283e49;
+  border-left: 3px solid var(--bench);
+}
+.trace-tool,
+.contract-tools,
+.challenge-workbench details {
+  border: 1px solid #2d4955;
+  border-radius: 4px;
+  padding: 12px;
+}
+.challenge-workbench summary {
+  cursor: pointer;
+  color: var(--bench);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.trace-tool table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.trace-tool td,
+.trace-tool th {
+  padding: 3px;
+  font: 11px monospace;
+  text-align: left;
+}
+.trace-tool input {
+  width: 100%;
+  padding: 5px;
+  min-width: 40px;
+}
+.trace-tool {
+  overflow: auto;
+}
+.fix-options {
+  display: grid;
+  gap: 10px;
+}
+.simulation-output,
+.bench-feedback {
+  padding: 12px;
+  background: #112922;
+  color: #b5e7cb;
+  white-space: pre-wrap;
+  font: 12px/1.6 monospace;
+  overflow-wrap: anywhere;
+}
+.cipher-preview {
+  background: #071820;
+  border: 1px solid #426357;
+  padding: 16px;
+  color: var(--bench);
+  font: 16px/1.6 monospace;
+  word-break: break-all;
+}
+.substitution-board {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  gap: 5px;
+}
+.substitution-board input {
+  text-align: center;
+  padding: 6px;
+}
+.log-viewer {
+  max-height: 300px;
+  overflow: auto;
+  border: 1px solid #314954;
+}
+.log-row {
+  display: block;
+  text-align: left;
+  width: 100%;
+  background: #0c1d27;
+  color: #afc4cf;
+  border: 0;
+  border-bottom: 1px solid #233b48;
+  padding: 8px 10px;
+  font: 11px/1.5 monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.log-row[aria-pressed="true"] {
+  color: #b3e6c4;
+  background: #1d3a31;
+}
+.pinned-evidence pre {
+  white-space: pre-wrap;
+  font-size: 11px;
+}
+.candidate-board {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.candidate-board button[aria-pressed="true"] {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.clue-list {
+  display: grid;
+  gap: 9px;
+}
+.clue-list label {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.digit-slots {
+  display: flex;
+  gap: 10px;
+}
+.digit-slots input {
+  width: 55px;
+  text-align: center;
+}
+.machine-chain {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.machine-chain span {
+  padding: 14px;
+  border: 1px solid #47775e;
+  border-radius: 4px;
+  font: 12px monospace;
+}
+.mock-portal {
+  background: #071b23;
+  border: 1px solid #467768;
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+}
+.staff-notice {
+  border-left: 2px solid #88c3a2;
+  padding-left: 12px;
+  margin: 0;
+}
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(28px, 1fr));
+  gap: 4px;
+  max-width: 400px;
+  padding: 10px;
+  background: #08171e;
+  border: 1px solid #6a5788;
+}
+.puzzle-tile {
+  display: flex;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #324454;
+  font: 18px monospace;
+  color: #c3aedf;
+  background: #1a2632;
+}
+.puzzle-tile[data-tile="#"] {
+  background: #050c12;
+  border-color: #15242f;
+}
+.puzzle-tile[data-tile="K"] {
+  color: #ffc762;
+}
+.puzzle-tile[data-tile="E"] {
+  color: #98e5b7;
+}
+.puzzle-tile[data-tile="D"] {
+  color: #ee9c98;
+}
+.puzzle-tile[data-token="true"] {
+  background: #624782;
+  color: #fff;
+}
+.maze-readout {
+  font: 12px monospace;
+  color: #c3acdf;
+}
+.lights-board {
+  max-width: 270px;
+}
+.lights-board button {
+  aspect-ratio: 1;
+  font-size: 30px;
+}
+.lights-board button[aria-pressed="true"] {
+  background: #bb9443;
+  color: #fff3b6;
+}
+.node-diagram {
+  position: relative;
+  aspect-ratio: 600/320;
+  min-height: 0;
+  border: 1px solid #35505b;
+  background: #071820;
+}
+.node-diagram svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.node-diagram svg text {
+  fill: #c4b0eb;
+  font-size: 20px;
+}
+.node-diagram button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  padding: 5px 8px;
+}
+.order-board {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.order-board li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #43526e;
+  background: #14212e;
+  cursor: grab;
+}
+.order-board strong {
+  margin-right: auto;
+  color: #ceb8f2;
+}
+.order-board button {
+  font-size: 10px;
+}
+.constraint-board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+.circuit-lamp {
+  padding: 16px;
+  background: #241f2d;
+  font: 13px monospace;
+  color: #cbb4e9;
+}
+.circuit-lamp[data-on="true"] {
+  background: #274231;
+  color: #b6f3ca;
+}
+.contract-tools {
+  display: grid;
+  gap: 12px;
+}
+.contract-tools:not([open]) > *:not(summary) {
+  display: none;
+}
+.challenge-stamp {
+  float: right;
+  color: #a7b8c8;
+  font: 12px monospace;
+}
+.home-exposure {
+  color: #f2a49e;
+  font: 10px monospace;
+}
+.bank-fee-ticker {
+  color: #b6d4c8;
+  font: 10px monospace;
+}
+/*
+ * Sits clear of the top chrome rather than on a fixed 66px, which put it on top
+ * of the scene bar and the connection status at every width. It hangs off the
+ * measured --hud-top so it stays clear whatever the mast and scene bar do, and
+ * carries a backing because it now floats over the artwork.
+ */
+.activity-banner {
+  position: fixed;
+  right: 24px;
+  top: calc(var(--hud-top, 116px) + 10px);
+  color: #edcf91;
+  font: 11px/1.5 monospace;
+  max-width: 350px;
+  pointer-events: none;
+  background: rgba(8, 15, 26, 0.78);
+  border: 1px solid rgba(53, 224, 232, 0.22);
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+.activity-banner:empty {
+  display: none;
+}
+.nexus-alert {
+  color: #ffdc8c !important;
+}
+@media (max-width: 600px) {
+  .substitution-board {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .constraint-board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .node-diagram button {
+    font-size: 9px;
+    padding: 3px 4px;
+  }
+  .order-board button {
+    padding: 5px;
+  }
+  .activity-banner {
+    right: 18px;
+    max-width: 210px;
+    font-size: 9px;
+  }
+  .trace-tool table {
+    min-width: 350px;
+  }
+}

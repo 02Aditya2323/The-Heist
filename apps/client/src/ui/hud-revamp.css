@@ -1,0 +1,526 @@
+/*
+ * HUD revamp: collapse behaviour and a neon cyber-noir pass.
+ *
+ * Loaded after event.css and layered on top of it rather than replacing it.
+ * event.css carries the HUD's layout plus four responsive breakpoints that are
+ * already tuned for phone, tablet and projector widths; rewriting it wholesale
+ * the night before an event would risk all of that for a visual change. This
+ * file therefore adjusts surfaces, colour and depth, and adds the collapse
+ * state, while leaving every position and breakpoint in place.
+ *
+ * Nothing here animates continuously. The HUD sits above a live canvas, so the
+ * only transitions are on state change and the only blur is on static panels.
+ */
+
+:root {
+  --hud-ink: #e4edfa;
+  --hud-dim: #8fa6c4;
+  --hud-cyan: #35e0e8;
+  --hud-amber: #f5b945;
+  --hud-green: #44d98a;
+  --hud-red: #ff5f6d;
+  --hud-edge: rgba(53, 224, 232, 0.22);
+  --hud-glass: rgba(8, 14, 26, 0.82);
+  --hud-glass-2: rgba(13, 21, 37, 0.9);
+}
+
+/* ── Shared panel treatment ──────────────────────────────────────────────── */
+.hud-wallet,
+.hud-directive,
+.hud-transmission {
+  border: 1px solid var(--hud-edge);
+  border-radius: 12px;
+  background: var(--hud-glass);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.5),
+    0 18px 40px rgba(0, 0, 0, 0.55);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* ── Mast ────────────────────────────────────────────────────────────────── */
+.hud-mast {
+  background:
+    radial-gradient(
+      100% 320% at 0% 0%,
+      rgba(53, 224, 232, 0.14),
+      transparent 55%
+    ),
+    linear-gradient(90deg, #0b1522, #060a12);
+  border-bottom: 1px solid var(--hud-edge);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+.hud-wordmark {
+  color: #f3f7ff;
+  text-shadow: 0 0 18px rgba(53, 224, 232, 0.28);
+}
+.hud-wordmark > span {
+  color: var(--hud-amber);
+}
+.hud-clock small {
+  color: var(--hud-cyan);
+}
+.hud-clock strong {
+  color: #f4f8ff;
+  /* Tabular figures stop the clock jittering as the digits change. */
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 22px rgba(53, 224, 232, 0.35);
+}
+
+/* ── Collapse control ────────────────────────────────────────────────────── */
+.hud-collapse {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 6px;
+  padding: 7px 12px;
+  border: 1px solid var(--hud-edge);
+  border-radius: 9px;
+  background: rgba(10, 18, 32, 0.75);
+  color: var(--hud-dim);
+  font: 600 10.5px/1 "Segoe UI", system-ui, sans-serif;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+.hud-collapse:hover {
+  color: var(--hud-cyan);
+  border-color: var(--hud-cyan);
+}
+.hud-collapse kbd {
+  padding: 2px 5px;
+  border: 1px solid rgba(143, 166, 196, 0.35);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  font: 9px Consolas, monospace;
+  color: var(--hud-dim);
+}
+/* A chevron drawn in CSS, so the control needs no icon asset. */
+.hud-collapse-icon {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-135deg);
+  transition: transform 0.18s ease;
+}
+
+/*
+ * Collapsed state.
+ *
+ * The mast stays: an operator must always be able to see the phase, the clock
+ * and how to get the HUD back. Everything else is hidden with `visibility`
+ * rather than `display:none` so the panels keep their layout box and nothing
+ * reflows when they return.
+ *
+ * Touch movement controls are deliberately exempt. On a phone they are the only
+ * way to move, so collapsing the HUD must never strand the player.
+ */
+body[data-hud-collapsed="true"] .hud-wallet,
+body[data-hud-collapsed="true"] .hud-directive,
+body[data-hud-collapsed="true"] .hud-transmission,
+body[data-hud-collapsed="true"] .activity-banner {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+body[data-hud-collapsed="true"] .hud-collapse-icon {
+  transform: rotate(45deg);
+}
+
+/* A compact wealth readout replaces the wallet panel while collapsed, so the
+ * number an operator checks most often never disappears entirely. */
+.hud-mini {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-left: 14px;
+  padding: 6px 12px;
+  border: 1px solid var(--hud-edge);
+  border-radius: 9px;
+  background: rgba(10, 18, 32, 0.75);
+  font: 600 12px/1 Consolas, monospace;
+  color: var(--hud-green);
+  font-variant-numeric: tabular-nums;
+}
+.hud-mini small {
+  color: var(--hud-dim);
+  font: 9px Consolas, monospace;
+  letter-spacing: 0.16em;
+}
+body[data-hud-collapsed="true"] .hud-mini {
+  display: inline-flex;
+}
+
+/* ── Wallet ──────────────────────────────────────────────────────────────── */
+.wallet-title {
+  color: var(--hud-dim);
+}
+.wallet-total small {
+  color: var(--hud-dim);
+  letter-spacing: 0.16em;
+}
+.wallet-total strong {
+  color: #f4f8ff;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 20px rgba(68, 217, 138, 0.3);
+}
+.wallet-accounts b {
+  font-variant-numeric: tabular-nums;
+}
+/* At-risk money reads amber; secured money reads green. The colour carries the
+ * same meaning everywhere in the HUD. */
+.wallet-accounts div:first-child b {
+  color: var(--hud-amber);
+}
+.wallet-accounts div:last-child b {
+  color: var(--hud-green);
+}
+.home-exposure {
+  color: var(--hud-amber) !important;
+}
+.bank-fee-ticker {
+  color: var(--hud-amber);
+}
+.hud-wallet progress {
+  border-radius: 999px;
+  overflow: hidden;
+}
+.hud-wallet progress::-webkit-progress-bar {
+  background: rgba(143, 166, 196, 0.16);
+}
+.hud-wallet progress::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--hud-green), var(--hud-amber));
+}
+.hud-wallet progress::-moz-progress-bar {
+  background: linear-gradient(90deg, var(--hud-green), var(--hud-amber));
+}
+
+/* ── Directive and transmission ──────────────────────────────────────────── */
+.hud-directive small,
+.hud-transmission span {
+  color: var(--hud-cyan);
+  letter-spacing: 0.16em;
+}
+.hud-directive p,
+.hud-transmission p {
+  color: var(--hud-ink);
+}
+.hud-directive button,
+.hud-transmission button {
+  border: 1px solid var(--hud-edge);
+  border-radius: 8px;
+  background: rgba(53, 224, 232, 0.08);
+  color: var(--hud-cyan);
+  cursor: pointer;
+}
+.hud-directive button:hover,
+.hud-transmission button:hover {
+  background: rgba(53, 224, 232, 0.16);
+}
+.hud-directive kbd {
+  color: var(--hud-dim);
+}
+
+/* The uplink dot is the one live element, and it is a slow pulse on a tiny
+ * area rather than anything that forces layout. */
+.hud-transmission span i {
+  box-shadow: 0 0 10px var(--hud-cyan);
+  animation: hud-pulse 2.4s ease-in-out infinite;
+}
+@keyframes hud-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hud-transmission span i {
+    animation: none;
+  }
+  .hud-wallet,
+  .hud-directive,
+  .hud-transmission,
+  .hud-collapse-icon,
+  .activity-banner {
+    transition: none;
+  }
+}
+
+/* ── Activity banner ─────────────────────────────────────────────────────── */
+.activity-banner:not(:empty) {
+  border: 1px solid rgba(245, 185, 69, 0.4);
+  border-radius: 10px;
+  background: rgba(245, 185, 69, 0.1);
+  color: #ffe6b8;
+  backdrop-filter: blur(6px);
+}
+
+/* ── World bars ──────────────────────────────────────────────────────────── */
+.world-heading h1 {
+  color: #f3f7ff;
+  text-shadow: 0 0 24px rgba(53, 224, 232, 0.2);
+}
+.world-heading small,
+.world-status {
+  color: var(--hud-dim);
+}
+.world-status button,
+.world-controls button,
+.world-bottom button {
+  border: 1px solid var(--hud-edge);
+  border-radius: 8px;
+  background: rgba(10, 18, 32, 0.78);
+  color: var(--hud-cyan);
+  cursor: pointer;
+}
+.world-status button:hover,
+.world-controls button:hover,
+.world-bottom button:hover {
+  background: rgba(53, 224, 232, 0.14);
+}
+/*
+ * The key legend sits directly on the artwork, and once the HUD is collapsed it
+ * has nothing dark behind it at all. Dim grey on a lit plaza is unreadable, so
+ * it carries its own backing rather than depending on what happens to be below.
+ */
+.world-help {
+  color: #a9c0cd;
+  background: rgba(8, 15, 26, 0.74);
+  border: 1px solid var(--hud-edge);
+  border-radius: 8px;
+  padding: 6px 10px;
+  backdrop-filter: blur(6px);
+}
+
+/* ── Touch controls ──────────────────────────────────────────────────────── */
+#touch-movement button {
+  border: 1px solid var(--hud-edge);
+  background: rgba(10, 18, 32, 0.82);
+  color: var(--hud-cyan);
+  backdrop-filter: blur(6px);
+}
+#touch-movement button:active {
+  background: rgba(53, 224, 232, 0.24);
+}
+
+/* ── Interact prompt ─────────────────────────────────────────────────────── */
+#interact-button {
+  border: 1px solid var(--hud-cyan);
+  border-radius: 10px;
+  background: rgba(8, 14, 26, 0.9);
+  color: var(--hud-cyan);
+  box-shadow: 0 0 26px rgba(53, 224, 232, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+/* On a narrow screen the label is dropped and only the chevron remains, so the
+ * mast does not wrap. */
+@media (max-width: 720px) {
+  .hud-collapse-text {
+    display: none;
+  }
+  .hud-collapse kbd {
+    display: none;
+  }
+  .hud-mini {
+    margin-left: 8px;
+    padding: 5px 9px;
+  }
+  .hud-mini small {
+    display: none;
+  }
+}
+
+/* ── Optional organizer fields on the sign-in panel ───────────────────────
+ * Collapsed by default so the login path stays a two-field form. The fields
+ * are for the organizer's roster and are never required, which the summary and
+ * the note both state plainly, so nobody stalls wondering if they must fill
+ * them in.
+ */
+.auth-profile {
+  margin: 12px 0 4px;
+  border: 1px solid rgba(53, 224, 232, 0.22);
+  border-radius: 10px;
+  background: rgba(8, 14, 26, 0.55);
+}
+.auth-profile > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 13px;
+  color: #9fb6d4;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  list-style: none;
+}
+.auth-profile > summary::-webkit-details-marker {
+  display: none;
+}
+.auth-profile > summary:hover {
+  color: var(--hud-cyan, #35e0e8);
+}
+.auth-profile > summary span {
+  padding: 2px 8px;
+  border: 1px solid rgba(143, 166, 196, 0.3);
+  border-radius: 999px;
+  color: #8fa6c4;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.auth-profile[open] > summary {
+  border-bottom: 1px solid rgba(53, 224, 232, 0.16);
+}
+.auth-profile-note {
+  margin: 10px 13px 2px;
+  color: #8fa6c4;
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+.auth-profile .auth-field {
+  margin: 8px 13px 10px;
+}
+
+/* ── Operator briefing ───────────────────────────────────────────────────── */
+/*
+ * No unqualified `display` rule on this dialog. The user agent hides a closed
+ * dialog with the lowest-precedence rule there is, and an author `display`
+ * declaration silently defeats it, which is how the operator console once
+ * painted itself over the whole game. The layout rule is scoped to [open].
+ */
+#help-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  /* The user agent centres a modal dialog with `margin: auto`, which the
+     `display` declaration above displaces. Restated so the briefing sits in the
+     middle of the viewport instead of pinned to the top-left corner. */
+  margin: auto;
+}
+#help-dialog {
+  width: 760px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 48px);
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--hud-edge);
+  border-radius: 14px;
+  background: #080f1a;
+  color: #d8e6f2;
+  font: 14px/1.6 "Segoe UI", system-ui, sans-serif;
+}
+#help-dialog::backdrop {
+  background: #03090cc4;
+  backdrop-filter: blur(4px);
+}
+.help-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--hud-edge);
+  background: linear-gradient(90deg, #0d1b24, #080f16);
+}
+.help-head small {
+  font: 9px/1 Consolas, monospace;
+  letter-spacing: 0.18em;
+  color: var(--hud-cyan);
+}
+.help-head h2 {
+  margin: 6px 0 0;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+}
+.help-head button {
+  flex: none;
+  padding: 8px 12px;
+  border: 1px solid var(--hud-edge);
+  border-radius: 8px;
+  background: rgba(10, 18, 32, 0.78);
+  color: var(--hud-cyan);
+  cursor: pointer;
+}
+.help-head button:hover {
+  background: rgba(53, 224, 232, 0.14);
+}
+.help-body {
+  overflow: auto;
+  padding: 4px 22px 20px;
+}
+.help-body h3 {
+  margin: 18px 0 6px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hud-cyan);
+}
+.help-body p,
+.help-body ol {
+  margin: 0 0 8px;
+  color: #b9cbd9;
+}
+.help-body ol {
+  padding-left: 20px;
+}
+.help-body strong {
+  color: #e9f3fb;
+}
+.help-keys {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 6px 18px;
+  margin: 0;
+}
+.help-keys > div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.help-keys dt {
+  flex: none;
+  min-width: 132px;
+}
+.help-keys dd {
+  margin: 0;
+  color: #b9cbd9;
+}
+#help-dialog kbd {
+  display: inline-block;
+  min-width: 18px;
+  padding: 1px 5px;
+  border: 1px solid var(--hud-edge);
+  border-radius: 4px;
+  background: rgba(10, 18, 32, 0.9);
+  font: 11px/1.5 Consolas, monospace;
+  text-align: center;
+  color: var(--hud-cyan);
+}
+#help-open {
+  margin-right: 6px;
+  padding: 2px 7px;
+  border: 1px solid var(--hud-edge);
+  border-radius: 6px;
+  background: rgba(10, 18, 32, 0.78);
+  color: var(--hud-cyan);
+  font-size: 9px;
+  cursor: pointer;
+}
+#help-open:hover {
+  background: rgba(53, 224, 232, 0.14);
+}
+@media (max-width: 600px) {
+  .help-keys {
+    grid-template-columns: 1fr;
+  }
+}

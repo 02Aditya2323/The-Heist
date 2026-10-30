@@ -1,0 +1,125 @@
+name: Deploy to event VM
+
+# Historical Azure deployment, retained for reference/manual operation only.
+# Portfolio builds use Render; pushing main must not touch the old event VM.
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Deploy even if the server reports a live event"
+        type: boolean
+        default: false
+
+concurrency:
+  # Never two deploys at once: the VM runs a single authoritative writer.
+  group: deploy-vm
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Build and test
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.19.0"
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - run: npm run test:shared
+      - run: npm run test:server
+      - run: npm run test:bots
+      - run: npx tsc -p apps/client/tsconfig.json --noEmit
+      - run: node tools/check-world-reachability.mjs
+      - run: node tools/check-dialog-visibility.mjs
+
+  deploy:
+    name: Deploy
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.VM_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          # Pin the host key so the deploy cannot be redirected to another host.
+          printf '%s\n' "${{ secrets.VM_HOST_KEY }}" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Refuse to interrupt a live event
+        if: ${{ github.event_name == 'push' || !inputs.force }}
+        env:
+          HOST: ${{ secrets.VM_HOST }}
+          USER_NAME: ${{ secrets.VM_USER }}
+        run: |
+          # /health is private to the VM, so this is asked over the SSH tunnel.
+          phase=$(ssh -i ~/.ssh/deploy_key -o BatchMode=yes "$USER_NAME@$HOST" \
+            'curl -s --max-time 5 http://127.0.0.1:8080/health || true' \
+            | tr -d "\n")
+          echo "health: ${phase:-<no response>}"
+          if printf '%s' "$phase" | grep -q '"phase":"live"'; then
+            echo "::error::The server reports a live event. Deploying now would"\
+                 "disconnect players. Re-run this workflow manually with"\
+                 "force=true only if that is intended."
+            exit 1
+          fi
+
+      - name: Upload source
+        env:
+          HOST: ${{ secrets.VM_HOST }}
+          USER_NAME: ${{ secrets.VM_USER }}
+        run: |
+          # node_modules and dist are rebuilt on the VM; .env must never be sent,
+          # since the private environment file lives in /etc/heist outside the
+          # checkout and a stray .env would be rejected by the preflight anyway.
+          # --omit-dir-times and --no-perms are required, not tidiness.
+          # /srv/the-heist is root-owned and setgid so the deploy user can write
+          # inside it but does not own the directory itself, and setting times
+          # or modes on a directory needs ownership. Without these, rsync
+          # transfers every file correctly and then exits 23 ("some files/attrs
+          # were not transferred") on the top-level directory alone, failing a
+          # deploy that actually succeeded.
+          rsync -az --delete --omit-dir-times --no-perms \
+            -e "ssh -i ~/.ssh/deploy_key -o BatchMode=yes" \
+            --exclude '.git' --exclude 'node_modules' --exclude '.env' \
+            --exclude 'bot-runs' --exclude 'dist' \
+            --exclude '.venv-world-analysis' \
+            ./ "$USER_NAME@$HOST:/srv/the-heist/"
+
+      - name: Install, build and restart
+        env:
+          HOST: ${{ secrets.VM_HOST }}
+          USER_NAME: ${{ secrets.VM_USER }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes "$USER_NAME@$HOST" \
+            'bash /srv/the-heist/deploy/azure/deploy.sh'
+
+      - name: Confirm the service is serving
+        env:
+          HOST: ${{ secrets.VM_HOST }}
+          USER_NAME: ${{ secrets.VM_USER }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes "$USER_NAME@$HOST" '
+            set -e
+            systemctl is-active --quiet heist || { echo "heist is not active"; exit 1; }
+            systemctl is-active --quiet nginx || { echo "nginx is not active"; exit 1; }
+            curl --fail --silent --max-time 5 http://127.0.0.1:8080/health
+            echo
+          '
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Deploy to the event VM"
+            echo
+            echo "- commit: \`${{ github.sha }}\`"
+            echo "- result: ${{ job.status }}"
+          } >> "$GITHUB_STEP_SUMMARY"

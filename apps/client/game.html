@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Heist</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* The reset above also zeroes the user agent's margin:auto on a modal
+         dialog, which is what centres it. Without this every staff dialog was
+         pinned to the top-left corner of the screen. */
+      dialog:modal {
+        margin: auto;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #10233a;
+        font-family: monospace;
+        color: #fff8d2;
+        user-select: none;
+      }
+      #game-canvas {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(16, 35, 58, 0.78);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+      }
+      .auth-box {
+        background: #f7e7ac;
+        border: 4px solid #26445f;
+        border-radius: 0;
+        padding: 26px;
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        box-shadow: 8px 8px 0 rgba(15, 31, 50, 0.7);
+      }
+      .auth-title {
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #c34b40;
+        text-align: center;
+      }
+      .auth-field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .auth-field label {
+        font-size: 11px;
+        color: #426079;
+        text-transform: uppercase;
+      }
+      .auth-field input {
+        background: #fff8d2;
+        border: 2px solid #426079;
+        border-radius: 0;
+        padding: 8px 10px;
+        color: #183250;
+        font-size: 14px;
+        outline: none;
+      }
+      .auth-field input:focus {
+        border-color: #c34b40;
+      }
+      .btn-row {
+        display: flex;
+        gap: 8px;
+        margin-top: 4px;
+      }
+      .btn {
+        flex: 1;
+        padding: 8px;
+        border: none;
+        border-radius: 0;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+      .btn-primary {
+        background: #e56a4f;
+        color: #fff8d2;
+      }
+      .btn-primary:hover {
+        background: #c34b40;
+      }
+      .btn-secondary {
+        background: #6fab55;
+        color: #fff8d2;
+      }
+      .btn-secondary:hover {
+        background: #548f45;
+      }
+      .auth-status {
+        font-size: 11px;
+        min-height: 16px;
+        text-align: center;
+      }
+      #system-banner {
+        position: fixed;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        display: none;
+        z-index: 200;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="system-banner" role="status" aria-live="polite"></div>
+    <div id="game-toast" hidden role="status"></div>
+
+    <div id="auth-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="auth-heading">
+      <div class="auth-box">
+        <div class="auth-console-top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 2l8 3v6c0 5-8 11-8 11S4 16 4 11V5Z M8 12l3 3 5-6"/></svg>VEYRA SYSTEMS / OPERATOR ACCESS</div>
+        <div id="auth-heading" class="auth-title">THE HEIST — VEYRA CITY</div>
+        <p class="auth-note">Walk the city. Find a terminal. Choose your next move.</p>
+        <div class="auth-field">
+          <label for="auth-username">Operator Name</label>
+          <input type="text" id="auth-username" placeholder="e.g. runner_01" autocomplete="username" />
+        </div>
+        <div class="auth-field">
+          <label for="auth-password">Passphrase</label>
+          <input type="password" id="auth-password" placeholder="••••••••" autocomplete="current-password" />
+        </div>
+        <details id="auth-profile" class="auth-profile">
+          <summary>Your details for the organizer <span>optional</span></summary>
+          <p class="auth-profile-note">Only used to identify you and hand out prizes. Leave any field blank; none of this is required to play.</p>
+          <div class="auth-field">
+            <label for="auth-fullname">Full name</label>
+            <input type="text" id="auth-fullname" placeholder="e.g. Advay Chavan" autocomplete="name" maxlength="80" />
+          </div>
+          <div class="auth-field">
+            <label for="auth-email">Email</label>
+            <input type="email" id="auth-email" placeholder="e.g. you@college.edu" autocomplete="email" maxlength="120" />
+          </div>
+          <div class="auth-field">
+            <label for="auth-phone">Phone</label>
+            <input type="tel" id="auth-phone" placeholder="e.g. 98765 43210" autocomplete="tel" maxlength="32" />
+          </div>
+          <div class="auth-field">
+            <label for="auth-team">College or team</label>
+            <input type="text" id="auth-team" placeholder="e.g. Team Nightfall" autocomplete="organization" maxlength="80" />
+          </div>
+        </details>
+        <div id="auth-status" class="auth-status" role="status" aria-live="polite"></div>
+        <div class="btn-row">
+          <button type="button" id="auth-btn-login" class="btn btn-primary">ENTER CITY</button>
+          <button type="button" id="auth-btn-register" class="btn btn-secondary">NEW OPERATOR</button>
+        </div>
+        <button type="button" id="auth-preview">Preview the complete city</button>
+      </div>
+    </div>
+
+    <canvas id="game-canvas"></canvas>
+    <div id="operator-hud" hidden>
+      <div class="hud-mast"><span class="hud-wordmark">THE HEIST<span>ZERO HOUR / 2046</span></span><div class="hud-clock"><small id="event-phase">AWAITING RESET</small><strong id="event-clock">03:00:00</strong><button id="hud-collapse" type="button" class="hud-collapse" aria-expanded="true" aria-controls="operator-hud" title="Collapse the HUD (H)"><span class="hud-collapse-icon" aria-hidden="true"></span><span class="hud-collapse-text">Hide HUD</span><kbd>H</kbd></button></div></div>
+      <div id="activity-banner" class="activity-banner" aria-live="polite"></div>
+      <section class="hud-wallet" aria-label="Operator account"><div class="wallet-title"><span id="operator-name">OPERATOR</span><span id="operator-status">ACTIVE</span></div><div class="wallet-total"><small>TOTAL WEALTH</small><strong id="wealth-total">₹0.00</strong></div><div class="wallet-accounts"><div><small id="home-exposure" class="home-exposure">HOME / AT RISK</small><b id="home-money">₹0.00</b></div><div><small>BANK / SECURED</small><b id="bank-money">₹0.00</b></div></div><p id="bank-fee-ticker" class="bank-fee-ticker"></p><div class="wallet-foot"><span id="completion-count">0 completions</span><span id="home-address">H—</span></div><progress id="wealth-progress" max="80000" value="0" aria-label="Wealth cap progress"></progress></section>
+      <aside class="hud-directive"><small>NEXT MOVE</small><p id="next-directive">Find your first contract in Tech Quarter.</p><button id="open-journal" type="button">Operator journal <kbd>J</kbd></button></aside>
+      <div class="hud-transmission"><span>NEXUS <i></i></span><p id="nexus-transmission" aria-live="polite">Establishing uplink…</p><button id="toggle-audio" type="button" aria-pressed="false">Sound off</button></div>
+      <nav id="touch-movement" aria-label="Movement controls"><button id="touch-up" type="button" aria-label="Move up">↑</button><button id="touch-left" type="button" aria-label="Move left">←</button><span>●</span><button id="touch-right" type="button" aria-label="Move right">→</button><button id="touch-down" type="button" aria-label="Move down">↓</button></nav>
+    </div>
+    <header class="world-bar">
+      <div class="world-heading"><small id="district-subtitle">VEYRA CITY · ZERO HOUR</small><h1 id="district-title">Central Exchange</h1></div>
+      <div class="world-status"><span id="connection-readout">city preview</span><span id="player-readout">0 nearby</span><button id="inspect-map" type="button">City maps · M</button></div>
+    </header>
+    <div id="map-inspector" hidden>
+      <label for="scene-select">Districts &amp; connectors</label><select id="scene-select"></select>
+      <p>Regenerated playable city artwork at native resolution. Drag to inspect; choose a POI on the complete map to locate it.</p>
+      <p id="art-load-state" aria-live="polite"></p>
+      <button id="world-overview" type="button">Complete city map · M</button>
+      <button id="return-to-game" type="button">Return to operator · Esc</button>
+    </div>
+    <section id="city-atlas" hidden aria-label="Complete Veyra City map">
+      <header class="atlas-header"><div><small>VEYRA SYSTEMS / CARTOGRAPHY</small><h2>Veyra City <span>Operations map</span></h2><p id="atlas-piece-count">Complete city artwork</p></div><div class="atlas-header-status"><span id="atlas-load-state" role="status"></span><button id="atlas-close" type="button">Close map · M / Esc</button></div></header>
+      <div class="atlas-layout"><div class="atlas-map-area"><canvas id="city-atlas-canvas" aria-label="Six districts, seven connectors and six residential wards"></canvas><div class="atlas-zoom"><button id="atlas-zoom-out" type="button" aria-label="Zoom world map out">−</button><span id="atlas-scale">100%</span><button id="atlas-zoom-in" type="button" aria-label="Zoom world map in">+</button><button id="atlas-fit" type="button">Fit entire city</button></div></div>
+      <aside class="atlas-sidebar"><h3 id="atlas-selected-title">Central Exchange</h3><p id="atlas-selected-links"></p><button id="atlas-inspect" type="button">Inspect region artwork</button><h4>All regions &amp; connectors</h4><nav id="atlas-regions" aria-label="Regions and connectors"></nav></aside></div>
+      <div id="atlas-poi-panel"><h4>Selected region · POIs &amp; Home sites</h4><nav id="atlas-landmarks" aria-label="Selected region landmarks"></nav></div>
+      <footer class="atlas-footer"><span><i class="atlas-player-dot"></i> Your operator · gold: POIs · violet: gates</span><span>19 playable regions · connective scenery is atlas-only · E at travel gates</span><span>Scroll / double-click to zoom · drag to pan</span></footer>
+    </section>
+    <div class="world-bottom"><div class="world-help"><button id="help-open" type="button" title="How the city works (?)">? Help</button></div><div class="world-controls"><button id="toggle-crowd-names" type="button" title="Toggle operator name labels">Names</button><button id="zoom-out" type="button" aria-label="Zoom out">−</button><span id="zoom-readout">100%</span><button id="zoom-in" type="button" aria-label="Zoom in">+</button><button id="zoom-native" type="button">1:1</button></div></div>
+    <button id="interact-button" type="button" hidden></button><p id="render-error" role="alert"></p>
+    <dialog id="terminal-dialog" aria-labelledby="terminal-title" aria-describedby="terminal-copy">
+      <header class="terminal-header"><div class="terminal-channel"><small>VEYRA SYSTEMS / FIELD UPLINK</small></div><button id="dialog-close" type="button" aria-label="Close terminal">Close · Esc</button></header>
+      <div class="terminal-content">
+        <div class="terminal-hero"><div id="terminal-emblem" class="terminal-emblem" aria-hidden="true"></div><div><div class="terminal-eyebrow"><span id="terminal-category">CITY OPERATIONS</span><span id="terminal-mode" class="terminal-mode">REHEARSAL</span></div><h2 id="terminal-title"></h2><p id="terminal-copy"></p></div></div>
+        <div class="terminal-meta"><span>OPERATOR / <b id="terminal-operator">—</b></span><span>ADDRESS / <b id="terminal-address">—</b></span><span id="terminal-network">SERVER AUTHORITATIVE</span></div>
+        <p id="terminal-state" role="status"></p><div id="terminal-game"></div>
+        <footer class="terminal-footnote"><span>NEXUS / ALL OUTCOMES VERIFIED BY THE SERVER</span><span>ESC TO RETURN TO THE CITY</span></footer>
+      </div>
+    </dialog>
+    <dialog id="help-dialog" aria-labelledby="help-title">
+      <header class="help-head">
+        <div><small>VEYRA SYSTEMS / OPERATOR BRIEFING</small><h2 id="help-title">How the city works</h2></div>
+        <button id="help-close" type="button">Close &middot; Esc</button>
+      </header>
+      <div class="help-body">
+        <section>
+          <h3>The one rule</h3>
+          <p>Veyra City holds a fixed amount of money and the server never creates more. Everything you earn is moved to you from a prize pool, or taken from another operator. Your score is whatever you are holding at the end.</p>
+        </section>
+        <section>
+          <h3>Earning</h3>
+          <ol>
+            <li>Walk to a district and find a lit terminal.</li>
+            <li>Press <kbd>E</kbd> to open it and accept a contract.</li>
+            <li>Solve it, then submit your answer in the journal (<kbd>J</kbd>).</li>
+          </ol>
+          <p>Every contract states its own answer format, with a worked example. Capitals and extra spaces are forgiven. A wrong answer costs no money, but there is a short cooldown between tries.</p>
+        </section>
+        <section>
+          <h3>Keeping it</h3>
+          <p>Earnings land in your <strong>Home</strong>, where other operators can burgle them. Money you deposit at the <strong>Bank</strong> is safe from burglary, but a successful bank raid can still take a share of it. Withdrawals are not instant.</p>
+        </section>
+        <section>
+          <h3>Getting around</h3>
+          <p>Press <kbd>M</kbd> for the city atlas. Districts are joined by connectors; stand on a travel gate and press <kbd>E</kbd> to move between them. Walking takes real time, so where you go is a real choice.</p>
+        </section>
+        <section>
+          <h3>Controls</h3>
+          <dl class="help-keys">
+            <div><dt><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / arrows</dt><dd>Walk</dd></div>
+            <div><dt><kbd>E</kbd></dt><dd>Use a terminal or travel gate</dd></div>
+            <div><dt><kbd>J</kbd></dt><dd>Operator journal and answers</dd></div>
+            <div><dt><kbd>M</kbd></dt><dd>City atlas</dd></div>
+            <div><dt><kbd>H</kbd></dt><dd>Hide or show the HUD</dd></div>
+            <div><dt><kbd>?</kbd></dt><dd>This briefing</dd></div>
+            <div><dt><kbd>Esc</kbd></dt><dd>Close whatever is open</dd></div>
+          </dl>
+        </section>
+        <section>
+          <h3>If you are stuck</h3>
+          <p>Read <strong>NEXT MOVE</strong> in the bottom-left of the HUD: it always names the single most useful thing you can do right now. If it says to find a contract, open the atlas with <kbd>M</kbd>, pick a district, and walk to a terminal there. NEXUS notifications tell you when races and other timed events open.</p>
+        </section>
+      </div>
+    </dialog>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

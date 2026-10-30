@@ -1,0 +1,28 @@
+server {
+    listen 80;
+    server_name ${HEIST_DOMAIN};
+    server_tokens off;
+    access_log off;
+    error_log /dev/null crit;
+    location ~ "^/\.well-known/acme-challenge/[A-Za-z0-9_-]+$" {
+        root /var/www/heist-acme;
+        default_type text/plain;
+        try_files $uri =404;
+    }
+    location / { return 308 https://${HEIST_DOMAIN}$request_uri; }
+}
+
+server {
+    listen 443 ssl;
+    server_name ${HEIST_DOMAIN};
+    ssl_certificate /etc/letsencrypt/live/${HEIST_DOMAIN}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/${HEIST_DOMAIN}/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_session_cache shared:heist_tls:10m;
+    ssl_session_tickets off;
+    include /etc/nginx/snippets/heist-player.conf;
+    # Authenticated organizer and staff API. Included only here, never in the
+    # plaintext server block above, because these requests carry session
+    # bearer tokens. See nginx-staff.conf for the full rationale.
+    include /etc/nginx/snippets/heist-staff.conf;
+}

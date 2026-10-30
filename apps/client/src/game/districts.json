@@ -1,0 +1,71 @@
+{
+  "_comment": "TODO: replace placeholder bounding boxes with authoritative bounds from Aditya",
+  "districts": [
+    {
+      "id": "tech_quarter",
+      "name": "Tech Quarter",
+      "description": "Silicon corridors, holo-billboards, server warehouses",
+      "bounds": {
+        "minX": 16,
+        "minY": 16,
+        "maxX": 112,
+        "maxY": 96
+      }
+    },
+    {
+      "id": "central_exchange",
+      "name": "Central Exchange",
+      "description": "High-stakes banking towers, vaults, and corporate exchanges",
+      "bounds": {
+        "minX": 112,
+        "minY": 16,
+        "maxX": 240,
+        "maxY": 96
+      }
+    },
+    {
+      "id": "data_harbor",
+      "name": "Data Harbor",
+      "description": "Deep-water data docks, fiber landing hubs, and wet shipping terminals",
+      "bounds": {
+        "minX": 16,
+        "minY": 96,
+        "maxX": 96,
+        "maxY": 176
+      }
+    },
+    {
+      "id": "nexus",
+      "name": "The NEXUS",
+      "description": "The fortified central citadel housing the central vault and AI cores",
+      "bounds": {
+        "minX": 96,
+        "minY": 96,
+        "maxX": 160,
+        "maxY": 176
+      }
+    },
+    {
+      "id": "black_grid",
+      "name": "Black Grid",
+      "description": "Off-grid rogue server enclaves and black market cipher dens",
+      "bounds": {
+        "minX": 160,
+        "minY": 96,
+        "maxX": 240,
+        "maxY": 176
+      }
+    },
+    {
+      "id": "undercity",
+      "name": "Undercity",
+      "description": "Sub-street maintenance catacombs, toxic runoff, and illicit runner hubs",
+      "bounds": {
+        "minX": 16,
+        "minY": 176,
+        "maxX": 240,
+        "maxY": 240
+      }
+    }
+  ]
+}

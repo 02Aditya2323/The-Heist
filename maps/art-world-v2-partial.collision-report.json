@@ -1,0 +1,51 @@
+{
+  "version": 30,
+  "sourceHash": "c84c3bf3d5b5d65196abfdd14ae92df35e1cdd1b5b1aaff30eb370c1eb1d9bcb",
+  "method": "Reviewed native-pixel floor/obstacle masks; OpenCV morphology, HSV diagnostics and connected components. Unknown surfaces blocked.",
+  "scenes": [
+    {
+      "id": "central",
+      "source": "docs/generated-world-v2/central.png",
+      "walkableTiles": 375,
+      "components": [
+        375
+      ],
+      "reviewedObstacles": 8,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.158
+    },
+    {
+      "id": "tech",
+      "source": "docs/generated-world-v2/tech.png",
+      "walkableTiles": 369,
+      "components": [
+        369
+      ],
+      "reviewedObstacles": 6,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.108
+    },
+    {
+      "id": "harbor",
+      "source": "docs/generated-world-v2/harbor.png",
+      "walkableTiles": 234,
+      "components": [
+        234
+      ],
+      "reviewedObstacles": 8,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.232
+    },
+    {
+      "id": "homes-a",
+      "source": "docs/generated-world-v2/homes.png",
+      "walkableTiles": 350,
+      "components": [
+        350
+      ],
+      "reviewedObstacles": 15,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.136
+    }
+  ]
+}

@@ -1,0 +1,481 @@
+[
+  {
+    "id": "ST-01",
+    "name": "ST-01 · Receipt Total",
+    "kind": "code",
+    "files": [
+      "desktop-ST-01-page-1.jpg",
+      "desktop-ST-01-page-2.jpg",
+      "desktop-ST-01-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "ST-02",
+    "name": "ST-02 · Broken Receipt",
+    "kind": "debug",
+    "files": [
+      "desktop-ST-02-page-1.jpg",
+      "desktop-ST-02-page-2.jpg",
+      "desktop-ST-02-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "ST-03",
+    "name": "ST-03 · Gate Cipher",
+    "kind": "cipher",
+    "files": [
+      "desktop-ST-03-page-1.jpg",
+      "desktop-ST-03-page-2.jpg",
+      "desktop-ST-03-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "SD-01",
+    "name": "SD-01 · Peak Reading",
+    "kind": "code",
+    "files": [
+      "desktop-SD-01-page-1.jpg",
+      "desktop-SD-01-page-2.jpg",
+      "desktop-SD-01-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "SD-02",
+    "name": "SD-02 · Lonely Packet",
+    "kind": "code",
+    "files": [
+      "desktop-SD-02-page-1.jpg",
+      "desktop-SD-02-page-2.jpg",
+      "desktop-SD-02-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "SD-03",
+    "name": "SD-03 · Robot Route",
+    "kind": "code",
+    "files": [
+      "desktop-SD-03-page-1.jpg",
+      "desktop-SD-03-page-2.jpg",
+      "desktop-SD-03-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "SD-04",
+    "name": "SD-04 · Patch the Meter",
+    "kind": "debug",
+    "files": [
+      "desktop-SD-04-page-1.jpg",
+      "desktop-SD-04-page-2.jpg",
+      "desktop-SD-04-page-3.jpg",
+      "desktop-SD-04-page-4.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "SD-05",
+    "name": "SD-05 · Fence Count",
+    "kind": "debug",
+    "files": [
+      "desktop-SD-05-page-1.jpg",
+      "desktop-SD-05-page-2.jpg",
+      "desktop-SD-05-page-3.jpg",
+      "desktop-SD-05-page-4.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "SD-06",
+    "name": "SD-06 · Password Profiler",
+    "kind": "deduction",
+    "files": [
+      "desktop-SD-06-page-1.jpg",
+      "desktop-SD-06-page-2.jpg",
+      "desktop-SD-06-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "SD-07",
+    "name": "SD-07 · Log Hunter",
+    "kind": "logs",
+    "files": [
+      "desktop-SD-07-page-1.jpg",
+      "desktop-SD-07-page-2.jpg",
+      "desktop-SD-07-page-3.jpg",
+      "desktop-SD-07-page-4.jpg",
+      "desktop-SD-07-page-5.jpg",
+      "desktop-SD-07-page-6.jpg",
+      "desktop-SD-07-page-7.jpg",
+      "desktop-SD-07-page-8.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "SD-08",
+    "name": "SD-08 · Decode Chain",
+    "kind": "cipher",
+    "files": [
+      "desktop-SD-08-page-1.jpg",
+      "desktop-SD-08-page-2.jpg",
+      "desktop-SD-08-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "SD-09",
+    "name": "SD-09 · Fare Gate",
+    "kind": "lights",
+    "files": [
+      "desktop-SD-09-page-1.jpg",
+      "desktop-SD-09-page-2.jpg",
+      "desktop-SD-09-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "SD-10",
+    "name": "SD-10 · Who Moved the Money",
+    "kind": "statements",
+    "files": [
+      "desktop-SD-10-page-1.jpg",
+      "desktop-SD-10-page-2.jpg",
+      "desktop-SD-10-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "EX-01",
+    "name": "EX-01 · Door and Key",
+    "kind": "maze",
+    "files": [
+      "desktop-EX-01-page-1.jpg",
+      "desktop-EX-01-page-2.jpg",
+      "desktop-EX-01-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "EX-02",
+    "name": "EX-02 · Chain of Command",
+    "kind": "tree",
+    "files": [
+      "desktop-EX-02-page-1.jpg",
+      "desktop-EX-02-page-2.jpg",
+      "desktop-EX-02-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "EX-03",
+    "name": "EX-03 · Ghost in the Counter",
+    "kind": "debug",
+    "files": [
+      "desktop-EX-03-page-1.jpg",
+      "desktop-EX-03-page-2.jpg",
+      "desktop-EX-03-page-3.jpg",
+      "desktop-EX-03-page-4.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "EX-04",
+    "name": "EX-04 · Gatekeeper",
+    "kind": "machine",
+    "files": [
+      "desktop-EX-04-page-1.jpg",
+      "desktop-EX-04-page-2.jpg",
+      "desktop-EX-04-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "EX-05",
+    "name": "EX-05 · Portal Peek",
+    "kind": "portal",
+    "files": [
+      "desktop-EX-05-page-1.jpg",
+      "desktop-EX-05-page-2.jpg",
+      "desktop-EX-05-page-3.jpg",
+      "desktop-EX-05-page-4.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BG-01",
+    "name": "BG-01 · Code Oracle",
+    "kind": "oracle",
+    "files": [
+      "desktop-BG-01-page-1.jpg",
+      "desktop-BG-01-page-2.jpg",
+      "desktop-BG-01-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BG-02",
+    "name": "BG-02 · Maze Lock",
+    "kind": "maze",
+    "files": [
+      "desktop-BG-02-page-1.jpg",
+      "desktop-BG-02-page-2.jpg",
+      "desktop-BG-02-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BG-03",
+    "name": "BG-03 · Circuit Lock",
+    "kind": "circuit",
+    "files": [
+      "desktop-BG-03-page-1.jpg",
+      "desktop-BG-03-page-2.jpg",
+      "desktop-BG-03-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "RC-01",
+    "name": "RC-01 · Sprint: Fare Sum",
+    "kind": "code",
+    "files": [
+      "desktop-RC-01-page-1.jpg",
+      "desktop-RC-01-page-2.jpg",
+      "desktop-RC-01-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "RC-02",
+    "name": "RC-02 · Sprint: Bug Hunt",
+    "kind": "debug",
+    "files": [
+      "desktop-RC-02-page-1.jpg",
+      "desktop-RC-02-page-2.jpg",
+      "desktop-RC-02-page-3.jpg",
+      "desktop-RC-02-page-4.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "RC-03",
+    "name": "RC-03 · Sprint: Decode",
+    "kind": "cipher",
+    "files": [
+      "desktop-RC-03-page-1.jpg",
+      "desktop-RC-03-page-2.jpg",
+      "desktop-RC-03-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "GH-01",
+    "name": "GH-01 · Key Card",
+    "kind": "cipher",
+    "files": [
+      "desktop-GH-01-page-1.jpg",
+      "desktop-GH-01-page-2.jpg",
+      "desktop-GH-01-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "GH-02",
+    "name": "GH-02 · Courier Interrogation",
+    "kind": "courier",
+    "files": [
+      "desktop-GH-02-page-1.jpg",
+      "desktop-GH-02-page-2.jpg",
+      "desktop-GH-02-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "GH-03",
+    "name": "GH-03 · Server Sprint",
+    "kind": "code",
+    "files": [
+      "desktop-GH-03-page-1.jpg",
+      "desktop-GH-03-page-2.jpg",
+      "desktop-GH-03-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BR-01",
+    "name": "BR-01 · Tunnel Network",
+    "kind": "maze",
+    "files": [
+      "desktop-BR-01-page-1.jpg",
+      "desktop-BR-01-page-2.jpg",
+      "desktop-BR-01-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BR-02",
+    "name": "BR-02 · Double Login",
+    "kind": "code",
+    "files": [
+      "desktop-BR-02-page-1.jpg",
+      "desktop-BR-02-page-2.jpg",
+      "desktop-BR-02-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BR-03",
+    "name": "BR-03 · Cipher Relay",
+    "kind": "cipher",
+    "files": [
+      "desktop-BR-03-page-1.jpg",
+      "desktop-BR-03-page-2.jpg",
+      "desktop-BR-03-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BR-04",
+    "name": "BR-04 · Ghost Log",
+    "kind": "logs",
+    "files": [
+      "desktop-BR-04-page-1.jpg",
+      "desktop-BR-04-page-2.jpg",
+      "desktop-BR-04-page-3.jpg",
+      "desktop-BR-04-page-4.jpg",
+      "desktop-BR-04-page-5.jpg",
+      "desktop-BR-04-page-6.jpg",
+      "desktop-BR-04-page-7.jpg",
+      "desktop-BR-04-page-8.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BR-05",
+    "name": "BR-05 · Org Chart",
+    "kind": "tree",
+    "files": [
+      "desktop-BR-05-page-1.jpg",
+      "desktop-BR-05-page-2.jpg",
+      "desktop-BR-05-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BR-06",
+    "name": "BR-06 · Combination Clues",
+    "kind": "deduction",
+    "files": [
+      "desktop-BR-06-page-1.jpg",
+      "desktop-BR-06-page-2.jpg",
+      "desktop-BR-06-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BR-07",
+    "name": "BR-07 · Self-Checking Vault",
+    "kind": "deduction",
+    "files": [
+      "desktop-BR-07-page-1.jpg",
+      "desktop-BR-07-page-2.jpg",
+      "desktop-BR-07-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BR-08",
+    "name": "BR-08 · Broken Tally",
+    "kind": "debug",
+    "files": [
+      "desktop-BR-08-page-1.jpg",
+      "desktop-BR-08-page-2.jpg",
+      "desktop-BR-08-page-3.jpg",
+      "desktop-BR-08-page-4.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BR-09",
+    "name": "BR-09 · Deploy Order",
+    "kind": "order",
+    "files": [
+      "desktop-BR-09-page-1.jpg",
+      "desktop-BR-09-page-2.jpg",
+      "desktop-BR-09-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BR-10",
+    "name": "BR-10 · Constraint Vault",
+    "kind": "constraints",
+    "files": [
+      "desktop-BR-10-page-1.jpg",
+      "desktop-BR-10-page-2.jpg",
+      "desktop-BR-10-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BL-01",
+    "name": "BL-01 · Ledger Running Total",
+    "kind": "code",
+    "files": [
+      "desktop-BL-01-page-1.jpg",
+      "desktop-BL-01-page-2.jpg",
+      "desktop-BL-01-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BL-02",
+    "name": "BL-02 · Triple Cipher",
+    "kind": "cipher",
+    "files": [
+      "desktop-BL-02-page-1.jpg",
+      "desktop-BL-02-page-2.jpg",
+      "desktop-BL-02-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BL-03",
+    "name": "BL-03 · Shadow Ring",
+    "kind": "ring",
+    "files": [
+      "desktop-BL-03-page-1.jpg",
+      "desktop-BL-03-page-2.jpg",
+      "desktop-BL-03-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BL-04",
+    "name": "BL-04 · Warden Script",
+    "kind": "machine",
+    "files": [
+      "desktop-BL-04-page-1.jpg",
+      "desktop-BL-04-page-2.jpg",
+      "desktop-BL-04-page-3.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  },
+  {
+    "id": "BL-05",
+    "name": "BL-05 · Broken Router",
+    "kind": "debug",
+    "files": [
+      "desktop-BL-05-page-1.jpg",
+      "desktop-BL-05-page-2.jpg",
+      "desktop-BL-05-page-3.jpg",
+      "desktop-BL-05-page-4.jpg"
+    ],
+    "scope": "Fresh personal variant; desktop layout reference only. Actual solve evidence is in before/played/complete files."
+  }
+]

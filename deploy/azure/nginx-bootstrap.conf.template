@@ -1,0 +1,14 @@
+# Certificate bootstrap ONLY: no plaintext login, API or WebSocket access.
+server {
+    listen 80;
+    server_name ${HEIST_DOMAIN};
+    server_tokens off;
+    access_log off;
+    error_log /dev/null crit;
+    location ~ "^/\.well-known/acme-challenge/[A-Za-z0-9_-]+$" {
+        root /var/www/heist-acme;
+        default_type text/plain;
+        try_files $uri =404;
+    }
+    location / { return 404; }
+}

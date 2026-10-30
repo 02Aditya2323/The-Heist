@@ -1,0 +1,235 @@
+{
+  "version": 30,
+  "sourceHash": "b7f1dec8c1a23c242d1c3d4b2a0e96b31882e60e01ad660a1757c71329e89f68",
+  "method": "Reviewed native-pixel floor/obstacle masks; OpenCV morphology, HSV diagnostics and connected components. Unknown surfaces blocked.",
+  "scenes": [
+    {
+      "id": "central",
+      "source": "docs/generated-world-v2/central.png",
+      "walkableTiles": 375,
+      "components": [
+        375
+      ],
+      "reviewedObstacles": 8,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.158
+    },
+    {
+      "id": "tech",
+      "source": "docs/generated-world-v2/tech.png",
+      "walkableTiles": 396,
+      "components": [
+        396
+      ],
+      "reviewedObstacles": 6,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.11
+    },
+    {
+      "id": "harbor",
+      "source": "docs/generated-world-v2/harbor.png",
+      "walkableTiles": 259,
+      "components": [
+        259
+      ],
+      "reviewedObstacles": 8,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.234
+    },
+    {
+      "id": "black",
+      "source": "docs/generated-world-v2/black.png",
+      "walkableTiles": 336,
+      "components": [
+        336
+      ],
+      "reviewedObstacles": 7,
+      "waterColorReviewTiles": [
+        [
+          0,
+          26
+        ]
+      ],
+      "floorEdgeDensity": 0.139
+    },
+    {
+      "id": "under",
+      "source": "docs/generated-world-v2/under.png",
+      "walkableTiles": 301,
+      "components": [
+        301
+      ],
+      "reviewedObstacles": 8,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.144
+    },
+    {
+      "id": "nexus",
+      "source": "docs/generated-world-v2/nexus.png",
+      "walkableTiles": 324,
+      "components": [
+        324
+      ],
+      "reviewedObstacles": 7,
+      "waterColorReviewTiles": [
+        [
+          47,
+          23
+        ]
+      ],
+      "floorEdgeDensity": 0.172
+    },
+    {
+      "id": "c07",
+      "source": "docs/generated-world-v2/c07.png",
+      "walkableTiles": 335,
+      "components": [
+        335
+      ],
+      "reviewedObstacles": 6,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.14
+    },
+    {
+      "id": "c08",
+      "source": "docs/generated-world-v2/c08.png",
+      "walkableTiles": 256,
+      "components": [
+        256
+      ],
+      "reviewedObstacles": 7,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.17
+    },
+    {
+      "id": "c09",
+      "source": "docs/generated-world-v2/c09.png",
+      "walkableTiles": 241,
+      "components": [
+        241
+      ],
+      "reviewedObstacles": 7,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.112
+    },
+    {
+      "id": "c10",
+      "source": "docs/generated-world-v2/c10.png",
+      "walkableTiles": 138,
+      "components": [
+        138
+      ],
+      "reviewedObstacles": 5,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.185
+    },
+    {
+      "id": "c11",
+      "source": "docs/generated-world-v2/c11.png",
+      "walkableTiles": 460,
+      "components": [
+        460
+      ],
+      "reviewedObstacles": 7,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.163
+    },
+    {
+      "id": "c12",
+      "source": "docs/generated-world-v2/c12.png",
+      "walkableTiles": 229,
+      "components": [
+        229
+      ],
+      "reviewedObstacles": 7,
+      "waterColorReviewTiles": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          23
+        ]
+      ],
+      "floorEdgeDensity": 0.143
+    },
+    {
+      "id": "c13",
+      "source": "docs/generated-world-v2/c13.png",
+      "walkableTiles": 295,
+      "components": [
+        295
+      ],
+      "reviewedObstacles": 7,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.133
+    },
+    {
+      "id": "homes-a",
+      "source": "docs/generated-world-v2/homes.png",
+      "walkableTiles": 373,
+      "components": [
+        373
+      ],
+      "reviewedObstacles": 15,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.138
+    },
+    {
+      "id": "homes-b",
+      "source": "docs/generated-world-v2/homes.png",
+      "walkableTiles": 373,
+      "components": [
+        373
+      ],
+      "reviewedObstacles": 15,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.138
+    },
+    {
+      "id": "homes-c",
+      "source": "docs/generated-world-v2/homes.png",
+      "walkableTiles": 373,
+      "components": [
+        373
+      ],
+      "reviewedObstacles": 15,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.138
+    },
+    {
+      "id": "homes-d",
+      "source": "docs/generated-world-v2/homes.png",
+      "walkableTiles": 373,
+      "components": [
+        373
+      ],
+      "reviewedObstacles": 15,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.138
+    },
+    {
+      "id": "homes-e",
+      "source": "docs/generated-world-v2/homes.png",
+      "walkableTiles": 373,
+      "components": [
+        373
+      ],
+      "reviewedObstacles": 15,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.138
+    },
+    {
+      "id": "homes-f",
+      "source": "docs/generated-world-v2/homes.png",
+      "walkableTiles": 373,
+      "components": [
+        373
+      ],
+      "reviewedObstacles": 15,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.138
+    }
+  ]
+}

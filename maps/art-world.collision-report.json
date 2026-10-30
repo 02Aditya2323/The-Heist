@@ -1,0 +1,458 @@
+{
+  "version": 22,
+  "sourceHash": "d02229576cd2f3f4cb422982581e94198a8a001c23ba19f5877b750dbb22f6d3",
+  "method": "Reviewed native-pixel floor/obstacle masks; OpenCV morphology, HSV diagnostics and connected components. Unknown surfaces blocked.",
+  "scenes": [
+    {
+      "id": "central",
+      "source": "01_Districts/03_Central_Exchange.png",
+      "walkableTiles": 291,
+      "components": [
+        291
+      ],
+      "reviewedObstacles": 5,
+      "waterColorReviewTiles": [
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          47,
+          11
+        ],
+        [
+          48,
+          11
+        ],
+        [
+          49,
+          11
+        ],
+        [
+          25,
+          20
+        ]
+      ],
+      "floorEdgeDensity": 0.233
+    },
+    {
+      "id": "tech",
+      "source": "01_Districts/01_Tech_Quarter.png",
+      "walkableTiles": 284,
+      "components": [
+        284
+      ],
+      "reviewedObstacles": 5,
+      "waterColorReviewTiles": [
+        [
+          28,
+          0
+        ],
+        [
+          34,
+          5
+        ],
+        [
+          43,
+          11
+        ],
+        [
+          44,
+          11
+        ],
+        [
+          9,
+          26
+        ],
+        [
+          32,
+          26
+        ],
+        [
+          33,
+          26
+        ],
+        [
+          34,
+          26
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          40,
+          26
+        ],
+        [
+          27,
+          27
+        ],
+        [
+          28,
+          27
+        ],
+        [
+          29,
+          27
+        ],
+        [
+          33,
+          27
+        ],
+        [
+          34,
+          27
+        ],
+        [
+          35,
+          27
+        ]
+      ],
+      "floorEdgeDensity": 0.139
+    },
+    {
+      "id": "harbor",
+      "source": "01_Districts/02_Data_Harbor.png",
+      "walkableTiles": 194,
+      "components": [
+        194
+      ],
+      "reviewedObstacles": 8,
+      "waterColorReviewTiles": [
+        [
+          46,
+          4
+        ],
+        [
+          47,
+          4
+        ],
+        [
+          48,
+          4
+        ],
+        [
+          49,
+          4
+        ],
+        [
+          39,
+          5
+        ],
+        [
+          46,
+          5
+        ],
+        [
+          47,
+          5
+        ],
+        [
+          23,
+          15
+        ],
+        [
+          30,
+          17
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          10,
+          20
+        ],
+        [
+          11,
+          20
+        ],
+        [
+          12,
+          20
+        ],
+        [
+          33,
+          20
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          34,
+          21
+        ],
+        [
+          8,
+          22
+        ]
+      ],
+      "floorEdgeDensity": 0.253
+    },
+    {
+      "id": "black",
+      "source": "01_Districts/04_Black_Grid.png",
+      "walkableTiles": 213,
+      "components": [
+        213
+      ],
+      "reviewedObstacles": 5,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.194
+    },
+    {
+      "id": "under",
+      "source": "01_Districts/05_Undercity.png",
+      "walkableTiles": 177,
+      "components": [
+        177
+      ],
+      "reviewedObstacles": 4,
+      "waterColorReviewTiles": [
+        [
+          44,
+          4
+        ],
+        [
+          45,
+          4
+        ],
+        [
+          43,
+          5
+        ],
+        [
+          44,
+          5
+        ],
+        [
+          39,
+          7
+        ],
+        [
+          37,
+          9
+        ],
+        [
+          43,
+          22
+        ],
+        [
+          42,
+          23
+        ],
+        [
+          43,
+          23
+        ]
+      ],
+      "floorEdgeDensity": 0.24
+    },
+    {
+      "id": "nexus",
+      "source": "02_Connectors/11_Central_Exchange_to_NEXUS_Plaza.png",
+      "walkableTiles": 225,
+      "components": [
+        225
+      ],
+      "reviewedObstacles": 5,
+      "waterColorReviewTiles": [
+        [
+          19,
+          5
+        ],
+        [
+          36,
+          7
+        ],
+        [
+          18,
+          8
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          13,
+          20
+        ],
+        [
+          14,
+          20
+        ],
+        [
+          40,
+          20
+        ],
+        [
+          41,
+          20
+        ],
+        [
+          41,
+          21
+        ],
+        [
+          42,
+          21
+        ]
+      ],
+      "floorEdgeDensity": 0.226
+    },
+    {
+      "id": "c07",
+      "source": "02_Connectors/07_Central_Exchange_to_Tech_Quarter.png",
+      "walkableTiles": 96,
+      "components": [
+        96
+      ],
+      "reviewedObstacles": 2,
+      "waterColorReviewTiles": [
+        [
+          46,
+          14
+        ],
+        [
+          47,
+          14
+        ],
+        [
+          48,
+          14
+        ],
+        [
+          49,
+          14
+        ],
+        [
+          46,
+          15
+        ],
+        [
+          47,
+          15
+        ],
+        [
+          48,
+          15
+        ],
+        [
+          49,
+          15
+        ]
+      ],
+      "floorEdgeDensity": 0.18
+    },
+    {
+      "id": "c08",
+      "source": "02_Connectors/08_Central_Exchange_to_Data_Harbor.png",
+      "walkableTiles": 58,
+      "components": [
+        58
+      ],
+      "reviewedObstacles": 2,
+      "waterColorReviewTiles": [
+        [
+          25,
+          25
+        ],
+        [
+          26,
+          25
+        ],
+        [
+          25,
+          27
+        ],
+        [
+          26,
+          27
+        ]
+      ],
+      "floorEdgeDensity": 0.129
+    },
+    {
+      "id": "c09",
+      "source": "02_Connectors/09_Central_Exchange_to_Black_Grid.png",
+      "walkableTiles": 98,
+      "components": [
+        98
+      ],
+      "reviewedObstacles": 2,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.196
+    },
+    {
+      "id": "c10",
+      "source": "02_Connectors/10_Central_Exchange_to_Undercity.png",
+      "walkableTiles": 58,
+      "components": [
+        58
+      ],
+      "reviewedObstacles": 2,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.167
+    },
+    {
+      "id": "c11",
+      "source": "01_Districts/06_NEXUS_Plaza.png",
+      "walkableTiles": 42,
+      "components": [
+        42
+      ],
+      "reviewedObstacles": 3,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.174
+    },
+    {
+      "id": "c12",
+      "source": "02_Connectors/12_Tech_Quarter_to_Data_Harbor.png",
+      "walkableTiles": 92,
+      "components": [
+        92
+      ],
+      "reviewedObstacles": 2,
+      "waterColorReviewTiles": [
+        [
+          2,
+          16
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          4,
+          16
+        ]
+      ],
+      "floorEdgeDensity": 0.216
+    },
+    {
+      "id": "c13",
+      "source": "02_Connectors/13_Undercity_to_Black_Grid.png",
+      "walkableTiles": 96,
+      "components": [
+        96
+      ],
+      "reviewedObstacles": 3,
+      "waterColorReviewTiles": [],
+      "floorEdgeDensity": 0.175
+    }
+  ]
+}

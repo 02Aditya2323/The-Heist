@@ -1,0 +1,73 @@
+{
+  "version": 30,
+  "tileSize": 32,
+  "width": 52,
+  "height": 29,
+  "note": "Staging plan for fully regenerated playable artwork. Rectangles are [x,y,width,height] in tiles; feet use tile centers. All images are style references only. No baked UI or direction labels.",
+  "districts": [
+    {"id":"central","name":"Central Exchange","origin":[140,120],"color":"#eab777","theme":"Central civic finance plaza; amber gold financial architecture, dark steel, grey ground. Large central bank in the north, a circular raid gathering plaza, race console in west, checkout in east, leaderboard in south.","ground":[[1,13,50,5],[15,0,4,29],[34,0,4,29],[16,12,20,11],[1,25,50,3]],"buildings":[
+      {"id":"bank","name":"Central Bank","rect":[21,2,10,10],"door":[26,12]},
+      {"id":"race","name":"Race Terminal","rect":[6,8,9,5],"door":[10,13]},
+      {"id":"checkout","name":"Checkout","rect":[38,8,9,5],"door":[42,13]},
+      {"id":"leaderboard","name":"Leaderboard","rect":[22,23,9,2],"door":[26,25]},
+      {"id":"raid","name":"Raid Circle","rect":[24,16,4,3],"door":[26,20],"shape":"monument"}
+    ]},
+    {"id":"tech","name":"Tech Quarter","origin":[0,0],"color":"#62d7ff","theme":"Computing campus, electric blue accents, readable circuit details only on buildings. Two server facilities north, central job board, CP lab southwest, debugging lab southeast, small logic training console south of the main street.","ground":[[1,13,50,5],[1,10,50,3],[1,25,50,3],[17,0,4,29],[31,0,4,29],[24,13,4,16]],"buildings":[
+      {"id":"tech-jobs","name":"Tech Job Board","rect":[21,3,10,9],"door":[26,12]},
+      {"id":"server-west","name":"West Server Facility","rect":[3,2,12,7],"door":[9,9],"decorative":true},
+      {"id":"server-east","name":"East Server Facility","rect":[38,2,11,7],"door":[43,9],"decorative":true},
+      {"id":"cp-lab","name":"CP Lab","rect":[4,19,12,5],"door":[10,24]},
+      {"id":"debug-lab","name":"Debugging Lab","rect":[36,19,12,5],"door":[42,24]},
+      {"id":"logic","name":"Logic Terminal","rect":[24,20,3,2],"door":[26,22],"shape":"console"}
+    ]},
+    {"id":"harbor","name":"Data Harbor","origin":[280,0],"color":"#58d5bf","theme":"Working data port, teal/cyan highlights, north/east docks visible outside the street grid, boats and cranes ONLY inside water/plot zones. Job board northwest, data centre north-middle, network tower northeast, OSINT southwest, SQL south-middle.","ground":[[1,13,50,5],[1,11,50,2],[1,25,36,3],[17,0,4,29],[32,0,4,29]],"buildings":[
+      {"id":"harbor-jobs","name":"Harbor Job Board","rect":[4,3,12,7],"door":[10,10]},
+      {"id":"data-centre","name":"Data Centre","rect":[22,3,10,7],"door":[27,10]},
+      {"id":"network-tower","name":"Network Tower","rect":[39,3,10,7],"door":[44,10]},
+      {"id":"osint","name":"OSINT Terminal","rect":[3,19,12,5],"door":[9,24]},
+      {"id":"sql","name":"SQL Terminal","rect":[22,19,10,5],"door":[27,24]},
+      {"id":"harbor-info","name":"Harbor Information","rect":[35,20,2,2],"door":[35,22],"shape":"console"}
+    ],"water":[[38,19,13,9]]},
+    {"id":"black","name":"Black Grid","origin":[280,120],"color":"#f26a85","theme":"Cybersecurity district, dark charcoal steel, restrained crimson lighting. Job board northwest, security hub with jail holding annex north-middle, simulated CTF arena northeast, challenge terminal southwest, safe sandbox lab southeast. No real weapons or combat.","ground":[[1,13,50,5],[1,11,50,2],[1,25,50,3],[17,0,4,29],[32,0,4,29],[24,12,5,17]],"buildings":[
+      {"id":"black-jobs","name":"Black Grid Job Board","rect":[4,3,12,7],"door":[10,10]},
+      {"id":"security","name":"Security Hub","rect":[22,3,10,7],"door":[27,10]},
+      {"id":"ctf","name":"CTF Arena","rect":[39,3,10,7],"door":[44,10]},
+      {"id":"black-challenge","name":"Challenge Terminal","rect":[4,19,12,5],"door":[10,24]},
+      {"id":"sandbox","name":"Sandbox Station","rect":[36,19,12,5],"door":[42,24]}
+    ]},
+    {"id":"under","name":"Undercity","origin":[140,240],"color":"#f0b36f","theme":"Residential district center; amber domestic light, dark steel low-rise houses, sparse magenta signs without letters. Residential street junctions lead south to six housing wards. Information kiosk north-middle, local market southeast; decorative residential home clusters northwest, northeast, southwest. Clean usable streets, no invented economy facilities.","ground":[[1,13,50,5],[1,10,50,3],[1,25,50,3],[17,0,4,29],[32,0,4,29],[24,13,5,16]],"buildings":[
+      {"id":"under-info","name":"Undercity Information","rect":[24,7,4,3],"door":[26,10],"shape":"console"},
+      {"id":"market","name":"Local Market","rect":[37,20,11,4],"door":[42,24]},
+      {"id":"northwest-homes","name":"Northern residential cluster","rect":[3,2,12,7],"door":[9,9],"decorative":true},
+      {"id":"northeast-homes","name":"Eastern residential cluster","rect":[39,2,10,7],"door":[44,9],"decorative":true},
+      {"id":"southwest-homes","name":"Western residential cluster","rect":[4,19,12,5],"door":[10,24],"decorative":true}
+    ]},
+    {"id":"nexus","name":"NEXUS Plaza","origin":[0,120],"color":"#cfa1ff","theme":"Public city intelligence plaza; violet and blue highlights, holographic globe ON the north-center tower. Golden Hour terminal southwest, event terminal southeast, announcement screen northwest, social hub northeast, information terminal south-middle. A small fountain in central plaza with generous circulation around it.","ground":[[1,13,50,5],[1,11,50,2],[1,25,50,3],[17,0,4,29],[32,0,4,29],[17,12,20,12]],"buildings":[
+      {"id":"nexus-tower","name":"NEXUS Tower","rect":[22,1,10,9],"door":[27,10],"decorative":true},
+      {"id":"nexus-announcement","name":"NEXUS Announcements","rect":[4,5,10,5],"door":[9,10]},
+      {"id":"social","name":"Social Hub","rect":[39,4,10,6],"door":[44,10]},
+      {"id":"golden","name":"Golden Hour Terminal","rect":[4,19,12,5],"door":[10,24]},
+      {"id":"nexus-event","name":"Event Terminal","rect":[38,19,11,5],"door":[43,24]},
+      {"id":"nexus-info","name":"NEXUS Information","rect":[23,23,7,2],"door":[26,25]},
+      {"id":"plaza-fountain","name":"Plaza fountain","rect":[24,16,4,3],"door":[26,20],"shape":"monument","decorative":true}
+    ]}
+  ],
+  "connectors":[
+    {"id":"c07","name":"Exchange ↔ Tech","origin":[70,60],"from":"central","to":"tech","orientation":"horizontal","theme":"Amber finance architecture on east fades to blue technology on west; a broad pedestrian bridge over a thin canal, benches, food stall, vending machine, a small info kiosk in side plots."},
+    {"id":"c08","name":"Exchange ↔ Harbor","origin":[210,60],"from":"central","to":"harbor","orientation":"vertical","theme":"Amber city steps south, teal cargo docks north; a straight broad stone pedestrian bridge across a horizontal harbor canal, dock cranes/boats strictly off the road, rest area, small information kiosk."},
+    {"id":"c09","name":"Exchange ↔ Black Grid","origin":[210,120],"from":"central","to":"black","orientation":"horizontal","theme":"Amber city on west, crimson cybersecurity on east; open security checkpoint arches spanning road without blocking it, surveillance towers in side plots, side rest area, food stall, info kiosk."},
+    {"id":"c10","name":"Exchange ↔ Undercity","origin":[140,180],"from":"central","to":"under","orientation":"vertical","theme":"Amber city north, cozy magenta residential south; wide straight pedestrian ramp and steps over narrow horizontal canal, street market, small rest area and info kiosk in side plots."},
+    {"id":"c11","name":"Exchange ↔ NEXUS","origin":[70,120],"from":"central","to":"nexus","orientation":"horizontal","theme":"Violet NEXUS plaza entrance on west, amber Central Exchange on east; wide promenade with side fountains and holographic billboards entirely in side plots, rest bench, food stall and info kiosk."},
+    {"id":"c12","name":"Tech ↔ Harbor","origin":[140,0],"from":"tech","to":"harbor","orientation":"horizontal","theme":"Blue server campus west, teal cargo pier east, broad uninterrupted pedestrian bridge across thin vertical canal, small information kiosk, rest area, food stall in side plots."},
+    {"id":"c13","name":"Undercity ↔ Black Grid","origin":[210,180],"from":"under","to":"black","orientation":"horizontal","theme":"Amber-magenta residential west to crimson security east; broad uninterrupted promenade, side gardens/ponds bounded by low walls, rest area, info kiosk, vending machine away from walking lanes."}
+  ],
+  "links":[
+    {"a":"central","pointA":[17,1],"connector":"c07","b":"tech","pointB":[26,27]},
+    {"a":"central","pointA":[36,1],"connector":"c08","b":"harbor","pointB":[19,27]},
+    {"a":"central","pointA":[50,15],"connector":"c09","b":"black","pointB":[1,15]},
+    {"a":"central","pointA":[17,27],"connector":"c10","b":"under","pointB":[19,1]},
+    {"a":"central","pointA":[1,15],"connector":"c11","b":"nexus","pointB":[50,15]},
+    {"a":"tech","pointA":[50,15],"connector":"c12","b":"harbor","pointB":[1,15]},
+    {"a":"under","pointA":[50,15],"connector":"c13","b":"black","pointB":[26,27]}
+  ]
+}

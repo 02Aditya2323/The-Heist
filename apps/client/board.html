@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Heist — Zero Hour · Live Board</title>
+    <meta
+      name="description"
+      content="Live standings for The Heist: Zero Hour."
+    />
+    <!-- Spectator display. Read-only: this page sends no commands and holds no
+         session, it only polls the public board feed. -->
+  </head>
+  <body>
+    <main id="board" class="board">
+      <header class="board-head">
+        <div class="board-brand">
+          <span class="board-wordmark">THE HEIST</span>
+          <span class="board-sub">ZERO HOUR / VEYRA CITY</span>
+        </div>
+        <div class="board-clock">
+          <small id="board-phase">CONNECTING</small>
+          <strong id="board-time">--:--:--</strong>
+        </div>
+      </header>
+
+      <section class="board-stats" id="board-stats"></section>
+
+      <section class="board-main">
+        <div class="board-panel board-standings">
+          <h2>Standings</h2>
+          <ol id="board-leaderboard" class="board-leaderboard"></ol>
+        </div>
+        <aside class="board-panel board-feed">
+          <h2>NEXUS transmissions</h2>
+          <ul id="board-announcements" class="board-announcements"></ul>
+        </aside>
+      </section>
+
+      <footer class="board-foot">
+        <span id="board-state">Connecting to the city…</span>
+        <span class="board-host">zerohour1.eastus.cloudapp.azure.com</span>
+      </footer>
+    </main>
+    <script type="module" src="/src/board.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+/* The world is the primary surface. All gameplay chrome floats over its edges. */
+:root { --field-surface: rgba(7,18,29,.78); --field-border: rgba(137,217,220,.22); --field-muted: #a1b6c3; }
+#game-canvas { top: 0; left: 0; width: 100vw; height: 100dvh; box-shadow: none; }
+.hud-mast,.hud-wallet,.hud-directive,.field-utilities,.field-objectives,#interact-button,
+dialog,.atlas-header,.atlas-sidebar,.atlas-zoom { background: var(--field-surface); border: 1px solid var(--field-border); box-shadow: inset 0 1px rgba(255,255,255,.035),0 12px 36px #0003; backdrop-filter: blur(12px); border-radius: 10px; }
+.hud-mast { position: fixed; inset: 12px 16px auto; height: 48px; min-height: 0; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; }
+.hud-wordmark { font-size: 13px; letter-spacing: .18em; text-shadow: none; }
+.hud-wordmark>span { display: none; }
+.hud-clock { gap: 14px; flex-wrap: nowrap; }
+.hud-clock strong { font: 500 22px/1.1 ui-monospace,monospace; text-shadow: none; }
+.hud-clock small { max-width: 145px; font-size: 8px; letter-spacing: .1em; }
+.hud-collapse { padding: 6px; margin: 0; }
+.hud-collapse-text,.hud-collapse-icon { display: none; }
+.hud-mini { display: inline-flex !important; padding: 0; border: 0; background: none; }
+.hud-mini small { display: none; }
+.world-bar { top: 20px !important; left: 160px; right: 82px; height: 32px; align-items: center; z-index: 24; }
+.world-heading { padding: 0 0 0 16px; border: 0; border-left: 1px solid var(--field-border); background: none; box-shadow: none; }
+.world-heading small { display: none; }
+.world-heading h1 { margin: 0; font-size: 11px; letter-spacing: .06em; }
+.world-status { position: fixed; top: 71px; right: 19px; padding: 0; border: 0; background: none; box-shadow: none; font-size: 10px; color: var(--field-muted); }
+#inspect-map,#player-readout { display: none; }
+body[data-hud-mode=diagnostics] #player-readout { display: inline; }
+.world-bottom,.hud-transmission { display: none !important; }
+.hud-wallet { inset: auto auto 18px 18px; width: 186px; padding: 12px 14px; }
+.wallet-title { font-size: 10px; gap: 8px; }
+.wallet-title #operator-status { font-size: 8px; color: #97d6b4; }
+.wallet-total { margin: 8px 0 0; }
+.wallet-total small { display: none; }
+.wallet-total strong { font-size: 23px; }
+.hud-wallet .wallet-accounts,.hud-wallet .wallet-foot,.hud-wallet progress,.hud-wallet #bank-fee-ticker { display: none; }
+.hud-wallet[data-expanded=true] .wallet-accounts,.hud-wallet[data-expanded=true] .wallet-foot { display: flex; }
+.hud-wallet[data-expanded=true] #bank-fee-ticker { display: block; }
+.account-toggle { margin-top: 8px; padding: 0; background: none; border: 0; color: var(--field-muted); font-size: 9px; cursor: pointer; }
+.hud-directive { inset: auto auto 18px 50%; transform: translateX(-50%); width: min(430px,34vw); padding: 10px 14px; min-height: 0; }
+.hud-directive>small { font-size: 8px; letter-spacing: .16em; color: #88c8cb; }
+.hud-directive p { margin: 5px 0; font-size: 11px; line-height: 1.5; }
+.hud-directive button { font-size: 9px; padding: 0; background: none; border: 0; }
+.field-utilities { position: fixed; right: 18px; bottom: 18px; display: flex; gap: 3px; padding: 6px; pointer-events: auto; }
+.field-utilities button { padding: 7px; background: none; border: 0; color: #bed0db; font: 10px system-ui; cursor: pointer; }
+.field-utilities button:hover { color: #89e2dc; background: #82e4da12; border-radius: 5px; }
+.field-objectives { position: fixed; right: 18px; top: 104px; width: 166px; padding: 10px 12px; font-size: 10px; pointer-events: auto; }
+.field-objectives summary { cursor: pointer; color: #b8d0dc; }
+.field-objectives p { line-height: 1.6; color: #a1b6c3; }
+.field-objectives button { background: none; border: 0; padding: 0; color: #88dcd6; cursor: pointer; }
+.completion-dock { top: 148px !important; right: 18px !important; bottom: auto !important; left: auto !important; padding: 8px 12px; font-size: 10px; background: var(--field-surface); border: 1px solid var(--field-border); }
+body:has(.field-objectives[open]) .completion-dock { top: 280px !important; }
+#interact-button { position: fixed; inset: 58% auto auto 50%; transform: translateX(-50%); max-width: min(340px,80vw); padding: 11px 17px; font-size: 11px; color: #b9f3e7; animation: field-appear .16s ease-out; }
+.activity-banner { position: fixed; top: 76px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 45vw; padding: 5px 12px; font-size: 9px; border: 0; background: #0b1d26b3; border-radius: 5px; }
+.activity-banner:empty { display: none; }
+.district-intro { position: fixed; top: 22%; left: 36px; z-index: 22; pointer-events: none; animation: field-intro 2.6s both; text-shadow: 0 2px 16px #000; }
+.district-intro small { display: block; color: #8fd9d6; letter-spacing: .22em; font: 9px system-ui; }
+.district-intro strong { display: block; margin-top: 8px; font: 500 32px system-ui; letter-spacing: .08em; color: #f1f4f6; }
+#game-toast { inset: 190px 18px auto auto; width: 280px; height: auto; padding: 13px; white-space: normal; line-height: 1.5; font-size: 11px; background: var(--field-surface); border: 1px solid var(--field-border); border-radius: 8px; backdrop-filter: blur(12px); }
+dialog::backdrop { background: #02081080; backdrop-filter: blur(3px); }
+dialog { color: #dfebf1; }
+.field-settings { width: min(370px,90vw); padding: 26px; }
+.field-settings h2 { font-size: 24px; font-weight: 500; }
+.field-settings p { color: var(--field-muted); font-size: 12px; }
+.field-settings .world-controls { display: flex; position: static; flex-wrap: wrap; margin: 24px 0; }
+.field-settings>button { display: block; width: 100%; margin-top: 10px; padding: 10px; border: 1px solid var(--field-border); background: #10283380; color: #dfebf1; border-radius: 6px; cursor: pointer; }
+#city-atlas { background: #06121deb; backdrop-filter: blur(14px); }
+.atlas-header h2 { font-weight: 500; }
+.atlas-sidebar { box-shadow: none; }
+.job-card { border-radius: 10px; background: #0c1d2ac9; box-shadow: none; }
+.job-card:has(button:disabled) { opacity: 1; }
+body[data-hud-collapsed=true] .world-bar { display: flex !important; }
+body[data-hud-collapsed=true] .hud-directive { display: block; }
+body[data-hud-collapsed=true] .hud-wallet,body[data-hud-collapsed=true] .field-objectives,body[data-hud-collapsed=true] .field-utilities,body[data-hud-collapsed=true] .completion-dock,body[data-hud-collapsed=true] .world-status { display: none !important; }
+body[data-hud-collapsed=true] .hud-mini { display: none !important; }
+button:focus-visible,summary:focus-visible { outline: 2px solid #8ce0db; outline-offset: 4px; }
+@keyframes field-appear { from { opacity: 0; translate: 0 6px; } to { opacity: 1; translate: 0 0; } }
+@keyframes field-intro { 0%,100% { opacity: 0; translate: 0 8px; } 15%,80% { opacity: 1; translate: 0 0; } }
+@media(max-width:1100px) { .field-utilities button { font-size: 9px; padding: 6px; } .hud-directive { width: 32vw; } .hud-clock small { display: none; } }
+@media(max-width:700px) { .hud-mast { inset: 8px 8px auto; padding: 0 10px; height: 44px; } .hud-wordmark { font-size: 10px; } .world-bar { left: 119px; right: 150px; top: 18px !important; } .world-heading { padding-left: 8px; } .world-heading h1 { font-size: 9px; } .hud-clock { gap: 6px; } .hud-clock strong { font-size: 16px; } .hud-mini { display: none !important; } .hud-wallet { bottom: 65px; left: 10px; width: 135px; padding: 9px; } .wallet-total strong { font-size: 18px; } .field-utilities { right: 8px; bottom: 10px; } .hud-directive { bottom: 67px; left: auto; right: 10px; transform: none; width: 45vw; padding: 8px; } .hud-directive p { font-size: 10px; } .field-objectives { top: 90px; right: 10px; width: 125px; } .completion-dock { top: 133px !important; right: 10px !important; } #touch-movement { bottom: 180px; left: 10px; } .district-intro { left: 20px; } .district-intro strong { font-size: 24px; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+#field-notifications { position: fixed; top: 190px; right: 18px; z-index: 46; width: min(280px,80vw); display: grid; gap: 8px; pointer-events: none; }
+#field-notifications article { position: relative; padding: 13px 28px 13px 14px; background: var(--field-surface); border: 1px solid var(--field-border); border-left: 2px solid #84d6bc; border-radius: 8px; backdrop-filter: blur(12px); color: #d8e6ed; animation: field-appear .18s ease-out; pointer-events: auto; }
+#field-notifications strong { font: 9px system-ui; letter-spacing: .12em; color: #94d9ca; }
+#field-notifications p { margin: 6px 0 0; font: 11px/1.6 system-ui; }
+#field-notifications button { position: absolute; top: 6px; right: 7px; border: 0; background: none; color: #aabcc9; cursor: pointer; }
+#field-notifications [data-error=true] { border-left-color: #ec9393; }
+.field-diagnostics { display: none; position: fixed; top: 100px; left: 18px; z-index: 25; padding: 12px; white-space: pre-line; font: 10px/1.8 monospace; color: #a6ddd2; background: var(--field-surface); border: 1px solid var(--field-border); border-radius: 8px; pointer-events: none; }
+body[data-hud-mode=diagnostics] .field-diagnostics { display: block; }
+#city-atlas.rail-collapsed .atlas-sidebar { display: none; }
+#city-atlas.rail-collapsed .atlas-layout { grid-template-columns: minmax(0,1fr); }
+.atlas-zoom { flex-wrap: wrap; max-width: calc(100% - 20px); gap: 5px; }
+.atlas-zoom button[aria-pressed=false] { opacity: .5; }
+#terminal-game .job-card,#terminal-game .challenge-card,#terminal-game .activity-card { background: #0c1d2abf; box-shadow: inset 0 1px #ffffff05; border-color: var(--field-border); }
+#terminal-game .job-card h3 { font-size: 22px; font-weight: 500; letter-spacing: .01em; }
+#terminal-game .job-card .game-button { border-radius: 6px; padding: 10px 14px; }
+body[data-hud-collapsed=true] .hud-directive { opacity: 1; visibility: visible; transform: translateX(-50%); pointer-events: auto; }
+@media(max-width:700px) { body[data-hud-collapsed=true] .hud-directive { transform: none; } }
+.hud-mast { gap: 22px; }
+.hud-mast .world-heading { position: static; margin-right: auto; flex: 1; min-width: 0; }
+.hud-mast .world-heading h1 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hud-mast .hud-wordmark { flex-shrink: 0; }
+@media(max-width:700px) { .hud-mast { gap: 8px; } }
+.hud-clock { display: flex; align-items: center; }
+.hud-collapse kbd { display: inline; }
+.hud-directive>small,.hud-directive>p { display: block; }
+@media(max-width:700px) { .hud-clock { flex-direction: row; } .hud-collapse { min-width: 24px; min-height: 24px; } .hud-directive>p { max-height: 60px; overflow: auto; } .hud-directive>small { font-size: 7px; } }
+/* Presence polish: no changes to the layout or authoritative movement. */
+#terminal-dialog[open],.completion-dialog[open] { animation: terminal-arrive 180ms ease-out; }
+#interact-button { transition: border-color 150ms, background-color 150ms, box-shadow 150ms; }
+#interact-button:hover { border-color: #91dcd5; background: #12333cde; box-shadow: 0 0 18px #80dad514; }
+#interact-button:active { scale: .98; }
+.wallet-total { position: relative; }
+.wallet-total[data-reward]::after { content: attr(data-reward); position: absolute; right: 0; top: -16px; color: #a1e4c5; font: 10px/1.5 ui-monospace,monospace; animation: reward-arrive 1.4s ease-out both; pointer-events: none; }
+@keyframes terminal-arrive { from { opacity: 0; translate: 0 7px; } to { opacity: 1; translate: 0 0; } }
+@keyframes reward-arrive { 0% { opacity:0; translate:0 5px; } 18%,75% { opacity:1; } 100% { opacity:0; translate:0 -5px; } }
+@media(prefers-reduced-motion:reduce) { #terminal-dialog[open],.completion-dialog[open],.wallet-total[data-reward]::after { animation: none; } }

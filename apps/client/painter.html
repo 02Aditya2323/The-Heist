@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Heist — Collision Painter Studio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-color: #0b0f19;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+        color: #cbd5e1;
+        display: flex;
+        flex-direction: column;
+        user-select: none;
+      }
+      header {
+        height: 48px;
+        background: #111827;
+        border-bottom: 1px solid #1f293d;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+        z-index: 10;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        color: #00f0ff;
+      }
+      .brand span {
+        color: #94a3b8;
+        font-weight: 400;
+        font-size: 12px;
+      }
+      .top-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .btn {
+        background: #1e293b;
+        color: #f1f5f9;
+        border: 1px solid #334155;
+        border-radius: 4px;
+        padding: 6px 12px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.15s ease;
+      }
+      .btn:hover {
+        background: #334155;
+        border-color: #00f0ff;
+      }
+      .btn-primary {
+        background: #0284c7;
+        border-color: #00f0ff;
+        color: #ffffff;
+      }
+      .btn-primary:hover {
+        background: #00f0ff;
+        color: #0f172a;
+      }
+      .btn-success {
+        background: #059669;
+        border-color: #10b981;
+      }
+      .btn-success:hover {
+        background: #10b981;
+        color: #0f172a;
+      }
+      .btn-danger {
+        background: #dc2626;
+        border-color: #f87171;
+      }
+      .btn-danger:hover {
+        background: #ef4444;
+        color: #ffffff;
+      }
+      .btn.active {
+        background: #00f0ff;
+        color: #0f172a;
+        border-color: #ffffff;
+      }
+      .main-container {
+        flex: 1;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+      }
+      aside {
+        width: 310px;
+        background: #0f172a;
+        border-right: 1px solid #1e293b;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px;
+        overflow-y: auto;
+        z-index: 5;
+      }
+      .section {
+        background: #141e33;
+        border: 1px solid #1e293b;
+        border-radius: 6px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .section-title {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #00f0ff;
+        margin-bottom: 2px;
+      }
+      details.section summary {
+        cursor: pointer;
+        outline: none;
+        list-style: none;
+      }
+      details.section summary::-webkit-details-marker {
+        display: none;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .row-space {
+        justify-content: space-between;
+      }
+      label {
+        font-size: 12px;
+        color: #94a3b8;
+      }
+      select, input[type="text"], input[type="number"] {
+        background: #0f172a;
+        border: 1px solid #334155;
+        color: #f8fafc;
+        padding: 5px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        outline: none;
+        flex: 1;
+      }
+      select:focus, input:focus {
+        border-color: #00f0ff;
+      }
+      input[type="range"] {
+        flex: 1;
+        accent-color: #00f0ff;
+      }
+      .tool-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .list-container {
+        max-height: 100px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        background: #0b0f19;
+        border: 1px solid #1e293b;
+        border-radius: 4px;
+        padding: 4px;
+      }
+      .list-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 8px;
+        font-size: 11px;
+        background: #141e33;
+        border-radius: 3px;
+      }
+      .list-item button {
+        background: transparent;
+        border: none;
+        color: #ef4444;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .canvas-viewport {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        background-color: #030508;
+        background-image: radial-gradient(#1e293b 1px, transparent 1px);
+        background-size: 16px 16px;
+        cursor: crosshair;
+      }
+      #editor-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        image-rendering: pixelated;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+      }
+      .status-bar {
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid #334155;
+        border-radius: 4px;
+        padding: 6px 12px;
+        font-size: 11px;
+        font-family: monospace;
+        color: #38bdf8;
+        display: flex;
+        gap: 16px;
+        pointer-events: none;
+        backdrop-filter: blur(4px);
+        z-index: 20;
+      }
+      .walk-banner {
+        position: absolute;
+        top: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(2, 132, 199, 0.95);
+        color: #ffffff;
+        border: 1px solid #00f0ff;
+        border-radius: 6px;
+        padding: 8px 18px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        display: none;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 4px 20px rgba(0, 240, 255, 0.3);
+        z-index: 30;
+      }
+      .walk-banner button {
+        background: #0f172a;
+        color: #ffffff;
+        border: 1px solid #38bdf8;
+        border-radius: 4px;
+        padding: 3px 8px;
+        cursor: pointer;
+        font-size: 11px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        THE HEIST <span>// Painted World Collision Studio</span>
+      </div>
+      <div class="top-controls">
+        <button id="btn-undo" class="btn" title="Undo (Ctrl+Z)">↶ Undo</button>
+        <button id="btn-redo" class="btn" title="Redo (Ctrl+Y)">↷ Redo</button>
+        <button id="btn-reset-view" class="btn">Reset View</button>
+        <button id="btn-export-map" class="btn btn-primary">⬇ Export map.json</button>
+        <button id="btn-export-manifest" class="btn btn-primary">⬇ Export painted.json</button>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <aside>
+        <!-- Map & Image Setup -->
+        <div class="section">
+          <div class="section-title">Painted Image & Grid</div>
+          <div class="row">
+            <label for="select-art">Image:</label>
+            <select id="select-art">
+              <option value="/art/tech_quarter.png">tech_quarter.png (52x29)</option>
+              <option value="/art/tech_quarter_to_data_harbor.png">tech_to_harbor.png</option>
+              <option value="/art/central_exchange_to_tech_quarter.png">exchange_to_tech.png</option>
+            </select>
+          </div>
+          <div class="row">
+            <label>Tiles W x H:</label>
+            <input type="number" id="input-tiles-w" value="52" min="10" max="256" style="width: 55px;" />
+            <span>×</span>
+            <input type="number" id="input-tiles-h" value="29" min="10" max="256" style="width: 55px;" />
+          </div>
+          <div class="row">
+            <label>Tile Size:</label>
+            <span style="font-weight: 600; color: #00f0ff;">32px</span>
+            <span style="color: #64748b; font-size: 11px; margin-left: auto;">1664 × 928 px</span>
+          </div>
+        </div>
+
+        <!-- Painting Tools -->
+        <div class="section">
+          <div class="section-title">Paint Tools & Actions</div>
+          <div class="row row-space">
+            <button id="mode-blocked" class="btn btn-primary active" style="flex:1;">Blocked (1)</button>
+            <button id="mode-walkable" class="btn" style="flex:1;">Walkable (0)</button>
+          </div>
+          <div class="tool-grid">
+            <button id="tool-brush" class="btn active">🖌 Brush</button>
+            <button id="tool-rect" class="btn">▭ Rect</button>
+            <button id="tool-fill" class="btn">🪣 Flood Fill</button>
+            <button id="tool-eraser" class="btn">🧹 Eraser (0)</button>
+            <button id="tool-wand" class="btn" style="grid-column: span 2;">✨ Magic Wand</button>
+          </div>
+
+          <!-- Quick Bulk Actions -->
+          <div class="row row-space" style="margin-top: 4px;">
+            <button id="btn-start-all-blocked" class="btn btn-danger" style="flex:1; font-size: 11px;" title="Set all tiles to blocked">
+              ◼ All Blocked
+            </button>
+            <button id="btn-clear-all" class="btn" style="flex:1; font-size: 11px;" title="Clear all tiles to walkable">
+              ◻ Clear All
+            </button>
+          </div>
+
+          <div class="row" style="margin-top: 4px;">
+            <label>Brush Size:</label>
+            <button class="btn btn-brush-size active" data-size="1">1x1</button>
+            <button class="btn btn-brush-size" data-size="2">2x2</button>
+            <button class="btn btn-brush-size" data-size="3">3x3</button>
+          </div>
+        </div>
+
+        <!-- Magic Wand Settings (Dynamic) -->
+        <div class="section" id="section-wand-settings" style="display: none; border-color: #00f0ff;">
+          <div class="section-title">✨ Magic Wand Options</div>
+          <div class="row">
+            <label for="rng-wand-tolerance">Tolerance:</label>
+            <input type="range" id="rng-wand-tolerance" min="1" max="100" value="22" />
+            <span id="txt-wand-tolerance" style="width: 32px; font-size: 11px; text-align: right;">22%</span>
+          </div>
+          <div id="wand-selection-status" style="font-size: 11px; color: #38bdf8;">
+            Click any tile to select connected similar colors.
+          </div>
+          <div class="row" id="row-wand-actions" style="display: none; gap: 6px;">
+            <button id="btn-wand-mark-walkable" class="btn btn-success" style="flex: 1; font-size: 11px;">
+              Mark Walkable (0)
+            </button>
+            <button id="btn-wand-mark-blocked" class="btn btn-danger" style="flex: 1; font-size: 11px;">
+              Mark Blocked (1)
+            </button>
+          </div>
+          <button id="btn-wand-deselect" class="btn" style="font-size: 11px; justify-content: center; display: none;">
+            Clear Selection
+          </button>
+        </div>
+
+        <!-- Verification Testing Tools: Foot-Test & Walk-Test -->
+        <div class="section" style="border-color: #0284c7;">
+          <div class="section-title">Verification & Testing</div>
+          <div class="row row-space">
+            <button id="btn-toggle-foot-test" class="btn" style="flex: 1;" title="Hover to check 32x48 silhouette and feet alignment">
+              🦶 Foot-Test Mode
+            </button>
+            <button id="btn-toggle-walk-test" class="btn btn-primary" style="flex: 1;" title="Press W to walk test collision locally with WASD">
+              🚶 Walk Test (W)
+            </button>
+          </div>
+          <p style="font-size: 10px; color: #94a3b8; line-height: 1.2;">
+            <strong>Foot-test:</strong> Hover shows 32x32 footprint tile and 32x48 avatar (green/red).<br/>
+            <strong>Walk-test:</strong> Real 250ms step-rate avatar movement (no server required).
+          </p>
+        </div>
+
+        <!-- Hotspots & Spawns -->
+        <div class="section">
+          <div class="section-title">Hotspots & Spawns</div>
+          <div class="row">
+            <button id="tool-hotspot" class="btn" style="flex:1;">📍 Hotspot Tool</button>
+            <button id="tool-spawn" class="btn" style="flex:1;">🚩 Spawn Tool</button>
+          </div>
+          <div class="row" id="row-hotspot-preset">
+            <label for="select-hotspot-name">Name:</label>
+            <select id="select-hotspot-name">
+              <option value="job_board">job_board</option>
+              <option value="bank">bank</option>
+              <option value="harbor_gate">harbor_gate</option>
+              <option value="tech_core">tech_core</option>
+              <option value="hideout">hideout</option>
+              <option value="black_market">black_market</option>
+              <option value="custom">custom...</option>
+            </select>
+          </div>
+          <div class="row" id="row-custom-hotspot" style="display: none;">
+            <input type="text" id="input-custom-hotspot" placeholder="Enter custom hotspot name" value="custom_spot" />
+          </div>
+          <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">Hotspots:</div>
+          <div id="hotspot-list" class="list-container"></div>
+          <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">Spawns:</div>
+          <div id="spawn-list" class="list-container"></div>
+        </div>
+
+        <!-- Overlays & Display -->
+        <div class="section">
+          <div class="section-title">Overlays & Display</div>
+          <div class="row row-space">
+            <label for="chk-overlay">Collision Overlay:</label>
+            <input type="checkbox" id="chk-overlay" checked />
+          </div>
+          <div class="row">
+            <label for="rng-opacity">Opacity:</label>
+            <input type="range" id="rng-opacity" min="0" max="100" value="50" />
+            <span id="txt-opacity" style="width: 32px; font-size: 11px; text-align: right;">50%</span>
+          </div>
+          <div class="row row-space">
+            <label for="chk-grid">32px Tile Grid:</label>
+            <input type="checkbox" id="chk-grid" checked />
+          </div>
+          <div class="row row-space">
+            <label for="chk-cover-rects">Show Cover Rects:</label>
+            <input type="checkbox" id="chk-cover-rects" checked />
+          </div>
+        </div>
+
+        <!-- Advanced Workflow (Collapsible) -->
+        <details class="section">
+          <summary class="section-title">▶ Advanced: Auto-Suggest</summary>
+          <p style="font-size: 11px; color: #94a3b8; line-height: 1.3; margin-top: 6px;">
+            Optional heuristic brightness analysis.
+          </p>
+          <div class="row" style="margin-top: 4px;">
+            <label for="rng-darkness">Threshold:</label>
+            <input type="range" id="rng-darkness" min="10" max="90" value="45" />
+            <span id="txt-darkness" style="width: 32px; font-size: 11px; text-align: right;">45%</span>
+          </div>
+          <button id="btn-auto-suggest" class="btn btn-success" style="justify-content: center; margin-top: 4px;">
+            ⚡ Run Auto-Suggest Draft
+          </button>
+          <button id="btn-apply-draft" class="btn btn-primary" style="justify-content: center; display: none; margin-top: 4px;">
+            ✓ Apply Draft Collision
+          </button>
+        </details>
+      </aside>
+
+      <main class="canvas-viewport" id="viewport">
+        <canvas id="editor-canvas"></canvas>
+
+        <div class="walk-banner" id="walk-banner">
+          <span>🚶 WALK TEST ACTIVE — Move with WASD, Esc to Exit</span>
+          <button id="btn-exit-walk-test">Exit</button>
+        </div>
+
+        <div class="status-bar" id="status-bar">
+          <span id="stat-coords">Tile: (0, 0)</span>
+          <span id="stat-tile-status">Type: WALKABLE</span>
+          <span id="stat-zoom">Zoom: 100%</span>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="./painter.bundle.js"></script>
+  </body>
+</html>

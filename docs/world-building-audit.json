@@ -1,0 +1,243 @@
+{
+  "mapVersion": 30,
+  "serverClientMapIdentical": true,
+  "mainDistricts": 6,
+  "connectors": 7,
+  "residentialWards": 6,
+  "homeSites": 90,
+  "interactionLocations": 124,
+  "travelDirections": 44,
+  "sourceAssets": [
+    {
+      "path": "docs/generated-world-v2/central.png",
+      "bytes": 3200423,
+      "sha256": "9e492a73833320f810d3f2e9ea2614b5cb5afc9ce51d776ba125b3e68bef8254"
+    },
+    {
+      "path": "docs/generated-world-v2/tech.png",
+      "bytes": 2761626,
+      "sha256": "8148b3d83c99248ea1611df8a1274e3a11a124cee5c04711927a76a483c1f5cb"
+    },
+    {
+      "path": "docs/generated-world-v2/harbor.png",
+      "bytes": 3331807,
+      "sha256": "9d7d0529820427bc670f4dd2ac8f3333d2ef9118a88f6bdadab9a290222ba1d7"
+    },
+    {
+      "path": "docs/generated-world-v2/black.png",
+      "bytes": 3111899,
+      "sha256": "cbaa5726df717149677ae18a84b595de476575e802c00c6e197f0251f3d3ef86"
+    },
+    {
+      "path": "docs/generated-world-v2/under.png",
+      "bytes": 3276561,
+      "sha256": "8207ee230d21d228f4facf7153490a48f21c1eb756a96535ae00c3a4b4e2874b"
+    },
+    {
+      "path": "docs/generated-world-v2/nexus.png",
+      "bytes": 3487644,
+      "sha256": "a53b9d1269d44b3cf918e0a5134e2bae76b89e04d9589bdc7b7e5cd71882a06f"
+    },
+    {
+      "path": "docs/generated-world-v2/c07.png",
+      "bytes": 3186803,
+      "sha256": "12bc7d9568b9a8259bea6b358f62a487ca615a2c8ed23790f6213a93d99362a2"
+    },
+    {
+      "path": "docs/generated-world-v2/c08.png",
+      "bytes": 3127803,
+      "sha256": "13ddd92857faeedd9aa0480a6da1171b10a39f54038c44197cbf31c9fdbf9a13"
+    },
+    {
+      "path": "docs/generated-world-v2/c09.png",
+      "bytes": 3103973,
+      "sha256": "6d1c668e7ba8bf87d550048e0fd0453e56adc7c95cbf234d0cd3cf508a021d32"
+    },
+    {
+      "path": "docs/generated-world-v2/c10.png",
+      "bytes": 3233407,
+      "sha256": "de220d930e123ed4d1513188da4a37bbfda98b50c6017e0054ace8be8c5676ca"
+    },
+    {
+      "path": "docs/generated-world-v2/c11.png",
+      "bytes": 3428609,
+      "sha256": "11ec257927de75e42a8d591801286ec353c38e13eb082d600a650d58844e6a2c"
+    },
+    {
+      "path": "docs/generated-world-v2/c12.png",
+      "bytes": 3217851,
+      "sha256": "8f9dd676ec427a75297e1b8244829d226fb8a66b6dd8a7d6df91ff8c1a0ad26d"
+    },
+    {
+      "path": "docs/generated-world-v2/c13.png",
+      "bytes": 3274165,
+      "sha256": "5bcad21fdea03227b071fdda6f6815b351620d261bb743cada2834da63d240df"
+    },
+    {
+      "path": "docs/generated-world-v2/homes.png",
+      "bytes": 3150485,
+      "sha256": "9fa6b3fa8dbb5aa2e27252e067b08d866fdb617aa3f8bf951f019c6377ac0b09"
+    }
+  ],
+  "encoding": [
+    {
+      "scene": "central",
+      "asset": "v2-central",
+      "width": 1680,
+      "height": 936,
+      "pngBytes": 3200423,
+      "webpBytes": 2401510,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "9e492a73833320f810d3f2e9ea2614b5cb5afc9ce51d776ba125b3e68bef8254",
+      "webpSha256": "cb07566f9ea3600069eb29c8e00a1d6610bcf2f40beb9448a0a0121b73e2c1c1"
+    },
+    {
+      "scene": "tech",
+      "asset": "v2-tech",
+      "width": 1679,
+      "height": 937,
+      "pngBytes": 2761626,
+      "webpBytes": 2261606,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "8148b3d83c99248ea1611df8a1274e3a11a124cee5c04711927a76a483c1f5cb",
+      "webpSha256": "fec416a0a1a840541b544320fd007b1910cb0219974caa7498f101b380d7f178"
+    },
+    {
+      "scene": "harbor",
+      "asset": "v2-harbor",
+      "width": 1679,
+      "height": 937,
+      "pngBytes": 3331807,
+      "webpBytes": 2609482,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "9d7d0529820427bc670f4dd2ac8f3333d2ef9118a88f6bdadab9a290222ba1d7",
+      "webpSha256": "bf230036c4489ec55693e14f56655598d56e6b415a23a52aea72e13cff5dec71"
+    },
+    {
+      "scene": "black",
+      "asset": "v2-black",
+      "width": 1679,
+      "height": 937,
+      "pngBytes": 3111899,
+      "webpBytes": 2375348,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "cbaa5726df717149677ae18a84b595de476575e802c00c6e197f0251f3d3ef86",
+      "webpSha256": "1d19a7f2b6435a476b6217de6d772be7c2becbd4b6759058c2c8bd451054e252"
+    },
+    {
+      "scene": "under",
+      "asset": "v2-under",
+      "width": 1680,
+      "height": 936,
+      "pngBytes": 3276561,
+      "webpBytes": 2596810,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "8207ee230d21d228f4facf7153490a48f21c1eb756a96535ae00c3a4b4e2874b",
+      "webpSha256": "6ef22869143f1f983155baaa0d8b283a3da918cec369fe69205c372d12f485a0"
+    },
+    {
+      "scene": "nexus",
+      "asset": "v2-nexus",
+      "width": 1679,
+      "height": 937,
+      "pngBytes": 3487644,
+      "webpBytes": 2715342,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "a53b9d1269d44b3cf918e0a5134e2bae76b89e04d9589bdc7b7e5cd71882a06f",
+      "webpSha256": "a36d13a993c9b5cbb23f594718d48c0edecbd648017c1f0ac13c79dd8fcf794f"
+    },
+    {
+      "scene": "c07",
+      "asset": "v2-c07",
+      "width": 1680,
+      "height": 936,
+      "pngBytes": 3186803,
+      "webpBytes": 2517738,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "12bc7d9568b9a8259bea6b358f62a487ca615a2c8ed23790f6213a93d99362a2",
+      "webpSha256": "e8ac24c40ee4d0e483d7f18859a8a821abd98b7cada8125c61e2a1c3ef96fe0d"
+    },
+    {
+      "scene": "c08",
+      "asset": "v2-c08",
+      "width": 1679,
+      "height": 937,
+      "pngBytes": 3127803,
+      "webpBytes": 2506820,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "13ddd92857faeedd9aa0480a6da1171b10a39f54038c44197cbf31c9fdbf9a13",
+      "webpSha256": "f95bd271d9df196b7957ce387b989630704fe1487d9ee858111299a9caa51559"
+    },
+    {
+      "scene": "c09",
+      "asset": "v2-c09",
+      "width": 1679,
+      "height": 937,
+      "pngBytes": 3103973,
+      "webpBytes": 2435316,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "6d1c668e7ba8bf87d550048e0fd0453e56adc7c95cbf234d0cd3cf508a021d32",
+      "webpSha256": "03bc63268e640b6df6d1884a79818202d6f6f682017d066bdf7212fccfa3cad1"
+    },
+    {
+      "scene": "c10",
+      "asset": "v2-c10",
+      "width": 1680,
+      "height": 936,
+      "pngBytes": 3233407,
+      "webpBytes": 2596626,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "de220d930e123ed4d1513188da4a37bbfda98b50c6017e0054ace8be8c5676ca",
+      "webpSha256": "4911b7a289ff6e9ca4e032e5c7258648bf3b37279f101da6cc07ad826829c477"
+    },
+    {
+      "scene": "c11",
+      "asset": "v2-c11",
+      "width": 1679,
+      "height": 937,
+      "pngBytes": 3428609,
+      "webpBytes": 2684960,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "11ec257927de75e42a8d591801286ec353c38e13eb082d600a650d58844e6a2c",
+      "webpSha256": "10be797ee768bea8032a20f60b21bb3be7215b049cb09335dab28622368ad204"
+    },
+    {
+      "scene": "c12",
+      "asset": "v2-c12",
+      "width": 1679,
+      "height": 937,
+      "pngBytes": 3217851,
+      "webpBytes": 2542440,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "8f9dd676ec427a75297e1b8244829d226fb8a66b6dd8a7d6df91ff8c1a0ad26d",
+      "webpSha256": "0c719c9155ebeb93ba5358fc27244456520e23c1cca2c29c5548732275d27e3a"
+    },
+    {
+      "scene": "c13",
+      "asset": "v2-c13",
+      "width": 1680,
+      "height": 936,
+      "pngBytes": 3274165,
+      "webpBytes": 2560606,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "5bcad21fdea03227b071fdda6f6815b351620d261bb743cada2834da63d240df",
+      "webpSha256": "8d7f31ec5301682deac730cb233c10d543d7f4be739c49d80b4785d672f1bb7e"
+    },
+    {
+      "scene": "homes-a",
+      "asset": "v2-homes",
+      "width": 1679,
+      "height": 937,
+      "pngBytes": 3150485,
+      "webpBytes": 2459296,
+      "identicalDecodedPixels": true,
+      "sourceSha256": "9fa6b3fa8dbb5aa2e27252e067b08d866fdb617aa3f8bf951f019c6377ac0b09",
+      "webpSha256": "cc67d2c570f73f4a72498690547d0f89909565f84663a72812ebfc57a82bdab8"
+    }
+  ],
+  "collisionReport": "maps/art-world-v2.collision-report.json",
+  "entranceReview": "maps/art-world-v2.entrance-adjustments.json",
+  "prompts": "docs/generated-world-v2/generation-prompts.json",
+  "housingPrompt": "docs/generated-world-v2/housing-prompt.txt",
+  "generationMode": "Built-in image generation; original references used for style, separate geometry guides used for layout."
+}

@@ -1,0 +1,36 @@
+{
+  "mapVersion": 30,
+  "panels": 19,
+  "connectedPeers": 12,
+  "minimumPeersVisible": 13,
+  "movementRejects": 0,
+  "terminalVerified": "raid",
+  "metrics": {
+    "players": 14,
+    "ghosts": 0,
+    "tickDuration": {
+      "avgMs": 0.018,
+      "p50Ms": 0.006,
+      "p99Ms": 0.369,
+      "maxMs": 0.806,
+      "tickOverruns": 0
+    },
+    "network": {
+      "totalMsgsIn": 8325,
+      "totalBytesOut": 133118,
+      "msgsInPerSec": 13,
+      "bytesOutPerSec": 3151,
+      "avgBytesPerClientPerSec": 225.1,
+      "outboxFlushesPerTick": 4.95,
+      "backpressureEvents": 0,
+      "rateLimitDrops": 0,
+      "malformedMessages": 0
+    },
+    "system": {
+      "memoryRssMb": 28.7,
+      "heapUsedMb": 16,
+      "eventLoopLagMs": 11,
+      "uptimeSec": 1787
+    }
+  }
+}

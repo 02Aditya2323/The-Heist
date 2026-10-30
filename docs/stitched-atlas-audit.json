@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-14",
+  "scope": "Client-only artwork atlas; not a seamless-walking world migration",
+  "mapVersion": 30,
+  "regions": 19,
+  "districts": 6,
+  "connectors": 7,
+  "housingWards": 6,
+  "reciprocalGateJoins": 22,
+  "directedGameplayGates": 44,
+  "interactionPoints": 124,
+  "homeSites": 90,
+  "projectedExtentTiles": [260, 203],
+  "verifiedTileCentres": 28652,
+  "artworkPanelSizesUnchanged": true,
+  "panelOverlaps": 0,
+  "serverMapAndCollisionChanged": false,
+  "connectiveScenery": {
+    "asset": "apps/client/public/art/atlas/veyra-infill-v1.png",
+    "sha256": "be8fc9dd8b5cf1eec69da95cb14191e45ce78a7ff43186739089d8200dd47585",
+    "bytes": 3837641,
+    "generation": "Built-in image generation, exact assembly guide and existing art style references",
+    "prompt": "docs/atlas-infill-prompt.md",
+    "interactive": false,
+    "layer": "Below all unchanged native artwork panels"
+  },
+  "rendering": {
+    "nativeImageCacheLimit": 4,
+    "uniqueNativeRequestsPerDrawLimit": 4,
+    "devicePixelRatioCap": 2,
+    "fullWorldOffscreenCanvasAllocated": false,
+    "fullDetailSourceCrop": "Same native tile-sized crop as gameplay",
+    "overview": "Lightweight existing previews; original source replaces them at detail zoom"
+  },
+  "verification": {
+    "atlasProjectionScript": "Passed: all tile centres, POIs, Homes, gates, no overlaps, exact gameplay edge set, empty/offset maps",
+    "clientInputScript": "Passed: WELCOME gating, taps, held keyboard/touch priority, reset",
+    "clientTypeCheck": "Passed",
+    "clientBuild": "Passed",
+    "sharedTests": "100 passed",
+    "worldAssetAudit": "Passed: original 14 art sources and live/client/server map identical",
+    "browser": [
+      "M opens atlas",
+      "M also closes atlas",
+      "All 19 pieces and scenic backplate load",
+      "Canvas click selects Central Exchange",
+      "Region list focuses selected artwork",
+      "Find me selects Tech Quarter and focuses the operator at 250% overview zoom",
+      "1:1 artwork reaches 100% native scale with original art loaded",
+      "Keyboard panning works while gameplay input is paused",
+      "Central Bank inspection focuses Central Exchange",
+      "Return to player restores Tech Quarter without teleporting",
+      "375px mobile viewport shows all 19 pieces with no horizontal page overflow",
+      "Temporary mobile viewport override reset",
+      "Final browser error-level console logs empty",
+      "Built single-server atlas asset returns HTTP 200"
+    ],
+    "operatorPositionBeforeAndAfterInspection": [27, 27]
+  },
+  "proofs": [
+    "screenshots/stitched-city-atlas-desktop.png",
+    "screenshots/stitched-city-atlas-detail.png",
+    "screenshots/stitched-city-atlas-native.png",
+    "screenshots/stitched-city-atlas-mobile.png"
+  ],
+  "limitations": [
+    "Scenic infill is not a playable region and has no collision, POIs or Home assignments.",
+    "Inter-region gameplay continues to use existing server-authoritative E gates.",
+    "The projection joins existing pieces but does not regenerate their edge geometry or make every touching border traversable."
+  ]
+}

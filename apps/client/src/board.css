@@ -1,0 +1,292 @@
+/*
+ * Spectator board styling, for a projector read from across a room.
+ *
+ * Sizing uses clamp() against the viewport so the same page fills a laptop, a
+ * 1080p projector and a 4K display without separate breakpoints. Type is large,
+ * the palette is high contrast, and every live figure uses tabular numerals so
+ * nothing shifts as digits change.
+ */
+:root {
+  --bd-bg: #05080f;
+  --bd-panel: #0b1220;
+  --bd-line: #1b2740;
+  --bd-ink: #e8f0fb;
+  --bd-dim: #87a0c2;
+  --bd-cyan: #35e0e8;
+  --bd-amber: #f5b945;
+  --bd-green: #44d98a;
+  --bd-red: #ff5f6d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background:
+    radial-gradient(
+      120% 90% at 50% 0%,
+      rgba(53, 224, 232, 0.1),
+      transparent 60%
+    ),
+    var(--bd-bg);
+  color: var(--bd-ink);
+  font:
+    16px/1.4 "Segoe UI",
+    system-ui,
+    sans-serif;
+  overflow: hidden;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 22px);
+  height: 100%;
+  padding: clamp(14px, 2vh, 34px) clamp(16px, 2.2vw, 44px);
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.board-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: clamp(8px, 1vh, 16px);
+  border-bottom: 1px solid var(--bd-line);
+}
+.board-wordmark {
+  display: block;
+  font-size: clamp(26px, 3.4vw, 64px);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-shadow: 0 0 40px rgba(53, 224, 232, 0.3);
+}
+.board-sub {
+  display: block;
+  margin-top: 4px;
+  color: var(--bd-amber);
+  font-size: clamp(10px, 0.85vw, 18px);
+  letter-spacing: 0.3em;
+}
+.board-clock {
+  text-align: right;
+}
+.board-clock small {
+  display: block;
+  color: var(--bd-cyan);
+  font-size: clamp(11px, 1vw, 20px);
+  letter-spacing: 0.22em;
+}
+.board-clock strong {
+  display: block;
+  margin-top: 2px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: clamp(34px, 4.4vw, 86px);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-shadow: 0 0 40px rgba(53, 224, 232, 0.35);
+}
+/* The phase colours the clock, so the room can tell the state at a glance. */
+body[data-phase="paused"] .board-clock strong,
+body[data-phase="paused"] .board-clock small {
+  color: var(--bd-amber);
+}
+body[data-phase="frozen"] .board-clock strong,
+body[data-phase="frozen"] .board-clock small {
+  color: var(--bd-red);
+}
+
+/* ── Stat row ────────────────────────────────────────────────────────────── */
+.board-stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(8px, 0.8vw, 18px);
+}
+.board-stat {
+  padding: clamp(8px, 1vh, 18px) clamp(10px, 1vw, 20px);
+  border: 1px solid var(--bd-line);
+  border-radius: 12px;
+  background: var(--bd-panel);
+}
+.board-stat small {
+  display: block;
+  color: var(--bd-dim);
+  font-size: clamp(9px, 0.72vw, 15px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.board-stat strong {
+  display: block;
+  margin-top: 5px;
+  font-size: clamp(20px, 2.1vw, 44px);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.board-stat.is-good strong {
+  color: var(--bd-green);
+}
+.board-stat.is-cyan strong {
+  color: var(--bd-cyan);
+}
+.board-stat.is-amber strong {
+  color: var(--bd-amber);
+}
+
+/* ── Main columns ────────────────────────────────────────────────────────── */
+.board-main {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+  gap: clamp(10px, 1.2vw, 24px);
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.board-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: clamp(10px, 1.2vh, 22px) clamp(12px, 1.2vw, 26px);
+  border: 1px solid var(--bd-line);
+  border-radius: 14px;
+  background: var(--bd-panel);
+}
+.board-panel h2 {
+  margin: 0 0 clamp(6px, 0.8vh, 14px);
+  color: var(--bd-cyan);
+  font-size: clamp(12px, 1vw, 22px);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ── Standings ───────────────────────────────────────────────────────────── */
+.board-leaderboard {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.board-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  align-items: center;
+  gap: clamp(8px, 1vw, 20px);
+  padding: clamp(5px, 0.72vh, 13px) 0;
+  border-bottom: 1px solid rgba(27, 39, 64, 0.7);
+  font-size: clamp(14px, 1.45vw, 31px);
+}
+.board-row:last-child {
+  border-bottom: none;
+}
+.board-rank {
+  width: clamp(26px, 2.4vw, 56px);
+  color: var(--bd-dim);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.board-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.board-tags {
+  color: var(--bd-amber);
+  font-size: clamp(9px, 0.7vw, 14px);
+  letter-spacing: 0.14em;
+}
+.board-solved {
+  color: var(--bd-cyan);
+  font-variant-numeric: tabular-nums;
+}
+.board-solved::after {
+  content: " solved";
+  color: var(--bd-dim);
+  font-size: 0.6em;
+  letter-spacing: 0.1em;
+}
+.board-score {
+  min-width: clamp(90px, 8vw, 200px);
+  font-family: ui-monospace, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--bd-green);
+}
+.board-row.is-first {
+  background: linear-gradient(
+    90deg,
+    rgba(245, 185, 69, 0.14),
+    transparent 70%
+  );
+}
+.board-row.is-first .board-rank,
+.board-row.is-first .board-name {
+  color: var(--bd-amber);
+  font-weight: 700;
+}
+.board-row.is-out {
+  opacity: 0.6;
+}
+.board-empty {
+  padding: 20px 0;
+  color: var(--bd-dim);
+  font-size: clamp(13px, 1.1vw, 24px);
+}
+
+/* ── Transmissions ───────────────────────────────────────────────────────── */
+.board-announcements {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.board-announcements li {
+  padding: clamp(6px, 0.8vh, 14px) 0;
+  border-bottom: 1px solid rgba(27, 39, 64, 0.7);
+  color: var(--bd-dim);
+  font-size: clamp(11px, 0.95vw, 20px);
+  line-height: 1.45;
+}
+.board-announcements li:first-child {
+  color: var(--bd-ink);
+}
+.board-announcements li:last-child {
+  border-bottom: none;
+}
+.board-announcements p {
+  margin: 0;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+.board-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: clamp(6px, 0.7vh, 12px);
+  border-top: 1px solid var(--bd-line);
+  color: var(--bd-dim);
+  font-size: clamp(9px, 0.75vw, 15px);
+  letter-spacing: 0.1em;
+}
+
+/* A portrait or narrow display stacks the two columns instead of squeezing
+ * the standings, which are the reason the board exists. */
+@media (max-aspect-ratio: 1/1), (max-width: 900px) {
+  .board-main {
+    grid-template-columns: 1fr;
+  }
+  .board-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .board-feed {
+    display: none;
+  }
+}

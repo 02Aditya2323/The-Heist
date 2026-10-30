@@ -1,0 +1,464 @@
+[
+  {
+    "station": "bank",
+    "name": "Central Bank",
+    "action": "bank",
+    "overview": "centre-bank-overview.jpg",
+    "ruleGuard": "centre-bank-rule-guard.jpg",
+    "result": "Opened; deposit correctly refused during rehearsal",
+    "files": [
+      "centre-bank-overview.jpg",
+      "centre-bank-rule-guard.jpg"
+    ]
+  },
+  {
+    "station": "race",
+    "name": "Race Terminal",
+    "action": "race",
+    "interaction": "E · Race Terminal",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCOMPETITIVE OPERATIONS\nREHEARSAL\nRace Terminal\n\nRaces open at minutes 30, 90 and 135. The first three correct answers receive ₹50, ₹30 and ₹20 from the race pool.\n\nOPERATOR / CENTRE_01\nADDRESS / H003\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nCITY OPERATIONS\n\nNEXUS will publish the schedule when the Great Reset begins.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-race-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "checkout",
+    "name": "Checkout",
+    "action": "checkout",
+    "interaction": "E · Checkout",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nFINAL SCORE SETTLEMENT\nREHEARSAL\nCheckout\n\nVoluntary Checkout opens at minute 150 and permanently seals your score. Transit must arrive first. Raid members and jailed operators cannot check out. Offline recovery retains its ten-minute grace period.\n\nOPERATOR / CENTRE_02\nADDRESS / H004\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nPERMANENT CHECKOUT\n\nYour current score is ₹0.00. Checkout ends your participation permanently. Withdrawals must arrive first. Raid members and jailed operators cannot leave.\n\nCheckout opens at minute 150 of the live event.\n\nI understand that I cannot return to this event.\nSeal my score\nCITY LEADERBOARD\n01 workbench_qa\n₹0.00\n0 clears\n02 centre_00\n₹0.00\n0 clears\n03 centre_01\n₹0.00\n0 clears\n04 centre_02\n₹0.00\n0 clears\n05 centre_03\n₹0.00\n0 clears\n06 centre_04\n₹0.00\n0 clears\n07 centre_05\n₹0.00\n0 clears\n08 centre_06\n₹0.00\n0 clears\n09 centre_07\n₹0.00\n0 clears\n10 centre_08\n₹0.00\n0 clears\n11 centre_09\n₹0.00\n0 clears\n12 centre_10\n₹0.00\n0 clears\n13 centre_11\n₹0.00\n0 clears\n14 centre_12\n₹0.00\n0 clears\n15 centre_13\n₹0.00\n0 clears\n16 centre_14\n₹0.00\n0 clears\n17 centre_15\n₹0.00\n0 clears\n18 centre_16\n₹0.00\n0 clears\n19 centre_17\n₹0.00\n0 clears\n20 centre_18\n₹0.00\n0 clears\n21 centre_19\n₹0.00\n0 clears\n22 centre_20\n₹0.00\n0 clears\n23 centre_21\n₹0.00\n0 clears\n24 centre_22\n₹0.00\n0 clears\n25 centre_23\n₹0.00\n0 clears\n26 centre_24\n₹0.00\n0 clears\n27 centre_25\n₹0.00\n0 clears\n28 centre_26\n₹0.00\n0 clears\n29 centre_27\n₹0.00\n0 clears\n30 centre_28\n₹0.00\n0 clears\n31 centre_29\n₹0.00\n0 clears\n32 centre_30\n₹0.00\n0 clears\n33 centre_31\n₹0.00\n0 clears\n34 centre_32\n₹0.00\n0 clears\n35 centre_33\n₹0.00\n0 clears\n36 centre_34\n₹0.00\n0 clears\n37 centre_35\n₹0.00\n0 clears\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-checkout-page-1.jpg",
+      "centre-checkout-page-2.jpg",
+      "centre-checkout-page-3.jpg",
+      "centre-checkout-page-4.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "leaderboard",
+    "name": "Leaderboard",
+    "action": "leaderboard",
+    "interaction": "E · Leaderboard",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY PERFORMANCE INDEX\nREHEARSAL\nLeaderboard\n\nFinal ranking uses Home plus Bank, then completed challenges, then the time that balance was reached.\n\nOPERATOR / CENTRE_03\nADDRESS / H005\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nCITY LEADERBOARD\n01 workbench_qa\n₹0.00\n0 clears\n02 centre_00\n₹0.00\n0 clears\n03 centre_01\n₹0.00\n0 clears\n04 centre_02\n₹0.00\n0 clears\n05 centre_03\n₹0.00\n0 clears\n06 centre_04\n₹0.00\n0 clears\n07 centre_05\n₹0.00\n0 clears\n08 centre_06\n₹0.00\n0 clears\n09 centre_07\n₹0.00\n0 clears\n10 centre_08\n₹0.00\n0 clears\n11 centre_09\n₹0.00\n0 clears\n12 centre_10\n₹0.00\n0 clears\n13 centre_11\n₹0.00\n0 clears\n14 centre_12\n₹0.00\n0 clears\n15 centre_13\n₹0.00\n0 clears\n16 centre_14\n₹0.00\n0 clears\n17 centre_15\n₹0.00\n0 clears\n18 centre_16\n₹0.00\n0 clears\n19 centre_17\n₹0.00\n0 clears\n20 centre_18\n₹0.00\n0 clears\n21 centre_19\n₹0.00\n0 clears\n22 centre_20\n₹0.00\n0 clears\n23 centre_21\n₹0.00\n0 clears\n24 centre_22\n₹0.00\n0 clears\n25 centre_23\n₹0.00\n0 clears\n26 centre_24\n₹0.00\n0 clears\n27 centre_25\n₹0.00\n0 clears\n28 centre_26\n₹0.00\n0 clears\n29 centre_27\n₹0.00\n0 clears\n30 centre_28\n₹0.00\n0 clears\n31 centre_29\n₹0.00\n0 clears\n32 centre_30\n₹0.00\n0 clears\n33 centre_31\n₹0.00\n0 clears\n34 centre_32\n₹0.00\n0 clears\n35 centre_33\n₹0.00\n0 clears\n36 centre_34\n₹0.00\n0 clears\n37 centre_35\n₹0.00\n0 clears\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-leaderboard-page-1.jpg",
+      "centre-leaderboard-page-2.jpg",
+      "centre-leaderboard-page-3.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "raid",
+    "name": "Raid Circle",
+    "action": "raid",
+    "interaction": "E · Raid Circle",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nBANK RAID PROTOCOL\nREHEARSAL\nRaid Circle\n\nCrews need 8 operators if fewer than 36 are registered at event start; otherwise 10. Hold the circle for 60 seconds after five completions. Each operator gets five private questions, two clears pass the gate, and five passing operators make the raid succeed.\n\nOPERATOR / CENTRE_04\nADDRESS / H006\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nREHEARSAL MODE\nAssemble. Hold. Breach.\n\nLearn the protocol now. Crew formation unlocks during a live raid window.\n\nCREW MANIFEST\n0 / 8 OPERATORS\n01\n02\n03\n04\n05\n06\n07\n08\nHold the raid circle\n\nAvailable when a live raid window opens.\n\nCIRCLE SYNCHRONIZATION\n00\n/ 60 SECOND HOLD\nHOLD TO QUALIFY\n01\nQUALIFY\n\n0 / 5 city completions\n\n02\nSYNCHRONIZE\n\nHold the circle for 60 seconds\n\n03\nBREACH\n\n0 / 2 private gate clears\n\nBREACH CONDITIONS\n\nEach operator gets five private contracts. Two clears pass the personal gate; five passing operators make the raid succeed. The Bank fee vault and in-transit deposits contribute to the prize. All qualification and hold checks run on the server.\n\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-raid-page-1.jpg",
+      "centre-raid-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "tech-jobs",
+    "name": "Tech Job Board",
+    "action": "jobs",
+    "interaction": "E · Tech Job Board",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nTech Job Board\n\nST-01 Receipt Total; ST-02 Broken Receipt; ST-03 Gate Cipher; SD-01 Peak Reading; SD-03 Robot Route; SD-04 Patch the Meter; SD-09 Fare Gate; EX-01 Door and Key; EX-03 Ghost in the Counter. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_05\nADDRESS / H007\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nST-01 / STARTER · CODE\nReceipt Total\n₹10.00\nTO YOUR HOME\n\n₹10.00 to Home · 1 eligible paid slot\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nST-02 / STARTER · DEBUG\nBroken Receipt\n₹10.00\nTO YOUR HOME\n\n₹10.00 to Home · 1 eligible paid slot\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nST-03 / STARTER · CTF\nGate Cipher\n₹10.00\nTO YOUR HOME\n\n₹10.00 to Home · 1 eligible paid slot\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-01 / STANDARD · CODE\nPeak Reading\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-03 / STANDARD · CODE\nRobot Route\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-04 / STANDARD · DEBUG\nPatch the Meter\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-09 / STANDARD · PUZZLE\nFare Gate\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nEX-01 / EXPERT · PUZZLE\nDoor and Key\n₹80.00\nTO YOUR HOME\n\n₹80.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nEX-03 / EXPERT · DEBUG\nGhost in the Counter\n₹80.00\nTO YOUR HOME\n\n₹80.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-tech-jobs-page-1.jpg",
+      "centre-tech-jobs-page-2.jpg",
+      "centre-tech-jobs-page-3.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "cp-lab",
+    "name": "CP Lab",
+    "action": "jobs",
+    "interaction": "E · CP Lab",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nCP Lab\n\nST-01 Receipt Total; SD-01 Peak Reading; SD-03 Robot Route; EX-01 Door and Key. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_06\nADDRESS / H008\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nST-01 / STARTER · CODE\nReceipt Total\n₹10.00\nTO YOUR HOME\n\n₹10.00 to Home · 1 eligible paid slot\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-01 / STANDARD · CODE\nPeak Reading\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-03 / STANDARD · CODE\nRobot Route\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nEX-01 / EXPERT · PUZZLE\nDoor and Key\n₹80.00\nTO YOUR HOME\n\n₹80.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-cp-lab-page-1.jpg",
+      "centre-cp-lab-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "debug-lab",
+    "name": "Debugging Lab",
+    "action": "jobs",
+    "interaction": "E · Debugging Lab",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nDebugging Lab\n\nST-02 Broken Receipt; SD-04 Patch the Meter; EX-03 Ghost in the Counter. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_07\nADDRESS / H009\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nST-02 / STARTER · DEBUG\nBroken Receipt\n₹10.00\nTO YOUR HOME\n\n₹10.00 to Home · 1 eligible paid slot\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-04 / STANDARD · DEBUG\nPatch the Meter\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nEX-03 / EXPERT · DEBUG\nGhost in the Counter\n₹80.00\nTO YOUR HOME\n\n₹80.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-debug-lab-page-1.jpg",
+      "centre-debug-lab-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "logic",
+    "name": "Logic Terminal",
+    "action": "jobs",
+    "interaction": "E · Logic Terminal",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nLogic Terminal\n\nST-03 Gate Cipher; SD-09 Fare Gate. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_08\nADDRESS / H010\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nST-03 / STARTER · CTF\nGate Cipher\n₹10.00\nTO YOUR HOME\n\n₹10.00 to Home · 1 eligible paid slot\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-09 / STANDARD · PUZZLE\nFare Gate\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-logic-page-1.jpg",
+      "centre-logic-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "harbor-jobs",
+    "name": "Harbor Job Board",
+    "action": "jobs",
+    "interaction": "E · Harbor Job Board",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nHarbor Job Board\n\nSD-02 Lonely Packet; SD-05 Fence Count; SD-08 Decode Chain; SD-10 Who Moved the Money; EX-02 Chain of Command. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_09\nADDRESS / H011\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nSD-02 / STANDARD · CODE\nLonely Packet\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-05 / STANDARD · DEBUG\nFence Count\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-08 / STANDARD · CTF\nDecode Chain\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-10 / STANDARD · PUZZLE\nWho Moved the Money\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nEX-02 / EXPERT · PUZZLE\nChain of Command\n₹80.00\nTO YOUR HOME\n\n₹80.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-harbor-jobs-page-1.jpg",
+      "centre-harbor-jobs-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "data-centre",
+    "name": "Data Centre",
+    "action": "jobs",
+    "interaction": "E · Data Centre",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nData Centre\n\nSD-02 Lonely Packet; EX-02 Chain of Command. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_10\nADDRESS / H012\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nSD-02 / STANDARD · CODE\nLonely Packet\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nEX-02 / EXPERT · PUZZLE\nChain of Command\n₹80.00\nTO YOUR HOME\n\n₹80.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-data-centre-page-1.jpg",
+      "centre-data-centre-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "network-tower",
+    "name": "Network Tower",
+    "action": "jobs",
+    "interaction": "E · Network Tower",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nNetwork Tower\n\nSD-08 Decode Chain. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_11\nADDRESS / H013\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nSD-08 / STANDARD · CTF\nDecode Chain\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-network-tower-page-1.jpg",
+      "centre-network-tower-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "osint",
+    "name": "OSINT Terminal",
+    "action": "jobs",
+    "interaction": "E · OSINT Terminal",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nOSINT Terminal\n\nSD-10 Who Moved the Money. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_12\nADDRESS / H014\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nSD-10 / STANDARD · PUZZLE\nWho Moved the Money\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-osint-page-1.jpg",
+      "centre-osint-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "sql",
+    "name": "Code Review Desk",
+    "action": "jobs",
+    "interaction": "E · Code Review Desk",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nCode Review Desk\n\nSD-05 Fence Count. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_13\nADDRESS / H015\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nSD-05 / STANDARD · DEBUG\nFence Count\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-sql-page-1.jpg",
+      "centre-sql-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "harbor-info",
+    "name": "Harbor Information",
+    "action": "info",
+    "interaction": "E · Harbor Information",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nHarbor Information\n\nThe harbor connects to Central Exchange and Tech Quarter via marked transit routes.\n\nOPERATOR / CENTRE_14\nADDRESS / H016\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-harbor-info-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "black-jobs",
+    "name": "Black Grid Job Board",
+    "action": "jobs",
+    "interaction": "E · Black Grid Job Board",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nBlack Grid Job Board\n\nSD-06 Password Profiler; SD-07 Log Hunter; EX-04 Gatekeeper; EX-05 Portal Peek. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_15\nADDRESS / H017\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nSD-06 / STANDARD · CTF\nPassword Profiler\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nSD-07 / STANDARD · CTF\nLog Hunter\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nEX-04 / EXPERT · CTF\nGatekeeper\n₹80.00\nTO YOUR HOME\n\n₹80.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nEX-05 / EXPERT · CTF\nPortal Peek\n₹80.00\nTO YOUR HOME\n\n₹80.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-black-jobs-page-1.jpg",
+      "centre-black-jobs-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "security",
+    "name": "Security Hub",
+    "action": "info",
+    "interaction": "E · Security Hub",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nSecurity Hub\n\nEvery attempt, lock and money movement belongs to the authoritative game server.\n\nOPERATOR / CENTRE_16\nADDRESS / H018\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-security-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "ctf",
+    "name": "CTF Arena",
+    "action": "jobs",
+    "interaction": "E · CTF Arena",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nCTF Arena\n\nSD-06 Password Profiler. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_17\nADDRESS / H019\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nSD-06 / STANDARD · CTF\nPassword Profiler\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-ctf-page-1.jpg",
+      "centre-ctf-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "black-challenge",
+    "name": "Challenge Terminal",
+    "action": "jobs",
+    "interaction": "E · Challenge Terminal",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nChallenge Terminal\n\nSD-07 Log Hunter. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_18\nADDRESS / H020\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nSD-07 / STANDARD · CTF\nLog Hunter\n₹20.00\nTO YOUR HOME\n\n₹20.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-black-challenge-page-1.jpg",
+      "centre-black-challenge-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "sandbox",
+    "name": "Sandbox Station",
+    "action": "jobs",
+    "interaction": "E · Sandbox Station",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCONTRACT ACQUISITION\nREHEARSAL\nSandbox Station\n\nEX-04 Gatekeeper; EX-05 Portal Peek. First-year Code, Debug, CTF and Puzzle contracts. Starter ₹10, Standard ₹20, Expert ₹80; training pays ₹0. All tasks and workbenches stay inside the game.\n\nOPERATOR / CENTRE_19\nADDRESS / H021\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nAVAILABLE CONTRACTS\nEX-04 / EXPERT · CTF\nGatekeeper\n₹80.00\nTO YOUR HOME\n\n₹80.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nEX-05 / EXPERT · CTF\nPortal Peek\n₹80.00\nTO YOUR HOME\n\n₹80.00 to Home · 0 eligible paid slots\n\nREHEARSAL / TRAINING AVAILABLE\nTake contract\nTrain · ₹0\nYOUR CONTRACTS\nYour next move starts on the street.\n\nApproach a marked job terminal and press E to choose a contract. Training pays ₹0; at most six training clears count during the event.\n\nE\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-sandbox-page-1.jpg",
+      "centre-sandbox-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "market",
+    "name": "Local Market",
+    "action": "info",
+    "interaction": "E · Local Market",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nLocal Market\n\nHomes and burglary are governed by the event rules. There is no direct player-to-player money transfer.\n\nOPERATOR / CENTRE_20\nADDRESS / H022\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-market-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "nexus-announcement",
+    "name": "NEXUS Announcements",
+    "action": "announcements",
+    "interaction": "E · NEXUS Announcements",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nNEXUS TRANSMISSIONS\nREHEARSAL\nNEXUS Announcements\n\nNEXUS announces waves, races, bounties and Golden Hour clues. The default event lasts 180 minutes.\n\nOPERATOR / CENTRE_21\nADDRESS / H023\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nCITY OPERATIONS\n\nNEXUS will publish the schedule when the Great Reset begins.\n\nNEXUS TRANSMISSIONS\nNEXUS BROADCAST / 04:29 PM\n\nNEXUS // Veyra City awaits the Great Reset. Explore the city and rehearse at a job terminal.\n\nPRIVATE MESSAGES\nPRIVATE CHANNEL / 04:29 PM\n\nYour safehouse is H023. Earn at Tech Quarter, Data Harbor or Black Grid. Bank your balance when deposits open.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-nexus-announcement-page-1.jpg",
+      "centre-nexus-announcement-page-2.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "social",
+    "name": "Social Hub",
+    "action": "info",
+    "interaction": "E · Social Hub",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nSocial Hub\n\nA public gathering place. The game does not permit direct money transfers between operators.\n\nOPERATOR / CENTRE_22\nADDRESS / H024\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-social-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "golden",
+    "name": "Golden Hour Terminal",
+    "action": "events",
+    "interaction": "E · Golden Hour Terminal",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nGOLDEN HOUR OPERATIONS\nREHEARSAL\nGolden Hour Terminal\n\nCard Hunt at minute 70, Courier Chase at 115 and Server Sprint at 165 each use a fixed ₹100 pool.\n\nOPERATOR / CENTRE_23\nADDRESS / H025\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nCITY OPERATIONS\n\nNEXUS will publish the schedule when the Great Reset begins.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-golden-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "nexus-event",
+    "name": "Event Terminal",
+    "action": "events",
+    "interaction": "E · Event Terminal",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nGOLDEN HOUR OPERATIONS\nREHEARSAL\nEvent Terminal\n\nGolden Hour start points and clues are announced by NEXUS; the server controls event availability.\n\nOPERATOR / CENTRE_24\nADDRESS / H026\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nCITY OPERATIONS\n\nNEXUS will publish the schedule when the Great Reset begins.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-nexus-event-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "nexus-info",
+    "name": "NEXUS Information",
+    "action": "info",
+    "interaction": "E · NEXUS Information",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nNEXUS Information\n\nCity announcements and event rules are available here. Every operator starts with zero wealth.\n\nOPERATOR / CENTRE_25\nADDRESS / H027\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-nexus-info-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "c07-info",
+    "name": "Route information kiosk",
+    "action": "info",
+    "interaction": "E · Route information kiosk",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nRoute information kiosk\n\nThis is the Exchange ↔ Tech route. Follow the signed city-map links to travel between districts.\n\nOPERATOR / CENTRE_26\nADDRESS / H028\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-c07-info-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "c08-info",
+    "name": "Route information kiosk",
+    "action": "info",
+    "interaction": "E · Route information kiosk",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nRoute information kiosk\n\nThis is the Exchange ↔ Harbor route. Follow the signed city-map links to travel between districts.\n\nOPERATOR / CENTRE_27\nADDRESS / H029\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-c08-info-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "c09-info",
+    "name": "Route information kiosk",
+    "action": "info",
+    "interaction": "E · Route information kiosk",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nRoute information kiosk\n\nThis is the Exchange ↔ Black Grid route. Follow the signed city-map links to travel between districts.\n\nOPERATOR / CENTRE_28\nADDRESS / H030\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-c09-info-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "c10-info",
+    "name": "Route information kiosk",
+    "action": "info",
+    "interaction": "E · Route information kiosk",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nRoute information kiosk\n\nThis is the Exchange ↔ Undercity route. Follow the signed city-map links to travel between districts.\n\nOPERATOR / CENTRE_29\nADDRESS / H031\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-c10-info-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "c11-info",
+    "name": "Route information kiosk",
+    "action": "info",
+    "interaction": "E · Route information kiosk",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nRoute information kiosk\n\nThis is the Exchange ↔ NEXUS route. Follow the signed city-map links to travel between districts.\n\nOPERATOR / CENTRE_30\nADDRESS / H032\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-c11-info-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "c12-info",
+    "name": "Route information kiosk",
+    "action": "info",
+    "interaction": "E · Route information kiosk",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nRoute information kiosk\n\nThis is the Tech ↔ Harbor route. Follow the signed city-map links to travel between districts.\n\nOPERATOR / CENTRE_31\nADDRESS / H033\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-c12-info-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "c13-info",
+    "name": "Route information kiosk",
+    "action": "info",
+    "interaction": "E · Route information kiosk",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nCITY OPERATIONS\nREHEARSAL\nRoute information kiosk\n\nThis is the Undercity ↔ Black Grid route. Follow the signed city-map links to travel between districts.\n\nOPERATOR / CENTRE_32\nADDRESS / H034\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-c13-info-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "home-h035",
+    "name": "Own Home",
+    "action": "homes",
+    "result": "Entered protection; closing menu returned to exposed street state",
+    "files": [
+      "centre-home-h035-page-1.jpg",
+      "centre-home-h035-protected.jpg",
+      "centre-home-h035-left.jpg"
+    ]
+  },
+  {
+    "station": "home-h001",
+    "name": "Other operator Home H001",
+    "action": "homes",
+    "interaction": "E · Home site H001",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nRESIDENTIAL NETWORK\nREHEARSAL\nHome site H001\n\nHome site H001. Earnings arrive at the assigned Home. Its owner can enter for protection; eligible thieves face a server-held lock-pick. The 40-player event assigns wards A–C; D–F remain preserved reserve streets.\n\nOPERATOR / CENTRE_34\nADDRESS / H036\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nworkbench_qa / H001\nH001\nOWNER / workbench_qa\n\nThe server checks owner presence, protection and cooldowns. Lock-picking failure costs up to ₹3 and three minutes in custody.\n\nLevel 1 · 5% / max ₹10Level 2 · 10% / max ₹25 / 5 clearsLevel 3 · 20% / max ₹50 / 12 clears\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-home-h001-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "under-info",
+    "name": "Home district guide",
+    "action": "homes",
+    "interaction": "E · Undercity Information",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nRESIDENTIAL NETWORK\nREHEARSAL\nUndercity Information\n\nEach operator owns one Home. Earnings arrive there first and can be exposed to burglary. Burglary requires a server-held lock and a validated challenge.\n\nOPERATOR / CENTRE_35\nADDRESS / H037\n● VERIFIED UPLINK\n\nLocation verified. Your actions are checked and settled by the server.\n\nYOUR SAFEHOUSE\nH037\nRESIDENTIAL NETWORK\n\nYour address is H037. Find the connected residential wards south of Undercity.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-under-info-page-1.jpg"
+    ],
+    "errors": [],
+    "result": "Opened through nearby E interaction"
+  },
+  {
+    "station": "home-h090",
+    "name": "Unassigned Home H090",
+    "action": "homes",
+    "result": "Opened unassigned reserve Home",
+    "text": "VEYRA SYSTEMS / FIELD UPLINK\nClose · Esc\nRESIDENTIAL NETWORK\nREHEARSAL\nHome site H090\n\nHome site H090. Earnings arrive at the assigned Home. Its owner can enter for protection; eligible thieves face a server-held lock-pick. The 40-player event assigns wards A–C; D–F remain preserved reserve streets.\n\nOPERATOR / WORKBENCH_QA\nADDRESS / H001\nSERVER AUTHORITATIVE\n\nLocation verified. Your actions are checked and settled by the server.\n\nYOUR SAFEHOUSE\nH001\nRESIDENTIAL NETWORK\n\nYour address is H001. Find the connected residential wards south of Undercity.\n\nNEXUS / ALL OUTCOMES VERIFIED BY THE SERVER\nESC TO RETURN TO THE CITY",
+    "files": [
+      "centre-home-h090-unassigned.jpg"
+    ]
+  }
+]

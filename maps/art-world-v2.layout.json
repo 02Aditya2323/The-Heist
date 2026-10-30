@@ -1,0 +1,5408 @@
+{
+  "version": 30,
+  "tileSize": 32,
+  "sceneWidth": 52,
+  "sceneHeight": 29,
+  "sourceRoot": ".",
+  "assetPrefix": "v2-",
+  "spawnPoint": [
+    848,
+    592
+  ],
+  "scenes": [
+    {
+      "id": "central",
+      "name": "Central Exchange",
+      "kind": "district",
+      "origin": [
+        140,
+        120
+      ],
+      "color": "#eab777",
+      "source": "docs/generated-world-v2/central.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            32,
+            416
+          ],
+          [
+            1632,
+            416
+          ],
+          [
+            1632,
+            576
+          ],
+          [
+            32,
+            576
+          ]
+        ],
+        [
+          [
+            480,
+            0
+          ],
+          [
+            608,
+            0
+          ],
+          [
+            608,
+            928
+          ],
+          [
+            480,
+            928
+          ]
+        ],
+        [
+          [
+            1088,
+            0
+          ],
+          [
+            1216,
+            0
+          ],
+          [
+            1216,
+            928
+          ],
+          [
+            1088,
+            928
+          ]
+        ],
+        [
+          [
+            512,
+            384
+          ],
+          [
+            1152,
+            384
+          ],
+          [
+            1152,
+            736
+          ],
+          [
+            512,
+            736
+          ]
+        ],
+        [
+          [
+            32,
+            800
+          ],
+          [
+            1632,
+            800
+          ],
+          [
+            1632,
+            896
+          ],
+          [
+            32,
+            896
+          ]
+        ],
+        [
+          [
+            800,
+            384
+          ],
+          [
+            896,
+            384
+          ],
+          [
+            896,
+            448
+          ],
+          [
+            800,
+            448
+          ]
+        ],
+        [
+          [
+            288,
+            416
+          ],
+          [
+            384,
+            416
+          ],
+          [
+            384,
+            480
+          ],
+          [
+            288,
+            480
+          ]
+        ],
+        [
+          [
+            1312,
+            416
+          ],
+          [
+            1408,
+            416
+          ],
+          [
+            1408,
+            480
+          ],
+          [
+            1312,
+            480
+          ]
+        ],
+        [
+          [
+            800,
+            800
+          ],
+          [
+            896,
+            800
+          ],
+          [
+            896,
+            864
+          ],
+          [
+            800,
+            864
+          ]
+        ],
+        [
+          [
+            800,
+            640
+          ],
+          [
+            896,
+            640
+          ],
+          [
+            896,
+            704
+          ],
+          [
+            800,
+            704
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "bank",
+          "name": "Central Bank",
+          "point": [
+            848,
+            336
+          ],
+          "action": "bank",
+          "description": "Deposits move Home money into the Bank. Bank deposits open at minute 10; the maximum Bank balance is ₹200. Withdrawals take 5 minutes."
+        },
+        {
+          "id": "race",
+          "name": "Race Terminal",
+          "point": [
+            336,
+            592
+          ],
+          "action": "race",
+          "description": "Races open at minutes 30, 90 and 135. The first three correct answers receive ₹50, ₹30 and ₹20 from the race pool."
+        },
+        {
+          "id": "checkout",
+          "name": "Checkout",
+          "point": [
+            1360,
+            592
+          ],
+          "action": "checkout",
+          "description": "Checkout ends your event participation and settles Home plus Bank. You cannot check out during a raid or while in jail."
+        },
+        {
+          "id": "leaderboard",
+          "name": "Leaderboard",
+          "point": [
+            848,
+            880
+          ],
+          "action": "leaderboard",
+          "description": "Final ranking uses Home plus Bank, then completed challenges, then the time that balance was reached."
+        },
+        {
+          "id": "raid",
+          "name": "Raid Circle",
+          "point": [
+            848,
+            624
+          ],
+          "action": "raid",
+          "description": "A crew has exactly 10 operators. Joining requires 5 completed challenges and 60 seconds in the circle. Each operator solves 5 questions; at least 5 must pass the 2-answer gate."
+        }
+      ],
+      "extractFloorFromImage": true
+    },
+    {
+      "id": "tech",
+      "name": "Tech Quarter",
+      "kind": "district",
+      "origin": [
+        0,
+        0
+      ],
+      "color": "#62d7ff",
+      "source": "docs/generated-world-v2/tech.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            32,
+            416
+          ],
+          [
+            1632,
+            416
+          ],
+          [
+            1632,
+            576
+          ],
+          [
+            32,
+            576
+          ]
+        ],
+        [
+          [
+            32,
+            320
+          ],
+          [
+            1632,
+            320
+          ],
+          [
+            1632,
+            416
+          ],
+          [
+            32,
+            416
+          ]
+        ],
+        [
+          [
+            32,
+            800
+          ],
+          [
+            1632,
+            800
+          ],
+          [
+            1632,
+            896
+          ],
+          [
+            32,
+            896
+          ]
+        ],
+        [
+          [
+            544,
+            0
+          ],
+          [
+            672,
+            0
+          ],
+          [
+            672,
+            928
+          ],
+          [
+            544,
+            928
+          ]
+        ],
+        [
+          [
+            992,
+            0
+          ],
+          [
+            1120,
+            0
+          ],
+          [
+            1120,
+            928
+          ],
+          [
+            992,
+            928
+          ]
+        ],
+        [
+          [
+            768,
+            416
+          ],
+          [
+            896,
+            416
+          ],
+          [
+            896,
+            928
+          ],
+          [
+            768,
+            928
+          ]
+        ],
+        [
+          [
+            800,
+            384
+          ],
+          [
+            896,
+            384
+          ],
+          [
+            896,
+            448
+          ],
+          [
+            800,
+            448
+          ]
+        ],
+        [
+          [
+            256,
+            288
+          ],
+          [
+            352,
+            288
+          ],
+          [
+            352,
+            352
+          ],
+          [
+            256,
+            352
+          ]
+        ],
+        [
+          [
+            1344,
+            288
+          ],
+          [
+            1440,
+            288
+          ],
+          [
+            1440,
+            352
+          ],
+          [
+            1344,
+            352
+          ]
+        ],
+        [
+          [
+            288,
+            768
+          ],
+          [
+            384,
+            768
+          ],
+          [
+            384,
+            832
+          ],
+          [
+            288,
+            832
+          ]
+        ],
+        [
+          [
+            1312,
+            768
+          ],
+          [
+            1408,
+            768
+          ],
+          [
+            1408,
+            832
+          ],
+          [
+            1312,
+            832
+          ]
+        ],
+        [
+          [
+            800,
+            704
+          ],
+          [
+            896,
+            704
+          ],
+          [
+            896,
+            768
+          ],
+          [
+            800,
+            768
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "tech-jobs",
+          "name": "Tech Job Board",
+          "point": [
+            848,
+            464
+          ],
+          "action": "jobs",
+          "description": "CP, debugging and logic challenges. Starter jobs pay ₹5 once per operator; Standard jobs pay ₹10, and Expert jobs pay ₹80. Training has no payout."
+        },
+        {
+          "id": "cp-lab",
+          "name": "CP Lab",
+          "point": [
+            336,
+            848
+          ],
+          "action": "jobs",
+          "description": "Competitive-programming challenges belong to the Tech Quarter pool."
+        },
+        {
+          "id": "debug-lab",
+          "name": "Debugging Lab",
+          "point": [
+            1360,
+            848
+          ],
+          "action": "jobs",
+          "description": "Debugging challenges and non-paying training are validated by the server."
+        },
+        {
+          "id": "logic",
+          "name": "Logic Terminal",
+          "point": [
+            848,
+            880
+          ],
+          "action": "jobs",
+          "description": "Practice logic and debugging variants. Challenge answers and completion credit are validated by the server."
+        }
+      ],
+      "extractFloorFromImage": true,
+      "floorOverrides": [
+        [
+          [
+            100,
+            839
+          ],
+          [
+            1605,
+            839
+          ],
+          [
+            1605,
+            864
+          ],
+          [
+            100,
+            864
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "harbor",
+      "name": "Data Harbor",
+      "kind": "district",
+      "origin": [
+        280,
+        0
+      ],
+      "color": "#58d5bf",
+      "source": "docs/generated-world-v2/harbor.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            32,
+            416
+          ],
+          [
+            1632,
+            416
+          ],
+          [
+            1632,
+            576
+          ],
+          [
+            32,
+            576
+          ]
+        ],
+        [
+          [
+            32,
+            352
+          ],
+          [
+            1632,
+            352
+          ],
+          [
+            1632,
+            416
+          ],
+          [
+            32,
+            416
+          ]
+        ],
+        [
+          [
+            32,
+            800
+          ],
+          [
+            1184,
+            800
+          ],
+          [
+            1184,
+            896
+          ],
+          [
+            32,
+            896
+          ]
+        ],
+        [
+          [
+            544,
+            0
+          ],
+          [
+            672,
+            0
+          ],
+          [
+            672,
+            928
+          ],
+          [
+            544,
+            928
+          ]
+        ],
+        [
+          [
+            1024,
+            0
+          ],
+          [
+            1152,
+            0
+          ],
+          [
+            1152,
+            928
+          ],
+          [
+            1024,
+            928
+          ]
+        ],
+        [
+          [
+            288,
+            320
+          ],
+          [
+            384,
+            320
+          ],
+          [
+            384,
+            384
+          ],
+          [
+            288,
+            384
+          ]
+        ],
+        [
+          [
+            832,
+            320
+          ],
+          [
+            928,
+            320
+          ],
+          [
+            928,
+            384
+          ],
+          [
+            832,
+            384
+          ]
+        ],
+        [
+          [
+            1376,
+            320
+          ],
+          [
+            1472,
+            320
+          ],
+          [
+            1472,
+            384
+          ],
+          [
+            1376,
+            384
+          ]
+        ],
+        [
+          [
+            256,
+            768
+          ],
+          [
+            352,
+            768
+          ],
+          [
+            352,
+            832
+          ],
+          [
+            256,
+            832
+          ]
+        ],
+        [
+          [
+            832,
+            768
+          ],
+          [
+            928,
+            768
+          ],
+          [
+            928,
+            832
+          ],
+          [
+            832,
+            832
+          ]
+        ],
+        [
+          [
+            1088,
+            704
+          ],
+          [
+            1184,
+            704
+          ],
+          [
+            1184,
+            768
+          ],
+          [
+            1088,
+            768
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "harbor-jobs",
+          "name": "Harbor Job Board",
+          "point": [
+            336,
+            464
+          ],
+          "action": "jobs",
+          "description": "SQL, networking and OSINT jobs use personal challenge variants. Answer submissions are checked by the server."
+        },
+        {
+          "id": "data-centre",
+          "name": "Data Centre",
+          "point": [
+            848,
+            464
+          ],
+          "action": "jobs",
+          "description": "Database challenges and training belong to the Data Harbor job pool."
+        },
+        {
+          "id": "network-tower",
+          "name": "Network Tower",
+          "point": [
+            1360,
+            464
+          ],
+          "action": "jobs",
+          "description": "Networking challenges belong to the Data Harbor pool."
+        },
+        {
+          "id": "osint",
+          "name": "OSINT Terminal",
+          "point": [
+            336,
+            816
+          ],
+          "action": "jobs",
+          "description": "OSINT jobs use the event's provided evidence, not real-world attacks."
+        },
+        {
+          "id": "sql",
+          "name": "SQL Terminal",
+          "point": [
+            848,
+            816
+          ],
+          "action": "jobs",
+          "description": "SQL jobs use a query-result validator and personal variants."
+        },
+        {
+          "id": "harbor-info",
+          "name": "Harbor Information",
+          "point": [
+            1168,
+            816
+          ],
+          "action": "info",
+          "description": "The harbor connects to Central Exchange and Tech Quarter via marked transit routes."
+        }
+      ],
+      "extractFloorFromImage": true,
+      "floorOverrides": [
+        [
+          [
+            100,
+            800
+          ],
+          [
+            1240,
+            800
+          ],
+          [
+            1240,
+            830
+          ],
+          [
+            100,
+            830
+          ]
+        ],
+        [
+          [
+            530,
+            420
+          ],
+          [
+            586,
+            420
+          ],
+          [
+            586,
+            928
+          ],
+          [
+            530,
+            928
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "black",
+      "name": "Black Grid",
+      "kind": "district",
+      "origin": [
+        280,
+        120
+      ],
+      "color": "#f26a85",
+      "source": "docs/generated-world-v2/black.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            32,
+            416
+          ],
+          [
+            1632,
+            416
+          ],
+          [
+            1632,
+            576
+          ],
+          [
+            32,
+            576
+          ]
+        ],
+        [
+          [
+            32,
+            352
+          ],
+          [
+            1632,
+            352
+          ],
+          [
+            1632,
+            416
+          ],
+          [
+            32,
+            416
+          ]
+        ],
+        [
+          [
+            32,
+            800
+          ],
+          [
+            1632,
+            800
+          ],
+          [
+            1632,
+            896
+          ],
+          [
+            32,
+            896
+          ]
+        ],
+        [
+          [
+            544,
+            0
+          ],
+          [
+            672,
+            0
+          ],
+          [
+            672,
+            928
+          ],
+          [
+            544,
+            928
+          ]
+        ],
+        [
+          [
+            1024,
+            0
+          ],
+          [
+            1152,
+            0
+          ],
+          [
+            1152,
+            928
+          ],
+          [
+            1024,
+            928
+          ]
+        ],
+        [
+          [
+            768,
+            384
+          ],
+          [
+            928,
+            384
+          ],
+          [
+            928,
+            928
+          ],
+          [
+            768,
+            928
+          ]
+        ],
+        [
+          [
+            288,
+            320
+          ],
+          [
+            384,
+            320
+          ],
+          [
+            384,
+            384
+          ],
+          [
+            288,
+            384
+          ]
+        ],
+        [
+          [
+            832,
+            320
+          ],
+          [
+            928,
+            320
+          ],
+          [
+            928,
+            384
+          ],
+          [
+            832,
+            384
+          ]
+        ],
+        [
+          [
+            1376,
+            320
+          ],
+          [
+            1472,
+            320
+          ],
+          [
+            1472,
+            384
+          ],
+          [
+            1376,
+            384
+          ]
+        ],
+        [
+          [
+            288,
+            768
+          ],
+          [
+            384,
+            768
+          ],
+          [
+            384,
+            832
+          ],
+          [
+            288,
+            832
+          ]
+        ],
+        [
+          [
+            1312,
+            768
+          ],
+          [
+            1408,
+            768
+          ],
+          [
+            1408,
+            832
+          ],
+          [
+            1312,
+            832
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "black-jobs",
+          "name": "Black Grid Job Board",
+          "point": [
+            336,
+            464
+          ],
+          "action": "jobs",
+          "description": "CTF, cybersecurity and forensics challenges use simulated targets. No task attacks a real system."
+        },
+        {
+          "id": "security",
+          "name": "Security Hub",
+          "point": [
+            848,
+            464
+          ],
+          "action": "info",
+          "description": "Every attempt, lock and money movement belongs to the authoritative game server."
+        },
+        {
+          "id": "ctf",
+          "name": "CTF Arena",
+          "point": [
+            1392,
+            464
+          ],
+          "action": "jobs",
+          "description": "CTF jobs are simulated sandbox targets with server-validated flags."
+        },
+        {
+          "id": "black-challenge",
+          "name": "Challenge Terminal",
+          "point": [
+            336,
+            848
+          ],
+          "action": "jobs",
+          "description": "Personal challenge variants and training are part of the Black Grid job pool."
+        },
+        {
+          "id": "sandbox",
+          "name": "Sandbox Station",
+          "point": [
+            1360,
+            848
+          ],
+          "action": "jobs",
+          "description": "Security challenges run against event-provided sandbox systems only."
+        }
+      ],
+      "extractFloorFromImage": true
+    },
+    {
+      "id": "under",
+      "name": "Undercity",
+      "kind": "district",
+      "origin": [
+        140,
+        240
+      ],
+      "color": "#f0b36f",
+      "source": "docs/generated-world-v2/under.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            32,
+            416
+          ],
+          [
+            1632,
+            416
+          ],
+          [
+            1632,
+            576
+          ],
+          [
+            32,
+            576
+          ]
+        ],
+        [
+          [
+            32,
+            320
+          ],
+          [
+            1632,
+            320
+          ],
+          [
+            1632,
+            416
+          ],
+          [
+            32,
+            416
+          ]
+        ],
+        [
+          [
+            32,
+            800
+          ],
+          [
+            1632,
+            800
+          ],
+          [
+            1632,
+            896
+          ],
+          [
+            32,
+            896
+          ]
+        ],
+        [
+          [
+            544,
+            0
+          ],
+          [
+            672,
+            0
+          ],
+          [
+            672,
+            928
+          ],
+          [
+            544,
+            928
+          ]
+        ],
+        [
+          [
+            1024,
+            0
+          ],
+          [
+            1152,
+            0
+          ],
+          [
+            1152,
+            928
+          ],
+          [
+            1024,
+            928
+          ]
+        ],
+        [
+          [
+            768,
+            416
+          ],
+          [
+            928,
+            416
+          ],
+          [
+            928,
+            928
+          ],
+          [
+            768,
+            928
+          ]
+        ],
+        [
+          [
+            800,
+            320
+          ],
+          [
+            896,
+            320
+          ],
+          [
+            896,
+            384
+          ],
+          [
+            800,
+            384
+          ]
+        ],
+        [
+          [
+            1312,
+            768
+          ],
+          [
+            1408,
+            768
+          ],
+          [
+            1408,
+            832
+          ],
+          [
+            1312,
+            832
+          ]
+        ],
+        [
+          [
+            256,
+            288
+          ],
+          [
+            352,
+            288
+          ],
+          [
+            352,
+            352
+          ],
+          [
+            256,
+            352
+          ]
+        ],
+        [
+          [
+            1376,
+            288
+          ],
+          [
+            1472,
+            288
+          ],
+          [
+            1472,
+            352
+          ],
+          [
+            1376,
+            352
+          ]
+        ],
+        [
+          [
+            288,
+            768
+          ],
+          [
+            384,
+            768
+          ],
+          [
+            384,
+            832
+          ],
+          [
+            288,
+            832
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "under-info",
+          "name": "Undercity Information",
+          "point": [
+            848,
+            400
+          ],
+          "action": "homes",
+          "description": "Each operator owns one Home. Earnings arrive there first and can be exposed to burglary. Burglary requires a server-held lock and a validated challenge."
+        },
+        {
+          "id": "market",
+          "name": "Local Market",
+          "point": [
+            1328,
+            784
+          ],
+          "action": "info",
+          "description": "Homes and burglary are governed by the event rules. There is no direct player-to-player money transfer."
+        }
+      ],
+      "extractFloorFromImage": true,
+      "floorOverrides": [
+        [
+          [
+            800,
+            375
+          ],
+          [
+            884,
+            375
+          ],
+          [
+            884,
+            420
+          ],
+          [
+            800,
+            420
+          ]
+        ],
+        [
+          [
+            640,
+            0
+          ],
+          [
+            690,
+            0
+          ],
+          [
+            690,
+            430
+          ],
+          [
+            640,
+            430
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "nexus",
+      "name": "NEXUS Plaza",
+      "kind": "district",
+      "origin": [
+        0,
+        120
+      ],
+      "color": "#cfa1ff",
+      "source": "docs/generated-world-v2/nexus.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            32,
+            416
+          ],
+          [
+            1632,
+            416
+          ],
+          [
+            1632,
+            576
+          ],
+          [
+            32,
+            576
+          ]
+        ],
+        [
+          [
+            32,
+            352
+          ],
+          [
+            1632,
+            352
+          ],
+          [
+            1632,
+            416
+          ],
+          [
+            32,
+            416
+          ]
+        ],
+        [
+          [
+            32,
+            800
+          ],
+          [
+            1632,
+            800
+          ],
+          [
+            1632,
+            896
+          ],
+          [
+            32,
+            896
+          ]
+        ],
+        [
+          [
+            544,
+            0
+          ],
+          [
+            672,
+            0
+          ],
+          [
+            672,
+            928
+          ],
+          [
+            544,
+            928
+          ]
+        ],
+        [
+          [
+            1024,
+            0
+          ],
+          [
+            1152,
+            0
+          ],
+          [
+            1152,
+            928
+          ],
+          [
+            1024,
+            928
+          ]
+        ],
+        [
+          [
+            544,
+            384
+          ],
+          [
+            1184,
+            384
+          ],
+          [
+            1184,
+            768
+          ],
+          [
+            544,
+            768
+          ]
+        ],
+        [
+          [
+            832,
+            320
+          ],
+          [
+            928,
+            320
+          ],
+          [
+            928,
+            384
+          ],
+          [
+            832,
+            384
+          ]
+        ],
+        [
+          [
+            256,
+            320
+          ],
+          [
+            352,
+            320
+          ],
+          [
+            352,
+            384
+          ],
+          [
+            256,
+            384
+          ]
+        ],
+        [
+          [
+            1376,
+            320
+          ],
+          [
+            1472,
+            320
+          ],
+          [
+            1472,
+            384
+          ],
+          [
+            1376,
+            384
+          ]
+        ],
+        [
+          [
+            288,
+            768
+          ],
+          [
+            384,
+            768
+          ],
+          [
+            384,
+            832
+          ],
+          [
+            288,
+            832
+          ]
+        ],
+        [
+          [
+            1344,
+            768
+          ],
+          [
+            1440,
+            768
+          ],
+          [
+            1440,
+            832
+          ],
+          [
+            1344,
+            832
+          ]
+        ],
+        [
+          [
+            800,
+            800
+          ],
+          [
+            896,
+            800
+          ],
+          [
+            896,
+            864
+          ],
+          [
+            800,
+            864
+          ]
+        ],
+        [
+          [
+            800,
+            640
+          ],
+          [
+            896,
+            640
+          ],
+          [
+            896,
+            704
+          ],
+          [
+            800,
+            704
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "nexus-announcement",
+          "name": "NEXUS Announcements",
+          "point": [
+            304,
+            400
+          ],
+          "action": "announcements",
+          "description": "NEXUS announces waves, races, bounties and Golden Hour clues. The default event lasts 180 minutes."
+        },
+        {
+          "id": "social",
+          "name": "Social Hub",
+          "point": [
+            1392,
+            400
+          ],
+          "action": "info",
+          "description": "A public gathering place. The game does not permit direct money transfers between operators."
+        },
+        {
+          "id": "golden",
+          "name": "Golden Hour Terminal",
+          "point": [
+            336,
+            752
+          ],
+          "action": "events",
+          "description": "Card Hunt at minute 70, Courier Chase at 115 and Server Sprint at 165 each use a fixed ₹100 pool."
+        },
+        {
+          "id": "nexus-event",
+          "name": "Event Terminal",
+          "point": [
+            1360,
+            752
+          ],
+          "action": "events",
+          "description": "Golden Hour start points and clues are announced by NEXUS; the server controls event availability."
+        },
+        {
+          "id": "nexus-info",
+          "name": "NEXUS Information",
+          "point": [
+            848,
+            880
+          ],
+          "action": "info",
+          "description": "City announcements and event rules are available here. Every operator starts with zero wealth."
+        }
+      ],
+      "extractFloorFromImage": true,
+      "floorOverrides": [
+        [
+          [
+            100,
+            736
+          ],
+          [
+            1550,
+            736
+          ],
+          [
+            1550,
+            768
+          ],
+          [
+            100,
+            768
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "c07",
+      "name": "Exchange ↔ Tech",
+      "kind": "connector",
+      "origin": [
+        70,
+        60
+      ],
+      "color": "#62d7ff",
+      "source": "docs/generated-world-v2/c07.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            0,
+            416
+          ],
+          [
+            1664,
+            416
+          ],
+          [
+            1664,
+            576
+          ],
+          [
+            0,
+            576
+          ]
+        ],
+        [
+          [
+            544,
+            0
+          ],
+          [
+            672,
+            0
+          ],
+          [
+            672,
+            928
+          ],
+          [
+            544,
+            928
+          ]
+        ],
+        [
+          [
+            1024,
+            0
+          ],
+          [
+            1152,
+            0
+          ],
+          [
+            1152,
+            928
+          ],
+          [
+            1024,
+            928
+          ]
+        ],
+        [
+          [
+            672,
+            576
+          ],
+          [
+            1024,
+            576
+          ],
+          [
+            1024,
+            864
+          ],
+          [
+            672,
+            864
+          ]
+        ],
+        [
+          [
+            320,
+            384
+          ],
+          [
+            416,
+            384
+          ],
+          [
+            416,
+            448
+          ],
+          [
+            320,
+            448
+          ]
+        ],
+        [
+          [
+            1312,
+            384
+          ],
+          [
+            1408,
+            384
+          ],
+          [
+            1408,
+            448
+          ],
+          [
+            1312,
+            448
+          ]
+        ],
+        [
+          [
+            800,
+            768
+          ],
+          [
+            896,
+            768
+          ],
+          [
+            896,
+            832
+          ],
+          [
+            800,
+            832
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "c07-info",
+          "name": "Route information kiosk",
+          "point": [
+            400,
+            400
+          ],
+          "action": "info",
+          "description": "This is the Exchange ↔ Tech route. Follow the signed city-map links to travel between districts."
+        }
+      ],
+      "extractFloorFromImage": true
+    },
+    {
+      "id": "c08",
+      "name": "Exchange ↔ Harbor",
+      "kind": "connector",
+      "origin": [
+        210,
+        60
+      ],
+      "color": "#58d5bf",
+      "source": "docs/generated-world-v2/c08.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            768,
+            0
+          ],
+          [
+            928,
+            0
+          ],
+          [
+            928,
+            928
+          ],
+          [
+            768,
+            928
+          ]
+        ],
+        [
+          [
+            256,
+            320
+          ],
+          [
+            1408,
+            320
+          ],
+          [
+            1408,
+            416
+          ],
+          [
+            256,
+            416
+          ]
+        ],
+        [
+          [
+            256,
+            640
+          ],
+          [
+            1408,
+            640
+          ],
+          [
+            1408,
+            736
+          ],
+          [
+            256,
+            736
+          ]
+        ],
+        [
+          [
+            448,
+            320
+          ],
+          [
+            544,
+            320
+          ],
+          [
+            544,
+            384
+          ],
+          [
+            448,
+            384
+          ]
+        ],
+        [
+          [
+            1152,
+            640
+          ],
+          [
+            1248,
+            640
+          ],
+          [
+            1248,
+            704
+          ],
+          [
+            1152,
+            704
+          ]
+        ],
+        [
+          [
+            448,
+            640
+          ],
+          [
+            544,
+            640
+          ],
+          [
+            544,
+            704
+          ],
+          [
+            448,
+            704
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "c08-info",
+          "name": "Route information kiosk",
+          "point": [
+            560,
+            304
+          ],
+          "action": "info",
+          "description": "This is the Exchange ↔ Harbor route. Follow the signed city-map links to travel between districts."
+        }
+      ],
+      "extractFloorFromImage": true,
+      "floorOverrides": [
+        [
+          [
+            16,
+            325
+          ],
+          [
+            1648,
+            325
+          ],
+          [
+            1648,
+            410
+          ],
+          [
+            16,
+            410
+          ]
+        ],
+        [
+          [
+            525,
+            275
+          ],
+          [
+            600,
+            275
+          ],
+          [
+            600,
+            352
+          ],
+          [
+            525,
+            352
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "c09",
+      "name": "Exchange ↔ Black Grid",
+      "kind": "connector",
+      "origin": [
+        210,
+        120
+      ],
+      "color": "#f26a85",
+      "source": "docs/generated-world-v2/c09.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            0,
+            416
+          ],
+          [
+            1664,
+            416
+          ],
+          [
+            1664,
+            576
+          ],
+          [
+            0,
+            576
+          ]
+        ],
+        [
+          [
+            544,
+            0
+          ],
+          [
+            672,
+            0
+          ],
+          [
+            672,
+            928
+          ],
+          [
+            544,
+            928
+          ]
+        ],
+        [
+          [
+            1024,
+            0
+          ],
+          [
+            1152,
+            0
+          ],
+          [
+            1152,
+            928
+          ],
+          [
+            1024,
+            928
+          ]
+        ],
+        [
+          [
+            672,
+            576
+          ],
+          [
+            1024,
+            576
+          ],
+          [
+            1024,
+            864
+          ],
+          [
+            672,
+            864
+          ]
+        ],
+        [
+          [
+            320,
+            384
+          ],
+          [
+            416,
+            384
+          ],
+          [
+            416,
+            448
+          ],
+          [
+            320,
+            448
+          ]
+        ],
+        [
+          [
+            1312,
+            384
+          ],
+          [
+            1408,
+            384
+          ],
+          [
+            1408,
+            448
+          ],
+          [
+            1312,
+            448
+          ]
+        ],
+        [
+          [
+            800,
+            768
+          ],
+          [
+            896,
+            768
+          ],
+          [
+            896,
+            832
+          ],
+          [
+            800,
+            832
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "c09-info",
+          "name": "Route information kiosk",
+          "point": [
+            560,
+            464
+          ],
+          "action": "info",
+          "description": "This is the Exchange ↔ Black Grid route. Follow the signed city-map links to travel between districts."
+        }
+      ],
+      "extractFloorFromImage": true,
+      "foregroundRects": [
+        {
+          "x": 688,
+          "y": 120,
+          "width": 309,
+          "height": 54
+        }
+      ]
+    },
+    {
+      "id": "c10",
+      "name": "Exchange ↔ Undercity",
+      "kind": "connector",
+      "origin": [
+        140,
+        180
+      ],
+      "color": "#f0b36f",
+      "source": "docs/generated-world-v2/c10.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            768,
+            0
+          ],
+          [
+            928,
+            0
+          ],
+          [
+            928,
+            928
+          ],
+          [
+            768,
+            928
+          ]
+        ],
+        [
+          [
+            256,
+            320
+          ],
+          [
+            1408,
+            320
+          ],
+          [
+            1408,
+            416
+          ],
+          [
+            256,
+            416
+          ]
+        ],
+        [
+          [
+            256,
+            640
+          ],
+          [
+            1408,
+            640
+          ],
+          [
+            1408,
+            736
+          ],
+          [
+            256,
+            736
+          ]
+        ],
+        [
+          [
+            448,
+            320
+          ],
+          [
+            544,
+            320
+          ],
+          [
+            544,
+            384
+          ],
+          [
+            448,
+            384
+          ]
+        ],
+        [
+          [
+            1152,
+            640
+          ],
+          [
+            1248,
+            640
+          ],
+          [
+            1248,
+            704
+          ],
+          [
+            1152,
+            704
+          ]
+        ],
+        [
+          [
+            448,
+            640
+          ],
+          [
+            544,
+            640
+          ],
+          [
+            544,
+            704
+          ],
+          [
+            448,
+            704
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "c10-info",
+          "name": "Route information kiosk",
+          "point": [
+            496,
+            304
+          ],
+          "action": "info",
+          "description": "This is the Exchange ↔ Undercity route. Follow the signed city-map links to travel between districts."
+        }
+      ],
+      "extractFloorFromImage": true,
+      "floorOverrides": [
+        [
+          [
+            300,
+            270
+          ],
+          [
+            840,
+            270
+          ],
+          [
+            840,
+            319
+          ],
+          [
+            300,
+            319
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "c11",
+      "name": "Exchange ↔ NEXUS",
+      "kind": "connector",
+      "origin": [
+        70,
+        120
+      ],
+      "color": "#cfa1ff",
+      "source": "docs/generated-world-v2/c11.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            0,
+            416
+          ],
+          [
+            1664,
+            416
+          ],
+          [
+            1664,
+            576
+          ],
+          [
+            0,
+            576
+          ]
+        ],
+        [
+          [
+            544,
+            0
+          ],
+          [
+            672,
+            0
+          ],
+          [
+            672,
+            928
+          ],
+          [
+            544,
+            928
+          ]
+        ],
+        [
+          [
+            1024,
+            0
+          ],
+          [
+            1152,
+            0
+          ],
+          [
+            1152,
+            928
+          ],
+          [
+            1024,
+            928
+          ]
+        ],
+        [
+          [
+            672,
+            576
+          ],
+          [
+            1024,
+            576
+          ],
+          [
+            1024,
+            864
+          ],
+          [
+            672,
+            864
+          ]
+        ],
+        [
+          [
+            320,
+            384
+          ],
+          [
+            416,
+            384
+          ],
+          [
+            416,
+            448
+          ],
+          [
+            320,
+            448
+          ]
+        ],
+        [
+          [
+            1312,
+            384
+          ],
+          [
+            1408,
+            384
+          ],
+          [
+            1408,
+            448
+          ],
+          [
+            1312,
+            448
+          ]
+        ],
+        [
+          [
+            800,
+            768
+          ],
+          [
+            896,
+            768
+          ],
+          [
+            896,
+            832
+          ],
+          [
+            800,
+            832
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "c11-info",
+          "name": "Route information kiosk",
+          "point": [
+            336,
+            400
+          ],
+          "action": "info",
+          "description": "This is the Exchange ↔ NEXUS route. Follow the signed city-map links to travel between districts."
+        }
+      ],
+      "extractFloorFromImage": true
+    },
+    {
+      "id": "c12",
+      "name": "Tech ↔ Harbor",
+      "kind": "connector",
+      "origin": [
+        140,
+        0
+      ],
+      "color": "#58d5bf",
+      "source": "docs/generated-world-v2/c12.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            0,
+            416
+          ],
+          [
+            1664,
+            416
+          ],
+          [
+            1664,
+            576
+          ],
+          [
+            0,
+            576
+          ]
+        ],
+        [
+          [
+            544,
+            0
+          ],
+          [
+            672,
+            0
+          ],
+          [
+            672,
+            928
+          ],
+          [
+            544,
+            928
+          ]
+        ],
+        [
+          [
+            1024,
+            0
+          ],
+          [
+            1152,
+            0
+          ],
+          [
+            1152,
+            928
+          ],
+          [
+            1024,
+            928
+          ]
+        ],
+        [
+          [
+            672,
+            576
+          ],
+          [
+            1024,
+            576
+          ],
+          [
+            1024,
+            864
+          ],
+          [
+            672,
+            864
+          ]
+        ],
+        [
+          [
+            320,
+            384
+          ],
+          [
+            416,
+            384
+          ],
+          [
+            416,
+            448
+          ],
+          [
+            320,
+            448
+          ]
+        ],
+        [
+          [
+            1312,
+            384
+          ],
+          [
+            1408,
+            384
+          ],
+          [
+            1408,
+            448
+          ],
+          [
+            1312,
+            448
+          ]
+        ],
+        [
+          [
+            800,
+            768
+          ],
+          [
+            896,
+            768
+          ],
+          [
+            896,
+            832
+          ],
+          [
+            800,
+            832
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "c12-info",
+          "name": "Route information kiosk",
+          "point": [
+            464,
+            368
+          ],
+          "action": "info",
+          "description": "This is the Tech ↔ Harbor route. Follow the signed city-map links to travel between districts."
+        }
+      ],
+      "extractFloorFromImage": true
+    },
+    {
+      "id": "c13",
+      "name": "Undercity ↔ Black Grid",
+      "kind": "connector",
+      "origin": [
+        210,
+        180
+      ],
+      "color": "#f26a85",
+      "source": "docs/generated-world-v2/c13.png",
+      "focus": [
+        848,
+        496
+      ],
+      "routes": [],
+      "floorPolygons": [
+        [
+          [
+            0,
+            416
+          ],
+          [
+            1664,
+            416
+          ],
+          [
+            1664,
+            576
+          ],
+          [
+            0,
+            576
+          ]
+        ],
+        [
+          [
+            544,
+            0
+          ],
+          [
+            672,
+            0
+          ],
+          [
+            672,
+            928
+          ],
+          [
+            544,
+            928
+          ]
+        ],
+        [
+          [
+            1024,
+            0
+          ],
+          [
+            1152,
+            0
+          ],
+          [
+            1152,
+            928
+          ],
+          [
+            1024,
+            928
+          ]
+        ],
+        [
+          [
+            672,
+            576
+          ],
+          [
+            1024,
+            576
+          ],
+          [
+            1024,
+            864
+          ],
+          [
+            672,
+            864
+          ]
+        ],
+        [
+          [
+            320,
+            384
+          ],
+          [
+            416,
+            384
+          ],
+          [
+            416,
+            448
+          ],
+          [
+            320,
+            448
+          ]
+        ],
+        [
+          [
+            1312,
+            384
+          ],
+          [
+            1408,
+            384
+          ],
+          [
+            1408,
+            448
+          ],
+          [
+            1312,
+            448
+          ]
+        ],
+        [
+          [
+            800,
+            768
+          ],
+          [
+            896,
+            768
+          ],
+          [
+            896,
+            832
+          ],
+          [
+            800,
+            832
+          ]
+        ]
+      ],
+      "objects": [
+        {
+          "id": "c13-info",
+          "name": "Route information kiosk",
+          "point": [
+            336,
+            400
+          ],
+          "action": "info",
+          "description": "This is the Undercity ↔ Black Grid route. Follow the signed city-map links to travel between districts."
+        }
+      ],
+      "extractFloorFromImage": true
+    },
+    {
+      "id": "homes-a",
+      "name": "Undercity · Ward A",
+      "kind": "neighborhood",
+      "parentId": "under",
+      "origin": [
+        70,
+        300
+      ],
+      "color": "#f0b36f",
+      "source": "docs/generated-world-v2/homes.png",
+      "asset": "homes",
+      "focus": [
+        840,
+        580
+      ],
+      "floorOverrides": [
+        [
+          [
+            644,
+            0
+          ],
+          [
+            692,
+            0
+          ],
+          [
+            692,
+            928
+          ],
+          [
+            644,
+            928
+          ]
+        ],
+        [
+          [
+            312,
+            0
+          ],
+          [
+            350,
+            0
+          ],
+          [
+            350,
+            928
+          ],
+          [
+            312,
+            928
+          ]
+        ],
+        [
+          [
+            988,
+            0
+          ],
+          [
+            1036,
+            0
+          ],
+          [
+            1036,
+            928
+          ],
+          [
+            988,
+            928
+          ]
+        ],
+        [
+          [
+            1328,
+            0
+          ],
+          [
+            1376,
+            0
+          ],
+          [
+            1376,
+            928
+          ],
+          [
+            1328,
+            928
+          ]
+        ]
+      ],
+      "extractFloorFromImage": true,
+      "routes": [
+        {
+          "points": [
+            [
+              16,
+              292
+            ],
+            [
+              1632,
+              292
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              580
+            ],
+            [
+              1632,
+              580
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              875
+            ],
+            [
+              1632,
+              875
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              16
+            ],
+            [
+              16,
+              896
+            ]
+          ],
+          "radius": 16
+        },
+        {
+          "points": [
+            [
+              333,
+              16
+            ],
+            [
+              333,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              670,
+              16
+            ],
+            [
+              670,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1010,
+              16
+            ],
+            [
+              1010,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1350,
+              16
+            ],
+            [
+              1350,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1632,
+              16
+            ],
+            [
+              1632,
+              896
+            ]
+          ],
+          "radius": 16
+        }
+      ],
+      "floorPolygons": [],
+      "objects": [
+        {
+          "id": "home-h001",
+          "name": "Home site H001",
+          "point": [
+            176,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H001",
+          "description": "H001, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h002",
+          "name": "Home site H002",
+          "point": [
+            496,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H002",
+          "description": "H002, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h003",
+          "name": "Home site H003",
+          "point": [
+            848,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H003",
+          "description": "H003, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h004",
+          "name": "Home site H004",
+          "point": [
+            1168,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H004",
+          "description": "H004, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h005",
+          "name": "Home site H005",
+          "point": [
+            1520,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H005",
+          "description": "H005, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h006",
+          "name": "Home site H006",
+          "point": [
+            176,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H006",
+          "description": "H006, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h007",
+          "name": "Home site H007",
+          "point": [
+            496,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H007",
+          "description": "H007, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h008",
+          "name": "Home site H008",
+          "point": [
+            848,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H008",
+          "description": "H008, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h009",
+          "name": "Home site H009",
+          "point": [
+            1168,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H009",
+          "description": "H009, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h010",
+          "name": "Home site H010",
+          "point": [
+            1520,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H010",
+          "description": "H010, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h011",
+          "name": "Home site H011",
+          "point": [
+            176,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H011",
+          "description": "H011, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h012",
+          "name": "Home site H012",
+          "point": [
+            496,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H012",
+          "description": "H012, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h013",
+          "name": "Home site H013",
+          "point": [
+            848,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H013",
+          "description": "H013, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h014",
+          "name": "Home site H014",
+          "point": [
+            1168,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H014",
+          "description": "H014, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h015",
+          "name": "Home site H015",
+          "point": [
+            1520,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H015",
+          "description": "H015, Undercity Ward A. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        }
+      ]
+    },
+    {
+      "id": "homes-b",
+      "name": "Undercity · Ward B",
+      "kind": "neighborhood",
+      "parentId": "under",
+      "origin": [
+        140,
+        300
+      ],
+      "color": "#f0b36f",
+      "source": "docs/generated-world-v2/homes.png",
+      "asset": "homes",
+      "focus": [
+        840,
+        580
+      ],
+      "floorOverrides": [
+        [
+          [
+            644,
+            0
+          ],
+          [
+            692,
+            0
+          ],
+          [
+            692,
+            928
+          ],
+          [
+            644,
+            928
+          ]
+        ],
+        [
+          [
+            312,
+            0
+          ],
+          [
+            350,
+            0
+          ],
+          [
+            350,
+            928
+          ],
+          [
+            312,
+            928
+          ]
+        ],
+        [
+          [
+            988,
+            0
+          ],
+          [
+            1036,
+            0
+          ],
+          [
+            1036,
+            928
+          ],
+          [
+            988,
+            928
+          ]
+        ],
+        [
+          [
+            1328,
+            0
+          ],
+          [
+            1376,
+            0
+          ],
+          [
+            1376,
+            928
+          ],
+          [
+            1328,
+            928
+          ]
+        ]
+      ],
+      "extractFloorFromImage": true,
+      "routes": [
+        {
+          "points": [
+            [
+              16,
+              292
+            ],
+            [
+              1632,
+              292
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              580
+            ],
+            [
+              1632,
+              580
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              875
+            ],
+            [
+              1632,
+              875
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              16
+            ],
+            [
+              16,
+              896
+            ]
+          ],
+          "radius": 16
+        },
+        {
+          "points": [
+            [
+              333,
+              16
+            ],
+            [
+              333,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              670,
+              16
+            ],
+            [
+              670,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1010,
+              16
+            ],
+            [
+              1010,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1350,
+              16
+            ],
+            [
+              1350,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1632,
+              16
+            ],
+            [
+              1632,
+              896
+            ]
+          ],
+          "radius": 16
+        }
+      ],
+      "floorPolygons": [],
+      "objects": [
+        {
+          "id": "home-h016",
+          "name": "Home site H016",
+          "point": [
+            176,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H016",
+          "description": "H016, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h017",
+          "name": "Home site H017",
+          "point": [
+            496,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H017",
+          "description": "H017, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h018",
+          "name": "Home site H018",
+          "point": [
+            848,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H018",
+          "description": "H018, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h019",
+          "name": "Home site H019",
+          "point": [
+            1168,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H019",
+          "description": "H019, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h020",
+          "name": "Home site H020",
+          "point": [
+            1520,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H020",
+          "description": "H020, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h021",
+          "name": "Home site H021",
+          "point": [
+            176,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H021",
+          "description": "H021, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h022",
+          "name": "Home site H022",
+          "point": [
+            496,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H022",
+          "description": "H022, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h023",
+          "name": "Home site H023",
+          "point": [
+            848,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H023",
+          "description": "H023, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h024",
+          "name": "Home site H024",
+          "point": [
+            1168,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H024",
+          "description": "H024, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h025",
+          "name": "Home site H025",
+          "point": [
+            1520,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H025",
+          "description": "H025, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h026",
+          "name": "Home site H026",
+          "point": [
+            176,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H026",
+          "description": "H026, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h027",
+          "name": "Home site H027",
+          "point": [
+            496,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H027",
+          "description": "H027, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h028",
+          "name": "Home site H028",
+          "point": [
+            848,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H028",
+          "description": "H028, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h029",
+          "name": "Home site H029",
+          "point": [
+            1168,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H029",
+          "description": "H029, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h030",
+          "name": "Home site H030",
+          "point": [
+            1520,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H030",
+          "description": "H030, Undercity Ward B. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        }
+      ]
+    },
+    {
+      "id": "homes-c",
+      "name": "Undercity · Ward C",
+      "kind": "neighborhood",
+      "parentId": "under",
+      "origin": [
+        210,
+        300
+      ],
+      "color": "#f0b36f",
+      "source": "docs/generated-world-v2/homes.png",
+      "asset": "homes",
+      "focus": [
+        840,
+        580
+      ],
+      "floorOverrides": [
+        [
+          [
+            644,
+            0
+          ],
+          [
+            692,
+            0
+          ],
+          [
+            692,
+            928
+          ],
+          [
+            644,
+            928
+          ]
+        ],
+        [
+          [
+            312,
+            0
+          ],
+          [
+            350,
+            0
+          ],
+          [
+            350,
+            928
+          ],
+          [
+            312,
+            928
+          ]
+        ],
+        [
+          [
+            988,
+            0
+          ],
+          [
+            1036,
+            0
+          ],
+          [
+            1036,
+            928
+          ],
+          [
+            988,
+            928
+          ]
+        ],
+        [
+          [
+            1328,
+            0
+          ],
+          [
+            1376,
+            0
+          ],
+          [
+            1376,
+            928
+          ],
+          [
+            1328,
+            928
+          ]
+        ]
+      ],
+      "extractFloorFromImage": true,
+      "routes": [
+        {
+          "points": [
+            [
+              16,
+              292
+            ],
+            [
+              1632,
+              292
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              580
+            ],
+            [
+              1632,
+              580
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              875
+            ],
+            [
+              1632,
+              875
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              16
+            ],
+            [
+              16,
+              896
+            ]
+          ],
+          "radius": 16
+        },
+        {
+          "points": [
+            [
+              333,
+              16
+            ],
+            [
+              333,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              670,
+              16
+            ],
+            [
+              670,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1010,
+              16
+            ],
+            [
+              1010,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1350,
+              16
+            ],
+            [
+              1350,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1632,
+              16
+            ],
+            [
+              1632,
+              896
+            ]
+          ],
+          "radius": 16
+        }
+      ],
+      "floorPolygons": [],
+      "objects": [
+        {
+          "id": "home-h031",
+          "name": "Home site H031",
+          "point": [
+            176,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H031",
+          "description": "H031, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h032",
+          "name": "Home site H032",
+          "point": [
+            496,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H032",
+          "description": "H032, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h033",
+          "name": "Home site H033",
+          "point": [
+            848,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H033",
+          "description": "H033, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h034",
+          "name": "Home site H034",
+          "point": [
+            1168,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H034",
+          "description": "H034, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h035",
+          "name": "Home site H035",
+          "point": [
+            1520,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H035",
+          "description": "H035, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h036",
+          "name": "Home site H036",
+          "point": [
+            176,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H036",
+          "description": "H036, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h037",
+          "name": "Home site H037",
+          "point": [
+            496,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H037",
+          "description": "H037, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h038",
+          "name": "Home site H038",
+          "point": [
+            848,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H038",
+          "description": "H038, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h039",
+          "name": "Home site H039",
+          "point": [
+            1168,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H039",
+          "description": "H039, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h040",
+          "name": "Home site H040",
+          "point": [
+            1520,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H040",
+          "description": "H040, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h041",
+          "name": "Home site H041",
+          "point": [
+            176,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H041",
+          "description": "H041, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h042",
+          "name": "Home site H042",
+          "point": [
+            496,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H042",
+          "description": "H042, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h043",
+          "name": "Home site H043",
+          "point": [
+            848,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H043",
+          "description": "H043, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h044",
+          "name": "Home site H044",
+          "point": [
+            1168,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H044",
+          "description": "H044, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h045",
+          "name": "Home site H045",
+          "point": [
+            1520,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H045",
+          "description": "H045, Undercity Ward C. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        }
+      ]
+    },
+    {
+      "id": "homes-d",
+      "name": "Undercity · Ward D",
+      "kind": "neighborhood",
+      "parentId": "under",
+      "origin": [
+        70,
+        360
+      ],
+      "color": "#f0b36f",
+      "source": "docs/generated-world-v2/homes.png",
+      "asset": "homes",
+      "focus": [
+        840,
+        580
+      ],
+      "floorOverrides": [
+        [
+          [
+            644,
+            0
+          ],
+          [
+            692,
+            0
+          ],
+          [
+            692,
+            928
+          ],
+          [
+            644,
+            928
+          ]
+        ],
+        [
+          [
+            312,
+            0
+          ],
+          [
+            350,
+            0
+          ],
+          [
+            350,
+            928
+          ],
+          [
+            312,
+            928
+          ]
+        ],
+        [
+          [
+            988,
+            0
+          ],
+          [
+            1036,
+            0
+          ],
+          [
+            1036,
+            928
+          ],
+          [
+            988,
+            928
+          ]
+        ],
+        [
+          [
+            1328,
+            0
+          ],
+          [
+            1376,
+            0
+          ],
+          [
+            1376,
+            928
+          ],
+          [
+            1328,
+            928
+          ]
+        ]
+      ],
+      "extractFloorFromImage": true,
+      "routes": [
+        {
+          "points": [
+            [
+              16,
+              292
+            ],
+            [
+              1632,
+              292
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              580
+            ],
+            [
+              1632,
+              580
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              875
+            ],
+            [
+              1632,
+              875
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              16
+            ],
+            [
+              16,
+              896
+            ]
+          ],
+          "radius": 16
+        },
+        {
+          "points": [
+            [
+              333,
+              16
+            ],
+            [
+              333,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              670,
+              16
+            ],
+            [
+              670,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1010,
+              16
+            ],
+            [
+              1010,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1350,
+              16
+            ],
+            [
+              1350,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1632,
+              16
+            ],
+            [
+              1632,
+              896
+            ]
+          ],
+          "radius": 16
+        }
+      ],
+      "floorPolygons": [],
+      "objects": [
+        {
+          "id": "home-h046",
+          "name": "Home site H046",
+          "point": [
+            176,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H046",
+          "description": "H046, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h047",
+          "name": "Home site H047",
+          "point": [
+            496,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H047",
+          "description": "H047, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h048",
+          "name": "Home site H048",
+          "point": [
+            848,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H048",
+          "description": "H048, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h049",
+          "name": "Home site H049",
+          "point": [
+            1168,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H049",
+          "description": "H049, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h050",
+          "name": "Home site H050",
+          "point": [
+            1520,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H050",
+          "description": "H050, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h051",
+          "name": "Home site H051",
+          "point": [
+            176,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H051",
+          "description": "H051, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h052",
+          "name": "Home site H052",
+          "point": [
+            496,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H052",
+          "description": "H052, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h053",
+          "name": "Home site H053",
+          "point": [
+            848,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H053",
+          "description": "H053, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h054",
+          "name": "Home site H054",
+          "point": [
+            1168,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H054",
+          "description": "H054, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h055",
+          "name": "Home site H055",
+          "point": [
+            1520,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H055",
+          "description": "H055, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h056",
+          "name": "Home site H056",
+          "point": [
+            176,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H056",
+          "description": "H056, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h057",
+          "name": "Home site H057",
+          "point": [
+            496,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H057",
+          "description": "H057, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h058",
+          "name": "Home site H058",
+          "point": [
+            848,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H058",
+          "description": "H058, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h059",
+          "name": "Home site H059",
+          "point": [
+            1168,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H059",
+          "description": "H059, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h060",
+          "name": "Home site H060",
+          "point": [
+            1520,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H060",
+          "description": "H060, Undercity Ward D. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        }
+      ]
+    },
+    {
+      "id": "homes-e",
+      "name": "Undercity · Ward E",
+      "kind": "neighborhood",
+      "parentId": "under",
+      "origin": [
+        140,
+        360
+      ],
+      "color": "#f0b36f",
+      "source": "docs/generated-world-v2/homes.png",
+      "asset": "homes",
+      "focus": [
+        840,
+        580
+      ],
+      "floorOverrides": [
+        [
+          [
+            644,
+            0
+          ],
+          [
+            692,
+            0
+          ],
+          [
+            692,
+            928
+          ],
+          [
+            644,
+            928
+          ]
+        ],
+        [
+          [
+            312,
+            0
+          ],
+          [
+            350,
+            0
+          ],
+          [
+            350,
+            928
+          ],
+          [
+            312,
+            928
+          ]
+        ],
+        [
+          [
+            988,
+            0
+          ],
+          [
+            1036,
+            0
+          ],
+          [
+            1036,
+            928
+          ],
+          [
+            988,
+            928
+          ]
+        ],
+        [
+          [
+            1328,
+            0
+          ],
+          [
+            1376,
+            0
+          ],
+          [
+            1376,
+            928
+          ],
+          [
+            1328,
+            928
+          ]
+        ]
+      ],
+      "extractFloorFromImage": true,
+      "routes": [
+        {
+          "points": [
+            [
+              16,
+              292
+            ],
+            [
+              1632,
+              292
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              580
+            ],
+            [
+              1632,
+              580
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              875
+            ],
+            [
+              1632,
+              875
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              16
+            ],
+            [
+              16,
+              896
+            ]
+          ],
+          "radius": 16
+        },
+        {
+          "points": [
+            [
+              333,
+              16
+            ],
+            [
+              333,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              670,
+              16
+            ],
+            [
+              670,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1010,
+              16
+            ],
+            [
+              1010,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1350,
+              16
+            ],
+            [
+              1350,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1632,
+              16
+            ],
+            [
+              1632,
+              896
+            ]
+          ],
+          "radius": 16
+        }
+      ],
+      "floorPolygons": [],
+      "objects": [
+        {
+          "id": "home-h061",
+          "name": "Home site H061",
+          "point": [
+            176,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H061",
+          "description": "H061, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h062",
+          "name": "Home site H062",
+          "point": [
+            496,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H062",
+          "description": "H062, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h063",
+          "name": "Home site H063",
+          "point": [
+            848,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H063",
+          "description": "H063, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h064",
+          "name": "Home site H064",
+          "point": [
+            1168,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H064",
+          "description": "H064, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h065",
+          "name": "Home site H065",
+          "point": [
+            1520,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H065",
+          "description": "H065, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h066",
+          "name": "Home site H066",
+          "point": [
+            176,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H066",
+          "description": "H066, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h067",
+          "name": "Home site H067",
+          "point": [
+            496,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H067",
+          "description": "H067, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h068",
+          "name": "Home site H068",
+          "point": [
+            848,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H068",
+          "description": "H068, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h069",
+          "name": "Home site H069",
+          "point": [
+            1168,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H069",
+          "description": "H069, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h070",
+          "name": "Home site H070",
+          "point": [
+            1520,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H070",
+          "description": "H070, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h071",
+          "name": "Home site H071",
+          "point": [
+            176,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H071",
+          "description": "H071, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h072",
+          "name": "Home site H072",
+          "point": [
+            496,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H072",
+          "description": "H072, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h073",
+          "name": "Home site H073",
+          "point": [
+            848,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H073",
+          "description": "H073, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h074",
+          "name": "Home site H074",
+          "point": [
+            1168,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H074",
+          "description": "H074, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h075",
+          "name": "Home site H075",
+          "point": [
+            1520,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H075",
+          "description": "H075, Undercity Ward E. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        }
+      ]
+    },
+    {
+      "id": "homes-f",
+      "name": "Undercity · Ward F",
+      "kind": "neighborhood",
+      "parentId": "under",
+      "origin": [
+        210,
+        360
+      ],
+      "color": "#f0b36f",
+      "source": "docs/generated-world-v2/homes.png",
+      "asset": "homes",
+      "focus": [
+        840,
+        580
+      ],
+      "floorOverrides": [
+        [
+          [
+            644,
+            0
+          ],
+          [
+            692,
+            0
+          ],
+          [
+            692,
+            928
+          ],
+          [
+            644,
+            928
+          ]
+        ],
+        [
+          [
+            312,
+            0
+          ],
+          [
+            350,
+            0
+          ],
+          [
+            350,
+            928
+          ],
+          [
+            312,
+            928
+          ]
+        ],
+        [
+          [
+            988,
+            0
+          ],
+          [
+            1036,
+            0
+          ],
+          [
+            1036,
+            928
+          ],
+          [
+            988,
+            928
+          ]
+        ],
+        [
+          [
+            1328,
+            0
+          ],
+          [
+            1376,
+            0
+          ],
+          [
+            1376,
+            928
+          ],
+          [
+            1328,
+            928
+          ]
+        ]
+      ],
+      "extractFloorFromImage": true,
+      "routes": [
+        {
+          "points": [
+            [
+              16,
+              292
+            ],
+            [
+              1632,
+              292
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              580
+            ],
+            [
+              1632,
+              580
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              875
+            ],
+            [
+              1632,
+              875
+            ]
+          ],
+          "radius": 42
+        },
+        {
+          "points": [
+            [
+              16,
+              16
+            ],
+            [
+              16,
+              896
+            ]
+          ],
+          "radius": 16
+        },
+        {
+          "points": [
+            [
+              333,
+              16
+            ],
+            [
+              333,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              670,
+              16
+            ],
+            [
+              670,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1010,
+              16
+            ],
+            [
+              1010,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1350,
+              16
+            ],
+            [
+              1350,
+              896
+            ]
+          ],
+          "radius": 34
+        },
+        {
+          "points": [
+            [
+              1632,
+              16
+            ],
+            [
+              1632,
+              896
+            ]
+          ],
+          "radius": 16
+        }
+      ],
+      "floorPolygons": [],
+      "objects": [
+        {
+          "id": "home-h076",
+          "name": "Home site H076",
+          "point": [
+            176,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H076",
+          "description": "H076, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h077",
+          "name": "Home site H077",
+          "point": [
+            496,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H077",
+          "description": "H077, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h078",
+          "name": "Home site H078",
+          "point": [
+            848,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H078",
+          "description": "H078, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h079",
+          "name": "Home site H079",
+          "point": [
+            1168,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H079",
+          "description": "H079, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h080",
+          "name": "Home site H080",
+          "point": [
+            1520,
+            304
+          ],
+          "action": "homes",
+          "homeAddress": "H080",
+          "description": "H080, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h081",
+          "name": "Home site H081",
+          "point": [
+            176,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H081",
+          "description": "H081, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h082",
+          "name": "Home site H082",
+          "point": [
+            496,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H082",
+          "description": "H082, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h083",
+          "name": "Home site H083",
+          "point": [
+            848,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H083",
+          "description": "H083, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h084",
+          "name": "Home site H084",
+          "point": [
+            1168,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H084",
+          "description": "H084, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h085",
+          "name": "Home site H085",
+          "point": [
+            1520,
+            592
+          ],
+          "action": "homes",
+          "homeAddress": "H085",
+          "description": "H085, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h086",
+          "name": "Home site H086",
+          "point": [
+            176,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H086",
+          "description": "H086, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h087",
+          "name": "Home site H087",
+          "point": [
+            496,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H087",
+          "description": "H087, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h088",
+          "name": "Home site H088",
+          "point": [
+            848,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H088",
+          "description": "H088, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h089",
+          "name": "Home site H089",
+          "point": [
+            1168,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H089",
+          "description": "H089, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        },
+        {
+          "id": "home-h090",
+          "name": "Home site H090",
+          "point": [
+            1520,
+            880
+          ],
+          "action": "homes",
+          "homeAddress": "H090",
+          "description": "H090, Undercity Ward F. A distinct residential Home site. Player ownership, protected disconnect grace, burglary locks and balances require the authoritative Home/economy service; they are not active in this build."
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "a": "central",
+      "pointA": [
+        560,
+        48
+      ],
+      "connector": "c07",
+      "b": "tech",
+      "pointB": [
+        848,
+        880
+      ],
+      "start": [
+        1584,
+        432
+      ],
+      "end": [
+        48,
+        432
+      ]
+    },
+    {
+      "a": "central",
+      "pointA": [
+        1168,
+        48
+      ],
+      "connector": "c08",
+      "b": "harbor",
+      "pointB": [
+        560,
+        880
+      ],
+      "start": [
+        848,
+        880
+      ],
+      "end": [
+        848,
+        48
+      ]
+    },
+    {
+      "a": "central",
+      "pointA": [
+        1616,
+        368
+      ],
+      "connector": "c09",
+      "b": "black",
+      "pointB": [
+        48,
+        496
+      ],
+      "start": [
+        48,
+        464
+      ],
+      "end": [
+        1616,
+        464
+      ]
+    },
+    {
+      "a": "central",
+      "pointA": [
+        656,
+        880
+      ],
+      "connector": "c10",
+      "b": "under",
+      "pointB": [
+        656,
+        48
+      ],
+      "start": [
+        848,
+        48
+      ],
+      "end": [
+        848,
+        880
+      ]
+    },
+    {
+      "a": "central",
+      "pointA": [
+        144,
+        496
+      ],
+      "connector": "c11",
+      "b": "nexus",
+      "pointB": [
+        1616,
+        416
+      ],
+      "start": [
+        1616,
+        432
+      ],
+      "end": [
+        48,
+        432
+      ]
+    },
+    {
+      "a": "tech",
+      "pointA": [
+        1616,
+        496
+      ],
+      "connector": "c12",
+      "b": "harbor",
+      "pointB": [
+        48,
+        464
+      ],
+      "start": [
+        48,
+        432
+      ],
+      "end": [
+        1616,
+        432
+      ]
+    },
+    {
+      "a": "under",
+      "pointA": [
+        1616,
+        416
+      ],
+      "connector": "c13",
+      "b": "black",
+      "pointB": [
+        848,
+        880
+      ],
+      "start": [
+        48,
+        432
+      ],
+      "end": [
+        1616,
+        432
+      ]
+    }
+  ],
+  "streets": [
+    {
+      "id": "homes-entry",
+      "a": "under",
+      "pointA": [
+        848,
+        880
+      ],
+      "b": "homes-b",
+      "pointB": [
+        670,
+        48
+      ]
+    },
+    {
+      "id": "homes-a-b",
+      "a": "homes-a",
+      "pointA": [
+        1616,
+        580
+      ],
+      "b": "homes-b",
+      "pointB": [
+        48,
+        580
+      ]
+    },
+    {
+      "id": "homes-b-c",
+      "a": "homes-b",
+      "pointA": [
+        1616,
+        580
+      ],
+      "b": "homes-c",
+      "pointB": [
+        48,
+        580
+      ]
+    },
+    {
+      "id": "homes-d-e",
+      "a": "homes-d",
+      "pointA": [
+        1616,
+        580
+      ],
+      "b": "homes-e",
+      "pointB": [
+        48,
+        580
+      ]
+    },
+    {
+      "id": "homes-e-f",
+      "a": "homes-e",
+      "pointA": [
+        1616,
+        580
+      ],
+      "b": "homes-f",
+      "pointB": [
+        48,
+        580
+      ]
+    },
+    {
+      "id": "homes-a-d",
+      "a": "homes-a",
+      "pointA": [
+        670,
+        880
+      ],
+      "b": "homes-d",
+      "pointB": [
+        670,
+        48
+      ]
+    },
+    {
+      "id": "homes-b-e",
+      "a": "homes-b",
+      "pointA": [
+        670,
+        880
+      ],
+      "b": "homes-e",
+      "pointB": [
+        670,
+        48
+      ]
+    },
+    {
+      "id": "homes-c-f",
+      "a": "homes-c",
+      "pointA": [
+        670,
+        880
+      ],
+      "b": "homes-f",
+      "pointB": [
+        670,
+        48
+      ]
+    }
+  ]
+}
