@@ -1,19 +1,332 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#060d17"><meta name="description" content="Enter Veyra City. Explore a real-time multiplayer cybercity, take contracts, build your fortune and discover the authoritative systems underneath THE HEIST."><title>THE HEIST — Zero to Kingpin</title><link rel="preload" as="image" href="/art/landing/veyra-hero.webp"></head>
-<body>
-<a class="skip-link" href="#world">Skip to the world</a>
-<header class="site-header"><a class="brand" href="#home" aria-label="The Heist home"><img class="brand-emblem" src="/art/landing/heist-emblem.svg" alt="" width="46" height="46"><span><img class="brand-wordmark" src="/art/landing/heist-wordmark.svg" alt="THE HEIST" width="160" height="29"><small>VEYRA CITY / ZERO HOUR</small></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu <span>＋</span></button><nav id="site-nav" aria-label="Main navigation"><a href="#world"><span>01</span> World</a><a href="#gameplay"><span>02</span> Gameplay</a><a href="#systems"><span>03</span> Systems</a><a href="#tech"><span>04</span> Tech</a><a href="#gallery"><span>05</span> Gallery</a></nav><button class="button button-small" data-play>Play demo <span>↗</span></button></header>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#04080f">
+<meta name="description" content="Enter Veyra City. A real-time multiplayer cybercity: walk six districts, take contracts, build a fortune and decide what to risk. THE HEIST — Zero to Kingpin.">
+<title>THE HEIST — Zero to Kingpin</title>
+<link rel="icon" href="/art/landing/heist-emblem.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" as="image" href="/art/landing/veyra-hero.webp">
+<script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("intro")</script>
+</head>
+<body class="is-booting">
+<a class="skip-link" href="#overview">Skip to content</a>
+
+<!-- ========== BOOT ========== -->
+<div class="boot" id="boot" aria-hidden="true">
+  <div class="boot-panel boot-panel-top"></div>
+  <div class="boot-panel boot-panel-bottom"></div>
+  <div class="boot-core">
+    <img src="/art/landing/heist-emblem.svg" alt="" width="54" height="54">
+    <div class="boot-lines" id="boot-lines"></div>
+    <div class="boot-meter"><span id="boot-bar"></span></div>
+    <div class="boot-foot"><span>VEYRA SYSTEMS // UPLINK</span><span id="boot-count">000</span></div>
+  </div>
+</div>
+
+<!-- ========== CURSOR ========== -->
+<div class="reticle" aria-hidden="true"><span class="reticle-ring"></span><span class="reticle-dot"></span><span class="reticle-label"></span></div>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="The Heist home">
+    <img class="brand-emblem" src="/art/landing/heist-emblem.svg" alt="" width="38" height="38">
+    <span class="brand-text"><img class="brand-wordmark" src="/art/landing/heist-wordmark.svg" alt="THE HEIST" width="132" height="24"><small>VEYRA CITY / ZERO HOUR</small></span>
+  </a>
+  <nav id="site-nav" aria-label="Main navigation">
+    <a href="#world" data-nav="world"><span>01</span>World</a>
+    <a href="#demo" data-nav="demo"><span>02</span>Feel</a>
+    <a href="#gameplay" data-nav="gameplay"><span>03</span>Loop</a>
+    <a href="#systems" data-nav="systems"><span>04</span>Systems</a>
+    <a href="#tech" data-nav="tech"><span>05</span>Proof</a>
+    <i class="nav-indicator" aria-hidden="true"></i>
+  </nav>
+  <div class="header-right">
+    <div class="city-clock" aria-hidden="true"><small>VEYRA LOCAL</small><span id="city-clock">00:00:00</span></div>
+    <button class="btn btn-gold btn-sm magnetic" data-play data-cursor="Enter"><span class="btn-label">Play</span><span class="btn-arrow">↗</span></button>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><b class="sr-only">Menu</b></button>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+</header>
+
 <main>
-<section class="hero" id="home" aria-labelledby="hero-title"><div class="hero-art" aria-hidden="true"></div><div class="hero-shade" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div><div class="hero-content"><p class="eyebrow"><span class="signal-dot"></span> Veyra City <span class="slash">//</span> Zero Hour</p><h1 id="hero-title"><span class="sr-only">THE HEIST</span><img src="/art/landing/heist-wordmark.svg" alt="" width="746" height="132" fetchpriority="high"></h1><p class="hero-tagline">ZERO TO KINGPIN.</p><p class="hero-description">One city. A thousand ways to rise.<br>A real-time multiplayer open world where every move has a price.</p><div class="hero-actions"><button class="button button-gold" data-play><span>▶</span> Enter the city <span>↗</span></button><a class="button button-ghost" href="#world">Explore the world <span>↓</span></a></div><div class="hero-note"><span class="fine-line"></span> Your story starts at street level.</div></div><div class="hero-coordinate" aria-hidden="true">VYR—001<br>CITY / OVERVIEW</div><div class="hero-footer"><a class="broadcast" href="#gameplay"><span class="signal-dot"></span><div><small>CITY BROADCAST</small><p id="city-broadcast">Every fortune begins with a first contract.</p></div><span>↗</span></a><div class="hero-traits"><a href="#world"><i>⌖</i><span><b>Explore</b><small>Six city districts</small></span></a><a href="#gameplay"><i>◇</i><span><b>Execute</b><small>Contracts & challenges</small></span></a><a href="#overview"><i>↗</i><span><b>Ascend</b><small>Earn. Secure. Progress.</small></span></a></div><a class="scroll-cue" href="#overview"><span class="discover-orbit">↓</span><span>Discover Veyra<small>Scroll to explore</small></span></a></div></section>
-<section class="pitch section" id="overview"><div class="section-meta"><span>01 / THE GAME</span><span>MULTIPLAYER · EXPLORATION · ECONOMY</span></div><div class="pitch-heading reveal"><p class="eyebrow">Welcome to the open world.</p><h2>ONE CITY.<br>EVERY MOVE <em>MATTERS.</em></h2></div><div class="pitch-copy reveal"><p>Start with nothing. Walk into a living network of districts, find your next contract, and turn a good decision into a better fortune.</p><p>Other operators are making their moves, too. What you earn is only half the story. What you choose to protect is the rest.</p><a class="text-link" href="#gameplay">Learn the game <span>↗</span></a></div><div class="city-intro-visual reveal"><img src="/art/landing/gameplay.png" alt="Explore Veyra City with the in-game operator HUD" loading="lazy" width="1280" height="720"><div><span>YOUR FIRST LOOK AT VEYRA</span><a href="#gallery">View gameplay ↗</a></div></div><div class="city-pillars"><article><span>01 / EXPLORE</span><h3>Learn the streets.</h3><p>Six districts linked by travel routes. Find terminals, banks and your next opportunity.</p></article><article><span>02 / PLAY TOGETHER</span><h3>Share the city.</h3><p>Move through the same world as other operators, with nearby activity kept in sync.</p></article><article><span>03 / BUILD WEALTH</span><h3>Make it count.</h3><p>Complete contracts, earn money and decide what to secure before taking your next risk.</p></article></div><div class="pitch-strip"><span>REAL-TIME MULTIPLAYER</span><span>DISTRICT EXPLORATION</span><span>CONTRACTS & CHALLENGES</span><span>A SHARED ECONOMY</span></div></section>
-<section class="world-section section" id="world"><div class="section-meta"><span>02 / DISTRICTS</span><span>6 DISTRICTS. ONE CONNECTED WORLD.</span></div><div class="section-heading reveal"><div><p class="eyebrow">Explore six distinct districts.</p><h2>WELCOME TO <em>VEYRA.</em></h2></div><div class="carousel-controls"><button id="district-prev" aria-label="Previous districts">←</button><button id="district-next" aria-label="Next districts">→</button></div></div><div id="districts" class="districts" tabindex="0" aria-label="Veyra City districts"></div><p class="world-footnote">Original in-game artwork. Every district is a place you can explore. <span>DRAG / SCROLL TO DISCOVER →</span></p></section>
-<section class="loop-section section" id="gameplay"><div class="section-meta"><span>03 / HOW TO PLAY</span><span>YOUR OPERATOR’S FIELD GUIDE</span></div><div class="loop-layout"><div class="reveal"><p class="eyebrow">From your first step to your next contract.</p><h2>EXPLORE.<br>EXECUTE.<br><em>ASCEND.</em></h2><p class="section-copy">Follow an opportunity across the city. Solve the challenge. Decide how much of your fortune to put back on the line.</p><div class="field-route"><div class="field-route-head">A ROUTE THROUGH THE CITY <span>⌖</span></div><ol><li><span>01</span><div><strong>Find a terminal</strong><small>Explore a district and approach an interaction point.</small></div></li><li><span>02</span><div><strong>Choose your contract</strong><small>Read the brief and work through the challenge.</small></div></li><li><span>03</span><div><strong>Plan your next stop</strong><small>Head to the Bank, return Home or keep exploring.</small></div></li></ol><a href="#world">Explore the districts ↗</a></div></div><div class="loop-console reveal"><div class="console-caption"><span>OPERATOR FIELD GUIDE</span><span>INTERACTIVE / 01—07</span></div><div id="loop-tabs" role="tablist" aria-label="Gameplay loop"></div><div id="loop-detail" role="tabpanel" aria-live="polite"></div></div></div></section>
-<section class="gallery-section section" id="gallery"><div class="section-meta"><span>04 / GAMEPLAY PREVIEW</span><span>ACTUAL GAME CAPTURE</span></div><div class="section-heading reveal"><div><p class="eyebrow">Inside the game.</p><h2>YOUR VIEW.<br><em>YOUR OPERATION.</em></h2></div><p class="section-copy">A clear view of the city. The right information, exactly when you need it.</p></div><div class="gallery-tabs" role="tablist" aria-label="Interface previews"><button role="tab" aria-selected="true" data-gallery="gameplay">Field HUD</button><button role="tab" aria-selected="false" data-gallery="map">Operations map</button><button role="tab" aria-selected="false" data-gallery="terminal">Contract terminal</button></div><figure class="game-frame reveal"><div class="frame-top"><span><i></i><i></i><i></i></span><small id="gallery-label">VEYRA CITY / FIELD HUD</small><span>↗</span></div><img id="gallery-image" src="/art/landing/gameplay.png" loading="lazy" width="1280" height="720" alt="Actual gameplay in Veyra City with the compact field HUD"><figcaption id="gallery-caption">Minimal by default. Contextual when it matters.</figcaption></figure></section>
-<section class="systems-section section" id="systems"><div class="section-meta"><span>05 / SERVER ARCHITECTURE</span><span>AUTHORITATIVE · REAL-TIME · CONNECTED</span></div><div class="section-heading reveal"><div><p class="eyebrow">How the multiplayer world works.</p><h2>BUILT AS A<br><em>REAL-TIME WORLD.</em></h2></div><p class="section-copy">Behind every step is an authoritative simulation. Your client sends intent. The server decides what happens and keeps nearby operators in sync.</p></div><div class="architecture reveal" aria-label="Clients send input through WebSocket sessions to an authoritative fixed-tick simulation. Spatial filtering replicates relevant state to connected players."><div><small>01 / INPUT</small><strong>Connected clients</strong><p>Predicted movement. Responsive feedback.</p></div><span>→</span><div><small>02 / TRANSPORT</small><strong>WebSocket sessions</strong><p>Binary packets. Resumable sessions.</p></div><span>→</span><div class="architecture-core"><small>03 / AUTHORITY</small><strong>Fixed-tick simulation</strong><p>Validated movement. Shared economy.</p></div><span>→</span><div><small>04 / REPLICATION</small><strong>Nearby world state</strong><p>Spatial filtering. Relevant updates.</p></div></div><div class="system-notes"><article><span>↔</span><h3>Connected, by design.</h3><p>Nearby-player replication keeps each operator’s view relevant to their place in the world.</p></article><article><span>◷</span><h3>A world with a rhythm.</h3><p>Fixed-tick updates give movement and state changes a consistent authoritative cadence.</p></article><article><span>⌁</span><h3>A way back in.</h3><p>Session handling and a short reconnect window let a disconnected operator resume in place.</p></article></div></section>
-<section class="tech-section section" id="tech"><div class="section-meta"><span>06 / PERFORMANCE</span><span>MEASURED BENCHMARKS</span></div><div class="section-heading reveal"><div><p class="eyebrow">Tested under active player load.</p><h2>PERFORMANCE.<br><em>WITHOUT THE GUESSWORK.</em></h2></div><p class="section-copy">The benchmark report belongs here once the final test runs are complete. Until then, the numbers stay open.</p></div><div class="benchmarks"><article><small>CONCURRENT PLAYERS</small><strong>—</strong><span>Awaiting final measurement</span></article><article><small>MESSAGES / SECOND</small><strong>—</strong><span>Awaiting final measurement</span></article><article><small>P95 LATENCY</small><strong>— <i>ms</i></strong><span>Awaiting final measurement</span></article><article><small>P95 UPDATE TIME</small><strong>— <i>ms</i></strong><span>Awaiting final measurement</span></article><article><small>AOI FAN-OUT REDUCTION</small><strong>— <i>%</i></strong><span>Awaiting final measurement</span></article></div><p class="benchmark-note"><span class="signal-dot muted"></span> Planned reporting basis: controlled local load testing. Hosting conditions and methodology will accompany the results.</p><div class="stack-tags"><span>TYPESCRIPT</span><span>NODE.JS</span><span>WEBSOCKETS</span><span>SQLITE</span><span>CANVAS 2D</span></div></section>
-<section class="final-cta section"><p class="eyebrow">Every kingpin started somewhere.</p><h2>THE CITY<br>IS <em>OPEN.</em></h2><div class="final-actions"><button class="button button-gold" data-play>Play the game <span>↗</span></button><a class="button button-ghost" href="https://github.com/advay1608/the-heist-2.0" target="_blank" rel="noopener noreferrer">View source <span>↗</span></a></div><div class="final-links"><a href="#systems">Architecture ↗</a><a href="#world">Explore Veyra City ↗</a></div><p>Built as a real-time multiplayer systems experiment<br>and an interactive game world.</p></section>
-</main><footer class="site-footer"><a class="brand" href="#home">THE <b>HEIST</b></a><span>VEYRA CITY // ZERO HOUR</span><a href="#home">Back to the skyline ↑</a></footer>
-<dialog id="entry-dialog" aria-labelledby="entry-title"><button class="entry-close" aria-label="Close operator access">×</button><small class="eyebrow">VEYRA SYSTEMS / OPERATOR ACCESS</small><h2 id="entry-title">Your next move<br>starts <em>here.</em></h2><p>Establish your uplink to Veyra City.</p><form id="entry-form"><label for="entry-name">OPERATOR NAME</label><input id="entry-name" name="username" autocomplete="username" required minlength="3" maxlength="20" placeholder="Your callsign"><label for="entry-password">PASSPHRASE</label><input id="entry-password" name="password" type="password" autocomplete="current-password" required placeholder="Your private passphrase"><p id="entry-status" role="status" aria-live="polite"></p><button class="button button-gold" type="submit" id="entry-login">Enter the city <span>↗</span></button><button class="entry-register" type="button" id="entry-register">New to Veyra? Create an operator →</button></form><a class="entry-preview" href="/game.html">Open the game / city preview ↗</a></dialog>
+<!-- ========== HERO ========== -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="hero-media" aria-hidden="true">
+    <div class="hero-art"></div>
+    <canvas class="hero-rain"></canvas>
+    <div class="hero-fog"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-scan"></div>
+  </div>
+
+  <div class="hud-frame" aria-hidden="true">
+    <i class="hud-corner tl"></i><i class="hud-corner tr"></i><i class="hud-corner bl"></i><i class="hud-corner br"></i>
+    <div class="hud-read hud-read-tl">VYR—001 / CITY OVERVIEW<br><span id="hud-coord">X 140.000 · Y 120.000</span></div>
+    <div class="hud-read hud-read-tr"><span class="live-dot"></span> UPLINK STABLE<br><span>20 Hz AUTHORITY</span></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="eyebrow hero-eyebrow" data-hero-in><span class="live-dot"></span>Veyra City <b>//</b> Zero Hour <span class="hide-sm"><b>//</b> Multiplayer open world</span></p>
+    <h1 id="hero-title" class="hero-title">
+      <span class="sr-only">THE HEIST</span>
+      <svg class="wordmark" viewBox="0 0 736 132" aria-hidden="true">
+        <defs>
+          <linearGradient id="wm-silver" x2=".12" y2="1"><stop stop-color="#fff"/><stop offset=".44" stop-color="#dce8f0"/><stop offset=".46" stop-color="#8193a5"/><stop offset=".56" stop-color="#f3f5f6"/><stop offset="1" stop-color="#a3b5c6"/></linearGradient>
+          <linearGradient id="wm-gold" x2=".12" y2="1"><stop stop-color="#fff0bd"/><stop offset=".4" stop-color="#eac17d"/><stop offset=".44" stop-color="#9d642e"/><stop offset=".54" stop-color="#edbd69"/><stop offset="1" stop-color="#bb813c"/></linearGradient>
+          <linearGradient id="wm-sheen" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          <clipPath id="wm-clip"><g transform="translate(29 8) skewX(-12)"><path transform="translate(0 0)" d="M0 0H82L77 21H53V110H29V21H0Z"/><path transform="translate(92 0)" d="M0 0H24V43H58V0H82V110H58V66H24V110H0Z"/><path transform="translate(184 0)" d="M0 0H82V21H24V43H69V65H24V89H82V110H0Z"/><path transform="translate(298 0)" d="M0 0H24V43H58V0H82V110H58V66H24V110H0Z"/><path transform="translate(390 0)" d="M0 0H82V21H24V43H69V65H24V89H82V110H0Z"/><path transform="translate(482 0)" d="M0 0H27V110H0Z"/><path transform="translate(519 0)" d="M16 0H82V22H25V43H66L82 59V94L66 110H0V88H57V66H16L0 50V16Z"/><path transform="translate(611 0)" d="M0 0H82L77 21H53V110H29V21H0Z"/></g></clipPath>
+        </defs>
+        <g transform="translate(29 8) skewX(-12)">
+          <g class="wm-l"><path transform="translate(0 0)" d="M0 0H82L77 21H53V110H29V21H0Z" fill="url(#wm-silver)" stroke="#d7e5ec" stroke-width=".7"/></g>
+          <g class="wm-l"><path transform="translate(92 0)" d="M0 0H24V43H58V0H82V110H58V66H24V110H0Z" fill="url(#wm-silver)" stroke="#d7e5ec" stroke-width=".7"/></g>
+          <g class="wm-l"><path transform="translate(184 0)" d="M0 0H82V21H24V43H69V65H24V89H82V110H0Z" fill="url(#wm-silver)" stroke="#d7e5ec" stroke-width=".7"/></g>
+          <g class="wm-l wm-gold"><path transform="translate(298 0)" d="M0 0H24V43H58V0H82V110H58V66H24V110H0Z" fill="url(#wm-gold)" stroke="#f4cf8d" stroke-width=".7"/></g>
+          <g class="wm-l wm-gold"><path transform="translate(390 0)" d="M0 0H82V21H24V43H69V65H24V89H82V110H0Z" fill="url(#wm-gold)" stroke="#f4cf8d" stroke-width=".7"/></g>
+          <g class="wm-l wm-gold"><path transform="translate(482 0)" d="M0 0H27V110H0Z" fill="url(#wm-gold)" stroke="#f4cf8d" stroke-width=".7"/></g>
+          <g class="wm-l wm-gold"><path transform="translate(519 0)" d="M16 0H82V22H25V43H66L82 59V94L66 110H0V88H57V66H16L0 50V16Z" fill="url(#wm-gold)" stroke="#f4cf8d" stroke-width=".7"/></g>
+          <g class="wm-l wm-gold"><path transform="translate(611 0)" d="M0 0H82L77 21H53V110H29V21H0Z" fill="url(#wm-gold)" stroke="#f4cf8d" stroke-width=".7"/></g>
+        </g>
+        <g clip-path="url(#wm-clip)"><rect class="wm-sheen" x="-200" y="0" width="160" height="132" fill="url(#wm-sheen)" opacity=".55"/></g>
+      </svg>
+    </h1>
+    <p class="hero-tagline" data-hero-in><span data-scramble>ZERO TO KINGPIN.</span></p>
+    <p class="hero-copy" data-hero-in>One city. A thousand ways to rise. A real-time multiplayer open world where every step is checked by the server and every fortune is earned.</p>
+    <div class="hero-actions" data-hero-in>
+      <button class="btn btn-gold magnetic" data-play data-cursor="Enter"><span class="btn-icon">▶</span><span class="btn-label">Enter the city</span><span class="btn-arrow">↗</span></button>
+      <a class="btn btn-ghost magnetic" href="#demo" data-cursor="Walk"><span class="btn-label">Take a step first</span><span class="btn-arrow">↓</span></a>
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <div class="broadcast" data-hero-in>
+      <span class="live-dot"></span>
+      <div><small>CITY BROADCAST</small><p id="city-broadcast">Every fortune begins with a first contract.</p></div>
+    </div>
+    <div class="hero-stats" data-hero-in>
+      <div><b>06</b><small>Districts</small></div>
+      <div><b>07</b><small>Connector routes</small></div>
+      <div><b>01</b><small>Shared economy</small></div>
+    </div>
+    <a class="scroll-cue" href="#overview" data-hero-in aria-label="Scroll to explore"><span class="scroll-cue-line"><i></i></span><span>SCROLL<br><small>TO DESCEND</small></span></a>
+  </div>
+</section>
+
+<!-- ========== MARQUEE ========== -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee" data-speed="1"><div class="marquee-track"><span>EXPLORE</span><i>✦</i><span class="o">EXECUTE</span><i>✦</i><span>ASCEND</span><i>✦</i><span class="o">ZERO TO KINGPIN</span><i>✦</i></div></div>
+  <div class="marquee marquee-alt" data-speed="-1"><div class="marquee-track"><span>CENTRAL EXCHANGE</span><i>/</i><span>TECH QUARTER</span><i>/</i><span>BLACK GRID</span><i>/</i><span>NEXUS PLAZA</span><i>/</i><span>DATA HARBOR</span><i>/</i><span>UNDERCITY</span><i>/</i></div></div>
+</div>
+
+<!-- ========== MANIFESTO ========== -->
+<section class="manifesto section" id="overview" aria-labelledby="manifesto-title">
+  <div class="section-meta"><span>01 / THE GAME</span><span>MULTIPLAYER · EXPLORATION · ECONOMY</span></div>
+  <h2 id="manifesto-title" class="sr-only">About the game</h2>
+  <p class="manifesto-text" data-words>Start with <em>nothing.</em> Walk into a living city of six districts. Find a terminal, take a contract, crack the problem and get <em>paid.</em> Then decide what you are willing to <em>risk</em> next. Other operators are moving too. What you earn is half the story. What you <em>protect</em> is the rest.</p>
+  <div class="manifesto-grid">
+    <article class="pillar" data-tilt>
+      <span class="pillar-n">01</span><span class="pillar-glyph">⌖</span>
+      <h3>Learn the streets.</h3>
+      <p>Six districts joined by travel routes. Find terminals, banks and your next opening.</p>
+    </article>
+    <article class="pillar" data-tilt>
+      <span class="pillar-n">02</span><span class="pillar-glyph">⇄</span>
+      <h3>Share the city.</h3>
+      <p>Move through the same world as every other operator, with nearby activity kept in sync.</p>
+    </article>
+    <article class="pillar" data-tilt>
+      <span class="pillar-n">03</span><span class="pillar-glyph">◆</span>
+      <h3>Make it count.</h3>
+      <p>Finish contracts, earn money and choose what to secure before your next risk.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ========== DISTRICTS (pinned horizontal) ========== -->
+<section class="world" id="world" aria-labelledby="world-title">
+  <div class="world-pin">
+    <div class="world-head">
+      <div>
+        <p class="eyebrow"><span class="live-dot"></span>02 / Districts</p>
+        <h2 id="world-title" class="display">Welcome to <em>Veyra.</em></h2>
+      </div>
+      <div class="route-map" aria-hidden="true">
+        <div class="route-line"><span></span></div>
+        <ol id="route-nodes"></ol>
+      </div>
+    </div>
+    <div class="world-track" id="districts"></div>
+    <p class="world-hint" aria-hidden="true"><span>ORIGINAL IN-GAME ARTWORK</span><span>KEEP SCROLLING →</span></p>
+  </div>
+</section>
+
+<!-- ========== WALKABLE DEMO ========== -->
+<section class="demo section" id="demo" aria-labelledby="demo-title">
+  <div class="section-meta"><span>03 / THE FEEL</span><span>LANDING-PAGE PREVIEW · OFFLINE · NOTHING IS SENT</span></div>
+  <div class="demo-layout">
+    <div class="demo-copy">
+      <p class="eyebrow"><span class="live-dot"></span>Try it right here</p>
+      <h2 id="demo-title" class="display">Take a<br><em>step.</em></h2>
+      <p class="lede">Four directions. A camera that follows. Walk up to something and it answers. This is Central Exchange, using the game's own artwork, walls and landmarks.</p>
+      <ul class="keys" aria-label="Controls">
+        <li><span class="keycaps"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span> or arrows to move</li>
+        <li><span class="keycaps"><kbd>E</kbd></span> to interact</li>
+        <li><span class="keycaps"><kbd>Esc</kbd></span> to let go</li>
+      </ul>
+      <div class="demo-found"><small>LANDMARKS FOUND</small><b><span id="demo-found">0</span> / <span id="demo-total">5</span></b><div class="demo-found-bar"><span id="demo-found-bar"></span></div></div>
+    </div>
+    <div class="demo-shell">
+      <div class="demo-window" id="demo-window" tabindex="0" role="application" aria-label="Walkable preview of Central Exchange. Use arrow keys or WASD to move and E to interact." data-cursor="Play">
+        <div class="demo-world" id="demo-world">
+          <div class="demo-art" id="demo-art"></div>
+          <div class="demo-markers" id="demo-markers"></div>
+          <div class="demo-op" id="demo-op"><span class="demo-op-shadow"></span><span class="demo-op-sprite"></span><span class="demo-op-tag">you</span></div>
+        </div>
+        <div class="demo-hud">
+          <div class="demo-hud-top"><span><b>THE HEIST</b><span class="hide-sm"> · Central Exchange</span></span><span id="demo-pos">X 166 · Y 138</span></div>
+          <div class="demo-prompt" id="demo-prompt" aria-live="polite"></div>
+          <div class="demo-toast" id="demo-toast" aria-live="polite"></div>
+        </div>
+        <button class="demo-start" id="demo-start" type="button"><span class="demo-start-ring"></span><span>Click to take control</span></button>
+      </div>
+      <div class="dpad" aria-label="On-screen controls">
+        <button type="button" data-dir="up" aria-label="Move up">▲</button>
+        <button type="button" data-dir="left" aria-label="Move left">◀</button>
+        <button type="button" data-act aria-label="Interact">E</button>
+        <button type="button" data-dir="right" aria-label="Move right">▶</button>
+        <button type="button" data-dir="down" aria-label="Move down">▼</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LOOP (sticky scrollytelling) ========== -->
+<section class="loop section" id="gameplay" aria-labelledby="loop-title">
+  <div class="section-meta"><span>04 / HOW TO PLAY</span><span>THE OPERATOR'S LOOP</span></div>
+  <div class="loop-layout">
+    <div class="loop-sticky">
+      <h2 id="loop-title" class="display">Explore.<br>Execute.<br><em>Ascend.</em></h2>
+      <div class="loop-dial" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><circle class="dial-track" cx="100" cy="100" r="88"/><circle class="dial-fill" cx="100" cy="100" r="88" pathLength="1"/><g class="dial-ticks"></g></svg>
+        <div class="dial-center"><small>STEP</small><b id="loop-num">01</b><span id="loop-label">Explore</span></div>
+      </div>
+    </div>
+    <ol class="loop-steps" id="loop-steps"></ol>
+  </div>
+</section>
+
+<!-- ========== INTERFACE ========== -->
+<section class="interface section" id="gallery" aria-labelledby="gallery-title">
+  <div class="section-meta"><span>05 / INSIDE THE GAME</span><span>ACTUAL GAME CAPTURE</span></div>
+  <div class="interface-head">
+    <h2 id="gallery-title" class="display">Your view.<br><em>Your operation.</em></h2>
+    <div class="tabs" role="tablist" aria-label="Interface previews">
+      <button role="tab" aria-selected="true" data-gallery="gameplay">Field HUD</button>
+      <button role="tab" aria-selected="false" data-gallery="map">Operations map</button>
+      <button role="tab" aria-selected="false" data-gallery="terminal">Contract terminal</button>
+      <i class="tabs-ink" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="screen-stage">
+    <figure class="screen" id="screen">
+      <div class="screen-bar"><span class="screen-dots"><i></i><i></i><i></i></span><small id="gallery-label">VEYRA CITY / FIELD HUD</small><span class="live-dot"></span></div>
+      <div class="screen-view">
+        <img id="gallery-image" src="/art/landing/gameplay.png" loading="lazy" width="1280" height="720" alt="Actual gameplay in Veyra City with the compact field HUD">
+        <div class="screen-wipe" aria-hidden="true"></div>
+        <div class="screen-glare" aria-hidden="true"></div>
+      </div>
+      <figcaption id="gallery-caption">Minimal by default. Contextual when it matters.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ========== SYSTEMS ========== -->
+<section class="systems section" id="systems" aria-labelledby="systems-title">
+  <div class="section-meta"><span>06 / SERVER ARCHITECTURE</span><span>AUTHORITATIVE · REAL-TIME · CONNECTED</span></div>
+  <div class="split-head">
+    <h2 id="systems-title" class="display">Built as a<br><em>real-time world.</em></h2>
+    <p class="lede">Behind every step is an authoritative simulation. Your client sends intent. The server decides what happens and keeps nearby operators in sync.</p>
+  </div>
+  <div class="pipeline" aria-label="Clients send input through WebSocket sessions to an authoritative fixed-tick simulation. Spatial filtering replicates relevant state to connected players.">
+    <div class="pipe-wire" aria-hidden="true"><div class="pipe-packets" id="pipe-packets"></div></div>
+    <div class="pipe-node"><small>01 / INPUT</small><strong>Connected clients</strong><p>Predicted movement. Instant feedback.</p></div>
+    <div class="pipe-node"><small>02 / TRANSPORT</small><strong>WebSocket sessions</strong><p>Binary packets. Resumable sessions.</p></div>
+    <div class="pipe-node pipe-core"><small>03 / AUTHORITY</small><strong>Fixed-tick simulation</strong><p>Validated movement. Shared economy.</p><div class="tick-row" aria-hidden="true" id="tick-row"></div></div>
+    <div class="pipe-node"><small>04 / REPLICATION</small><strong>Nearby world state</strong><p>Spatial filtering. Only what matters.</p></div>
+  </div>
+  <div class="notes">
+    <article><span>↔</span><h3>Connected, by design.</h3><p>Nearby-player replication keeps each operator's view relevant to where they stand.</p></article>
+    <article><span>◷</span><h3>A world with a rhythm.</h3><p>Fixed-tick updates give movement and state changes one steady, authoritative cadence.</p></article>
+    <article><span>⌁</span><h3>A way back in.</h3><p>Session handling and a short reconnect window let a dropped operator resume in place.</p></article>
+  </div>
+</section>
+
+<!-- ========== BENCHMARKS ========== -->
+<section class="tech section" id="tech" aria-labelledby="tech-title">
+  <div class="section-meta"><span>07 / PERFORMANCE</span><span>MEASURED, NOT PROMISED</span></div>
+  <div class="split-head">
+    <h2 id="tech-title" class="display">Performance.<br><em>Without the guesswork.</em></h2>
+    <p class="lede" id="bench-copy">The benchmark report belongs here once the final test runs are complete. Until then, the numbers stay open.</p>
+  </div>
+  <div class="bench-grid" id="bench-grid">
+    <article class="bench bench-hero"><small>CONCURRENT PLAYERS</small><strong><span class="bench-v">—</span></strong><span class="bench-note">Awaiting final measurement</span><div class="bench-crowd" aria-hidden="true"></div></article>
+    <article class="bench"><small>MESSAGES / SECOND</small><strong><span class="bench-v">—</span></strong><span class="bench-note">Awaiting final measurement</span></article>
+    <article class="bench"><small>P95 LATENCY</small><strong><span class="bench-v">—</span><i> ms</i></strong><span class="bench-note">Awaiting final measurement</span></article>
+    <article class="bench"><small>P95 UPDATE TIME</small><strong><span class="bench-v">—</span><i> ms</i></strong><span class="bench-note">Awaiting final measurement</span></article>
+    <article class="bench"><small>AOI FAN-OUT REDUCTION</small><strong><span class="bench-v">—</span><i> %</i></strong><span class="bench-note">Awaiting final measurement</span></article>
+  </div>
+  <p class="bench-foot" id="bench-foot"><span class="live-dot muted"></span> Planned reporting basis: controlled local load testing. Hosting conditions and methodology will accompany the results.</p>
+  <div class="stack" aria-label="Technology"><span>TypeScript</span><span>Node.js</span><span>WebSockets</span><span>SQLite</span><span>Canvas 2D</span></div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="finale" id="finale" aria-labelledby="finale-title">
+  <div class="finale-art" aria-hidden="true"></div>
+  <div class="finale-mask" aria-hidden="true"></div>
+  <div class="finale-content">
+    <p class="eyebrow"><span class="live-dot"></span>Every kingpin started somewhere</p>
+    <h2 id="finale-title" class="finale-title"><span class="line"><span>The city</span></span><span class="line"><span>is <em>open.</em></span></span></h2>
+    <div class="finale-actions">
+      <button class="btn btn-gold btn-lg magnetic" data-play data-cursor="Enter"><span class="btn-icon">▶</span><span class="btn-label">Play the game</span><span class="btn-arrow">↗</span></button>
+      <a class="btn btn-ghost magnetic" href="https://github.com/advay1608/the-heist-2.0" target="_blank" rel="noopener noreferrer" data-cursor="Source"><span class="btn-label">View source</span><span class="btn-arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-row">
+    <span>Built as a real-time multiplayer systems experiment and an interactive game world.</span>
+    <nav aria-label="Footer"><a href="#world">World</a><a href="#demo">Feel</a><a href="#systems">Architecture</a><a href="/art/benchmark/report.html">Benchmark report</a><a href="#home" class="to-top">Back to the skyline ↑</a></nav>
+  </div>
+  <div class="footer-mark" aria-hidden="true">THE HEIST</div>
+</footer>
+
+<!-- ========== ENTRY DIALOG ========== -->
+<dialog id="entry-dialog" aria-labelledby="entry-title" data-lenis-prevent>
+  <div class="entry-side" aria-hidden="true"><div class="entry-side-art"></div><span>VEYRA SYSTEMS<br>OPERATOR ACCESS</span></div>
+  <div class="entry-main">
+    <button class="entry-close" aria-label="Close operator access">×</button>
+    <small class="eyebrow"><span class="live-dot"></span>Secure uplink</small>
+    <h2 id="entry-title">Your next move<br>starts <em>here.</em></h2>
+    <p>Sign in with your callsign, or create a new operator.</p>
+    <form id="entry-form">
+      <label for="entry-name">OPERATOR NAME</label>
+      <input id="entry-name" name="username" autocomplete="username" required minlength="3" maxlength="20" placeholder="Your callsign">
+      <label for="entry-password">PASSPHRASE</label>
+      <input id="entry-password" name="password" type="password" autocomplete="current-password" required placeholder="Your private passphrase">
+      <p id="entry-status" role="status" aria-live="polite"></p>
+      <button class="btn btn-gold" type="submit" id="entry-login"><span class="btn-label">Enter the city</span><span class="btn-arrow">↗</span></button>
+      <button class="entry-register" type="button" id="entry-register">New to Veyra? Create an operator →</button>
+    </form>
+    <a class="entry-preview" href="/game.html">Open the game / city preview ↗</a>
+  </div>
+</dialog>
+
 <script type="module" src="/src/landing.ts"></script>
-</body></html>
+</body>
+</html>
