@@ -8,7 +8,7 @@
 
 THE HEIST is a browser-based, top-down multiplayer game—and an engineering project about making a shared world responsive, consistent and measurable. Its six districts connect exploration, coding and puzzle challenges, a player economy, Homes and timed events. Beneath the city is an authoritative TypeScript server with fixed-tick simulation, spatial replication and SQLite persistence isolated in a worker thread.
 
-[The game](#the-game) · [Architecture](#architecture) · [Benchmarks](#measured-backend-performance) · [Run locally](#run-locally) · [Deploy on Render](docs/RENDER_DEPLOYMENT.md)
+[The game](#the-game) · [Architecture](#architecture) · [Benchmarks](#measured-backend-performance) · [Run locally](#run-locally) · [Deployment](#deployment)
 
 ## The game
 
@@ -40,7 +40,7 @@ One deployable service serves the website, game assets, HTTP API and WebSocket e
 ```mermaid
 flowchart TB
     Browser[Browser: landing page + game client]
-    Edge[Render HTTPS / WSS]
+    Edge[VM HTTPS / WSS]
     HTTP[Fastify: assets + auth + API]
     WS[WebSocket sessions + input validation]
     World[Authoritative world / fixed-tick simulation]
@@ -98,7 +98,7 @@ The core world engine passed a **15-minute soak with 500 actively moving simulat
 
 **What these numbers mean:** a validated operating point for the core world engine on Apple M1 / 8 GiB RAM / Node 22.19.0, with bots and server co-located on loopback. Throughput counts logical packet deliveries including recipient copies, not unique player actions. AOI reduction compares deliveries per acknowledged move against a global-replication baseline.
 
-The core benchmark excludes the event/contract scheduler. A separate **40-player full-game lobby/workbench run** passed, and earlier paid-gameplay validation covered jobs, deposits, races and settlement. The **1,000-player core run failed stability gates** and is retained in the report. These are not hardware-independent capacity claims or Render Free capacity measurements; the demo is configured for 60 players.
+The core benchmark excludes the event/contract scheduler. A separate **40-player full-game lobby/workbench run** passed, and earlier paid-gameplay validation covered jobs, deposits, races and settlement. The **1,000-player core run failed stability gates** and is retained in the report. These are not hardware-independent capacity claims or production VM capacity measurements; the demo is configured for 60 players.
 
 [Full methodology, passing and failing runs](docs/benchmarks/RESULTS.md) · [Machine-readable evidence](docs/benchmarks/results.json) · [Validation summary](docs/benchmarks/VALIDATION.md) · [SQLite/gameplay validation](docs/SQLITE_VALIDATION.md)
 <!-- measured-benchmark:end -->
@@ -124,8 +124,18 @@ For live editing, run `npm run build:shared`, then `npm run dev:server` and `npm
 
 ## Deployment
 
-The root [Dockerfile](Dockerfile) builds the frontend and backend together. [render.yaml](render.yaml) configures one free Docker web service, a generated owner password, `/health`, and deployment after CI passes. The server listens on VM's `PORT` and serves HTTP and WebSocket traffic on the same origin.
+with:
 
+```md
+## Deployment
+
+The root [Dockerfile](Dockerfile) builds the frontend and backend together as a single deployable service. The application can run on a Linux VM or any Docker-compatible environment. The server listens on the configured `PORT` and serves HTTP and WebSocket traffic on the same origin.
+
+Local container preview:
+
+```bash
+docker build -t the-heist .
+docker run --rm -p 8080:10000 the-heist
 
 
 Local container preview:
